@@ -1,0 +1,674 @@
+[
+  {
+    "slug": "ouverture",
+    "title": "Ouverture",
+    "aliases": ["ouverture", "ouvertures", "nombre f"],
+    "kind": "aperture",
+    "definition": "La taille relative de la pupille d’entrée de l’objectif. Le nombre f est la focale divisée par le diamètre de cette pupille.",
+    "example": "À 50 mm et f/2, la pupille d’entrée mesure environ 25 mm ; à f/4, environ 12,5 mm. À temps de pose identique, passer de f/2 à f/4 divise la lumière par quatre.",
+    "lesson": "N01-L03",
+    "steps": [
+      {
+        "title": "Grande ouverture",
+        "body": "Un petit nombre f laisse une pupille plus large. Observez le passage central entre les lamelles."
+      },
+      {
+        "title": "Fermer le diaphragme",
+        "body": "Le passage rétrécit quand le nombre f augmente ; moins de lumière est collectée à durée identique."
+      },
+      {
+        "title": "Choisir un compromis",
+        "body": "Fermer peut étendre la profondeur de champ, mais demande une compensation et peut accentuer la diffraction."
+      }
+    ]
+  },
+  {
+    "slug": "diaphragme",
+    "title": "Diaphragme",
+    "aliases": ["diaphragme", "diaphragmes"],
+    "kind": "aperture",
+    "definition": "Le mécanisme à lamelles de l’objectif qui fait varier le passage de la lumière. Il contribue à définir l’ouverture.",
+    "example": "En mode A/Av, choisissez f/2,8 puis f/8 : le boîtier adapte normalement le temps de pose pour suivre sa mesure.",
+    "lesson": "N01-L03",
+    "steps": [
+      {
+        "title": "Repérer les lamelles",
+        "body": "Tournez la scène pour examiner les pièces qui entourent le passage lumineux."
+      },
+      {
+        "title": "Actionner le mécanisme",
+        "body": "Déplacez le réglage : les lamelles modifient le diamètre utile de la pupille représentée."
+      },
+      {
+        "title": "Relier au nombre f",
+        "body": "Le nombre f décrit une ouverture relative, pas le nombre de lamelles ni une durée."
+      }
+    ]
+  },
+  {
+    "slug": "focale",
+    "title": "Focale",
+    "aliases": ["focale", "focales", "longueur focale"],
+    "kind": "focal",
+    "definition": "Une caractéristique optique exprimée en millimètres qui, avec la taille du capteur, détermine l’angle de champ.",
+    "example": "Depuis le même endroit, un 24 mm couvre un champ plus large qu’un 85 mm sur le même capteur. La perspective ne change pas tant que le point de vue ne bouge pas.",
+    "lesson": "N03-L01",
+    "steps": [
+      {
+        "title": "Champ large",
+        "body": "À courte focale, le cadre représenté couvre une zone plus grande depuis le même point."
+      },
+      {
+        "title": "Resserrer le cadre",
+        "body": "Augmentez la focale : le champ se réduit sans déplacer l’appareil."
+      },
+      {
+        "title": "Séparer focale et perspective",
+        "body": "Reculez réellement pour modifier les rapports de taille entre les plans ; le zoom seul ne le fait pas."
+      }
+    ]
+  },
+  {
+    "slug": "profondeur-de-champ",
+    "title": "Profondeur de champ",
+    "aliases": ["profondeur de champ"],
+    "kind": "depth",
+    "definition": "L’étendue des distances qui paraissent suffisamment nettes selon un critère d’observation choisi, autour du plan de mise au point.",
+    "example": "Un portrait rapproché à f/1,8 peut présenter une zone nette très courte. Une petite ouverture et une mise au point plus lointaine peuvent l’étendre.",
+    "lesson": "N03-L03",
+    "steps": [
+      {
+        "title": "Sélectionner un plan",
+        "body": "Le sujet sur lequel vous faites le point définit la référence de netteté."
+      },
+      {
+        "title": "Faire varier l’ouverture",
+        "body": "Observez le diaphragme ; une ouverture plus petite étend généralement la zone jugée nette."
+      },
+      {
+        "title": "Vérifier à la taille finale",
+        "body": "La netteté acceptable dépend du grossissement et du critère retenu. Le calcul de la leçon précise ses hypothèses."
+      }
+    ]
+  },
+  {
+    "slug": "temps-de-pose",
+    "title": "Temps de pose",
+    "aliases": [
+      "temps de pose",
+      "vitesse d’obturation",
+      "obturation",
+      "obturateur"
+    ],
+    "kind": "shutter",
+    "definition": "La durée pendant laquelle le capteur collecte la lumière pour former l’image. Elle influence la quantité de lumière et le rendu du mouvement.",
+    "example": "À ouverture et ISO constants, 1/250 s collecte deux fois plus de lumière que 1/500 s. Un sujet mobile peut donc laisser une trace plus longue.",
+    "lesson": "N01-L04",
+    "steps": [
+      {
+        "title": "Laisser une trace",
+        "body": "Une pose longue enregistre davantage de positions successives du sujet."
+      },
+      {
+        "title": "Raccourcir la collecte",
+        "body": "Le réglage réduit la durée ; la traînée représentée diminue."
+      },
+      {
+        "title": "Figer selon le mouvement",
+        "body": "Une durée courte aide, mais le résultat dépend aussi de la direction et de la vitesse du sujet."
+      }
+    ]
+  },
+  {
+    "slug": "iso",
+    "title": "Sensibilité ISO",
+    "aliases": ["ISO", "sensibilité ISO"],
+    "kind": "iso",
+    "definition": "Un réglage qui intervient dans le traitement du signal et la luminosité rendue. Il ne fait pas entrer plus de lumière dans l’appareil.",
+    "example": "Dans une salle sombre, monter l’ISO peut permettre de garder un temps de pose court. Cela n’annule pas les conséquences d’une faible quantité de lumière collectée.",
+    "lesson": "N01-L05",
+    "steps": [
+      {
+        "title": "Une base basse",
+        "body": "Avec suffisamment de lumière, un ISO bas peut préserver une bonne latitude de traitement."
+      },
+      {
+        "title": "Augmenter l’ISO",
+        "body": "Les points de bruit sont une illustration pédagogique, pas la mesure d’un boîtier."
+      },
+      {
+        "title": "Comprendre le compromis",
+        "body": "Pour comparer le bruit, considérez aussi l’exposition réelle et la luminosité finale."
+      }
+    ]
+  },
+  {
+    "slug": "capteur",
+    "title": "Capteur",
+    "aliases": ["capteur", "capteurs"],
+    "kind": "sensor",
+    "definition": "La surface photosensible qui transforme la lumière projetée par l’objectif en signaux enregistrables.",
+    "example": "Une zone très claire peut saturer des photosites. Réduire l’exposition à la capture peut préserver des nuances, contrairement à une simple baisse de luminosité après coup.",
+    "lesson": "N01-L02",
+    "steps": [
+      {
+        "title": "Recevoir une image",
+        "body": "Suivez les rayons illustrés de l’objectif vers la surface sensible."
+      },
+      {
+        "title": "Échantillonner la lumière",
+        "body": "La grille de photosites représente des mesures locales de signal."
+      },
+      {
+        "title": "Atteindre la saturation",
+        "body": "Le réglage illustre une montée du signal ; la capacité réelle dépend du capteur."
+      }
+    ]
+  },
+  {
+    "slug": "photosite",
+    "title": "Photosite",
+    "aliases": ["photosite", "photosites"],
+    "kind": "sensor",
+    "definition": "Un élément sensible du capteur qui mesure un signal lié à la lumière reçue. Un photosite n’est pas à lui seul une photographie couleur complète.",
+    "example": "Une matrice de filtres colorés permet généralement d’échantillonner différentes composantes ; le traitement reconstruit ensuite la couleur de l’image.",
+    "lesson": "N01-L02",
+    "steps": [
+      {
+        "title": "Observer la grille",
+        "body": "Chaque cellule représente une mesure locale et non un petit dessin complet."
+      },
+      {
+        "title": "Collecter un signal",
+        "body": "L’animation fait varier la réponse des cellules. La disposition est schématique."
+      },
+      {
+        "title": "Reconstruire la couleur",
+        "body": "La couleur finale dépend du filtrage, du dématriçage et du traitement, selon le capteur."
+      }
+    ]
+  },
+  {
+    "slug": "exposition",
+    "title": "Exposition",
+    "aliases": ["exposition", "triangle d’exposition"],
+    "kind": "triangle",
+    "definition": "La quantité de lumière reçue par le capteur pendant la prise de vue. L’ouverture et le temps de pose la contrôlent ; l’ISO influence le rendu du signal.",
+    "example": "Ouvrir d’un stop et diviser le temps de pose par deux conservent approximativement la lumière collectée, avec un rendu différent du mouvement ou de la zone nette.",
+    "lesson": "N01-L06",
+    "steps": [
+      {
+        "title": "Choisir l’ouverture",
+        "body": "Le passage lumineux influence la collecte et la profondeur de champ."
+      },
+      {
+        "title": "Choisir la durée",
+        "body": "La durée influence la collecte et la trace du mouvement."
+      },
+      {
+        "title": "Distinguer le rendu ISO",
+        "body": "Un ISO plus élevé peut éclaircir le rendu sans ajouter de lumière à la scène ou au capteur."
+      }
+    ]
+  },
+  {
+    "slug": "autofocus",
+    "title": "Autofocus",
+    "aliases": ["autofocus", "AF continu", "AF ponctuel", "collimateur"],
+    "kind": "focus",
+    "definition": "Le système qui règle la mise au point pour rendre une cible nette. La zone sélectionnée et le mode de suivi déterminent ce que l’appareil tente de suivre.",
+    "example": "Pour un marcheur qui se rapproche, l’AF continu peut actualiser la mise au point. Une zone trop large peut néanmoins accrocher l’arrière-plan.",
+    "lesson": "N02-L04",
+    "steps": [
+      {
+        "title": "Désigner la cible",
+        "body": "Le repère montre la zone que vous souhaitez rendre nette."
+      },
+      {
+        "title": "Actualiser la distance",
+        "body": "Déplacez le plan de mise au point pour comprendre le suivi d’un sujet."
+      },
+      {
+        "title": "Contrôler le résultat",
+        "body": "La détection ne garantit pas la réussite : vérifiez le point important, souvent l’œil en portrait."
+      }
+    ]
+  },
+  {
+    "slug": "histogramme",
+    "title": "Histogramme",
+    "aliases": ["histogramme", "histogrammes"],
+    "kind": "histogram",
+    "definition": "Une représentation du nombre de valeurs tonales, des ombres aux hautes lumières. Elle ne montre pas où se trouvent les objets dans l’image.",
+    "example": "Une scène de neige peut avoir beaucoup de valeurs claires. Il n’est pas nécessaire de recentrer son histogramme ; il faut surtout vérifier les zones que vous voulez préserver.",
+    "lesson": "N02-L03",
+    "steps": [
+      {
+        "title": "Lire les ombres",
+        "body": "Les colonnes à gauche représentent des valeurs basses."
+      },
+      {
+        "title": "Lire les tons moyens",
+        "body": "Déplacez la répartition ; aucune forme unique n’est idéale pour toutes les images."
+      },
+      {
+        "title": "Surveiller les extrémités",
+        "body": "Un amas sur un bord peut signaler une saturation. Vérifiez aussi les canaux couleur et les alertes du boîtier."
+      }
+    ]
+  },
+  {
+    "slug": "balance-des-blancs",
+    "title": "Balance des blancs",
+    "aliases": ["balance des blancs"],
+    "kind": "whitebalance",
+    "definition": "L’interprétation des couleurs destinée à rendre neutre une référence sous une lumière donnée, ou à choisir volontairement une ambiance.",
+    "example": "Sous la même lumière, passer d’un réglage de 3 000 K à 7 000 K réchauffe généralement le rendu. Ce réglage ne modifie pas la couleur physique de la source.",
+    "lesson": "N02-L05",
+    "steps": [
+      {
+        "title": "Un rendu froid",
+        "body": "La maquette montre une interprétation bleutée. La source réelle reste une autre question."
+      },
+      {
+        "title": "Un repère neutre",
+        "body": "Une surface réellement neutre peut servir de référence pour les canaux couleur."
+      },
+      {
+        "title": "Un rendu chaud",
+        "body": "Augmenter le réglage Kelvin réchauffe généralement le rendu sous une lumière inchangée."
+      }
+    ]
+  },
+  {
+    "slug": "perspective",
+    "title": "Perspective",
+    "aliases": ["perspective"],
+    "kind": "perspective",
+    "definition": "La relation apparente de taille et de position entre les éléments selon le point de vue. Elle dépend de votre position par rapport aux sujets.",
+    "example": "Un visage photographié de très près présente un nez relativement plus grand. Changer seulement la focale depuis la même place ne corrige pas ce rapport.",
+    "lesson": "N03-L04",
+    "steps": [
+      {
+        "title": "Se rapprocher",
+        "body": "Le premier plan prend beaucoup d’importance relativement au fond."
+      },
+      {
+        "title": "Reculer",
+        "body": "À taille du premier sujet comparable dans le cadre, le rapport des plans change."
+      },
+      {
+        "title": "Vérifier les lignes",
+        "body": "L’orientation du boîtier joue également sur le rendu des verticales."
+      }
+    ]
+  },
+  {
+    "slug": "bruit",
+    "title": "Bruit numérique",
+    "aliases": ["bruit numérique", "bruit"],
+    "kind": "iso",
+    "definition": "Les variations indésirables du signal qui rendent le grain ou les taches visibles, particulièrement lorsque peu de lumière est collectée et que le rendu est éclairci.",
+    "example": "Une photo sous-exposée puis fortement éclaircie peut montrer beaucoup de bruit. Comparer deux ISO demande de tenir compte de la lumière réellement reçue.",
+    "lesson": "N01-L05",
+    "steps": [
+      {
+        "title": "Beaucoup de signal",
+        "body": "Les détails se distinguent plus facilement des variations aléatoires."
+      },
+      {
+        "title": "Peu de lumière",
+        "body": "Des points schématiques représentent la fluctuation visible dans le rendu."
+      },
+      {
+        "title": "Choisir la priorité",
+        "body": "Une image un peu bruitée peut être préférable à un sujet involontairement flou."
+      }
+    ]
+  },
+  {
+    "slug": "diffraction",
+    "title": "Diffraction",
+    "aliases": ["diffraction"],
+    "kind": "diffraction",
+    "definition": "L’étalement de la lumière lorsqu’elle traverse une ouverture. À très petite ouverture, cet effet peut réduire la finesse des détails enregistrés.",
+    "example": "Fermer à f/22 peut augmenter la zone jugée nette tout en réduisant le détail très fin par rapport à f/8. Il faut arbitrer selon le sujet et la taille finale.",
+    "lesson": "N03-L05",
+    "steps": [
+      {
+        "title": "Un passage large",
+        "body": "Le diaphragme laisse un passage plus grand."
+      },
+      {
+        "title": "Réduire le passage",
+        "body": "Les ondes représentées soulignent que la lumière ne se comporte pas comme des traits infiniment fins."
+      },
+      {
+        "title": "Observer l’étalement",
+        "body": "La taille des anneaux augmente lorsque le nombre f augmente. Le modèle illustre le principe sans calculer une image de diffraction exacte."
+      }
+    ]
+  },
+  {
+    "slug": "bokeh",
+    "title": "Bokeh",
+    "aliases": ["bokeh"],
+    "kind": "bokeh",
+    "definition": "L’aspect des zones hors mise au point : forme, douceur et transitions du flou. Ce n’est pas un synonyme de faible profondeur de champ.",
+    "example": "Deux objectifs peuvent produire une zone nette comparable mais un rendu différent des points lumineux flous. Les lamelles et les corrections optiques participent au résultat.",
+    "lesson": "N03-L03",
+    "steps": [
+      {
+        "title": "Un fond hors du plan net",
+        "body": "Les disques lumineux illustrent des points défocalisés."
+      },
+      {
+        "title": "Changer l’ouverture",
+        "body": "Leur taille apparente varie dans cette représentation ; la forme de la pupille joue aussi sur leur rendu."
+      },
+      {
+        "title": "Juger le rendu",
+        "body": "Le modèle ne mesure pas la qualité esthétique du bokeh d’un objectif réel."
+      }
+    ]
+  },
+  {
+    "slug": "raw",
+    "title": "RAW",
+    "aliases": ["RAW"],
+    "kind": "workflow",
+    "definition": "Un fichier contenant des données issues du capteur et des métadonnées, avant un rendu final destiné à l’affichage. Son interprétation dépend d’un développement.",
+    "example": "Conservez le RAW, ajustez la balance des blancs puis exportez un JPEG. Le fichier exporté est une interprétation ; il ne remplace pas toutes les données sources.",
+    "lesson": "N02-L06",
+    "steps": [
+      {
+        "title": "Capturer",
+        "body": "La première carte représente les données originales."
+      },
+      {
+        "title": "Développer",
+        "body": "La deuxième carte représente des choix de rendu non destructifs."
+      },
+      {
+        "title": "Exporter",
+        "body": "La troisième carte est une image destinée à un usage ; gardez la source pour revenir sur les réglages."
+      }
+    ]
+  },
+  {
+    "slug": "jpeg",
+    "title": "JPEG",
+    "aliases": ["JPEG"],
+    "kind": "export",
+    "definition": "Un format d’image qui contient un rendu déjà calculé et utilise généralement une compression avec perte. Il facilite le partage et l’affichage.",
+    "example": "Un JPEG web peut être exporté en sRGB avec des dimensions adaptées. Réenregistrer plusieurs fois un fichier compressé peut dégrader son contenu.",
+    "lesson": "N02-L06",
+    "steps": [
+      {
+        "title": "Choisir une destination",
+        "body": "L’affichage et l’impression n’imposent pas les mêmes dimensions."
+      },
+      {
+        "title": "Régler la sortie",
+        "body": "Le nombre de pixels exportés influence les dimensions disponibles, pas le détail déjà perdu."
+      },
+      {
+        "title": "Vérifier le fichier",
+        "body": "Contrôlez le profil, la compression et les dimensions de la copie livrée."
+      }
+    ]
+  },
+  {
+    "slug": "dynamique",
+    "title": "Dynamique",
+    "aliases": ["dynamique"],
+    "kind": "dynamic",
+    "definition": "L’écart entre les niveaux de lumière qui peuvent être distingués ou enregistrés. Une scène peut dépasser la dynamique exploitable du capteur.",
+    "example": "Un intérieur sombre devant une fenêtre ensoleillée peut présenter plus d’écart que le capteur n’enregistre en une seule exposition. Un réflecteur réduit le contraste de la scène.",
+    "lesson": "N02-L03",
+    "steps": [
+      {
+        "title": "Écart modéré",
+        "body": "Les ombres et les hautes lumières restent relativement proches dans la répartition représentée."
+      },
+      {
+        "title": "Écart important",
+        "body": "Les groupes de valeurs s’écartent ; une seule exposition peut imposer un compromis."
+      },
+      {
+        "title": "Décider quoi préserver",
+        "body": "Protégez les zones importantes ou modifiez l’éclairage. La plage du dessin n’est pas une mesure de capteur."
+      }
+    ]
+  },
+  {
+    "slug": "hyperfocale",
+    "title": "Hyperfocale",
+    "aliases": ["hyperfocale"],
+    "kind": "hyperfocal",
+    "definition": "Une distance de mise au point calculée pour que la limite lointaine de profondeur de champ atteigne l’infini selon un cercle de confusion choisi.",
+    "example": "À 50 mm, f/8 et un cercle de confusion de 0,03 mm, l’hyperfocale est proche de 10,47 m. Ce résultat reste lié au critère d’observation.",
+    "lesson": "N03-L03",
+    "steps": [
+      {
+        "title": "Faire le point près",
+        "body": "La zone jugée nette reste limitée en distance."
+      },
+      {
+        "title": "Éloigner la mise au point",
+        "body": "La limite lointaine s’éloigne dans le modèle."
+      },
+      {
+        "title": "Atteindre l’hyperfocale",
+        "body": "Avec les hypothèses indiquées, l’infini entre dans la zone acceptable. Cela ne signifie pas une netteté absolue."
+      }
+    ]
+  },
+  {
+    "slug": "flash",
+    "title": "Flash",
+    "aliases": ["flash"],
+    "kind": "flash",
+    "definition": "Une source qui émet un éclair bref. L’équilibre entre cet éclair et la lumière ambiante dépend des réglages et du mode de synchronisation.",
+    "example": "En synchro classique, à ouverture et ISO fixes, allonger le temps de pose augmente surtout la part de lumière ambiante. Le régime HSS fonctionne différemment.",
+    "lesson": "N05-L04",
+    "steps": [
+      {
+        "title": "Observer la fenêtre temporelle",
+        "body": "La scène représente l’ouverture de l’obturateur."
+      },
+      {
+        "title": "Placer l’éclair",
+        "body": "Le point lumineux matérialise un éclair bref pendant cette fenêtre."
+      },
+      {
+        "title": "Équilibrer les sources",
+        "body": "Le dessin est un modèle temporel simplifié, pas une mesure de durée d’éclair."
+      }
+    ]
+  },
+  {
+    "slug": "synchronisation",
+    "title": "Synchronisation flash",
+    "aliases": ["synchronisation", "synchro"],
+    "kind": "flash",
+    "definition": "La coordination de l’éclair avec le fonctionnement de l’obturateur pour éclairer correctement la surface du capteur.",
+    "example": "Dépasser la vitesse de synchro classique peut créer une bande sombre si le système n’utilise pas un mode compatible comme le HSS.",
+    "lesson": "N05-L04",
+    "steps": [
+      {
+        "title": "Ouvrir",
+        "body": "Le déplacement des rideaux détermine la fenêtre d’exposition."
+      },
+      {
+        "title": "Déclencher l’éclair",
+        "body": "L’éclair doit arriver au bon instant. Déplacez le réglage pour visualiser la coordination."
+      },
+      {
+        "title": "Connaître son matériel",
+        "body": "La vitesse limite et les modes compatibles se vérifient dans les notices du boîtier et du flash."
+      }
+    ]
+  },
+  {
+    "slug": "contre-jour",
+    "title": "Contre-jour",
+    "aliases": ["contre-jour"],
+    "kind": "backlight",
+    "definition": "Une situation où une source importante se trouve derrière le sujet relativement à l’appareil. Elle peut créer une silhouette, un liseré ou un fort contraste.",
+    "example": "Devant une fenêtre, préserver le détail extérieur peut assombrir le visage. Ajouter un réflecteur peut éclairer le visage sans surexposer davantage le fond.",
+    "lesson": "N05-L03",
+    "steps": [
+      {
+        "title": "Préserver le fond",
+        "body": "Le sujet reçoit peu de lumière frontale et peut apparaître sombre."
+      },
+      {
+        "title": "Éclaircir le sujet",
+        "body": "Faire varier la lumière sur la maquette montre l’effet d’un apport."
+      },
+      {
+        "title": "Réduire le contraste",
+        "body": "Un apport réel modifie la scène ; éclaircir un fichier ne produit pas exactement le même résultat."
+      }
+    ]
+  },
+  {
+    "slug": "lumiere-douce",
+    "title": "Lumière douce",
+    "aliases": ["lumière douce", "source diffuse"],
+    "kind": "light",
+    "definition": "Une lumière dont les transitions entre ombre et lumière sont progressives. La taille apparente de la source vue du sujet est déterminante.",
+    "example": "Une grande fenêtre proche peut donner des ombres plus douces qu’un petit flash nu éloigné. Un diffuseur minuscule très loin ne devient pas une grande source apparente.",
+    "lesson": "N05-L01",
+    "steps": [
+      {
+        "title": "Lire la direction",
+        "body": "Tournez la maquette pour examiner les surfaces éclairées."
+      },
+      {
+        "title": "Déplacer la source",
+        "body": "L’angle de la source change le dessin des ombres."
+      },
+      {
+        "title": "Distinguer douceur et direction",
+        "body": "Le réglage d’angle montre la direction. La douceur dépend aussi de la taille et de la distance de la source."
+      }
+    ]
+  },
+  {
+    "slug": "masque",
+    "title": "Masque",
+    "aliases": ["masque", "masques"],
+    "kind": "mask",
+    "definition": "Une sélection qui détermine où et avec quelle intensité un réglage de retouche agit. Il peut suivre une zone, un sujet ou des critères de couleur et de luminosité.",
+    "example": "Pour éclaircir un visage sans éclaircir le fond, utilisez un masque local avec une transition adaptée et vérifiez l’absence de halo.",
+    "lesson": "N07-L03",
+    "steps": [
+      {
+        "title": "Une action globale",
+        "body": "Un grand repère couvre une large partie du sujet."
+      },
+      {
+        "title": "Limiter la sélection",
+        "body": "Réduisez le rayon pour isoler une zone."
+      },
+      {
+        "title": "Soigner la transition",
+        "body": "Le contour représenté explique la sélection ; un logiciel réel permet aussi de gérer le contour progressif."
+      }
+    ]
+  },
+  {
+    "slug": "courbe-tonale",
+    "title": "Courbe tonale",
+    "aliases": ["courbe tonale", "courbe en S"],
+    "kind": "curves",
+    "definition": "Une transformation qui associe des valeurs tonales d’entrée à des valeurs de sortie. Elle permet de modifier le contraste selon les zones de la gamme.",
+    "example": "Une courbe en S modérée assombrit certains tons sombres et éclaircit certains tons clairs. Un réglage excessif peut écrêter des nuances.",
+    "lesson": "N07-L02",
+    "steps": [
+      {
+        "title": "Un rendu doux",
+        "body": "Les valeurs sont rapprochées, le contraste paraît moins marqué."
+      },
+      {
+        "title": "Un contraste accru",
+        "body": "Les variations de hauteur matérialisent la transformation des tons."
+      },
+      {
+        "title": "Surveiller les limites",
+        "body": "Une correction plus forte n’est pas toujours meilleure. Conservez des nuances utiles à l’intention."
+      }
+    ]
+  },
+  {
+    "slug": "aberration-chromatique",
+    "title": "Aberration chromatique",
+    "aliases": ["aberration chromatique", "aberrations chromatiques"],
+    "kind": "chromatic",
+    "definition": "Un défaut optique où différentes composantes de couleur ne se superposent pas exactement dans l’image, pouvant créer des franges sur les transitions contrastées.",
+    "example": "Des contours de branches contre un ciel clair peuvent montrer des franges. Leur correction dépend du type d’aberration et des outils disponibles.",
+    "lesson": "N03-L05",
+    "steps": [
+      {
+        "title": "Traverser l’objectif",
+        "body": "Les trajets colorés représentent plusieurs composantes de la lumière."
+      },
+      {
+        "title": "Séparer les composantes",
+        "body": "Faites varier le décalage pour voir que les foyers peuvent ne pas coïncider."
+      },
+      {
+        "title": "Identifier une frange",
+        "body": "La scène exagère la séparation pour rendre le mécanisme lisible ; elle ne caractérise pas un objectif réel."
+      }
+    ]
+  },
+  {
+    "slug": "sauvegarde",
+    "title": "Sauvegarde",
+    "aliases": ["sauvegarde", "sauvegardes"],
+    "kind": "backup",
+    "definition": "Une copie destinée à permettre la récupération des données après perte, erreur ou panne. Son indépendance et sa capacité de restauration sont essentielles.",
+    "example": "Une synchronisation peut répliquer une suppression. Une copie distincte, un historique adapté et un test de restauration apportent une protection différente.",
+    "lesson": "N07-L05",
+    "steps": [
+      {
+        "title": "Une copie de travail",
+        "body": "Un seul stockage reste un point de défaillance."
+      },
+      {
+        "title": "Une copie indépendante",
+        "body": "Ajoutez un stockage séparé pour limiter les conséquences d’une panne ou erreur."
+      },
+      {
+        "title": "Vérifier la restauration",
+        "body": "La présence de disques dans le dessin ne suffit pas : testez l’ouverture d’un fichier réellement restauré."
+      }
+    ]
+  },
+  {
+    "slug": "pixels",
+    "title": "Pixels et dimensions",
+    "aliases": ["pixel", "pixels", "ppp"],
+    "kind": "export",
+    "definition": "Les dimensions en pixels déterminent la quantité d’échantillons d’une image. Les ppp relient ces pixels à une taille physique d’impression.",
+    "example": "3 000 pixels à 300 ppp correspondent à 10 pouces, soit environ 25,4 cm. Changer seulement la valeur ppp sans rééchantillonner ne crée pas de détail.",
+    "lesson": "N07-L06",
+    "steps": [
+      {
+        "title": "Définir l’usage",
+        "body": "Une image destinée à un écran et une impression n’ont pas les mêmes contraintes."
+      },
+      {
+        "title": "Choisir les dimensions",
+        "body": "Le réglage change la largeur de sortie représentée ; il n’invente pas de détails."
+      },
+      {
+        "title": "Calculer la taille imprimée",
+        "body": "Taille en pouces = pixels / ppp. Vérifiez aussi les exigences du laboratoire."
+      }
+    ]
+  }
+]

@@ -17,7 +17,7 @@ assert len({q['q'] for lesson in CONTENT.values() for q in lesson['questions']})
 assert sum(len(x['scenarios']) for x in CONTENT.values())==144
 
 with sync_playwright() as p:
-    browser=p.chromium.launch(executable_path=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium'),headless=True,args=['--no-sandbox'])
+    browser=p.chromium.launch(executable_path=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium'),headless=True,args=['--no-sandbox','--enable-unsafe-swiftshader','--use-angle=swiftshader','--use-gl=angle','--disable-webgpu'])
     page=browser.new_page(viewport={'width':1440,'height':1000})
     errors=[]
     page.on('pageerror',lambda error:errors.append(str(error)))
@@ -38,7 +38,7 @@ with sync_playwright() as p:
         page.wait_for_selector('.lesson-overview')
         assert page.locator('h1').inner_text()==lesson['titre'],id
         assert page.locator('.chapter').count()==6,id
-        assert page.locator('.concept-preview svg[role="img"]').count()==1,id
+        assert page.locator('.concept-preview .spatial-preview').count()==1,id
         # The actual shared image must be available, not just an element or placeholder.
         assert page.evaluate("async()=>{const r=await fetch('assets/academy-scenes.png');return r.ok&&(await r.blob()).size>10000}")
         page.locator('[data-read="0"]').check()
@@ -46,7 +46,7 @@ with sync_playwright() as p:
         for i,scenario in enumerate(CONTENT[id]['scenarios']):
             page.locator(f'[data-scenario="{i}"]').click()
             assert page.locator('#scenario-explanation').inner_text()==scenario['explanation'],id
-            assert page.locator('#workshop-art svg title').text_content().endswith(scenario['label'])
+            assert page.locator('#workshop-art .spatial-view').get_attribute('data-title').endswith(scenario['label'])
         assert page.locator('.comparison-card').count()==3
         page.locator('#tab-mission').click()
         note=f"Séance {id} : j’ai comparé mes réglages et noté les différences observées."

@@ -288,7 +288,7 @@
           "",
         )}</div><div class="next-step"><div><span class="eyebrow">OBSERVER POUR COMPRENDRE</span><h3>Une idée devient claire quand on la compare.</h3><p>Explorez les trois situations, puis testez sur le terrain.</p></div><button class="btn" id="go-visual">Ouvrir l’atelier visuel →</button></div>`;
     $("#pane-visual").innerHTML =
-      `<div class="section-title"><span>↔</span><h2>Un sujet. Trois situations.</h2></div><p class="section-intro">Sélectionnez une situation pour lire le schéma et comprendre le choix photographique.</p><div class="scenario-tabs" role="group" aria-label="Situations à comparer">${meta.scenarios.map((x, i) => `<button class="scenario-button ${i === 0 ? "selected" : ""}" data-scenario="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${esc(x.label)}</button>`).join("")}</div><div class="visual-workshop"><div id="workshop-art">${FocalVisuals.draw(meta.kind, 0, lesson.titre + " : " + meta.scenarios[0].label)}</div><aside class="workshop-explanation" aria-live="polite"><span class="eyebrow">DÉCODER L’IMAGE</span><h2 id="scenario-title">${esc(meta.scenarios[0].label)}</h2><p id="scenario-explanation">${esc(meta.scenarios[0].explanation)}</p><div class="callout">${esc(meta.key)}</div><span class="illustration-label">Schéma pédagogique : représentation simplifiée, sans valeur de mesure.</span></aside></div>${["aperture", "depth"].includes(meta.kind) ? depthCalculator() : ""}<div class="comparison-heading"><span class="eyebrow">GARDER LES TROIS REPÈRES EN TÊTE</span></div><div class="comparison-grid">${meta.scenarios.map((x, i) => `<article class="comparison-card">${FocalVisuals.draw(meta.kind, i, x.label)}<div><span class="eyebrow">SITUATION 0${i + 1}</span><h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p></div></article>`).join("")}</div>`;
+      `<div class="section-title"><span>↔</span><h2>Un sujet. Trois situations.</h2></div><p class="section-intro">Sélectionnez une situation, manipulez la scène 3D et observez le mécanisme.</p><div class="scenario-tabs" role="group" aria-label="Situations à comparer">${meta.scenarios.map((x, i) => `<button class="scenario-button ${i === 0 ? "selected" : ""}" data-scenario="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${esc(x.label)}</button>`).join("")}</div><div class="visual-workshop"><div id="workshop-art">${FocalVisuals.draw(meta.kind, 0, lesson.titre + " : " + meta.scenarios[0].label, "interactive")}</div><aside class="workshop-explanation" aria-live="polite"><span class="eyebrow">DÉCODER L’IMAGE</span><h2 id="scenario-title">${esc(meta.scenarios[0].label)}</h2><p id="scenario-explanation">${esc(meta.scenarios[0].explanation)}</p><div class="callout">${esc(meta.key)}</div><span class="illustration-label">Maquette 3D pédagogique : mécanismes simplifiés, sans valeur de mesure optique.</span></aside></div>${["aperture", "depth"].includes(meta.kind) ? depthCalculator() : ""}<div class="comparison-heading"><span class="eyebrow">GARDER LES TROIS REPÈRES EN TÊTE</span></div><div class="comparison-grid">${meta.scenarios.map((x, i) => `<article class="comparison-card">${FocalVisuals.draw(meta.kind, i, x.label)}<div><span class="eyebrow">SITUATION 0${i + 1}</span><h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p></div></article>`).join("")}</div>`;
     $("#pane-mission").innerHTML =
       `<div class="mission-layout"><div><div class="section-title"><span>→</span><h2>De la notion à votre image.</h2></div><div class="panel mission-brief"><span class="eyebrow">VOTRE MISSION · ${esc(lesson.id)}</span><h2>${esc(lesson.titre)}</h2><p class="mission-instruction">${esc(meta.mission)}</p><h3>Votre protocole</h3><ol><li>Écrivez votre intention avant de commencer.</li><li>Gardez une trace des réglages et des conditions de chaque essai.</li><li>Comparez les résultats au même grossissement.</li><li>Notez une observation et une correction pour votre prochaine séance.</li></ol><div class="callout">${esc(meta.key)}</div></div></div><aside class="panel mission-evidence"><span class="eyebrow">À RAPPORTER DE VOTRE SÉANCE</span><h3>Une preuve, une réflexion.</h3><ul>${(lesson.exercice?.preuves || ["Une série d’essais comparables", "Des réglages consignés", "Une conclusion argumentée"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p class="tiny">Les images restent chez vous. Le site conserve uniquement vos notes et votre déclaration de réalisation.</p></aside></div><section class="panel notes-panel"><label for="fieldNotes"><h2>Mon carnet de terrain</h2><span>Intention, réglages, observations, prochain essai.</span></label><textarea id="fieldNotes" maxlength="50000" placeholder="Mon intention…\nLes conditions et mes réglages…\nCe que j’ai observé…\nCe que je changerai…">${esc(state.notes[id] || "")}</textarea><div class="notes-actions"><button class="btn" id="saveNotes">Enregistrer mes notes</button><span id="notes-status" role="status"></span><label class="read-check"><input type="checkbox" id="practiceDone" ${state.practice[id] ? "checked" : ""}> Mission réalisée</label></div></section>`;
     $("#pane-quiz").innerHTML =
@@ -361,7 +361,8 @@
             b.classList.toggle("selected", b === button);
             b.setAttribute("aria-pressed", b === button);
           });
-          $("#workshop-art").innerHTML = FocalVisuals.draw(
+          FocalVisuals.update(
+            $("#workshop-art"),
             meta.kind,
             i,
             lesson.titre + " : " + meta.scenarios[i].label,
@@ -371,6 +372,18 @@
             meta.scenarios[i].explanation;
         }),
     );
+    function exploreScene() {
+      $$("[data-scenario]").forEach((b) => {
+        b.classList.remove("selected");
+        b.setAttribute("aria-pressed", "false");
+      });
+      $("#scenario-title").textContent = "Exploration libre";
+      $("#scenario-explanation").textContent =
+        meta.key +
+        " Les réglages du laboratoire remplacent le préréglage de la situation. Sélectionnez une situation pour y revenir.";
+    }
+    $("#workshop-art").addEventListener("spatial-change", exploreScene);
+    $("#workshop-art").addEventListener("spatial-play", exploreScene);
     const notes = $("#fieldNotes"),
       notesStatus = $("#notes-status");
     let noteTimer;
@@ -580,10 +593,15 @@
     document.title = "FOCAL Academy — Le regard s’apprend";
     if (bits[0] === "courses") renderCatalog(Number(bits[1]) || 0);
     else if (bits[0] === "progress") renderProgress();
-    else if (bits[0] === "lesson") renderLesson(bits[1], bits[2]);
+    else if (bits[0] === "glossary") {
+      activeLesson = null;
+      setNav("glossary");
+      FocalGlossary.render(app, bits[1], state.lastLesson);
+    } else if (bits[0] === "lesson") renderLesson(bits[1], bits[2]);
     else if (!bits[0]) renderLesson(state.lastLesson || reference.id);
     else renderNotFound();
     window.scrollTo(0, 0);
+    FocalGlossary.restorePosition();
   }
   async function init() {
     try {
@@ -632,6 +650,7 @@
           } catch {}
         }
       });
+      await FocalGlossary.init();
       renderRoute();
       updateProgress();
       window.FocalApp = {

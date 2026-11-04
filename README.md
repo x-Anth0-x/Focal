@@ -19,7 +19,7 @@ En production, les fichiers sont servis depuis la racine de la branche `gh-pages
 Chaque leçon dispose de cinq espaces :
 
 - **Cours** : repère essentiel, visuel d’ambiance et six chapitres avec suivi de lecture.
-- **Atelier visuel** : schéma propre à la notion, trois situations commentées et une comparaison côte à côte.
+- **Atelier visuel** : scène 3D manipulable, réglage animé, repères cliquables, trois situations commentées et une comparaison de rendus 3D.
 - **Mission terrain** : protocole, preuves attendues et carnet personnel.
 - **Quiz** : questions propres au sujet, correction expliquée et possibilité de recommencer.
 - **Mémo** : synthèse imprimable et liens vers les leçons du même niveau.
@@ -43,7 +43,7 @@ Les contenus d’origine sont conservés dans `curriculum.json`. Les complément
 | `assets/landscape.png`      | Illustration générée de la première version, conservée        |
 | `REFERENCE.md`              | Documentation historique de l’archive fournie                 |
 
-Pour enrichir une leçon, conserver son identifiant `Nxx-Lxx`. Modifier ses textes dans `lesson-content.json`, et son schéma dans `visuals.js`. Les illustrations générées ne sont pas des photographies comparatives contrôlées. Les ateliers SVG sont des schémas explicatifs, pas des simulations quantitatives. Le calcul optique annonce séparément ses hypothèses.
+Pour enrichir une leçon, conserver son identifiant `Nxx-Lxx`. Modifier ses textes dans `lesson-content.json`, et sa maquette dans `spatial-models.js`. Les illustrations générées ne sont pas des photographies comparatives contrôlées. Les maquettes 3D expliquent des mécanismes ; elles ne constituent pas des simulations optiques quantitatives. Le calcul optique annonce séparément ses hypothèses.
 
 ## Suivi et compatibilité
 
@@ -62,3 +62,42 @@ FOCAL_URL=http://127.0.0.1:3000 python tests/smoke.py
 ```
 
 `CHROMIUM_PATH` peut désigner un autre exécutable Chromium. La suite parcourt les 48 leçons, réalise les missions et quiz, vérifie la persistance, l’import/export, la reprise d’un ancien suivi, les calculs de profondeur de champ, les liens directs, le clavier et six largeurs d’écran.
+
+## Laboratoire spatial et lexique vivant
+
+Les 48 anciens schémas SVG sont remplacés par des rendus de modèles 3D procéduraux. Les cours affichent des aperçus 3D ; les ateliers et le lexique donnent accès aux scènes manipulables.
+
+- Rotation à la souris ou au toucher, zoom tactile et par boutons, vue de face et réinitialisation.
+- Un réglage propre à la notion, une animation à la demande et des points explicatifs ancrés à la scène.
+- Géométries mises à jour réellement : lamelles du diaphragme, plans de mise au point, répartition tonale, sources lumineuses, trajectoires et flux de fichiers.
+- Lorsque le réglage est modifié librement, la narration quitte le préréglage pour éviter de présenter une ancienne situation comme l’état actuel.
+- Les flèches font tourner la vue au clavier ; `+` / `−` zooment et `0` réinitialise. La barre d’espace lance ou arrête l’animation lorsque le canevas est sélectionné.
+
+**29 notions techniques** deviennent des liens dans les cours, exemples et corrections. Chaque notion possède une définition, une animation 3D pilotable, trois étapes commentées et un exemple concret. La lecture des textes ne nécessite pas de GPU. Le retour depuis un mot cliqué restaure la leçon et son onglet, avec sa position de lecture.
+
+Routes supplémentaires : `#glossary`, `#glossary/ouverture`, `#glossary/diaphragme`, `#glossary/focale`.
+
+### Architecture graphique
+
+| Fichier             | Rôle                                                                          |
+| ------------------- | ----------------------------------------------------------------------------- |
+| `spatial-models.js` | 53 configurations de maquettes, dont les 48 sujets du parcours                |
+| `spatial.js`        | Rendu, contrôles, repères, animation, visibilité et libération des ressources |
+| `spatial.css`       | Interface spatiale et lexique responsive                                      |
+| `glossary.json`     | 29 définitions, 87 étapes et exemples rédigés                                 |
+| `glossary.js`       | Liens de vocabulaire, recherche, navigation et narration                      |
+| `vendor/three/`     | Three.js r180, contrôles et géométrie arrondie, sous licence MIT              |
+
+Le moteur Three.js sélectionne **WebGPU** lorsqu’un adaptateur est disponible et utilise **WebGL 2** sinon. Les dépendances sont servies depuis le dépôt grâce à une import map ; aucun CDN ni service externe n’est requis à l’exécution.
+
+Le catalogue et l’index du lexique ne créent pas de moteur graphique. Les scènes se chargent à l’approche de la zone visible. Un moteur réutilisé produit les aperçus ; un second sert la scène interactive. Le cache des aperçus est borné. Le rendu est déclenché à la demande ; les animations ne démarrent jamais seules et s’arrêtent quand la scène ou la page est masquée. Géométries, matériaux, ombres et contrôles sont libérés à la sortie de scène. Les préférences de réduction des animations sont respectées.
+
+L’absence de support graphique affiche une explication textuelle : définition, étapes, exemples et cours restent utilisables. Les visuels sont schématiques, les trajectoires peuvent être exagérées, et les objets représentés ne caractérisent pas un appareil ou un objectif réel. Seul le calcul de profondeur de champ est quantitatif, selon les hypothèses affichées.
+
+### Vérification 3D
+
+```sh
+python tests/spatial.py
+```
+
+Cette suite utilise aussi Pillow pour contrôler une capture du canevas. Elle vérifie les géométries aux bornes des réglages, le rendu réel des 48 leçons et des 29 notions, les animations, la caméra, les repères, le retour à la leçon, les écrans étroits et le cas sans GPU. Le moteur WebGL 2 est vérifié avec le rendu logiciel de Chromium dans l’environnement cloud ; les performances WebGPU natives dépendent du matériel et ne sont pas mesurées ici.
