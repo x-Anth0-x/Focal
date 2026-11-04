@@ -1,3 +1,5 @@
+> Documentation historique de l’archive fournie. Elle décrit la version de référence initiale, pas le périmètre actuel. Voir README.md pour l’application modernisée.
+
 # FOCAL Academy — Application web responsive
 
 ## Démarrage

@@ -1,0 +1,1966 @@
+{
+  "N01-L01": {
+    "kind": "camera",
+    "headline": "Le boîtier devient un outil, pas un obstacle.",
+    "key": "L’objectif forme l’image ; le boîtier contrôle son enregistrement.",
+    "mission": "Repérez le déclencheur, les molettes et la sélection AF sur votre appareil. Photographiez un même sujet en expliquant le rôle de chaque commande.",
+    "scenarios": [
+      {
+        "label": "Observer",
+        "explanation": "Suivez le trajet de la lumière, de l’objectif au capteur."
+      },
+      {
+        "label": "Faire le point",
+        "explanation": "Choisissez vous-même le collimateur sur le sujet principal."
+      },
+      {
+        "label": "Déclencher",
+        "explanation": "Vérifiez le cadrage et la stabilité avant la prise de vue."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quel élément forme l’image sur le capteur ?",
+        "a": ["L’objectif", "La carte mémoire", "La batterie"],
+        "correct": 0,
+        "why": "Les lentilles de l’objectif forment l’image ; le capteur l’enregistre."
+      },
+      {
+        "q": "Pour imposer la zone nette, que faut-il contrôler ?",
+        "a": [
+          "Le nom du fichier",
+          "La luminosité de l’écran",
+          "La zone de mise au point"
+        ],
+        "correct": 2,
+        "why": "Le collimateur ou la zone AF aide à désigner la partie importante."
+      }
+    ]
+  },
+  "N01-L02": {
+    "kind": "sensor",
+    "headline": "De la lumière à l’image.",
+    "key": "Le capteur échantillonne la lumière ; sa taille ne se résume pas au nombre de pixels.",
+    "mission": "Photographiez une scène contrastée à exposition constante. Zoomez à 100 % et distinguez détail, bruit et zones saturées.",
+    "scenarios": [
+      {
+        "label": "Lumière",
+        "explanation": "L’objectif projette une image sur une surface sensible."
+      },
+      {
+        "label": "Échantillonnage",
+        "explanation": "Chaque photosite mesure un signal lumineux ; la couleur doit être reconstruite."
+      },
+      {
+        "label": "Saturation",
+        "explanation": "Un photosite saturé ne conserve plus les différences des hautes lumières."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Que mesure un photosite ?",
+        "a": [
+          "Une intention artistique",
+          "Un nombre de fichiers",
+          "Un signal lumineux"
+        ],
+        "correct": 2,
+        "why": "Le photosite produit un signal lié à la lumière reçue."
+      },
+      {
+        "q": "Que signifie une haute lumière saturée à la capture ?",
+        "a": [
+          "Elle est forcément correctement exposée",
+          "Ses différences de signal ne sont plus enregistrées",
+          "Elle contient toujours plus de détails"
+        ],
+        "correct": 1,
+        "why": "La saturation empêche de conserver les variations au-delà de la capacité du photosite."
+      }
+    ]
+  },
+  "N01-L03": {
+    "kind": "aperture",
+    "headline": "Une ouverture, une intention.",
+    "key": "Un petit nombre f correspond à une grande ouverture.",
+    "mission": "À focale et position fixes, réalisez quatre vues à f/2,8, f/4, f/5,6 et f/8. Compensez avec le temps de pose.",
+    "scenarios": [
+      {
+        "label": "f/1,8",
+        "explanation": "Une grande ouverture favorise la séparation du sujet et du décor."
+      },
+      {
+        "label": "f/5,6",
+        "explanation": "Une ouverture intermédiaire peut équilibrer netteté et exposition."
+      },
+      {
+        "label": "f/16",
+        "explanation": "Une petite ouverture étend souvent la zone nette, mais la diffraction peut réduire le détail."
+      }
+    ],
+    "questions": [
+      {
+        "q": "À focale constante, quel nombre correspond à la plus grande ouverture ?",
+        "a": ["f/16", "f/1,8", "f/8"],
+        "correct": 1,
+        "why": "Le nombre f est inversement lié au diamètre de la pupille d’entrée."
+      },
+      {
+        "q": "Passer de f/2,8 à f/4 à temps de pose constant fait quoi ?",
+        "a": [
+          "Divise approximativement la lumière par deux",
+          "Double la lumière",
+          "Change la perspective"
+        ],
+        "correct": 0,
+        "why": "Ces nombres sont séparés d’environ un stop."
+      }
+    ]
+  },
+  "N01-L04": {
+    "kind": "shutter",
+    "headline": "Figer l’instant ou laisser une trace.",
+    "key": "Le temps de pose règle la durée de collecte et le rendu du mouvement.",
+    "mission": "Photographiez un sujet mobile à 1/30 s, 1/250 s puis 1/1000 s. Gardez une exposition comparable et comparez le sujet et le fond.",
+    "scenarios": [
+      {
+        "label": "1/30 s",
+        "explanation": "Une pose longue rend les déplacements visibles ; un appui limite le bougé du boîtier."
+      },
+      {
+        "label": "1/250 s",
+        "explanation": "Un compromis dépendant de la vitesse du sujet et de son déplacement dans le cadre."
+      },
+      {
+        "label": "1/1000 s",
+        "explanation": "Une pose courte peut figer le geste, mais demande plus de lumière ou une compensation."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quelle pose a le plus de chances de figer un mouvement rapide ?",
+        "a": ["1/1000 s", "1/30 s", "1 seconde"],
+        "correct": 0,
+        "why": "Une durée courte réduit le déplacement du sujet pendant la collecte."
+      },
+      {
+        "q": "À ouverture et ISO constants, passer de 1/250 s à 1/500 s…",
+        "a": [
+          "Double la lumière",
+          "Ne change pas l’exposition",
+          "Divise la lumière collectée par deux"
+        ],
+        "correct": 2,
+        "why": "La durée est divisée par deux."
+      }
+    ]
+  },
+  "N01-L05": {
+    "kind": "iso",
+    "headline": "Trouver le détail dans la pénombre.",
+    "key": "Augmenter l’ISO ne fait pas entrer davantage de lumière.",
+    "mission": "Avec ouverture et temps de pose fixes, comparez plusieurs ISO. Recommencez à luminosité finale comparable en notant les compensations.",
+    "scenarios": [
+      {
+        "label": "ISO 100",
+        "explanation": "Une faible amplification convient quand la quantité de lumière collectée est suffisante."
+      },
+      {
+        "label": "ISO 1600",
+        "explanation": "Une sensibilité plus élevée peut permettre un temps de pose plus court."
+      },
+      {
+        "label": "ISO 6400",
+        "explanation": "Le bruit et la latitude de traitement dépendent du capteur et de l’exposition réelle."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Monter l’ISO fait-il entrer davantage de lumière ?",
+        "a": [
+          "Oui, le diaphragme s’ouvre toujours",
+          "Oui, la lumière ambiante augmente",
+          "Non"
+        ],
+        "correct": 2,
+        "why": "La lumière collectée dépend de la scène, de l’ouverture et du temps de pose."
+      },
+      {
+        "q": "Pourquoi monter l’ISO en sport peu éclairé ?",
+        "a": [
+          "Pour agrandir le capteur",
+          "Pour conserver un temps de pose court et un rendu exploitable",
+          "Pour ralentir le sujet"
+        ],
+        "correct": 1,
+        "why": "C’est un compromis entre vitesse nécessaire, exposition réelle et bruit."
+      }
+    ]
+  },
+  "N01-L06": {
+    "kind": "triangle",
+    "headline": "Trois réglages, une exposition choisie.",
+    "key": "Ouverture, temps de pose et ISO ont des effets visuels différents.",
+    "mission": "Produisez trois images de luminosité comparable : une privilégiant le flou de fond, une le mouvement et une la netteté globale.",
+    "scenarios": [
+      {
+        "label": "Ouvrir",
+        "explanation": "Ouvrir d’un stop double approximativement la lumière reçue à temps de pose identique."
+      },
+      {
+        "label": "Raccourcir",
+        "explanation": "Diviser le temps de pose par deux divise la lumière collectée par deux."
+      },
+      {
+        "label": "Compenser",
+        "explanation": "Monter l’ISO peut éclaircir le rendu ; cela ne remplace pas la lumière non collectée."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Ouvrir d’un stop et raccourcir la pose d’un stop…",
+        "a": [
+          "Supprime tous les flous",
+          "Conserve approximativement la quantité de lumière",
+          "Double toujours la lumière"
+        ],
+        "correct": 1,
+        "why": "Les deux effets sur la collecte se compensent, mais le rendu peut changer."
+      },
+      {
+        "q": "Quel réglage modifie directement la durée de collecte ?",
+        "a": ["Le temps de pose", "L’ISO", "La balance des blancs"],
+        "correct": 0,
+        "why": "L’obturateur ou l’échantillonnage électronique contrôle cette durée."
+      }
+    ]
+  },
+  "N02-L01": {
+    "kind": "modes",
+    "headline": "Choisir qui décide de quoi.",
+    "key": "A/Av donne la priorité à l’ouverture ; S/Tv au temps de pose.",
+    "mission": "Photographiez un sujet fixe en A/Av puis un sujet mobile en S/Tv. Notez les réglages choisis automatiquement par le boîtier.",
+    "scenarios": [
+      {
+        "label": "A / Av",
+        "explanation": "Vous choisissez l’ouverture, l’appareil adapte le temps de pose selon la mesure."
+      },
+      {
+        "label": "S / Tv",
+        "explanation": "Vous fixez le temps de pose ; le boîtier ajuste l’ouverture dans les limites de l’objectif."
+      },
+      {
+        "label": "M",
+        "explanation": "Vous réglez ouverture et temps de pose. L’ISO peut rester automatique selon le boîtier."
+      }
+    ],
+    "questions": [
+      {
+        "q": "En mode A/Av, que choisissez-vous en priorité ?",
+        "a": [
+          "L’ouverture",
+          "Le temps de pose imposé",
+          "Le profil d’impression"
+        ],
+        "correct": 0,
+        "why": "Le boîtier calcule le temps de pose selon la mesure et les autres réglages."
+      },
+      {
+        "q": "Le mode M impose-t-il nécessairement un ISO fixe ?",
+        "a": [
+          "Oui, sur tous les appareils",
+          "Il interdit toute mesure",
+          "Non, l’ISO automatique peut rester actif"
+        ],
+        "correct": 2,
+        "why": "De nombreux boîtiers permettent M avec ISO automatique."
+      }
+    ]
+  },
+  "N02-L02": {
+    "kind": "meter",
+    "headline": "Mesurer ne signifie pas deviner l’intention.",
+    "key": "La mesure réfléchie peut rendre un sujet clair trop gris.",
+    "mission": "Cadrez une surface très claire puis très sombre. Testez −1, 0 et +1 IL sans changer la lumière et comparez les histogrammes.",
+    "scenarios": [
+      {
+        "label": "−1 IL",
+        "explanation": "La correction négative assombrit le rendu demandé à l’automatisme."
+      },
+      {
+        "label": "0 IL",
+        "explanation": "La mesure propose une référence ; elle ne connaît pas la luminosité voulue du sujet."
+      },
+      {
+        "label": "+1 IL",
+        "explanation": "La correction positive éclaircit le rendu, avec un risque de saturation des hautes lumières."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Un sujet blanc rendu trop gris peut nécessiter…",
+        "a": [
+          "Une correction toujours négative",
+          "Un changement de carte",
+          "Une correction positive à vérifier"
+        ],
+        "correct": 2,
+        "why": "La mesure réfléchie peut ramener un sujet clair vers un ton de référence."
+      },
+      {
+        "q": "Quel risque accompagne une correction positive excessive ?",
+        "a": [
+          "Supprimer la perspective",
+          "Écrêter les hautes lumières",
+          "Réduire la focale réelle"
+        ],
+        "correct": 1,
+        "why": "Une exposition plus élevée peut dépasser la capacité d’enregistrement."
+      }
+    ]
+  },
+  "N02-L03": {
+    "kind": "histogram",
+    "headline": "Lire la lumière au-delà de l’écran.",
+    "key": "L’histogramme montre une répartition de tons, pas la position des objets.",
+    "mission": "Photographiez une scène sombre, une scène claire et une scène très contrastée. Identifiez les éventuels écrêtages sans chercher une forme idéale.",
+    "scenarios": [
+      {
+        "label": "Ombres",
+        "explanation": "Une concentration à gauche peut être cohérente avec une scène sombre."
+      },
+      {
+        "label": "Tons moyens",
+        "explanation": "Une répartition centrale n’est pas un objectif universel."
+      },
+      {
+        "label": "Hautes lumières",
+        "explanation": "Un amas au bord droit peut indiquer une saturation ; vérifiez aussi les canaux couleur."
+      }
+    ],
+    "questions": [
+      {
+        "q": "L’histogramme localise-t-il les objets dans le cadre ?",
+        "a": [
+          "Oui, mais seulement les visages",
+          "Non, il répartit les valeurs tonales",
+          "Oui, de gauche à droite dans la scène"
+        ],
+        "correct": 1,
+        "why": "Il compte les valeurs, sans indiquer leur position spatiale."
+      },
+      {
+        "q": "Une scène volontairement sombre doit-elle avoir un histogramme centré ?",
+        "a": ["Non", "Toujours", "Seulement en RAW"],
+        "correct": 0,
+        "why": "La forme cohérente dépend du contenu et de l’intention."
+      }
+    ]
+  },
+  "N02-L04": {
+    "kind": "focus",
+    "headline": "La netteté commence par une décision.",
+    "key": "Le suivi AF doit correspondre au mouvement du sujet.",
+    "mission": "Photographiez un sujet immobile en AF ponctuel puis un marcheur en AF continu. Vérifiez la netteté des yeux et les ratés à 100 %.",
+    "scenarios": [
+      {
+        "label": "Ponctuel",
+        "explanation": "Sur un sujet stable, faites le point sur la zone importante."
+      },
+      {
+        "label": "Continu",
+        "explanation": "Un sujet se déplace : le boîtier actualise la mise au point selon sa configuration."
+      },
+      {
+        "label": "Zone AF",
+        "explanation": "Une zone trop large peut sélectionner le décor plutôt que le sujet voulu."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quel mode convient généralement à un sujet qui se rapproche ?",
+        "a": [
+          "AF continu",
+          "AF ponctuel verrouillé sans suivi",
+          "Mise au point sur l’infini"
+        ],
+        "correct": 0,
+        "why": "L’AF continu actualise la mise au point pendant le déplacement."
+      },
+      {
+        "q": "Pourquoi une zone AF trop large peut-elle échouer ?",
+        "a": [
+          "Elle change l’ouverture physique",
+          "Elle désactive toujours le capteur",
+          "Elle peut sélectionner le décor"
+        ],
+        "correct": 2,
+        "why": "L’appareil doit choisir une cible parmi plusieurs éléments."
+      }
+    ]
+  },
+  "N02-L05": {
+    "kind": "whitebalance",
+    "headline": "Choisir une couleur cohérente.",
+    "key": "La balance des blancs interprète la couleur de la lumière.",
+    "mission": "Photographiez un objet neutre sous une seule lumière, puis comparez automatique, lumière du jour et un réglage Kelvin adapté.",
+    "scenarios": [
+      {
+        "label": "Froid",
+        "explanation": "Un réglage Kelvin plus bas rend généralement le rendu plus bleuté sous une même lumière."
+      },
+      {
+        "label": "Neutre",
+        "explanation": "Une référence réellement neutre aide à corriger une dominante."
+      },
+      {
+        "label": "Chaud",
+        "explanation": "Un réglage Kelvin plus haut réchauffe généralement le rendu sous une même lumière."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Sous une lumière inchangée, augmenter le réglage Kelvin rend généralement l’image…",
+        "a": ["Plus froide", "Plus nette", "Plus chaude"],
+        "correct": 2,
+        "why": "Le réglage compense davantage une source supposée froide."
+      },
+      {
+        "q": "Quelle référence aide à neutraliser une dominante ?",
+        "a": [
+          "Une zone déjà saturée",
+          "Une surface réellement neutre",
+          "Un objet dont on aime la couleur"
+        ],
+        "correct": 1,
+        "why": "Une référence neutre permet d’estimer l’équilibre entre canaux."
+      }
+    ]
+  },
+  "N02-L06": {
+    "kind": "workflow",
+    "headline": "Du déclenchement à un fichier maîtrisé.",
+    "key": "Le RAW préserve des données de capture ; le JPEG contient un rendu déjà calculé.",
+    "mission": "Capturez en RAW+JPEG, comparez une correction de balance des blancs puis archivez les originaux et exportez une copie destinée au partage.",
+    "scenarios": [
+      {
+        "label": "Capturer",
+        "explanation": "Le RAW garde davantage de latitude de traitement ; il n’est pas une image finale universellement lisible."
+      },
+      {
+        "label": "Développer",
+        "explanation": "Travaillez sur une interprétation non destructive et conservez l’original."
+      },
+      {
+        "label": "Partager",
+        "explanation": "Un JPEG exporté avec un profil approprié facilite la diffusion."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quel format laisse généralement davantage de latitude de développement ?",
+        "a": ["Une capture d’écran", "RAW", "Un JPEG fortement compressé"],
+        "correct": 1,
+        "why": "Le RAW préserve plus d’informations et diffère du rendu final."
+      },
+      {
+        "q": "Que faut-il conserver pour revenir au développement d’origine ?",
+        "a": [
+          "Le RAW original et les réglages",
+          "Seulement le JPEG partagé",
+          "Seulement une miniature"
+        ],
+        "correct": 0,
+        "why": "Un flux non destructif conserve la source et les paramètres."
+      }
+    ]
+  },
+  "N03-L01": {
+    "kind": "focal",
+    "headline": "Un angle de champ, une manière de voir.",
+    "key": "La focale change l’angle de champ ; la perspective dépend du point de vue.",
+    "mission": "Depuis un point fixe, comparez trois focales. Puis déplacez-vous pour garder un sujet à la même taille et observez le rapport au décor.",
+    "scenarios": [
+      {
+        "label": "24 mm",
+        "explanation": "Sur un même capteur, une focale courte embrasse un champ plus large."
+      },
+      {
+        "label": "50 mm",
+        "explanation": "Une focale intermédiaire permet un cadrage plus resserré au même endroit."
+      },
+      {
+        "label": "135 mm",
+        "explanation": "Une focale longue réduit le champ couvert ; la distance décide de la perspective."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Depuis une position fixe, une focale plus longue donne…",
+        "a": [
+          "Un angle de champ plus étroit",
+          "Une perspective automatiquement différente",
+          "Un capteur plus grand"
+        ],
+        "correct": 0,
+        "why": "À capteur identique, la focale détermine le champ couvert."
+      },
+      {
+        "q": "Qu’est-ce qui change directement la perspective ?",
+        "a": [
+          "Le seul recadrage du fichier",
+          "Le changement de nom de l’objectif",
+          "Le déplacement du point de vue"
+        ],
+        "correct": 2,
+        "why": "La position de prise de vue détermine les rapports entre plans."
+      }
+    ]
+  },
+  "N03-L02": {
+    "kind": "lenskit",
+    "headline": "La souplesse ou la simplicité.",
+    "key": "Un zoom varie sa focale ; une focale fixe peut proposer d’autres compromis.",
+    "mission": "Réalisez une promenade avec une seule focale, puis une autre avec un zoom. Comparez vos déplacements, cadrages et contraintes.",
+    "scenarios": [
+      {
+        "label": "Focale fixe",
+        "explanation": "Un angle imposé peut encourager l’anticipation ; les caractéristiques varient selon les objectifs."
+      },
+      {
+        "label": "Zoom",
+        "explanation": "Changer la focale permet d’ajuster le cadrage sans changer de place."
+      },
+      {
+        "label": "Choix pratique",
+        "explanation": "Ouverture, poids, budget et conditions de terrain comptent autant que la plage focale."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quelle propriété définit un zoom ?",
+        "a": [
+          "Il est toujours plus lumineux",
+          "Il empêche de se déplacer",
+          "Sa focale est variable"
+        ],
+        "correct": 2,
+        "why": "Le zoom propose plusieurs focales sans changer d’objectif."
+      },
+      {
+        "q": "Une focale fixe est-elle toujours meilleure dans tous les usages ?",
+        "a": [
+          "Oui, même sans cadrage adapté",
+          "Non, les compromis dépendent du besoin",
+          "Oui, sans exception"
+        ],
+        "correct": 1,
+        "why": "Poids, ouverture, qualité, coût et souplesse doivent être comparés."
+      }
+    ]
+  },
+  "N03-L03": {
+    "kind": "depth",
+    "headline": "La netteté est une zone, pas une frontière absolue.",
+    "key": "La profondeur de champ dépend de plusieurs paramètres et d’un critère de netteté.",
+    "mission": "Gardez la focale et l’ouverture fixes, faites le point à trois distances et comparez le décor à un grossissement identique.",
+    "scenarios": [
+      {
+        "label": "Proche",
+        "explanation": "À paramètres égaux, une mise au point plus proche réduit généralement la profondeur de champ."
+      },
+      {
+        "label": "Intermédiaire",
+        "explanation": "La zone jugée nette s’étend de part et d’autre du plan de mise au point."
+      },
+      {
+        "label": "Lointain",
+        "explanation": "L’hyperfocale repose sur un cercle de confusion choisi, pas sur une netteté absolue."
+      }
+    ],
+    "questions": [
+      {
+        "q": "À paramètres égaux, se rapprocher du plan de mise au point tend à…",
+        "a": [
+          "Supprimer le flou",
+          "Réduire la profondeur de champ",
+          "L’augmenter toujours"
+        ],
+        "correct": 1,
+        "why": "Le rapport de grandissement augmente et la zone jugée nette se réduit généralement."
+      },
+      {
+        "q": "L’hyperfocale garantit-elle une netteté absolue à tout grossissement ?",
+        "a": [
+          "Non, elle repose sur un critère de netteté",
+          "Oui, sur tout écran",
+          "Oui, quel que soit le capteur"
+        ],
+        "correct": 0,
+        "why": "Le cercle de confusion représente une convention liée à l’usage."
+      }
+    ]
+  },
+  "N03-L04": {
+    "kind": "perspective",
+    "headline": "Le point de vue dessine l’espace.",
+    "key": "Se déplacer modifie les rapports de taille entre les plans.",
+    "mission": "Photographiez deux objets alignés depuis trois distances, en adaptant la focale pour garder le premier à la même taille.",
+    "scenarios": [
+      {
+        "label": "Proche",
+        "explanation": "Le premier plan paraît plus grand relativement à l’arrière-plan."
+      },
+      {
+        "label": "À distance",
+        "explanation": "Le rapport de taille entre les plans se rapproche lorsque le point de vue recule."
+      },
+      {
+        "label": "Boîtier incliné",
+        "explanation": "Incliner le boîtier vers le haut fait converger les verticales d’un bâtiment."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Pourquoi un premier plan paraît-il disproportionné lorsqu’on s’en approche ?",
+        "a": [
+          "Le rapport des distances entre les plans change",
+          "L’ISO change la géométrie",
+          "Le capteur se courbe"
+        ],
+        "correct": 0,
+        "why": "La perspective résulte de la position relative du point de vue et des objets."
+      },
+      {
+        "q": "Pointer un boîtier vers le haut devant une façade produit souvent…",
+        "a": [
+          "Des verticales toujours parallèles",
+          "Une baisse automatique du bruit",
+          "Des verticales convergentes"
+        ],
+        "correct": 2,
+        "why": "Le plan du capteur n’est plus parallèle aux verticales de la façade."
+      }
+    ]
+  },
+  "N03-L05": {
+    "kind": "aberration",
+    "headline": "Reconnaître les limites de son objectif.",
+    "key": "Diffraction, aberrations et flou de mise au point sont des phénomènes différents.",
+    "mission": "Sur trépied, photographiez un sujet détaillé à pleine ouverture, f/5,6 et f/16. Comparez centre, coins et franges à exposition comparable.",
+    "scenarios": [
+      {
+        "label": "Pleine ouverture",
+        "explanation": "Certains défauts optiques peuvent être plus visibles, selon l’objectif et la mise au point."
+      },
+      {
+        "label": "Intermédiaire",
+        "explanation": "Fermer modérément peut améliorer les coins et réduire certaines aberrations."
+      },
+      {
+        "label": "Très fermé",
+        "explanation": "La diffraction étale les détails ; fermer davantage ne garantit pas plus de précision."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Pourquoi f/22 peut-il donner moins de détail que f/8 ?",
+        "a": [
+          "Parce que le capteur perd des pixels",
+          "Parce que la focale disparaît",
+          "À cause de la diffraction"
+        ],
+        "correct": 2,
+        "why": "Une très petite ouverture étale la réponse optique aux fins détails."
+      },
+      {
+        "q": "Une frange colorée au bord d’un détail contrasté peut être…",
+        "a": [
+          "Un changement de perspective",
+          "Une aberration chromatique",
+          "Un défaut de classement"
+        ],
+        "correct": 1,
+        "why": "Les différentes longueurs d’onde peuvent ne pas se superposer exactement."
+      }
+    ]
+  },
+  "N03-L06": {
+    "kind": "kit",
+    "headline": "Le bon matériel est celui qui sert votre projet.",
+    "key": "Un kit se choisit à partir d’un usage et de contraintes réelles.",
+    "mission": "Définissez un reportage d’une heure, une limite de poids et un budget. Justifiez chaque pièce emportée et ce que vous laissez.",
+    "scenarios": [
+      {
+        "label": "Léger",
+        "explanation": "Un boîtier et une optique polyvalente limitent la charge et les choix."
+      },
+      {
+        "label": "Spécialisé",
+        "explanation": "Une optique ou un accessoire répond à un besoin précis identifié sur le terrain."
+      },
+      {
+        "label": "Prêt à partir",
+        "explanation": "Batterie, carte, protection et sauvegarde font partie du kit."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Par quoi commencer pour choisir un kit ?",
+        "a": [
+          "Le nombre d’accessoires",
+          "L’usage et les contraintes",
+          "Le prix maximal disponible seulement"
+        ],
+        "correct": 1,
+        "why": "Un équipement pertinent répond à un projet réel."
+      },
+      {
+        "q": "Quel élément fait partie de la préparation du kit ?",
+        "a": [
+          "Vérifier batteries et cartes",
+          "Acheter tous les objectifs",
+          "Supprimer les sauvegardes"
+        ],
+        "correct": 0,
+        "why": "La fiabilité pratique compte autant que les caractéristiques optiques."
+      }
+    ]
+  },
+  "N04-L01": {
+    "kind": "composition",
+    "headline": "Décider ce qui mérite d’être vu.",
+    "key": "Le cadre organise une intention ; une grille ne décide pas à votre place.",
+    "mission": "Photographiez le même sujet centré, décentré puis au bord du cadre. Décrivez comment l’attention et le sens changent.",
+    "scenarios": [
+      {
+        "label": "Centrer",
+        "explanation": "La symétrie et la frontalité peuvent affirmer la présence du sujet."
+      },
+      {
+        "label": "Décentrer",
+        "explanation": "Un décalage peut créer une tension ou réserver de l’espace au regard."
+      },
+      {
+        "label": "Épurer",
+        "explanation": "Retirer un élément du cadre peut rendre l’intention plus lisible."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Une grille de tiers garantit-elle une image forte ?",
+        "a": [
+          "Non",
+          "Oui, systématiquement",
+          "Seulement avec un objectif cher"
+        ],
+        "correct": 0,
+        "why": "Le cadre sert une intention ; une règle seule ne la fournit pas."
+      },
+      {
+        "q": "Pourquoi laisser de l’espace devant un regard ?",
+        "a": [
+          "Pour augmenter la résolution",
+          "Pour corriger l’exposition",
+          "Pour suggérer une direction ou une attente"
+        ],
+        "correct": 2,
+        "why": "L’organisation de l’espace influence la lecture et le sens."
+      }
+    ]
+  },
+  "N04-L02": {
+    "kind": "lines",
+    "headline": "Guider le regard sans le contraindre.",
+    "key": "Les lignes, les masses et les contrastes créent un parcours visuel.",
+    "mission": "Composez trois images : une ligne directrice, un équilibre symétrique et un équilibre asymétrique. Dessinez le trajet du regard.",
+    "scenarios": [
+      {
+        "label": "Ligne directrice",
+        "explanation": "Une diagonale peut conduire l’œil vers une zone forte."
+      },
+      {
+        "label": "Symétrie",
+        "explanation": "Des masses similaires peuvent stabiliser la composition."
+      },
+      {
+        "label": "Asymétrie",
+        "explanation": "Une petite zone contrastée peut équilibrer une masse plus grande."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quel élément peut guider l’œil vers un sujet ?",
+        "a": [
+          "Le nom du boîtier",
+          "La capacité de la carte",
+          "Une ligne directrice"
+        ],
+        "correct": 2,
+        "why": "Les lignes peuvent organiser un parcours dans l’image."
+      },
+      {
+        "q": "Un équilibre exige-t-il deux masses de même taille ?",
+        "a": [
+          "Seulement en couleur",
+          "Non, contraste et position comptent aussi",
+          "Oui"
+        ],
+        "correct": 1,
+        "why": "Une petite zone très contrastée peut peser fortement visuellement."
+      }
+    ]
+  },
+  "N04-L03": {
+    "kind": "color",
+    "headline": "Faire dialoguer les couleurs.",
+    "key": "Le contraste de couleur et le contraste de luminance sont distincts.",
+    "mission": "Créez une image en couleurs proches puis une image en couleurs opposées. Passez-les temporairement en noir et blanc pour comparer leur lisibilité.",
+    "scenarios": [
+      {
+        "label": "Analogue",
+        "explanation": "Des teintes proches peuvent créer une atmosphère unifiée."
+      },
+      {
+        "label": "Complémentaire",
+        "explanation": "Des teintes opposées créent une séparation colorée marquée."
+      },
+      {
+        "label": "Luminance",
+        "explanation": "Deux couleurs différentes peuvent devenir presque identiques en noir et blanc."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Deux couleurs différentes peuvent-elles avoir une luminance proche ?",
+        "a": ["Uniquement à ISO 100", "Oui", "Non"],
+        "correct": 1,
+        "why": "Le contraste de teinte ne garantit pas un contraste en noir et blanc."
+      },
+      {
+        "q": "Des couleurs proches sur le cercle chromatique créent plutôt…",
+        "a": [
+          "Une harmonie analogue",
+          "Une complémentarité obligatoire",
+          "Un effet de perspective"
+        ],
+        "correct": 0,
+        "why": "Des teintes voisines peuvent unifier une ambiance."
+      }
+    ]
+  },
+  "N04-L04": {
+    "kind": "negative",
+    "headline": "Laisser respirer le sujet.",
+    "key": "L’espace négatif et le fond participent au message de l’image.",
+    "mission": "Sans changer de sujet, produisez un fond encombré, un fond épuré et un cadrage avec beaucoup d’espace négatif.",
+    "scenarios": [
+      {
+        "label": "Encombré",
+        "explanation": "Des détails contrastés derrière le sujet peuvent concurrencer son importance."
+      },
+      {
+        "label": "Épuré",
+        "explanation": "Un déplacement de quelques pas suffit parfois à clarifier le fond."
+      },
+      {
+        "label": "Respiration",
+        "explanation": "Un espace vide peut suggérer calme, isolement ou direction."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Comment clarifier un fond sans retouche ?",
+        "a": [
+          "Changer légèrement de point de vue",
+          "Monter seulement l’ISO",
+          "Renommer la photo"
+        ],
+        "correct": 0,
+        "why": "Un déplacement peut retirer des éléments concurrents du cadre."
+      },
+      {
+        "q": "L’espace négatif peut-il porter du sens ?",
+        "a": [
+          "Non, c’est toujours une erreur",
+          "Seulement dans un carré",
+          "Oui, par exemple isolement ou calme"
+        ],
+        "correct": 2,
+        "why": "Une zone vide peut construire une relation avec le sujet."
+      }
+    ]
+  },
+  "N04-L05": {
+    "kind": "street",
+    "headline": "Anticiper la rencontre dans le cadre.",
+    "key": "Un instant expressif résulte souvent d’un cadre préparé et d’une attente.",
+    "mission": "Choisissez un lieu, construisez un cadre et attendez trois gestes ou rencontres différents. Respectez les personnes et les règles locales.",
+    "scenarios": [
+      {
+        "label": "Préparer",
+        "explanation": "Repérez la lumière, le fond et l’endroit où l’action pourrait se produire."
+      },
+      {
+        "label": "Attendre",
+        "explanation": "Laissez un sujet entrer dans une composition déjà pensée."
+      },
+      {
+        "label": "Sélectionner",
+        "explanation": "Comparez gestes, superpositions et expressions plutôt que le seul déclenchement net."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quelle méthode aide à capter une rencontre dans la rue ?",
+        "a": [
+          "Déclencher sans regarder",
+          "Imposer un geste à chaque passant",
+          "Préparer un cadre puis attendre"
+        ],
+        "correct": 2,
+        "why": "L’anticipation libère l’attention au moment où les éléments s’alignent."
+      },
+      {
+        "q": "Le seul critère d’une bonne image de rue est-il la netteté ?",
+        "a": [
+          "Oui, à grande ouverture",
+          "Non, gestes et relations comptent aussi",
+          "Oui"
+        ],
+        "correct": 1,
+        "why": "L’expression et l’organisation du cadre peuvent être déterminantes."
+      }
+    ]
+  },
+  "N04-L06": {
+    "kind": "story",
+    "headline": "Une série raconte ce qu’une image ne peut pas dire.",
+    "key": "Une séquence crée des relations entre des images complémentaires.",
+    "mission": "Racontez un lieu en cinq vues : contexte, personnage, action, détail et conclusion. Justifiez l’ordre et retirez les répétitions.",
+    "scenarios": [
+      {
+        "label": "Ouvrir",
+        "explanation": "Une vue de contexte donne des repères au lecteur."
+      },
+      {
+        "label": "Développer",
+        "explanation": "Une action et un détail enrichissent le récit sans répéter la même information."
+      },
+      {
+        "label": "Conclure",
+        "explanation": "Une dernière image peut fermer le récit ou laisser une question."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Pourquoi varier plan large et détail dans une série ?",
+        "a": [
+          "Pour éviter toute cohérence",
+          "Pour apporter des informations complémentaires",
+          "Pour remplir une carte"
+        ],
+        "correct": 1,
+        "why": "Chaque image peut jouer un rôle dans la narration."
+      },
+      {
+        "q": "Que faire d’une image qui répète exactement une autre ?",
+        "a": [
+          "Envisager de la retirer",
+          "La garder toujours",
+          "La répéter trois fois"
+        ],
+        "correct": 0,
+        "why": "L’édition évite les redondances qui affaiblissent le rythme."
+      }
+    ]
+  },
+  "N05-L01": {
+    "kind": "light",
+    "headline": "La lumière donne sa forme au sujet.",
+    "key": "La taille apparente de la source influence la douceur des ombres.",
+    "mission": "Éclairez un objet de face, de côté et à contre-jour, puis rapprochez un diffuseur en conservant une exposition comparable.",
+    "scenarios": [
+      {
+        "label": "Frontale",
+        "explanation": "Une lumière proche de l’axe de prise de vue réduit la perception de certains reliefs."
+      },
+      {
+        "label": "Latérale",
+        "explanation": "Une lumière de côté révèle volumes et textures."
+      },
+      {
+        "label": "Diffuse",
+        "explanation": "Une source de grande taille apparente produit généralement des transitions d’ombre plus douces."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Une grande source apparente produit généralement…",
+        "a": [
+          "Des transitions d’ombre plus douces",
+          "Des ombres toujours plus dures",
+          "Aucune ombre possible"
+        ],
+        "correct": 0,
+        "why": "La taille apparente de la source influence la transition entre lumière et ombre."
+      },
+      {
+        "q": "Une lumière latérale aide à révéler…",
+        "a": [
+          "Le nom du fichier",
+          "La vitesse de la carte",
+          "Le relief et les textures"
+        ],
+        "correct": 2,
+        "why": "Les variations d’ombre rendent les volumes lisibles."
+      }
+    ]
+  },
+  "N05-L02": {
+    "kind": "sun",
+    "headline": "Le même lieu, une autre lumière.",
+    "key": "L’orientation, la météo et la saison comptent autant que l’heure.",
+    "mission": "Revenez au même endroit à trois moments de la journée. Notez direction, dureté, couleur et contraste de la lumière.",
+    "scenarios": [
+      {
+        "label": "Matin",
+        "explanation": "Un soleil bas peut produire de longues ombres ; son aspect dépend de la météo."
+      },
+      {
+        "label": "Midi",
+        "explanation": "Un soleil haut et direct crée souvent des ombres courtes et marquées."
+      },
+      {
+        "label": "Soir",
+        "explanation": "La lumière basse peut réchauffer les surfaces et allonger les ombres."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Qu’est-ce qui influence la lumière naturelle en plus de l’heure ?",
+        "a": [
+          "Seulement le nombre de pixels",
+          "Seulement le format du fichier",
+          "Météo, saison et orientation"
+        ],
+        "correct": 2,
+        "why": "La trajectoire et la diffusion de la lumière dépendent de ces conditions."
+      },
+      {
+        "q": "Un soleil bas produit souvent…",
+        "a": [
+          "Un éclairage identique à midi",
+          "Des ombres longues",
+          "Des ombres forcément absentes"
+        ],
+        "correct": 1,
+        "why": "L’angle rasant projette les ombres sur une plus grande distance."
+      }
+    ]
+  },
+  "N05-L03": {
+    "kind": "backlight",
+    "headline": "Préserver les hautes lumières, choisir les ombres.",
+    "key": "Une scène peut dépasser la dynamique enregistrable en une seule exposition.",
+    "mission": "Photographiez un sujet devant une fenêtre : exposez pour la fenêtre, pour le sujet, puis ajoutez un réflecteur si possible.",
+    "scenarios": [
+      {
+        "label": "Fenêtre",
+        "explanation": "Préserver le fond lumineux peut transformer le sujet en silhouette."
+      },
+      {
+        "label": "Sujet",
+        "explanation": "Éclaircir le sujet par l’exposition peut saturer le fond."
+      },
+      {
+        "label": "Réflecteur",
+        "explanation": "Renvoyer de la lumière vers le sujet réduit le contraste de la scène elle-même."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Exposer pour une fenêtre très claire peut rendre le sujet…",
+        "a": ["Plus proche", "En silhouette", "Toujours parfaitement détaillé"],
+        "correct": 1,
+        "why": "Le contraste peut dépasser la dynamique enregistrable."
+      },
+      {
+        "q": "Quel geste réduit le contraste de la scène elle-même ?",
+        "a": [
+          "Renvoyer de la lumière avec un réflecteur",
+          "Augmenter seulement la luminosité de l’écran",
+          "Changer le nom du fichier"
+        ],
+        "correct": 0,
+        "why": "Un apport sur le sujet réduit l’écart avec le fond."
+      }
+    ]
+  },
+  "N05-L04": {
+    "kind": "flash",
+    "headline": "Éclairer un instant au bon moment.",
+    "key": "La synchronisation dépend du boîtier, de l’obturateur et du mode de flash.",
+    "mission": "À une vitesse compatible avec la synchronisation, testez trois puissances de flash. Comparez ensuite la lumière ambiante avec deux temps de pose.",
+    "scenarios": [
+      {
+        "label": "Ambiance",
+        "explanation": "À ouverture et ISO constants, le temps de pose module la lumière ambiante."
+      },
+      {
+        "label": "Éclair",
+        "explanation": "Hors HSS, la puissance du flash influence l’exposition de la partie éclairée par l’éclair."
+      },
+      {
+        "label": "Synchroniser",
+        "explanation": "Au-delà de la synchro classique, un mode compatible est nécessaire pour éviter une bande sombre."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Hors HSS, dépasser la vitesse de synchro peut produire…",
+        "a": [
+          "Une bande sombre",
+          "Une meilleure balance des blancs",
+          "Une netteté infinie"
+        ],
+        "correct": 0,
+        "why": "L’éclair peut ne pas éclairer tout le capteur pendant le déplacement des rideaux."
+      },
+      {
+        "q": "À ouverture et ISO fixes, le temps de pose agit principalement sur…",
+        "a": [
+          "La seule puissance électrique du flash",
+          "La température fixe du tube",
+          "L’ambiance, dans le régime de synchro classique"
+        ],
+        "correct": 2,
+        "why": "Un éclair bref et la lumière continue ne répondent pas de la même façon au temps de pose."
+      }
+    ]
+  },
+  "N05-L05": {
+    "kind": "portraitlight",
+    "headline": "Sculpter un visage avec une seule source.",
+    "key": "La position et la taille apparente de la source façonnent les ombres.",
+    "mission": "Avec l’accord du modèle, faites trois portraits en déplaçant une seule source. Gardez cadrage et expression aussi constants que possible.",
+    "scenarios": [
+      {
+        "label": "Face",
+        "explanation": "Une source près de l’axe du visage donne un rendu généralement plus frontal."
+      },
+      {
+        "label": "45 degrés",
+        "explanation": "Une source latérale et légèrement haute modèle les volumes."
+      },
+      {
+        "label": "Réflecteur",
+        "explanation": "Un réflecteur débouche les ombres sans déplacer la lumière principale."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Déplacer une source autour d’un visage modifie…",
+        "a": [
+          "La taille physique du capteur",
+          "Le droit d’auteur",
+          "Le dessin des ombres"
+        ],
+        "correct": 2,
+        "why": "La direction de lumière change le modelé du visage."
+      },
+      {
+        "q": "Un réflecteur sert notamment à…",
+        "a": [
+          "Changer le nombre de pixels",
+          "Déboucher les ombres",
+          "Allonger la focale"
+        ],
+        "correct": 1,
+        "why": "Il renvoie une partie de la lumière disponible."
+      }
+    ]
+  },
+  "N05-L06": {
+    "kind": "mixed",
+    "headline": "Deux sources, deux couleurs.",
+    "key": "Une balance des blancs globale ne neutralise pas deux sources différentes à la fois.",
+    "mission": "Photographiez un objet éclairé par une fenêtre et une lampe chaude. Essayez d’éteindre une source puis d’harmoniser leur couleur.",
+    "scenarios": [
+      {
+        "label": "Fenêtre",
+        "explanation": "La lumière du jour fournit une référence de couleur variable avec les conditions."
+      },
+      {
+        "label": "Lampe chaude",
+        "explanation": "Une source tungstène paraît chaude avec un réglage adapté à la lumière du jour."
+      },
+      {
+        "label": "Harmoniser",
+        "explanation": "Une gélatine ou le remplacement d’une source peut rapprocher leurs couleurs avant la prise de vue."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Une seule balance des blancs neutralise-t-elle toujours fenêtre et tungstène ?",
+        "a": ["Oui, avec tout JPEG", "Non", "Oui, parfaitement"],
+        "correct": 1,
+        "why": "Deux sources de spectres différents peuvent garder des dominantes distinctes."
+      },
+      {
+        "q": "Comment harmoniser les sources dès la prise de vue ?",
+        "a": [
+          "Adapter une source avec une gélatine appropriée",
+          "Augmenter le contraste de l’écran",
+          "Réduire le nombre de fichiers"
+        ],
+        "correct": 0,
+        "why": "Une correction de source réduit l’écart avant la capture."
+      }
+    ]
+  },
+  "N06-L01": {
+    "kind": "portrait",
+    "headline": "Une rencontre avant un réglage.",
+    "key": "Confort, expression et mise au point construisent un portrait naturel.",
+    "mission": "Avec consentement, réalisez une série courte en lumière de fenêtre. Proposez une action simple et sélectionnez trois expressions différentes.",
+    "scenarios": [
+      {
+        "label": "Échanger",
+        "explanation": "Expliquez l’intention et laissez le modèle exprimer ses limites."
+      },
+      {
+        "label": "Placer",
+        "explanation": "Choisissez un fond calme et une lumière qui respecte votre intention."
+      },
+      {
+        "label": "Déclencher",
+        "explanation": "Vérifiez les yeux, mais privilégiez aussi le geste et l’expression."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quel préalable améliore un portrait naturel ?",
+        "a": [
+          "Mettre le modèle en confiance et obtenir son accord",
+          "Imposer toute pose sans échange",
+          "Éviter toute explication"
+        ],
+        "correct": 0,
+        "why": "Le confort du modèle influence expression et collaboration."
+      },
+      {
+        "q": "Où place-t-on souvent la netteté importante dans un portrait rapproché ?",
+        "a": [
+          "Toujours sur le fond",
+          "Toujours sur le bord",
+          "Sur l’œil pertinent pour l’intention"
+        ],
+        "correct": 2,
+        "why": "Le regard joue généralement un rôle fort dans la lecture du portrait."
+      }
+    ]
+  },
+  "N06-L02": {
+    "kind": "family",
+    "headline": "Photographier la relation et le mouvement.",
+    "key": "Un groupe demande de gérer plusieurs plans de netteté et des gestes imprévisibles.",
+    "mission": "Avec autorisation, photographiez une interaction familiale sans imposer de pose. Testez une vitesse adaptée et vérifiez tous les visages.",
+    "scenarios": [
+      {
+        "label": "Rassembler",
+        "explanation": "Des personnes proches du même plan facilitent la netteté du groupe."
+      },
+      {
+        "label": "Anticiper",
+        "explanation": "Préparez cadrage et mise au point avant le geste attendu."
+      },
+      {
+        "label": "Accompagner",
+        "explanation": "Une consigne ludique et courte préserve une interaction spontanée."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Pour un groupe net, pourquoi rapprocher les visages du même plan ?",
+        "a": [
+          "Pour doubler les ISO",
+          "Pour supprimer la lumière",
+          "Pour réduire l’étendue de profondeur nécessaire"
+        ],
+        "correct": 2,
+        "why": "Des distances proches simplifient la gestion de la zone nette."
+      },
+      {
+        "q": "Quelle consigne favorise une interaction spontanée ?",
+        "a": [
+          "Ne pas laisser bouger les enfants",
+          "Une action courte et ludique",
+          "Une longue liste contradictoire"
+        ],
+        "correct": 1,
+        "why": "Une action simple peut susciter un geste naturel."
+      }
+    ]
+  },
+  "N06-L03": {
+    "kind": "landscape",
+    "headline": "Organiser la profondeur d’un lieu.",
+    "key": "Un paysage se construit avec le point de vue, les plans et la lumière.",
+    "mission": "Photographiez un lieu avec puis sans premier plan. Contrôlez les hautes lumières et testez deux points de mise au point.",
+    "scenarios": [
+      {
+        "label": "Premier plan",
+        "explanation": "Un élément proche peut donner une entrée dans l’image."
+      },
+      {
+        "label": "Plans",
+        "explanation": "Séparer premier plan, plan moyen et fond peut rendre l’espace plus lisible."
+      },
+      {
+        "label": "Lumière",
+        "explanation": "Une lumière choisie peut organiser l’image plus fortement qu’un angle spectaculaire."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Que peut apporter un premier plan au paysage ?",
+        "a": [
+          "Une netteté automatique à l’infini",
+          "Une entrée et un repère de profondeur",
+          "Une exposition toujours parfaite"
+        ],
+        "correct": 1,
+        "why": "Les plans organisent la perception de l’espace."
+      },
+      {
+        "q": "Faut-il toujours fermer à l’ouverture minimale en paysage ?",
+        "a": [
+          "Non, il faut arbitrer netteté et diffraction",
+          "Oui",
+          "Oui, sans vérifier la mise au point"
+        ],
+        "correct": 0,
+        "why": "Une petite ouverture n’est pas une garantie universelle de détail."
+      }
+    ]
+  },
+  "N06-L04": {
+    "kind": "sport",
+    "headline": "Suivre l’énergie d’un mouvement.",
+    "key": "La vitesse, le suivi AF et l’anticipation doivent servir le geste.",
+    "mission": "Dans un lieu sûr, photographiez un cycliste en passage latéral : geste figé puis filé. Ne gênez jamais sa trajectoire.",
+    "scenarios": [
+      {
+        "label": "Figer",
+        "explanation": "Une pose courte peut arrêter un mouvement rapide selon sa direction et sa vitesse."
+      },
+      {
+        "label": "Suivre",
+        "explanation": "Le suivi AF et une zone adaptée aident à conserver le sujet net."
+      },
+      {
+        "label": "Filé",
+        "explanation": "Accompagner le sujet à une pose plus longue peut flouter le fond tout en gardant une partie du sujet lisible."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quel geste accompagne un filé ?",
+        "a": [
+          "Suivre le déplacement du sujet",
+          "Bloquer toujours le boîtier vers le sol",
+          "Ne pas regarder le sujet"
+        ],
+        "correct": 0,
+        "why": "Le suivi réduit le mouvement relatif du sujet par rapport au fond."
+      },
+      {
+        "q": "Quel mode de mise au point aide sur un sujet en déplacement ?",
+        "a": [
+          "AF ponctuel figé sur le fond",
+          "Infini sans vérification",
+          "AF continu adapté"
+        ],
+        "correct": 2,
+        "why": "Le suivi permet d’actualiser la distance de mise au point."
+      }
+    ]
+  },
+  "N06-L05": {
+    "kind": "architecture",
+    "headline": "Construire une géométrie lisible.",
+    "key": "Un boîtier incliné modifie le rendu des verticales.",
+    "mission": "Photographiez une façade boîtier horizontal, puis incliné vers le haut. Comparez un recadrage et une correction de perspective.",
+    "scenarios": [
+      {
+        "label": "Horizontal",
+        "explanation": "Un capteur vertical et un axe horizontal aident à garder les verticales parallèles."
+      },
+      {
+        "label": "Incliné",
+        "explanation": "Pointer vers le haut fait converger les lignes verticales."
+      },
+      {
+        "label": "Corrigé",
+        "explanation": "Une correction géométrique recadre l’image et peut étirer les zones transformées."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Comment limiter les verticales convergentes dès la prise de vue ?",
+        "a": [
+          "Pointer davantage vers le haut",
+          "Monter les ISO",
+          "Garder l’axe de visée horizontal quand le cadrage le permet"
+        ],
+        "correct": 2,
+        "why": "Éviter l’inclinaison réduit la convergence des verticales."
+      },
+      {
+        "q": "Une correction de perspective peut nécessiter…",
+        "a": [
+          "Une augmentation réelle du détail",
+          "Un recadrage et une perte de champ",
+          "Une récupération de toute la scène hors cadre"
+        ],
+        "correct": 1,
+        "why": "La transformation géométrique déplace et étire les pixels."
+      }
+    ]
+  },
+  "N06-L06": {
+    "kind": "night",
+    "headline": "Collecter la lumière sans perdre le ciel.",
+    "key": "Le temps de pose sans suivi dépend de la focale, du capteur et du critère de netteté.",
+    "mission": "Depuis un lieu sûr, réalisez plusieurs poses du ciel sur trépied. Comparez étoiles ponctuelles et traînées au même grossissement.",
+    "scenarios": [
+      {
+        "label": "Court",
+        "explanation": "Une pose courte limite le déplacement apparent des étoiles, mais collecte moins de lumière."
+      },
+      {
+        "label": "Long",
+        "explanation": "Sans suivi, la rotation terrestre allonge les étoiles au cours de l’exposition."
+      },
+      {
+        "label": "Série",
+        "explanation": "Plusieurs images peuvent être alignées et empilées avec un traitement adapté."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Sans suivi, pourquoi les étoiles deviennent-elles des traits ?",
+        "a": [
+          "La carte est lente",
+          "La Terre tourne pendant la pose",
+          "L’ISO crée des lignes"
+        ],
+        "correct": 1,
+        "why": "Le ciel se déplace dans le cadre pendant la collecte."
+      },
+      {
+        "q": "Pourquoi vérifier un calcul de pose théorique à 100 % ?",
+        "a": [
+          "Le critère de netteté et le matériel modifient le résultat acceptable",
+          "Pour changer la saison",
+          "Pour annuler la rotation terrestre"
+        ],
+        "correct": 0,
+        "why": "Une règle simplifiée n’est qu’un point de départ."
+      }
+    ]
+  },
+  "N07-L01": {
+    "kind": "raw",
+    "headline": "Développer sans perdre l’original.",
+    "key": "Un traitement non destructif conserve la capture et ses paramètres d’interprétation.",
+    "mission": "Sur un RAW, ajustez balance des blancs, exposition et hautes lumières. Comparez avant/après et gardez une version naturelle comme référence.",
+    "scenarios": [
+      {
+        "label": "Neutre",
+        "explanation": "Commencez par un profil et une balance des blancs cohérents."
+      },
+      {
+        "label": "Tonalité",
+        "explanation": "Réglez luminosité et contraste sans confondre récupération et création de détail."
+      },
+      {
+        "label": "Version",
+        "explanation": "Conservez l’original et les paramètres de développement séparément."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Qu’est-ce qu’un développement non destructif ?",
+        "a": [
+          "Conserver l’original et enregistrer des paramètres",
+          "Écraser toujours le RAW",
+          "Supprimer la capture après export"
+        ],
+        "correct": 0,
+        "why": "Le rendu peut être recalculé sans modifier les données sources."
+      },
+      {
+        "q": "Un curseur de récupération recrée-t-il les données entièrement saturées ?",
+        "a": ["Oui, sans limite", "Oui, dans tout JPEG", "Non"],
+        "correct": 2,
+        "why": "Un traitement ne garantit pas le retour d’informations qui n’ont pas été enregistrées."
+      }
+    ]
+  },
+  "N07-L02": {
+    "kind": "curves",
+    "headline": "Donner du caractère sans casser les nuances.",
+    "key": "Une courbe transforme les valeurs tonales ; ses extrémités peuvent écrêter les détails.",
+    "mission": "Créez une version à faible contraste et une courbe en S modérée. Vérifiez les ombres, les hautes lumières et la cohérence des couleurs.",
+    "scenarios": [
+      {
+        "label": "Doux",
+        "explanation": "Réduire le contraste rapproche les valeurs et peut adoucir une ambiance."
+      },
+      {
+        "label": "Courbe en S",
+        "explanation": "Assombrir certaines ombres et éclaircir certains tons augmente le contraste localement dans la gamme."
+      },
+      {
+        "label": "Couleur",
+        "explanation": "Modifier un canal change l’équilibre chromatique, pas seulement la luminosité."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Une courbe en S modérée sert souvent à…",
+        "a": [
+          "Changer la focale",
+          "Reconstituer des pixels absents",
+          "Augmenter le contraste"
+        ],
+        "correct": 2,
+        "why": "Elle écarte certaines valeurs sombres et claires."
+      },
+      {
+        "q": "Pourquoi surveiller les extrémités de la courbe ?",
+        "a": [
+          "Pour régler l’autofocus",
+          "Pour éviter un écrêtage non voulu",
+          "Pour compter les fichiers"
+        ],
+        "correct": 1,
+        "why": "Écraser les valeurs extrêmes peut supprimer des nuances."
+      }
+    ]
+  },
+  "N07-L03": {
+    "kind": "mask",
+    "headline": "Retoucher là où l’image en a besoin.",
+    "key": "Un masque définit où un réglage agit et avec quelle intensité.",
+    "mission": "Sur une copie, éclaircissez uniquement un sujet puis adoucissez le contour du masque. Vérifiez l’absence de halo et de transition visible.",
+    "scenarios": [
+      {
+        "label": "Global",
+        "explanation": "Une correction globale affecte toute l’image."
+      },
+      {
+        "label": "Local",
+        "explanation": "Un masque limite la correction à une région ou à une sélection."
+      },
+      {
+        "label": "Transition",
+        "explanation": "Un contour progressif évite une rupture visible lorsque le contexte le permet."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Que définit un masque ?",
+        "a": [
+          "La propriété juridique",
+          "La zone et l’intensité d’action d’un réglage",
+          "Le format du capteur"
+        ],
+        "correct": 1,
+        "why": "Il limite spatialement ou selon une sélection l’effet du traitement."
+      },
+      {
+        "q": "Un halo autour d’un sujet peut révéler…",
+        "a": [
+          "Une transition de masque ou une correction excessive",
+          "Un défaut de nommage",
+          "Une carte trop grande"
+        ],
+        "correct": 0,
+        "why": "Un traitement local trop fort ou mal raccordé peut devenir visible."
+      }
+    ]
+  },
+  "N07-L04": {
+    "kind": "ethics",
+    "headline": "Retoucher une image, respecter une personne.",
+    "key": "Le consentement et le contexte de diffusion définissent les limites de la retouche.",
+    "mission": "Écrivez avec le modèle ce qui peut être corrigé. Produisez une retouche légère et comparez à l’original sans modifier les traits convenus.",
+    "scenarios": [
+      {
+        "label": "Accord",
+        "explanation": "Précisez l’usage prévu et les limites acceptées avant la retouche."
+      },
+      {
+        "label": "Correction",
+        "explanation": "Traitez les défauts temporaires convenus sans effacer systématiquement la texture."
+      },
+      {
+        "label": "Transparence",
+        "explanation": "Une modification importante peut nécessiter une mention selon le contexte et les obligations applicables."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quelle limite doit guider une retouche de portrait ?",
+        "a": [
+          "Le consentement et le contexte d’usage",
+          "La suppression systématique de toute texture",
+          "Le goût du retoucheur seul"
+        ],
+        "correct": 0,
+        "why": "L’accord et la finalité comptent pour les modifications acceptables."
+      },
+      {
+        "q": "Une peau sans aucune texture est-elle toujours une amélioration ?",
+        "a": [
+          "Oui, pour tous les usages",
+          "Oui, si le fichier est lourd",
+          "Non"
+        ],
+        "correct": 2,
+        "why": "Le rendu doit respecter l’intention et les limites convenues."
+      }
+    ]
+  },
+  "N07-L05": {
+    "kind": "backup",
+    "headline": "Un fichier important mérite plusieurs vies.",
+    "key": "Une synchronisation n’est pas toujours une sauvegarde avec historique.",
+    "mission": "Dessinez le trajet de vos fichiers, créez une copie indépendante et restaurez une image test depuis votre sauvegarde.",
+    "scenarios": [
+      {
+        "label": "Copie de travail",
+        "explanation": "L’original de travail reste exposé à une panne ou à une erreur."
+      },
+      {
+        "label": "Copie indépendante",
+        "explanation": "Une sauvegarde distincte limite les conséquences d’une suppression ou d’une corruption."
+      },
+      {
+        "label": "Restauration",
+        "explanation": "Une sauvegarde se vérifie en restaurant réellement des fichiers."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Pourquoi une synchronisation seule peut-elle être insuffisante ?",
+        "a": [
+          "Elle empêche toute panne",
+          "Elle garde toujours toutes les versions",
+          "Elle peut propager une suppression"
+        ],
+        "correct": 2,
+        "why": "Une vraie stratégie prévoit indépendance et restauration."
+      },
+      {
+        "q": "Quel test prouve le mieux qu’une sauvegarde est utilisable ?",
+        "a": [
+          "Renommer le disque",
+          "Restaurer un fichier et vérifier son ouverture",
+          "Voir une icône verte seulement"
+        ],
+        "correct": 1,
+        "why": "La récupération réelle vérifie le résultat attendu."
+      }
+    ]
+  },
+  "N07-L06": {
+    "kind": "export",
+    "headline": "Préparer l’image pour sa destination.",
+    "key": "Dimensions, profil et compression se choisissent selon le support.",
+    "mission": "Exportez une version web et une version pour un laboratoire. Comparez dimensions, profil demandé et qualité à la taille d’usage.",
+    "scenarios": [
+      {
+        "label": "Web",
+        "explanation": "Adaptez les pixels à l’affichage et choisissez un profil largement pris en charge comme sRGB."
+      },
+      {
+        "label": "Impression",
+        "explanation": "Demandez au prestataire les dimensions et le profil attendus ; les ppp ne créent pas de détail."
+      },
+      {
+        "label": "Contrôle",
+        "explanation": "Vérifiez le fichier exporté, pas uniquement l’aperçu dans le logiciel."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Augmenter uniquement les ppp ajoute-t-il du détail natif ?",
+        "a": ["Oui, sans rééchantillonnage", "Non", "Oui, automatiquement"],
+        "correct": 1,
+        "why": "Les détails dépendent des pixels disponibles et du procédé d’impression."
+      },
+      {
+        "q": "Que faut-il vérifier pour un laboratoire ?",
+        "a": [
+          "Ses dimensions et profils demandés",
+          "Le seul nom du photographe",
+          "La marque de la carte"
+        ],
+        "correct": 0,
+        "why": "Les exigences du destinataire déterminent un export approprié."
+      }
+    ]
+  },
+  "N08-L01": {
+    "kind": "planning",
+    "headline": "Préparer pour mieux improviser.",
+    "key": "Un brief relie objectifs, moyens, contraintes et livrables.",
+    "mission": "Rédigez un brief d’une page : intention, destinataire, liste de vues, lieu, autorisations, matériel, planning et solution de repli.",
+    "scenarios": [
+      {
+        "label": "Intention",
+        "explanation": "Définissez ce que les images doivent communiquer et à qui."
+      },
+      {
+        "label": "Organisation",
+        "explanation": "Planifiez le lieu, les personnes, les horaires et les moyens nécessaires."
+      },
+      {
+        "label": "Plan B",
+        "explanation": "Anticipez météo, retard, panne et sauvegarde dès la préparation."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Que doit relier un brief ?",
+        "a": [
+          "Intention, contraintes et livrables",
+          "Uniquement la liste du matériel",
+          "Uniquement l’heure du repas"
+        ],
+        "correct": 0,
+        "why": "Un brief aligne résultat attendu et conditions de production."
+      },
+      {
+        "q": "Pourquoi prévoir un plan B ?",
+        "a": [
+          "Pour éviter toute préparation",
+          "Pour multiplier les coûts sans motif",
+          "Pour répondre à une météo, un retard ou une panne"
+        ],
+        "correct": 2,
+        "why": "L’anticipation réduit les interruptions de production."
+      }
+    ]
+  },
+  "N08-L02": {
+    "kind": "direction",
+    "headline": "Diriger avec clarté, écouter avec attention.",
+    "key": "Une consigne concrète fonctionne mieux qu’un jugement vague.",
+    "mission": "Préparez trois consignes d’action, reformulez-les avec le modèle et prenez le temps d’un retour partagé entre deux séquences.",
+    "scenarios": [
+      {
+        "label": "Écouter",
+        "explanation": "Vérifiez le confort, les limites et la compréhension de l’intention."
+      },
+      {
+        "label": "Guider",
+        "explanation": "Proposez une action simple plutôt qu’une évaluation de l’apparence."
+      },
+      {
+        "label": "Ajuster",
+        "explanation": "Partagez un aperçu utile et adaptez la consigne sans multiplier les demandes contradictoires."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quelle consigne est la plus exploitable ?",
+        "a": [
+          "Soyez mieux",
+          "Changez tout en même temps",
+          "Tournez légèrement les épaules vers la fenêtre"
+        ],
+        "correct": 2,
+        "why": "Une action concrète peut être comprise et ajustée."
+      },
+      {
+        "q": "Pourquoi demander un retour au modèle ?",
+        "a": [
+          "Pour imposer davantage",
+          "Pour vérifier confort et compréhension",
+          "Pour abandonner toute intention"
+        ],
+        "correct": 1,
+        "why": "La collaboration permet d’adapter le travail et de respecter les limites."
+      }
+    ]
+  },
+  "N08-L03": {
+    "kind": "portfolio",
+    "headline": "Montrer moins, raconter mieux.",
+    "key": "Un portfolio démontre une direction et une sélection cohérente.",
+    "mission": "Sélectionnez 12 images pour un destinataire précis, réduisez à 8 puis justifiez l’ordre et chaque exclusion.",
+    "scenarios": [
+      {
+        "label": "Sélection",
+        "explanation": "Choisissez selon l’intention et le public, pas seulement selon l’attachement personnel."
+      },
+      {
+        "label": "Cohérence",
+        "explanation": "Le traitement, les sujets et le rythme doivent servir un propos lisible."
+      },
+      {
+        "label": "Édition",
+        "explanation": "Retirez les doublons et terminez par une image qui prolonge votre message."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Un portfolio doit-il contenir toutes les bonnes photos ?",
+        "a": [
+          "Oui, dans l’ordre des fichiers",
+          "Non, il sert une intention et un destinataire",
+          "Oui, toujours"
+        ],
+        "correct": 1,
+        "why": "Une sélection ciblée peut mieux démontrer une direction."
+      },
+      {
+        "q": "Pourquoi retirer des images redondantes ?",
+        "a": [
+          "Pour renforcer le rythme et la cohérence",
+          "Pour réduire la résolution",
+          "Pour modifier l’exposition"
+        ],
+        "correct": 0,
+        "why": "L’édition concentre l’attention sur les images nécessaires."
+      }
+    ]
+  },
+  "N08-L04": {
+    "kind": "critique",
+    "headline": "Observer avant de juger.",
+    "key": "Une critique utile relie observation, effet et proposition concrète.",
+    "mission": "Analysez trois de vos images : intention, fait observable, effet produit et prochain essai mesurable. Comparez ensuite à un retour extérieur.",
+    "scenarios": [
+      {
+        "label": "Observer",
+        "explanation": "Décrivez un élément visible avant de dire si vous l’aimez."
+      },
+      {
+        "label": "Relier",
+        "explanation": "Expliquez comment cet élément renforce ou affaiblit l’intention."
+      },
+      {
+        "label": "Progresser",
+        "explanation": "Proposez un changement testable et comparez le résultat lors d’une nouvelle séance."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quelle formulation constitue une critique utile ?",
+        "a": [
+          "Le fond attire l’œil ; déplaçons le cadre pour isoler le sujet",
+          "C’est nul",
+          "C’est bien, sans autre précision"
+        ],
+        "correct": 0,
+        "why": "Une critique relie un fait observable, un effet et une piste."
+      },
+      {
+        "q": "Comment vérifier qu’un retour aide à progresser ?",
+        "a": [
+          "Appliquer toute opinion sans réfléchir",
+          "Ne jamais refaire de photo",
+          "Tester un changement et comparer"
+        ],
+        "correct": 2,
+        "why": "Une proposition mesurable peut être évaluée sur un nouvel essai."
+      }
+    ]
+  },
+  "N08-L05": {
+    "kind": "rights",
+    "headline": "Clarifier l’usage avant de livrer.",
+    "key": "Les droits d’utilisation et le droit à l’image sont des questions distinctes.",
+    "mission": "Rédigez une liste de points à faire valider : livrables, prix, délais, supports, durée et territoire d’utilisation. Vérifiez les règles de votre pays.",
+    "scenarios": [
+      {
+        "label": "Définir",
+        "explanation": "Un devis précise la prestation et les livrables attendus."
+      },
+      {
+        "label": "Autoriser",
+        "explanation": "Les usages accordés et les autorisations des personnes se traitent selon le contexte juridique."
+      },
+      {
+        "label": "Livrer",
+        "explanation": "Précisez sélection, format, échéance, conditions et usages autorisés par écrit."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Droit d’auteur et droit à l’image sont-ils identiques ?",
+        "a": ["Oui", "Seulement sur Internet", "Non"],
+        "correct": 2,
+        "why": "Ils concernent des objets juridiques différents ; les règles dépendent du contexte et du pays."
+      },
+      {
+        "q": "Que faut-il préciser dans une autorisation d’usage ?",
+        "a": [
+          "Aucun détail écrit",
+          "Les supports, la durée et le périmètre convenus",
+          "Seulement la taille de la carte"
+        ],
+        "correct": 1,
+        "why": "Un périmètre explicite aide à éviter les malentendus."
+      }
+    ]
+  },
+  "N08-L06": {
+    "kind": "project",
+    "headline": "Faire converger technique, intention et récit.",
+    "key": "Un projet final montre une démarche autant qu’une sélection d’images.",
+    "mission": "Concevez une série de 6 à 10 images avec un brief, une planche de sélection, des réglages commentés et un bilan critique.",
+    "scenarios": [
+      {
+        "label": "Concevoir",
+        "explanation": "Formulez une intention et des critères de réussite avant la production."
+      },
+      {
+        "label": "Produire",
+        "explanation": "Réalisez, comparez et ajustez votre protocole au fil des essais."
+      },
+      {
+        "label": "Présenter",
+        "explanation": "Expliquez vos choix, les limites rencontrées et la prochaine piste de progression."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Qu’est-ce qui rend une présentation de projet plus convaincante ?",
+        "a": [
+          "Masquer toutes les limites",
+          "Relier les images à une intention et justifier les choix",
+          "Ne montrer que le prix du matériel"
+        ],
+        "correct": 1,
+        "why": "La démarche, les résultats et l’analyse permettent d’évaluer le projet."
+      },
+      {
+        "q": "Un bilan critique doit notamment identifier…",
+        "a": [
+          "Une limite et une prochaine piste concrète",
+          "Uniquement des compliments",
+          "Un classement des marques"
+        ],
+        "correct": 0,
+        "why": "L’analyse prépare une nouvelle itération et montre la compréhension des compromis."
+      }
+    ]
+  }
+}
