@@ -1,10 +1,10 @@
 import * as T from "./vendor/three/three.module.min.js";
-import { OrbitControls } from "./vendor/three/OrbitControls.js?v=20261104-5";
+import { OrbitControls } from "./vendor/three/OrbitControls.js?v=20261104-6";
 import {
   buildWorld,
   configs,
   formatValue,
-} from "./spatial-models.js?v=20261104-5";
+} from "./spatial-models.js?v=20261104-6";
 const escape = (value) =>
   String(value).replace(
     /[&<>"']/g,
@@ -132,6 +132,11 @@ function sceneFor(world, quality = true) {
   const rim = new T.DirectionalLight(0x79c5e0, 3.6);
   rim.position.set(-4, 3, -3);
   scene.add(rim);
+  if (["camera", "sensor", "kit", "lenskit", "modes"].includes(world.kind)) {
+    const rearFill = new T.DirectionalLight(0xd7e1e9, 2.5);
+    rearFill.position.set(0, 2, -5);
+    scene.add(rearFill);
+  }
   const floor = new T.Mesh(
     new T.CylinderGeometry(4.3, 4.3, 0.065, 64),
     new T.MeshStandardMaterial({
@@ -182,11 +187,17 @@ function unavailable(host) {
     '<div class="spatial-unavailable"><span>EXPLICATION ACCESSIBLE</span><strong>Le rendu 3D n’a pas pu démarrer.</strong><p>Les explications restent consultables. Vous pouvez relancer la scène sans quitter la leçon.</p><button class="btn alt" data-spatial-retry>Réessayer la 3D</button></div>';
 }
 async function preview(host) {
-  const key = host.dataset.kind + ":" + host.dataset.step;
+  const shooting = JSON.parse(host.dataset.capture || "{}");
+  const key =
+    host.dataset.kind +
+    ":" +
+    host.dataset.step +
+    ":" +
+    JSON.stringify(shooting);
   if (!cache.has(key)) {
     const r = await getPreviewRenderer();
     if (!host.isConnected) return;
-    const world = buildWorld(host.dataset.kind, +host.dataset.step),
+    const world = buildWorld(host.dataset.kind, +host.dataset.step, shooting),
       scene = sceneFor(world, false),
       camera = makeCamera(560, 340);
     r.setSize(560, 340, false);
@@ -208,7 +219,7 @@ async function preview(host) {
     .forEach((el) => el.remove());
   host.insertAdjacentHTML(
     "afterbegin",
-    `<img class="spatial-thumbnail" src="${cache.get(key)}" width="560" height="340" alt="${escape(host.dataset.title)} — rendu d’un modèle 3D"><span class="spatial-preview-label"><i></i> ÉTUDE SPATIALE · 3D</span>`,
+    `<img class="spatial-thumbnail" src="${cache.get(key)}" width="560" height="340" alt="${escape(host.dataset.title)} — rendu d’un modèle 3D"><span class="spatial-preview-label"><i></i> α7 IV · ${escape(shooting.lensShort || "VOTRE KIT")}</span>`,
   );
   host.querySelector(".spatial-loading,.spatial-unavailable")?.remove();
   if (!host.querySelector("[data-open-spatial]"))
@@ -248,30 +259,33 @@ document.addEventListener("visibilitychange", () => {
 });
 function applyValue(a, value, manual = true) {
   const cfg = a.world.config;
-  const bounded = T.MathUtils.clamp(Number(value), cfg[1], cfg[2]);
-  a.world.set(bounded);
+  a.world.set(T.MathUtils.clamp(Number(value), cfg[1], cfg[2]));
+  const actual = a.world.valueNow;
   a.host.querySelector(".spatial-value").textContent = formatValue(
     a.world.kind,
-    bounded,
+    actual,
   );
   const range = a.host.querySelector(".spatial-range");
-  range.value = bounded;
-  range.setAttribute("aria-valuetext", formatValue(a.world.kind, bounded));
+  range.value = a.world.controlValues
+    ? a.world.controlValues.indexOf(actual)
+    : actual;
+  range.setAttribute("aria-valuetext", formatValue(a.world.kind, actual));
   if (manual) {
-    a.host.dataset.parameter = String(bounded);
+    a.host.dataset.parameter = String(actual);
     a.host.dispatchEvent(
       new CustomEvent("spatial-change", {
         bubbles: true,
         detail: {
           kind: a.world.kind,
-          value: bounded,
-          formatted: formatValue(a.world.kind, bounded),
+          value: actual,
+          formatted: formatValue(a.world.kind, actual),
         },
       }),
     );
   }
   draw(a);
 }
+
 function annotate(a) {
   const rect = a.canvas.getBoundingClientRect(),
     used = [];
@@ -361,7 +375,8 @@ async function interactive(host) {
   if (
     active?.host === host &&
     active.world.step === +host.dataset.step &&
-    active.world.kind === host.dataset.kind
+    active.world.kind === host.dataset.kind &&
+    active.captureKey === host.dataset.capture
   ) {
     stop();
     const initial = active.world.config[4][active.world.step];
@@ -376,13 +391,32 @@ async function interactive(host) {
   if (!host.isConnected || revision !== mountRevision) return;
   const kind = host.dataset.kind,
     step = +host.dataset.step,
-    world = buildWorld(kind, step),
+    world = buildWorld(kind, step, JSON.parse(host.dataset.capture || "{}")),
     cfg = world.config,
     scene = sceneFor(world, true),
     camera = makeCamera();
   r.shadowMap.enabled = true;
   r.setPixelRatio(Math.min(devicePixelRatio, 1.5));
-  host.innerHTML = `<div class="spatial-stage-header"><div><span class="spatial-live-dot"></span> LABORATOIRE SPATIAL</div><span class="spatial-backend">${r.backend.isWebGPUBackend ? "WebGPU" : "WebGL 2"} · TEMPS RÉEL</span></div><div class="spatial-canvas-wrap"><div class="spatial-vignette"></div><div class="spatial-annotations">${world.hotspots.map((h, i) => `<button class="spatial-hotspot" data-hotspot="${i}" aria-label="Expliquer : ${escape(h.label)}"><span>${i + 1}</span>${escape(h.label)}</button>`).join("")}</div><div class="spatial-orbit-hint">Glissez horizontalement pour tourner · +/− pour zoomer</div><div class="spatial-view-tools"><button data-action="front" aria-label="Vue de face" title="Vue de face">Face</button><button data-action="reset" aria-label="Réinitialiser la vue" title="Réinitialiser la vue">↺</button><button data-action="zoom-in" aria-label="Rapprocher la vue">＋</button><button data-action="zoom-out" aria-label="Éloigner la vue">−</button></div></div><div class="spatial-control-deck"><div class="spatial-slider-label"><label>${escape(cfg[0])}</label><output class="spatial-value">${escape(formatValue(kind, world.value))}</output></div><input class="spatial-range" type="range" aria-label="${escape(cfg[0])}" min="${cfg[1]}" max="${cfg[2]}" step="${cfg[3]}" value="${world.value}"><div class="spatial-play-row"><button class="spatial-play" data-action="play" aria-pressed="false">▷ Lancer l’animation</button><span>Manipulez le réglage pour observer son effet.</span></div></div><div class="spatial-insight" aria-live="polite"><strong>À explorer</strong><span>Cliquez sur un repère numéroté pour comprendre le mécanisme.</span></div>`;
+  host.innerHTML = `<div class="spatial-stage-header"><div><span class="spatial-live-dot"></span> SONY α7 IV · LABORATOIRE</div><span class="spatial-backend">${r.backend.isWebGPUBackend ? "WebGPU" : "WebGL 2"} · TEMPS RÉEL</span></div><div class="spatial-gear-reference"><strong>ILCE-7M4 · PLEIN FORMAT</strong><span>${escape(world.capture.lensName)}</span></div><div class="spatial-canvas-wrap"><div class="spatial-vignette"></div><div class="spatial-annotations">${world.hotspots.map((h, i) => `<button class="spatial-hotspot" data-hotspot="${i}" aria-label="Expliquer : ${escape(h.label)}"><span>${i + 1}</span>${escape(h.label)}</button>`).join("")}</div><div class="spatial-orbit-hint">Glissez horizontalement pour tourner · +/− pour zoomer</div><div class="spatial-view-tools"><button data-action="front" aria-label="Vue de face" title="Vue de face">Face</button><button data-action="back" aria-label="Vue arrière">Dos</button><button data-action="top" aria-label="Vue du dessus">Dessus</button><button data-action="reset" aria-label="Réinitialiser la vue" title="Réinitialiser la vue">↺</button><button data-action="zoom-in" aria-label="Rapprocher la vue">＋</button><button data-action="zoom-out" aria-label="Éloigner la vue">−</button></div></div><div class="spatial-control-deck"><div class="spatial-slider-label"><label>${escape(cfg[0])}</label><output class="spatial-value">${escape(formatValue(kind, world.value))}</output></div><input class="spatial-range" type="range" aria-label="${escape(cfg[0])}" min="${cfg[1]}" max="${cfg[2]}" step="${cfg[3]}" value="${world.value}"><div class="spatial-play-row"><button class="spatial-play" data-action="play" aria-pressed="false">▷ Lancer l’animation</button><span>Manipulez le réglage pour observer son effet.</span></div></div><div class="spatial-insight" aria-live="polite"><strong>À explorer</strong><span>Maquette 3D pédagogique, proportions et commandes simplifiées. Cliquez sur un repère pour comprendre le mécanisme.</span></div>`;
+  if (world.controlValues) {
+    const input = host.querySelector(".spatial-range");
+    input.min = 0;
+    input.max = world.controlValues.length - 1;
+    input.step = 1;
+    input.value = world.controlValues.indexOf(world.value);
+    input.dataset.values = JSON.stringify(world.controlValues);
+    input.dataset.physicalMin = cfg[1];
+    input.dataset.physicalMax = cfg[2];
+    input.setAttribute("aria-valuetext", formatValue(kind, world.value));
+  }
+  const fixed = cfg[1] === cfg[2];
+  if (fixed) {
+    host.querySelector(".spatial-range").disabled = true;
+    host.querySelector('[data-action="play"]').disabled = true;
+    host.querySelector('[data-action="play"]').textContent = "Focale fixe";
+    host.querySelector(".spatial-play-row>span").textContent =
+      "Cet objectif ne zoome pas. Changez de situation pour comparer un autre objectif.";
+  }
   const wrap = host.querySelector(".spatial-canvas-wrap"),
     canvas = r.domElement;
   wrap.prepend(canvas);
@@ -406,6 +440,7 @@ async function interactive(host) {
   controls.update();
   const a = {
     host,
+    captureKey: host.dataset.capture,
     world,
     scene,
     camera,
@@ -475,6 +510,7 @@ async function interactive(host) {
     resize();
   }
   function play() {
+    if (cfg[1] === cfg[2]) return;
     if (a.playing) {
       stop();
       return;
@@ -501,7 +537,8 @@ async function interactive(host) {
   }
   host.querySelector(".spatial-range").oninput = (e) => {
     stop();
-    applyValue(a, +e.target.value);
+    const n = +e.target.value;
+    applyValue(a, world.controlValues ? world.controlValues[n] : n);
   };
   host
     .querySelectorAll("[data-hotspot]")
@@ -513,6 +550,20 @@ async function interactive(host) {
   host.querySelector('[data-action="front"]').onclick = () => {
     stop();
     camera.position.set(0, 1, 8);
+    controls.target.set(0, 0.05, 0);
+    controls.update();
+    draw(a);
+  };
+  host.querySelector('[data-action="back"]').onclick = () => {
+    stop();
+    camera.position.set(0, 0.6, -5.2);
+    controls.target.set(0, 0.05, 0);
+    controls.update();
+    draw(a);
+  };
+  host.querySelector('[data-action="top"]').onclick = () => {
+    stop();
+    camera.position.set(0, 8, 0.1);
     controls.target.set(0, 0.05, 0);
     controls.update();
     draw(a);

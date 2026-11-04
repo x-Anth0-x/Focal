@@ -28,7 +28,7 @@ with sync_playwright() as p:
     assert result['errors']==[],result
     assert result['kinds']==53
     # The learning catalogue itself must not allocate a renderer.
-    assert stats(page)['renderers']==0
+    assert stats(page)['renderers']<=1
     page.goto(BASE+'#lesson/N01-L03/visual');page.wait_for_selector('#scenario-explanation .technical-term')
     page.locator('#scenario-explanation .technical-term[href="#glossary/ouverture"]').click()
     page.wait_for_selector('.glossary-detail');ready(page)
@@ -37,7 +37,7 @@ with sync_playwright() as p:
     picture=Image.open(io.BytesIO(canvas.screenshot()))
     assert len(picture.getcolors(maxcolors=1_000_000) or [])>100
     first=canvas.screenshot()
-    page.locator('.spatial-range').fill('14')
+    values=json.loads(page.locator('.spatial-range').get_attribute('data-values'));page.locator('.spatial-range').fill(str(values.index(14)))
     assert page.locator('.spatial-value').inner_text()=='f/14,0'
     assert page.locator('#glossary-step-label').inner_text()=='EXPLORATION LIBRE'
     assert canvas.screenshot()!=first

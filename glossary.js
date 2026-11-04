@@ -13,7 +13,7 @@ window.FocalGlossary = (() => {
         })[c],
     );
   const selectors =
-    ".chapter-content p,.callout,.concept-intro h2,.takeaway p,#scenario-explanation,.comparison-card p,.mission-instruction,#pane-resources p,.answer-feedback";
+    ".chapter-content p,.callout,.concept-intro h2,.takeaway p,#scenario-explanation,.comparison-card p,.mission-instruction,#pane-resources p,.answer-feedback,.sony-steps p,.sony-check p,.sony-auto-note,.sony-guide-grid p";
   let terms = [],
     lookup = new Map(),
     pattern,

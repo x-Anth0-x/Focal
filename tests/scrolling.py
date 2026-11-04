@@ -37,7 +37,8 @@ with sync_playwright() as p:
  a.bring_to_front();a.wait_for_function("FocalApp.state.notes['N01-L03']==='Une note distante.'")
  assert a.locator('#fieldNotes').input_value()=='Mon brouillon local non enregistré'
  assert a.locator('#fieldNotes').evaluate('el=>el===document.activeElement')
- a.locator('#saveNotes').click();same.bring_to_front();same.wait_for_function("FocalApp.state.notes['N01-L03']==='Mon brouillon local non enregistré'")
+ same.locator('#fieldNotes').focus()  # A clean, focused field must also receive remote saved edits.
+ a.locator('#saveNotes').click();same.bring_to_front();same.wait_for_function("FocalApp.state.notes['N01-L03']==='Mon brouillon local non enregistré' && document.querySelector('#fieldNotes').value==='Mon brouillon local non enregistré'")
  assert same.locator('#fieldNotes').input_value()=='Mon brouillon local non enregistré'
  progress=open_page('#progress');progress.evaluate('scrollTo(0,450)')
  same.locator('#practiceDone').check();same.locator('#tab-quiz').click()

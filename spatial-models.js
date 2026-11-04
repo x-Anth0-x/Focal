@@ -86,10 +86,12 @@ export function formatValue(kind, value) {
   if (c[5] === "f/") return "f/" + Number(value).toFixed(1).replace(".", ",");
   if (c[5] === "pose") return times[Math.round(value)];
   if (c[5] === "ISO") return "ISO " + 100 * 2 ** Math.round(value);
-  if (c[5] === "mode") return ["A / Av", "S / Tv", "M"][Math.round(value)];
+  if (c[5] === "mode") return ["A", "S", "M"][Math.round(value)];
   if (c[5] === "step") return "Étape " + (Math.round(value) + 1);
   return (
-    Number(value).toLocaleString("fr-FR", { maximumFractionDigits: 2 }) + c[5]
+    Number(value).toLocaleString("fr-FR", {
+      maximumFractionDigits: ["meter", "triangle"].includes(kind) ? 1 : 2,
+    }) + c[5]
   );
 }
 function mat(color, options = {}) {
@@ -158,57 +160,170 @@ function pointer(parent, a, b, color = gold) {
     ),
   );
 }
+const labelTextures = new Map();
+function decal(
+  parent,
+  text,
+  x,
+  y,
+  z,
+  w = 0.4,
+  h = 0.12,
+  rotationX = 0,
+  color = "#eeeae1",
+) {
+  const key = text + color;
+  let texture = labelTextures.get(key);
+  if (!texture) {
+    const canvas = document.createElement("canvas");
+    canvas.width = 512;
+    canvas.height = 128;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, 512, 128);
+    ctx.fillStyle = color;
+    ctx.font = "600 64px Arial, sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(text, 256, 65, 500);
+    texture = new T.CanvasTexture(canvas);
+    texture.colorSpace = T.SRGBColorSpace;
+    labelTextures.set(key, texture);
+  }
+  const label = mesh(
+    new T.PlaneGeometry(w, h),
+    new T.MeshBasicMaterial({
+      map: texture,
+      transparent: true,
+      depthWrite: false,
+      side: T.DoubleSide,
+    }),
+    parent,
+    x,
+    y,
+    z,
+  );
+  label.rotation.x = rotationX;
+  label.castShadow = false;
+  return label;
+}
 function camera(parent, x = 0, y = 0, z = 0, size = 1) {
+  const capture = parent.userData.capture || {},
+    lensId = capture.lensId || "tamron";
   const g = new T.Group();
   g.position.set(x, y, z);
   g.scale.setScalar(size);
+  g.userData.model = "Sony α7 IV · ILCE-7M4";
   parent.add(g);
-  const body = mat(0x28343d, { roughness: 0.3, metalness: 0.75 }),
-    metal = mat(0xaeb8bb, { metalness: 0.85, roughness: 0.26 });
-  box(g, 0, 0, 0, 1.7, 1.1, 0.65, body);
-  box(g, 0, 0.45, 0.01, 1.66, 0.22, 0.69, metal);
+  const body = mat(0x151a1e, { roughness: 0.48, metalness: 0.42 }),
+    rubber = mat(0x111619, { roughness: 0.92, metalness: 0.03 }),
+    metal = mat(0x8f999d, { metalness: 0.85, roughness: 0.28 });
+  box(g, 0, 0, 0, 1.72, 1.15, 0.68, body);
+  box(g, -0.64, -0.05, 0.29, 0.4, 1.02, 0.66, rubber);
+  box(g, 0, 0.48, 0, 1.65, 0.22, 0.68, body);
+  // Central electronic viewfinder, Multi Interface shoe, deep right-hand grip. No built-in flash.
+  box(g, 0.03, 0.68, -0.03, 0.52, 0.35, 0.57, body);
+  box(g, 0.03, 0.89, -0.04, 0.34, 0.05, 0.32, metal);
+  box(g, 0.03, 0.925, -0.04, 0.2, 0.016, 0.22, body);
+  decal(g, "SONY", 0.04, 0.69, 0.266, 0.38, 0.1);
+  decal(g, "α7 IV", 0.62, 0.32, 0.353, 0.3, 0.105);
+  const mode = cylinder(g, -0.48, 0.73, -0.04, 0.24, 0.16, body);
+  for (let i = 0; i < 16; i++) {
+    const a = (i * Math.PI) / 8;
+    box(
+      g,
+      -0.48 + Math.cos(a) * 0.245,
+      0.73,
+      -0.04 + Math.sin(a) * 0.245,
+      0.017,
+      0.12,
+      0.017,
+      rubber,
+    );
+  }
+  decal(g, "P A S M", -0.48, 0.82, -0.04, 0.32, 0.09, -Math.PI / 2);
+  cylinder(g, -0.48, 0.62, -0.04, 0.27, 0.07, body);
+  decal(g, "PHOTO · MOVIE · S&Q", -0.48, 0.58, 0.24, 0.48, 0.055);
+  cylinder(g, -0.68, 0.63, 0.51, 0.105, 0.055, metal);
+  ring(g, -0.68, 0.66, 0.51, 0.15, body, 0.025).rotation.x = -Math.PI / 2;
+  cylinder(g, -0.78, 0.41, 0.55, 0.08, 0.13, body).rotation.z = Math.PI / 2;
+  cylinder(g, -0.83, 0.64, 0.12, 0.045, 0.045, body);
+  cylinder(g, -0.75, 0.64, -0.11, 0.045, 0.045, body);
+  sphere(g, -0.36, 0.69, 0.31, 0.045, mat(0x9e3435));
+  // Rear screen and named controls: positions are schematic, labels identify actual functions.
+  box(g, 0.18, -0.13, -0.376, 1.05, 0.69, 0.07, body);
   box(
     g,
-    -0.66,
-    -0.05,
-    0.38,
-    0.32,
-    0.85,
-    0.16,
-    mat(0x141e24, { roughness: 0.9 }),
+    0.18,
+    -0.13,
+    -0.418,
+    0.92,
+    0.56,
+    0.012,
+    mat(0x1a343d, { roughness: 0.2, metalness: 0.3 }),
   );
-  box(g, -0.1, 0.66, 0.02, 0.55, 0.22, 0.5, body);
-  cylinder(g, 0.53, 0.65, 0.02, 0.13, 0.13, metal);
+  const screen = decal(g, "α7 IV · PHOTO", 0.18, -0.13, -0.43, 0.74, 0.1);
+  screen.rotation.y = Math.PI;
+  for (const [text, bx, by, bw] of [
+    ["MENU", 0.66, 0.41, 0.25],
+    ["AF-ON", -0.48, 0.38, 0.26],
+    ["AEL", -0.78, 0.36, 0.16],
+    ["Fn", -0.55, 0.04, 0.16],
+    ["DISP", -0.55, -0.17, 0.19],
+    ["ISO", -0.76, -0.35, 0.14],
+  ]) {
+    box(g, bx, by, -0.39, bw, 0.12, 0.08, body);
+    const label = decal(g, text, bx, by, -0.437, bw * 0.9, 0.068);
+    label.rotation.y = Math.PI;
+  }
+  const wheel = cylinder(g, -0.55, -0.36, -0.41, 0.17, 0.04, body);
+  wheel.rotation.x = Math.PI / 2;
   const lens = new T.Group();
   g.add(lens);
-  const barrel = cylinder(lens, 0, 0, 0.72, 0.55, 1.0, body);
+  const length = lensId === "fe35" ? 0.7 : lensId === "fe85" ? 0.86 : 1.18,
+    radius = lensId === "fe35" ? 0.43 : 0.54;
+  const barrel = cylinder(lens, 0, 0, 0.35 + length / 2, radius, length, body);
   barrel.rotation.x = Math.PI / 2;
-  ring(lens, 0, 0, 1.21, 0.48, metal, 0.035);
-  ring(lens, 0, 0, 1.23, 0.4, mat(0x101d22), 0.045);
+  ring(lens, 0, 0, 0.36, radius * 0.95, mat(0xb5744d), 0.025);
+  ring(lens, 0, 0, 0.36 + length, radius * 0.94, metal, 0.025);
+  ring(lens, 0, 0, 0.38 + length, radius * 0.8, rubber, 0.045);
   sphere(
     lens,
     0,
     0,
-    1.2,
-    0.39,
-    mat(0x397d89, { roughness: 0.1, metalness: 0.58, clearcoat: 1 }),
+    0.37 + length,
+    radius * 0.72,
+    mat(0x316674, { roughness: 0.11, metalness: 0.6, clearcoat: 1 }),
     [1, 1, 0.12],
   );
-  for (let i = 0; i < 12; i++) {
-    const a = (i * Math.PI) / 6;
+  for (let i = 0; i < 18; i++) {
+    const a = (i * Math.PI) / 9;
     box(
       lens,
-      Math.cos(a) * 0.553,
-      Math.sin(a) * 0.553,
-      0.7,
-      0.02,
-      0.02,
-      0.42,
-      metal,
+      Math.cos(a) * (radius + 0.007),
+      Math.sin(a) * (radius + 0.007),
+      0.42 + length * 0.45,
+      0.015,
+      0.015,
+      length * 0.24,
+      rubber,
     );
   }
+  decal(
+    lens,
+    lensId === "fe85"
+      ? "FE 85 / 1.8"
+      : lensId === "fe35"
+        ? "FE 35 / 1.8"
+        : "28–75 / 2.8 G2",
+    0,
+    radius * 0.62,
+    0.4 + length,
+    0.62,
+    0.07,
+  );
   return { group: g, lens };
 }
+
 function bust(parent, x = 0, y = 0, z = 0, size = 1, color = cream) {
   const g = new T.Group();
   g.position.set(x, y, z);
@@ -378,7 +493,7 @@ function kelvin(k) {
     T.MathUtils.clamp(b, 0, 255) / 255,
   );
 }
-export function buildWorld(kind, step = 0) {
+export function buildWorld(kind, step = 0, shooting = {}) {
   const root = new T.Group(),
     objects = [],
     materials = [],
@@ -394,7 +509,69 @@ export function buildWorld(kind, step = 0) {
   };
   const addHot = (label, position, description) =>
     hotspots.push({ label, position: new T.Vector3(...position), description });
-  const cfg = configs[kind] || configs.camera;
+  const capture = {
+    body: "Sony α7 IV",
+    bodyCode: "ILCE-7M4",
+    lensId: "tamron",
+    lensName: "Tamron 28–75 mm f/2,8 G2",
+    focalMin: 28,
+    focalMax: 75,
+    apertureMin: 2.8,
+    apertureMax: 22,
+    focal: 50,
+    aperture: 2.8,
+    distance: 2,
+    iso: 100,
+    shutter: "1/250",
+    ...shooting,
+  };
+  root.userData.capture = capture;
+  const source = configs[kind] || configs.camera;
+  const cfg = [...source];
+  cfg[4] = [...source[4]];
+  if (
+    ["aperture", "depth", "aberration", "diffraction", "bokeh"].includes(kind)
+  ) {
+    cfg[1] = capture.apertureMin;
+    cfg[2] = capture.apertureMax;
+    cfg[4][step] = capture.aperture;
+  }
+  if (["focal", "lenskit"].includes(kind)) {
+    cfg[1] = capture.focalMin;
+    cfg[2] = capture.focalMax;
+    cfg[4][step] = capture.focal;
+    cfg[0] =
+      capture.focalMin === capture.focalMax
+        ? "Focale fixe de l’objectif"
+        : "Focale du Tamron";
+  }
+  if (kind === "iso") cfg[4][step] = Math.log2(capture.iso / 100);
+  if (kind === "night" && Number.isFinite(Number(capture.shutter)))
+    cfg[4][step] = Number(capture.shutter);
+  if (["shutter", "sport"].includes(kind)) {
+    const index = times.indexOf(capture.shutter + " s");
+    if (index >= 0) cfg[4][step] = index;
+  }
+  cfg[4] = cfg[4].map((v) => T.MathUtils.clamp(v, cfg[1], cfg[2]));
+  let controlValues = null;
+  if (
+    ["aperture", "depth", "aberration", "diffraction", "bokeh"].includes(kind)
+  )
+    controlValues = [
+      1.8, 2, 2.2, 2.5, 2.8, 3.2, 3.5, 4, 4.5, 5, 5.6, 6.3, 7.1, 8, 9, 10, 11,
+      13, 14, 16, 18, 20, 22,
+    ].filter((v) => v >= cfg[1] && v <= cfg[2]);
+  if (kind === "night")
+    controlValues = [
+      1, 1.3, 1.6, 2, 2.5, 3.2, 4, 5, 6, 8, 10, 13, 15, 20, 25, 30,
+    ];
+  if (["meter", "triangle"].includes(kind))
+    controlValues = Array.from({ length: 19 }, (_, i) => (i - 9) / 3);
+  if (kind === "whitebalance") {
+    cfg[1] = 2500;
+    cfg[2] = 9900;
+    cfg[3] = 100;
+  }
   let current = cfg[4][step] ?? cfg[4][0];
   switch (kind) {
     case "camera":
@@ -418,19 +595,31 @@ export function buildWorld(kind, step = 0) {
         "Le capteur reçoit l’image projetée par l’objectif.",
       );
       addHot(
-        "Commande",
-        [0.4, 0.9, 0],
+        "Déclencheur / ON-OFF",
+        [-1.22, 0.89, 0.69],
         "Le déclencheur commande la prise de vue selon la configuration du boîtier.",
+      );
+      addHot(
+        "P / A / S / M",
+        [-0.95, 1.08, -0.04],
+        "La molette supérieure sélectionne les modes photo. La bague Photo/Film/S&Q est une commande distincte.",
+      );
+      addHot(
+        "Fn / commandes arrière",
+        [-1.04, 0.05, -0.6],
+        "Utilisez la vue Dos pour repérer Fn, MENU, AF-ON et le multi-sélecteur. Les affectations peuvent être personnalisées.",
       );
       update = (v) => {
         const e =
-          kind === "camera" ? v : kind === "lenskit" ? (v - 24) / 81 : 0.12;
+          kind === "camera" ? v : kind === "lenskit" ? (v - 28) / 47 : 0.12;
         c.lens.position.z = e * 1.5;
         sensor.position.z = -0.65 - e;
+        sensor.visible = kind === "camera" && e > 0.15;
         items.forEach(
           (o, i) => (o.visible = kind === "kit" ? i < v - 1 : false),
         );
-        if (kind === "lenskit") c.lens.scale.z = 0.7 + e * 0.9;
+        if (kind === "lenskit" && capture.focalMin !== capture.focalMax)
+          c.lens.scale.z = 0.85 + e * 0.3;
       };
       break;
     }
@@ -585,11 +774,14 @@ export function buildWorld(kind, step = 0) {
         rayGroup.scale.y = 0.45 + radius * 0.45;
         head.group.scale.setScalar(0.65);
         if (kind === "depth") {
-          const H = (2500 / (v * 0.03) + 50) / 1000,
-            near = (H * 2) / (H + 2 - 0.05),
-            far = 2 >= H ? 12 : (H * 2) / (H - 2 + 0.05);
+          const f = capture.focal,
+            d = capture.distance || 2;
+          const H = ((f * f) / (v * 0.03) + f) / 1000,
+            near = (H * d) / (H + d - f / 1000),
+            far = d >= H ? 12 : (H * d) / (H - d + f / 1000);
           zone.scale.z = Math.min(4, (far - near) * 2.5);
-          zone.position.z = -1 + (2 - (near + far) / 2) * 2.5;
+          zone.position.z =
+            -1 + ((capture.distance || 2) - (near + far) / 2) * 2.5;
         }
         waves.forEach((w, i) =>
           w.scale.setScalar(
@@ -1303,12 +1495,20 @@ export function buildWorld(kind, step = 0) {
     root,
     kind,
     step,
+    capture,
     config: cfg,
+    controlValues,
     hotspots,
     value: current,
     set(v) {
-      current = v;
-      update(v);
+      current = T.MathUtils.clamp(v, cfg[1], cfg[2]);
+      if (controlValues)
+        current = controlValues.reduce(
+          (best, n) =>
+            Math.abs(n - current) < Math.abs(best - current) ? n : best,
+          controlValues[0],
+        );
+      update(current);
     },
     get valueNow() {
       return current;

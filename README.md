@@ -35,7 +35,7 @@ Les contenus d’origine sont conservés dans `curriculum.json`. Les complément
 | `index.html`                | Structure accessible, chargement et navigation                |
 | `academy.css`               | Interface, responsive, impression et réduction des animations |
 | `academy.js`                | Catalogue, routes, leçons, quiz, carnet et progression        |
-| `visuals.js`                | Schémas SVG originaux adaptés aux 48 sujets                   |
+| `visuals.js`                | Chargement différé des aperçus et ateliers 3D                   |
 | `curriculum.json`           | Catalogue et contenu pédagogique d’origine                    |
 | `lesson-content.json`       | Notions, missions, situations et questions complémentaires    |
 | `lesson_reference.json`     | Chapitres et quiz d’origine du pilote sur l’ouverture         |
@@ -90,9 +90,9 @@ Routes supplémentaires : `#glossary`, `#glossary/ouverture`, `#glossary/diaphra
 
 Les aperçus des cours utilisent le moteur **WebGL 2** classique, sans attendre la disponibilité de WebGPU. Les scènes interactives tentent **WebGPU** avec des délais bornés pour la détection, l’initialisation et le premier rendu ; un échec ou un dépassement provoque un repli sur WebGL 2. Les dépendances utilisent des imports relatifs directs et sont servies depuis le dépôt ; aucun CDN, import map ni service externe n’est requis à l’exécution.
 
-Le catalogue et l’index du lexique ne créent pas de moteur graphique. Les scènes se chargent à l’approche de la zone visible. Un moteur réutilisé produit les aperçus ; un second sert la scène interactive. Le cache des aperçus est borné. Le rendu est déclenché à la demande ; les animations ne démarrent jamais seules et s’arrêtent quand la scène ou la page est masquée. Géométries, matériaux, ombres et contrôles sont libérés à la sortie de scène. Les préférences de réduction des animations sont respectées.
+Les miniatures de boîtier du catalogue peuvent utiliser le moteur d’aperçus ; l’index du lexique ne crée pas de moteur graphique. Les scènes se chargent à l’approche de la zone visible. Un moteur réutilisé produit les aperçus ; un second sert la scène interactive. Le cache des aperçus est borné. Le rendu est déclenché à la demande ; les animations ne démarrent jamais seules et s’arrêtent quand la scène ou la page est masquée. Géométries, matériaux, ombres et contrôles sont libérés à la sortie de scène. Les préférences de réduction des animations sont respectées.
 
-L’absence de support graphique affiche une explication textuelle : définition, étapes, exemples et cours restent utilisables. Les visuels sont schématiques, les trajectoires peuvent être exagérées, et les objets représentés ne caractérisent pas un appareil ou un objectif réel. Seul le calcul de profondeur de champ est quantitatif, selon les hypothèses affichées.
+L’absence de support graphique affiche une explication textuelle : définition, étapes, exemples et cours restent utilisables. Les visuels sont schématiques, les trajectoires peuvent être exagérées, et le boîtier reprend les fonctions du Sony α7 IV et les trois objectifs du profil, avec des formes et positions simplifiées ; il ne s’agit pas d’une numérisation du matériel réel. Seul le calcul de profondeur de champ est quantitatif, selon les hypothèses affichées.
 
 ### Vérification 3D
 
@@ -125,3 +125,17 @@ python tests/scrolling.py
 ```
 
 La suite ouvre plusieurs pages dans **un même contexte navigateur**, avec un stockage réellement partagé. Elle vérifie l’absence de rechargements croisés, la conservation de la position de lecture, des onglets, du brouillon local et des filtres, la mise à jour du suivi ainsi que les vrais gestes de molette et de défilement tactile sur le canevas 3D.
+
+## Kit Sony α7 IV
+
+Le profil `sony-a7iv.json` décrit le boîtier ILCE-7M4, le Tamron A063 28–75 mm f/2,8 G2, le Sony SEL85F18 et le Sony SEL35F18F plein format. Il fournit 48 protocoles de cinq étapes et 144 situations. `camera-kit.js` affiche ces protocoles dans les cours, les missions et le mémo ; `#camera` présente les commandes et les trois objectifs. Le générateur éditorial est `scripts/build_sony_profile.py`.
+
+Les focales et ouvertures des ateliers et du calculateur respectent le kit : 28–75 mm et f/2,8–22 pour le Tamron ; 35 ou 85 mm fixes et f/1,8–22 pour les Sony. Les commandes d’ouverture utilisent des valeurs par tiers de diaphragme. Les modes sont A et S, avec vitesse ou ouverture automatique signalée explicitement. Les réglages sont des points de départ, pas les EXIF des illustrations générées.
+
+Le firmware et les affectations personnalisées de l’utilisateur sont inconnus. Le guide officiel Sony est lié mais son accès depuis cet environnement est bloqué par la politique réseau ; les intitulés et chemins exacts des menus ne sont donc pas présentés comme vérifiés. Aucune manipulation n’a été testée sur un boîtier physique. Les vues 3D restent des maquettes pédagogiques ; des photos réelles ou une numérisation et des prises de vue comparatives contrôlées seront nécessaires à une future présentation photoréaliste.
+
+```sh
+python tests/sony.py
+```
+
+La suite contrôle les 48 protocoles, les 144 situations, les limites des objectifs, les trois sélections du calculateur, les vues du boîtier et les écrans étroits.

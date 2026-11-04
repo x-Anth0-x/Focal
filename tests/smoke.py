@@ -106,12 +106,12 @@ with sync_playwright() as p:
     migrated.close()
     # Physics, keyboard navigation, responsive layout and refreshable deep links.
     page.goto(BASE+'/#lesson/N01-L03/visual');page.wait_for_selector('#dofOut')
-    assert page.locator('#dofOut').inner_text()=='0,26 m'
-    page.locator('#aperture').fill('9');page.locator('#focal').fill('24');page.locator('#distance').fill('10')
+    assert page.locator('#dofOut').inner_text()=='0,06 m'
+    page.locator('#dof-lens').select_option('tamron');page.locator('#aperture').fill('8');page.locator('#focal').fill('28');page.locator('#distance').fill('10')
     assert page.locator('#farOut').inner_text()=='∞'
-    assert page.locator('#nearOut').inner_text()=='0,59 m'
+    assert page.locator('#nearOut').inner_text()=='1,09 m'
     page.locator('#resetLab').click()
-    assert page.locator('#dofOut').inner_text()=='0,26 m'
+    assert page.locator('#focal').input_value()=='75'
     page.locator('#tab-visual').focus();page.keyboard.press('ArrowRight')
     assert page.locator('#pane-mission').is_visible()
     page.reload();page.wait_for_selector('#pane-mission')

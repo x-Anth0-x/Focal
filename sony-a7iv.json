@@ -1,0 +1,2406 @@
+{
+  "model": "Sony α7 IV",
+  "modelCode": "ILCE-7M4",
+  "sensor": "Plein format 35 mm",
+  "megapixels": 33,
+  "jpegLarge": [7008, 4672],
+  "firmware": null,
+  "menuLanguage": "fr",
+  "lensSource": "Kit indiqué par l’utilisateur",
+  "lenses": {
+    "tamron": {
+      "name": "Tamron 28–75 mm f/2,8 Di III VXD G2",
+      "model": "A063 · monture Sony E",
+      "focalMin": 28,
+      "focalMax": 75,
+      "maxAperture": 2.8,
+      "minAperture": 22,
+      "stabilized": false
+    },
+    "fe85": {
+      "name": "Sony FE 85 mm f/1,8",
+      "model": "SEL85F18",
+      "focalMin": 85,
+      "focalMax": 85,
+      "maxAperture": 1.8,
+      "minAperture": 22,
+      "stabilized": false
+    },
+    "fe35": {
+      "name": "Sony FE 35 mm f/1,8",
+      "model": "SEL35F18F · plein format",
+      "focalMin": 35,
+      "focalMax": 35,
+      "maxAperture": 1.8,
+      "minAperture": 22,
+      "stabilized": false
+    }
+  },
+  "lessons": {
+    "N01-L01": {
+      "purpose": "Retrouver les commandes avant de penser à la technique.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Placez le sélecteur Photo/Film/S&Q sur Photo, puis mettez l’interrupteur autour du déclencheur sur ON.",
+        "Déverrouillez la molette de mode et sélectionnez A. Repérez la molette avant, les molettes arrière, Fn, MENU, AF-ON et le multi-sélecteur.",
+        "À 50 mm sur le Tamron, réglez f/2,8 avec la molette attribuée à l’ouverture. Lisez le nombre f dans le viseur plutôt que de compter les crans.",
+        "Choisissez AF-S pour un objet immobile et une zone de mise au point réduite. Déplacez cette zone au multi-sélecteur.",
+        "Enfoncez le déclencheur à mi-course, vérifiez la confirmation de mise au point, puis déclenchez. Ouvrez la lecture et agrandissez le détail visé."
+      ],
+      "check": "Si la demi-pression ne lance pas l’AF, votre boîtier peut être configuré en mise au point au bouton AF-ON. Vérifiez cette personnalisation avant de modifier les autres paramètres.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N01-L02": {
+      "purpose": "Relier le capteur plein format à un fichier Sony.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 5.6,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "M",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Restez en mode Photo et sélectionnez M pour imposer les paramètres de comparaison.",
+        "Pour travailler en plein format avec vos trois objectifs FE, contrôlez la fonction APS-C/Super 35 mm et évitez un recadrage APS-C involontaire.",
+        "Choisissez RAW + JPEG dans les réglages de qualité d’image. Le RAW Sony est un fichier .ARW ; le JPEG est un rendu calculé.",
+        "En JPEG 3:2, taille L, le plein format de l’α7 IV fournit 7008 × 4672 pixels. Vérifiez la taille réellement enregistrée dans le fichier.",
+        "Photographiez une zone détaillée et une zone très claire. Comparez les deux fichiers à 100 % sur ordinateur."
+      ],
+      "check": "L’α7 IV est un plein format d’environ 33 mégapixels. Un réglage JPEG ou un profil de rendu ne change pas la taille physique du capteur.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N01-L03": {
+      "purpose": "Comparer le diaphragme avec vos ouvertures réellement disponibles.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 1.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 85 mm f/1,8. S’il est sur MF, remettez le commutateur de l’objectif sur AF.",
+        "En Photo, choisissez A puis ISO 100 si la lumière le permet. Faites le point sur un sujet immobile vers 2 m.",
+        "Réglez f/1,8, puis f/2,8, f/4 et f/8 avec la molette d’ouverture. L’α7 IV adapte la vitesse en A : surveillez-la à chaque vue.",
+        "Gardez la même position, le même sujet et la même mise au point. Placez le décor plusieurs mètres derrière le sujet.",
+        "Comparez les fichiers au même grossissement. Recommencez avec le Tamron à 75 mm en démarrant à f/2,8, son ouverture maximale."
+      ],
+      "check": "Ni le FE 85 ni le FE 35 ne possèdent de bague d’ouverture : le réglage se fait depuis le boîtier. Votre Tamron ne peut pas ouvrir à f/1,8.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 16,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N01-L04": {
+      "purpose": "Utiliser la lettre S de la molette Sony pour choisir le mouvement.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 75,
+        "aperture": 2.8,
+        "shutter": "1/1000",
+        "iso": 400,
+        "mode": "S",
+        "af": "AF-C"
+      },
+      "steps": [
+        "En Photo, sélectionnez S sur la molette de mode et choisissez AF-C pour un sujet qui se déplace.",
+        "Commencez à 1/1000 s sur un marcheur rapide ou un cycliste, dans un emplacement sûr.",
+        "Cadrez à 75 mm et vérifiez l’ouverture affichée : si f/2,8 ne suffit pas, montez l’ISO ou employez ISO AUTO.",
+        "Comparez 1/250 s puis 1/30 s. Pour un filé, accompagnez le sujet pendant le déclenchement.",
+        "Contrôlez la netteté du sujet et du fond en lecture, pas seulement l’impression de netteté dans le viseur."
+      ],
+      "check": "Sur Sony, le mode est S, pas Tv. À la limite f/2,8 du Tamron, le boîtier ne peut pas ouvrir davantage pour compenser une pose plus courte.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 75,
+          "aperture": 2.8,
+          "shutter": "1/30",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 75,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 75,
+          "aperture": 2.8,
+          "shutter": "1/1000",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        }
+      ]
+    },
+    "N01-L05": {
+      "purpose": "Comprendre l’ISO sans confondre amplification et lumière.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 1.8,
+        "shutter": "1/125",
+        "iso": 1600,
+        "mode": "M",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 35 mm f/1,8, sélectionnez M, f/1,8 et 1/125 s pour une scène intérieure fixe.",
+        "Sélectionnez une valeur ISO fixe au lieu d’ISO AUTO. Recherchez la fonction ISO dans Fn si elle est présente dans votre menu personnalisé.",
+        "Photographiez successivement à ISO 100, 800, 1600 et 6400 sans changer la lumière, l’ouverture ni la durée.",
+        "Comparez ensuite les RAW à luminosité finale comparable. Notez quelles différences viennent de la collecte et du traitement.",
+        "Revenez à ISO AUTO pour un usage mobile si nécessaire, puis surveillez les valeurs choisies par le boîtier."
+      ],
+      "check": "Vos trois objectifs n’ont pas de stabilisation optique. La stabilisation SteadyShot du boîtier aide sur le bougé du photographe, pas sur le mouvement du sujet.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 1.8,
+          "shutter": "1/125",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 1.8,
+          "shutter": "1/125",
+          "iso": 1600,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 1.8,
+          "shutter": "1/125",
+          "iso": 6400,
+          "mode": "M",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N01-L06": {
+      "purpose": "Construire des couples ouverture–vitesse cohérents sur l’α7 IV.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 400,
+        "mode": "M",
+        "af": "AF-S"
+      },
+      "steps": [
+        "En Photo, sélectionnez M et désactivez provisoirement ISO AUTO pour isoler les variables.",
+        "À 50 mm, commencez par f/2,8, 1/250 s et ISO 400. Ajustez d’abord l’éclairage ou l’ISO si cette base ne convient pas à votre scène.",
+        "Passez à f/4 et 1/125 s en gardant le même ISO : ces deux variations se compensent approximativement.",
+        "Comparez ensuite f/5,6 et 1/60 s, toujours avec le même ISO.",
+        "Lisez l’échelle d’exposition dans le viseur et vérifiez le fichier. Notez les changements de profondeur de champ et de mouvement."
+      ],
+      "check": "Ces couples sont des exemples de compensation, pas une exposition garantie dans toutes les lumières. Ne laissez pas ISO AUTO masquer l’expérience.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N02-L01": {
+      "purpose": "Lire P, A, S et M sur la molette propre au Sony.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 400,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Gardez le sélecteur inférieur sur Photo. Utilisez la molette de mode pour passer de P à A, puis à S et M.",
+        "En A, choisissez f/4 et observez la vitesse calculée. En S, imposez 1/250 s et observez l’ouverture.",
+        "En M avec ISO fixe, vérifiez l’échelle de mesure : le boîtier mesure mais ne corrige pas automatiquement ouverture et vitesse.",
+        "Activez ensuite ISO AUTO en M et observez que l’ISO peut varier, alors que vos deux paramètres restent imposés.",
+        "Revenez à A pour un sujet fixe et à S pour le mouvement, selon votre intention."
+      ],
+      "check": "Les indications A/Av et S/Tv des cours génériques sont ici remplacées par les lettres A et S réellement inscrites sur votre α7 IV.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N02-L02": {
+      "purpose": "Corriger la mesure sans déplacer l’intention du cadrage.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Choisissez Photo, A, f/4 et un ISO fixe. Cadrez successivement une surface claire puis une surface sombre.",
+        "Trouvez la fonction de correction d’exposition et réalisez −1, 0 et +1 IL.",
+        "Si votre molette arrière droite est toujours affectée à cette fonction, utilisez-la et vérifiez sa position de verrouillage.",
+        "Observez la vitesse choisie par le boîtier en A et contrôlez l’histogramme.",
+        "En M à ISO fixe, changez directement l’ouverture, la durée ou l’ISO : la correction ne remplace pas ces réglages."
+      ],
+      "check": "Les molettes sont personnalisables. Ne supposez pas qu’une molette correspond à l’ISO ou à la correction sans lire la valeur qui change à l’écran.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N02-L03": {
+      "purpose": "Lire l’histogramme du Sony plutôt que la luminosité de son écran.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 5.6,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "En Photo, utilisez DISP pour parcourir les affichages disponibles et afficher l’histogramme si votre configuration l’inclut.",
+        "Photographiez une scène sombre puis une scène claire sans chercher une forme d’histogramme universelle.",
+        "Effectuez une vue avec une correction positive puis négative et repérez les zones importantes proches de la saturation.",
+        "En lecture, utilisez les vues d’informations et l’agrandissement pour confronter la mesure au contenu.",
+        "Vérifiez ensuite le .ARW dans votre logiciel : l’aperçu et l’histogramme du boîtier dépendent d’un rendu JPEG."
+      ],
+      "check": "Le rendu Creative Look et la balance des blancs influencent l’aperçu. L’histogramme affiché n’est pas un inventaire brut de toute la latitude du RAW.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N02-L04": {
+      "purpose": "Séparer mode AF, zone AF et détection de l’œil.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 1.8,
+        "shutter": "1/500",
+        "iso": 400,
+        "mode": "S",
+        "af": "AF-C"
+      },
+      "steps": [
+        "Placez le commutateur du FE 85 sur AF, puis sélectionnez AF-C dans la fonction de mode de mise au point.",
+        "Pour un portrait, réglez la priorité visage/œil sur un sujet humain. Ne la laissez pas sur animal ou oiseau.",
+        "Choisissez une zone de suivi adaptée à la scène et désignez la personne à suivre avec le multi-sélecteur ou le tactile selon votre configuration.",
+        "Gardez le déclencheur à mi-course, ou AF-ON si vous avez séparé la mise au point du déclencheur, pendant le déplacement.",
+        "Vérifiez l’œil sur les images enregistrées. Recommencez avec une zone plus ciblée si l’appareil accroche le décor."
+      ],
+      "check": "L’α7 IV n’utilise pas le même ensemble de reconnaissances de sujets que les boîtiers Sony plus récents à processeur de reconnaissance dédié. Ne transposez pas leurs menus au vôtre.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/500",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/500",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/500",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        }
+      ]
+    },
+    "N02-L05": {
+      "purpose": "Régler le rendu de couleur et conserver une référence neutre.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 2.8,
+        "shutter": "1/125",
+        "iso": 400,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "En Photo, choisissez RAW + JPEG pour conserver la latitude de développement et un rendu de référence.",
+        "Accédez à la balance des blancs depuis Fn si elle y figure, ou depuis la fonction de balance des blancs du menu.",
+        "Comparez AWB, Lumière du jour et un réglage de température de couleur sous une source unique.",
+        "Incluez une référence réellement neutre et réalisez une série sans changer l’éclairage.",
+        "Gardez la même balance sur une série contrôlée ; utilisez le RAW pour comparer ensuite plusieurs interprétations."
+      ],
+      "check": "Un réglage Kelvin plus élevé réchauffe généralement le rendu sous une lumière inchangée ; ce n’est pas une mesure directe de la température physique de la lampe.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N02-L06": {
+      "purpose": "Organiser RAW .ARW, JPEG et les deux logements du boîtier.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "En Photo, ouvrez les réglages de qualité d’image et choisissez RAW + JPEG pour cet exercice.",
+        "Vérifiez le type de RAW choisi et la qualité JPEG. Utilisez le plein format 3:2 et la taille L pour le JPEG si vous visez 33 Mpx.",
+        "Identifiez les cartes : logement 1 compatible CFexpress Type A ou SD ; logement 2 compatible SD. Les cartes CFexpress Type B ne conviennent pas.",
+        "Si deux cartes sont présentes, distinguez enregistrement simultané, tri des formats et basculement de support : ces comportements ne sont pas équivalents.",
+        "Importez les .ARW et les JPEG sans supprimer la carte avant vérification de vos copies."
+      ],
+      "check": "Les paramètres JPEG ne développent pas définitivement le RAW. Le format de RAW et les cartes peuvent limiter les cadences de rafale.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N03-L01": {
+      "purpose": "Comparer les focales de votre kit, sans inventer un zoom 24–135 mm.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 28,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Veillez à rester en plein format ; ne comparez pas une vue APS-C avec une vue plein format sans le noter.",
+        "Depuis un emplacement fixe, photographiez à 28, 50 et 75 mm sur le Tamron.",
+        "Montez ensuite le FE 35 puis le FE 85 pour comparer leurs champs à position fixe.",
+        "Pour comparer la perspective, refaites l’essai en vous déplaçant afin de garder le sujet à taille similaire.",
+        "Ne cherchez pas à zoomer avec les FE 35 et FE 85 : leur focale est fixe."
+      ],
+      "check": "Le 35 mm reste un 35 mm, même si un recadrage APS-C réduit son champ. Pour cette leçon, les valeurs sont données sur le plein format de l’α7 IV.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N03-L02": {
+      "purpose": "Choisir entre votre zoom constant et vos deux focales fixes.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 35,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Commencez avec le Tamron à 35 mm, f/2,8 et un point de vue fixe.",
+        "Montez le FE 35 et réalisez une vue à f/2,8, puis une autre à f/1,8 si la lumière et le sujet le permettent.",
+        "Comparez la mobilité du Tamron entre 28 et 75 mm avec l’obligation de vous placer pour cadrer avec le 35.",
+        "Utilisez le FE 85 pour un portrait plus serré : c’est un changement d’objectif, pas une position supplémentaire de la bague de zoom du Tamron.",
+        "Notez ce que vous gagnez en souplesse, ouverture, distance de travail et simplicité."
+      ],
+      "check": "Le Tamron ouvre à f/2,8 sur toute sa plage 28–75 mm. Les deux Sony ouvrent à f/1,8 mais ne changent pas de focale.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N03-L03": {
+      "purpose": "Contrôler une faible zone nette à 85 mm.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 1.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 85, sélectionnez A et f/1,8. Choisissez un sujet immobile autour de 2 m et un fond éloigné.",
+        "Faites le point sur le détail important. Contrôlez soigneusement les deux yeux si le visage est tourné.",
+        "Gardez la même distance et comparez f/1,8, f/2,8 et f/5,6.",
+        "Recommencez en vous éloignant du sujet, puis en éloignant le décor sans changer la mise au point sur le sujet.",
+        "Utilisez le calculateur avec 85 mm pour cet objectif ; 35 mm pour le FE 35 et une valeur entre 28 et 75 mm pour le Tamron."
+      ],
+      "check": "La profondeur de champ calculée dépend d’un critère de netteté. La détection de l’œil ne rend pas automatiquement tous les plans du visage nets.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 16,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N03-L04": {
+      "purpose": "Observer le point de vue avec le 35 et le 85.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Choisissez un sujet et un décor comportant des repères de profondeur.",
+        "Photographiez au FE 35 depuis une position proche, en évitant de vous approcher au point de déformer involontairement un visage.",
+        "Montez le FE 85 puis reculez pour retrouver une taille de sujet comparable.",
+        "Comparez le rapport entre le sujet et le fond : le déplacement a changé la perspective.",
+        "En architecture, utilisez le niveau d’affichage et gardez le boîtier horizontal avant de tester une inclinaison vers le haut."
+      ],
+      "check": "Vos objectifs ne sont pas des objectifs à décentrement. Une correction logicielle peut recadrer et étirer l’image ; elle ne remplace pas un point de vue adapté.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N03-L05": {
+      "purpose": "Comparer vos objectifs sans confondre défaut optique et erreur de point.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "MF"
+      },
+      "steps": [
+        "Installez le boîtier de manière stable et sélectionnez une cible détaillée, parallèle au plan du capteur.",
+        "À 50 mm sur le Tamron, faites une mise au point contrôlée puis comparez f/2,8, f/5,6, f/8 et f/16.",
+        "Gardez une exposition comparable en adaptant la durée. Utilisez le retardateur si vous disposez d’un support stable.",
+        "Comparez centre et coins des .ARW avec un traitement identique. Notez les corrections de profil appliquées par votre logiciel.",
+        "Refaites le test au FE 35 ou au FE 85, à la même ouverture quand la comparaison l’exige."
+      ],
+      "check": "La stabilisation du boîtier ne transforme pas une mise au point incorrecte en image nette. Vos trois objectifs ne permettent pas f/32 ; restez dans leurs limites.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "MF"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "MF"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 16,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "MF"
+        }
+      ]
+    },
+    "N03-L06": {
+      "purpose": "Préparer un kit réaliste avec les trois objectifs que vous possédez.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 400,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Pour une sortie légère et polyvalente, partez avec l’α7 IV et le Tamron 28–75 G2.",
+        "Ajoutez le FE 35 pour la faible lumière et un cadre de rue ou d’intérieur plus large que le 85.",
+        "Ajoutez le FE 85 si le portrait et la séparation sujet/fond sont prioritaires et si vous avez assez de recul.",
+        "Vérifiez batterie NP-FZ100, cartes compatibles, bouchons, pare-soleil et fixations avant le départ.",
+        "Dans un endroit propre, coupez l’appareil pour changer d’objectif et évitez de laisser la monture ouverte vers le ciel."
+      ],
+      "check": "Aucun de vos trois objectifs n’est doté d’OSS/VC. Le boîtier possède la stabilisation SteadyShot ; elle ne remplace ni une bonne tenue ni une vitesse adaptée au sujet.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N04-L01": {
+      "purpose": "Construire le cadre avec une vraie focale fixe de votre kit.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 200,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 35 et sélectionnez A avec f/4 pour ne pas réduire l’exercice au seul flou.",
+        "Activez une grille d’affichage si elle vous aide et gardez le boîtier horizontal avec le niveau si nécessaire.",
+        "Faites un cadrage centré puis décentré en déplaçant la zone de mise au point, pas seulement le sujet dans l’image.",
+        "Verifiez les quatre bords du cadre dans le viseur avant de déclencher.",
+        "En lecture, comparez l’intention et les distractions avant de juger le seul niveau de détail."
+      ],
+      "check": "Avec le FE 35, le cadrage change par votre déplacement ou un recadrage ultérieur, pas par une bague de zoom.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 200,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 200,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 200,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N04-L02": {
+      "purpose": "Utiliser le grand-angle disponible dans votre kit : 28 mm.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 28,
+        "aperture": 5.6,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Placez la bague du Tamron sur 28 mm. Gardez le mode plein format pour retrouver le champ attendu.",
+        "Affichez la grille et le niveau de l’α7 IV pour contrôler l’horizon et les alignements.",
+        "Construisez une vue avec une diagonale, une avec symétrie et une avec équilibre asymétrique.",
+        "Déplacez-vous avant de zoomer : un pas latéral peut mieux organiser les lignes que la seule focale.",
+        "Contrôlez les bords et les superpositions dans les fichiers enregistrés."
+      ],
+      "check": "Votre zoom commence à 28 mm ; une démonstration à 24 mm n’est pas réalisable avec ce kit sans autre objectif.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N04-L03": {
+      "purpose": "Comparer la couleur sans laisser le rendu changer à chaque photo.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 35 et capturez en RAW + JPEG.",
+        "Fixez la balance des blancs pour la série et choisissez un rendu Creative Look sobre, par exemple ST, pour la comparaison JPEG.",
+        "Réalisez une composition en couleurs proches, puis une composition de couleurs opposées.",
+        "Comparez les JPEG, puis les RAW développés avec un traitement identique.",
+        "Examinez une conversion noir et blanc pour distinguer contraste de teinte et contraste de luminance."
+      ],
+      "check": "Un Creative Look modifie le rendu du JPEG et l’aperçu du RAW ; il ne grave pas ce même rendu dans les mesures brutes du .ARW.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N04-L04": {
+      "purpose": "Choisir le 85 pour isoler, sans oublier le sens du fond.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 1.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 85 et commencez à f/1,8 en A pour un sujet calme.",
+        "Éloignez le sujet du décor et faites le point sur son détail important.",
+        "Déplacez-vous pour supprimer une branche, une tache claire ou une ligne derrière le sujet.",
+        "Fermez ensuite à f/5,6 pour conserver plus de contexte et comparez.",
+        "Refaites une version au FE 35 avec davantage d’espace autour du sujet."
+      ],
+      "check": "Un arrière-plan flou peut rester distrayant. L’α7 IV ne choisit pas votre intention ni le sens de l’espace négatif.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N04-L05": {
+      "purpose": "Préparer une scène de rue avant l’arrivée du geste.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 4,
+        "shutter": "1/500",
+        "iso": 400,
+        "mode": "S",
+        "af": "AF-C"
+      },
+      "steps": [
+        "Choisissez le FE 35, le mode S et une base de 1/500 s pour un piéton en mouvement.",
+        "Utilisez ISO AUTO si la lumière varie et surveillez les valeurs choisies. Une limite ISO se choisit selon vos exigences, pas comme une règle universelle.",
+        "Réglez AF-C et une zone qui ne choisit pas systématiquement l’arrière-plan.",
+        "Cadrez un fond et attendez le passage ; vérifiez les superpositions et le geste avant de déclencher.",
+        "Sous éclairage LED, testez l’obturateur mécanique et contrôlez les bandes sur les images plutôt que de supposer que le mode silencieux les supprime."
+      ],
+      "check": "Un obturateur électronique silencieux peut produire du rolling shutter et des bandes. Respectez les personnes et les règles de prise de vue et de diffusion.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/500",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/500",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/500",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        }
+      ]
+    },
+    "N04-L06": {
+      "purpose": "Raconter une série en gardant une cohérence de fichiers Sony.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 35,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 400,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Utilisez le Tamron pour varier entre plan de contexte à 28 mm et détail à 75 mm.",
+        "Veillez à garder une balance des blancs cohérente dans une même lumière et capturez en RAW.",
+        "Photographiez un contexte, une personne, une action, un détail puis une conclusion.",
+        "En lecture, utilisez le repérage ou la notation disponible dans votre configuration, puis terminez l’édition sur ordinateur.",
+        "Conservez les .ARW et construisez l’ordre de la série à partir de l’intention, pas seulement des numéros de fichiers."
+      ],
+      "check": "Le numéro d’image ou la rafale ne crée pas un récit. Le choix du cadre et l’édition restent vos décisions.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N05-L01": {
+      "purpose": "Garder une exposition fixe pour comparer la direction de lumière.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 2.8,
+        "shutter": "1/125",
+        "iso": 400,
+        "mode": "M",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 35 et choisissez M avec ISO fixe pour que l’automatisme ne masque pas les changements d’éclairage.",
+        "À f/2,8 et 1/125 s, ajustez d’abord l’ISO à la scène puis gardez ces paramètres pour la série.",
+        "Éclairez un objet de face, à 45° puis de côté avec une même source.",
+        "Changez ensuite sa taille apparente par sa distance ou un diffuseur, en notant la compensation d’exposition éventuellement nécessaire.",
+        "Comparez les ombres dans les fichiers, à balance des blancs identique."
+      ],
+      "check": "L’absence d’OSS dans le FE 35 n’empêche pas le SteadyShot du boîtier. La douceur de lumière ne dépend pas de cette stabilisation.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N05-L02": {
+      "purpose": "Comparer un même lieu en conservant le même cadrage.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 35,
+        "aperture": 5.6,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Choisissez 35 mm sur le Tamron et notez la position de prise de vue.",
+        "Verifiez date et heure du boîtier pour retrouver les horaires dans les EXIF.",
+        "En A à f/5,6, photographiez le lieu le matin, à mi-journée et en fin de journée.",
+        "Notez la balance des blancs, la vitesse et l’ISO réellement choisis à chaque fois.",
+        "Comparez une série en AWB et une série développée à balance identique pour séparer changement de lumière et interprétation."
+      ],
+      "check": "Une recette « coucher de soleil » ne remplace pas la mesure et la vérification de vos hautes lumières.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 35,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 35,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 35,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N05-L03": {
+      "purpose": "Exposer un portrait en contre-jour avec votre 85 mm.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Placez le sujet devant un fond lumineux et faites le point sur l’œil avec une détection humaine correctement réglée.",
+        "En A à f/2,8, contrôlez la mesure puis utilisez la correction d’exposition en surveillant les hautes lumières importantes.",
+        "Réalisez une version préservant le fond puis une version donnant plus de place au visage.",
+        "Si vous avez un réflecteur, renvoyez de la lumière vers le visage et refaites la mesure.",
+        "Comparez les .ARW sans supposer que toutes les zones surexposées seront récupérables."
+      ],
+      "check": "L’α7 IV n’enregistre pas une dynamique infinie. Pour un bracketing, utilisez une série d’expositions contrôlées et un assemblage adapté, pas une fonction HDR supposée présente.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N05-L04": {
+      "purpose": "Distinguer la lumière ambiante de l’éclair sur votre boîtier.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 5.6,
+        "shutter": "1/160",
+        "iso": 100,
+        "mode": "M",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Cette mission demande un flash ou un déclencheur compatible Sony sur la griffe Multi Interface : l’α7 IV n’a pas de flash intégré.",
+        "Choisissez Photo, M, obturateur mécanique et prise de vue silencieuse désactivée. Commencez à 1/160 s, f/5,6 et ISO 100.",
+        "Vérifiez la communication et le mode du flash externe ; ne transposez pas les commandes d’un modèle Canon ou Nikon.",
+        "Gardez ouverture et ISO fixes, puis changez la puissance du flash pour observer la partie éclairée par l’éclair.",
+        "Comparez ensuite deux durées compatibles avec la synchronisation et observez surtout la lumière ambiante. N’employez le HSS qu’avec un système compatible."
+      ],
+      "check": "1/160 s est un point de départ prudent, pas la vitesse de synchro maximale annoncée du boîtier. Le HSS et la synchronisation dépendent aussi du flash et du mode d’obturation.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/160",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/160",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/160",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N05-L05": {
+      "purpose": "Lire les ombres sur un portrait réalisé au FE 85.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 2.8,
+        "shutter": "1/160",
+        "iso": 100,
+        "mode": "M",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 85, installez le sujet avec son accord et faites le point sur l’œil.",
+        "En lumière continue, choisissez une durée adaptée au sujet ; avec un flash compatible, reprenez d’abord la base mécanique 1/160 s.",
+        "Gardez f/2,8 et ISO fixe, puis déplacez une source de face vers 45° et sur le côté.",
+        "Utilisez un réflecteur si disponible pour comparer un remplissage des ombres.",
+        "Verifiez les yeux et les ombres en lecture agrandie, puis comparez à rendu de couleur identique."
+      ],
+      "check": "À f/1,8, un visage tourné peut avoir un seul œil dans la zone jugée nette. Fermer à f/2,8 ou f/4 peut être plus approprié que rester systématiquement à pleine ouverture.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/160",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/160",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/160",
+          "iso": 100,
+          "mode": "M",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N05-L06": {
+      "purpose": "Éviter de confondre balance des blancs et mélange de sources.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 2.8,
+        "shutter": "1/125",
+        "iso": 800,
+        "mode": "M",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Montez le FE 35 et enregistrez en RAW + JPEG.",
+        "Placez un objet neutre entre une fenêtre et une lampe chaude.",
+        "En M, gardez vos paramètres fixes et comparez une balance de blancs adaptée au jour puis à la lampe.",
+        "Éteignez une source ou harmonisez-la si vous disposez du matériel nécessaire, puis refaites une vue.",
+        "Comparez les deux côtés de l’objet dans les .ARW : un seul réglage global ne neutralise pas forcément les deux sources."
+      ],
+      "check": "La balance des blancs et le Creative Look ne changent pas la lumière physique qui éclaire le sujet.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 800,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 800,
+          "mode": "M",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 2.8,
+          "shutter": "1/125",
+          "iso": 800,
+          "mode": "M",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N06-L01": {
+      "purpose": "Un portrait naturel avec votre FE 85 et l’AF de l’α7 IV.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 1.8,
+        "shutter": "1/250",
+        "iso": 400,
+        "mode": "M",
+        "af": "AF-C"
+      },
+      "steps": [
+        "Placez le commutateur du FE 85 sur AF et sélectionnez AF-C pour une personne qui bouge légèrement.",
+        "Choisissez la détection humaine et vérifiez que le cadre de l’œil correspond bien à la personne voulue.",
+        "Choisissez M et commencez à 1/250 s, f/1,8 et ISO 400. Ajustez à la lumière ; si le sujet bouge davantage, raccourcissez la pose et compensez si nécessaire.",
+        "À f/1,8, contrôlez l’œil net et la distance. Comparez avec f/2,8 ou f/4 si plusieurs plans du visage doivent rester lisibles.",
+        "Donnez une action simple, déclenchez une courte série puis vérifiez réellement les fichiers."
+      ],
+      "check": "Le FE 85 nécessite du recul. Pour un portrait environnemental dans un espace étroit, passez au FE 35 en gardant une distance respectueuse du visage.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 1.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        }
+      ]
+    },
+    "N06-L02": {
+      "purpose": "Suivre une famille sans compter sur le seul flou d’arrière-plan.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 4,
+        "shutter": "1/500",
+        "iso": 800,
+        "mode": "S",
+        "af": "AF-C"
+      },
+      "steps": [
+        "Montez le Tamron pour pouvoir adapter le cadre de 28 à 75 mm.",
+        "Choisissez S, une base de 1/500 s et AF-C. Activez une détection humaine cohérente avec la scène.",
+        "Utilisez ISO AUTO si besoin pour conserver une durée courte, en contrôlant l’ouverture et les valeurs ISO.",
+        "Pour un groupe, rapprochez les visages d’un même plan et visez f/4 à f/5,6 si la lumière le permet.",
+        "Une rafale courte peut aider, mais vérifiez que chaque visage important est net avant de déclarer la série réussie."
+      ],
+      "check": "SteadyShot ne fige pas un enfant en mouvement. Si S impose une ouverture trop grande pour la profondeur voulue, passez en M avec vitesse, ouverture et ISO AUTO contrôlés.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/500",
+          "iso": 800,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/500",
+          "iso": 800,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/500",
+          "iso": 800,
+          "mode": "S",
+          "af": "AF-C"
+        }
+      ]
+    },
+    "N06-L03": {
+      "purpose": "Construire un paysage au 28 mm disponible dans votre sac.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 28,
+        "aperture": 8,
+        "shutter": "1/125",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Mettez le Tamron sur 28 mm et vérifiez le plein format.",
+        "En A, commencez à f/8 et ISO 100 lorsque la scène et la stabilité le permettent.",
+        "Affichez le niveau, construisez les plans et faites le point sur une distance choisie plutôt qu’automatiquement sur l’infini.",
+        "Sur un support stable, un retardateur limite le contact au déclenchement ; à main levée, surveillez la durée réelle choisie.",
+        "Comparez f/8 et f/16 au même grossissement pour arbitrer profondeur et détail fin."
+      ],
+      "check": "Votre kit ne couvre pas 24 mm. Un panorama peut élargir le champ, mais demande une prise de vue et un assemblage cohérents.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 8,
+          "shutter": "1/125",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 8,
+          "shutter": "1/125",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 8,
+          "shutter": "1/125",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N06-L04": {
+      "purpose": "Anticiper l’action dans les limites du 75 mm.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 75,
+        "aperture": 2.8,
+        "shutter": "1/1000",
+        "iso": 1600,
+        "mode": "S",
+        "af": "AF-C"
+      },
+      "steps": [
+        "Placez le Tamron vers 75 mm, sélectionnez S et commencez à 1/1000 s.",
+        "Choisissez AF-C et une zone de suivi adaptée au sujet. Vérifiez une priorité humaine lorsque vous photographiez un sportif.",
+        "Utilisez une rafale courte et un ISO adapté, sans supposer qu’une cadence annoncée est disponible avec tous les types de RAW et toutes les cartes.",
+        "Gardez une position sûre et anticipez l’entrée du sujet dans le cadre.",
+        "Pour un filé, essayez 1/60 s ou 1/30 s et accompagnez le mouvement. Comparez le sujet et le fond."
+      ],
+      "check": "Le 75 mm peut être trop court pour certains sports éloignés. Le FE 85 apporte peu d’allonge supplémentaire : le placement reste déterminant.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 75,
+          "aperture": 2.8,
+          "shutter": "1/1000",
+          "iso": 1600,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 75,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 1600,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 75,
+          "aperture": 2.8,
+          "shutter": "1/30",
+          "iso": 1600,
+          "mode": "S",
+          "af": "AF-C"
+        }
+      ]
+    },
+    "N06-L05": {
+      "purpose": "Garder une géométrie maîtrisée avec l’α7 IV.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 28,
+        "aperture": 5.6,
+        "shutter": "1/125",
+        "iso": 400,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Placez le Tamron sur 28 mm et activez le niveau d’affichage si disponible dans votre cycle DISP.",
+        "Gardez le boîtier horizontal pour une première vue de façade.",
+        "En A à f/5,6 ou f/8, contrôlez les détails importants et l’exposition des fenêtres.",
+        "Comparez une seconde vue en inclinant le boîtier vers le haut, puis observez les verticales.",
+        "Gardez une marge de cadrage si vous prévoyez une correction géométrique du .ARW sur ordinateur."
+      ],
+      "check": "Ni le Tamron ni vos deux Sony ne sont à décentrement. La correction logicielle implique souvent du recadrage et de l’étirement.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 5.6,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 5.6,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 28,
+          "aperture": 5.6,
+          "shutter": "1/125",
+          "iso": 400,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N06-L06": {
+      "purpose": "Une base de ciel nocturne réaliste au FE 35.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 1.8,
+        "shutter": "5",
+        "iso": 1600,
+        "mode": "M",
+        "af": "MF"
+      },
+      "steps": [
+        "Cette mission demande un support stable pour plusieurs secondes de pose. Montez le FE 35 et sélectionnez M.",
+        "Commencez à f/1,8, 5 s et ISO 1600, puis adaptez à la pollution lumineuse et au rendu recherché.",
+        "Passez l’objectif et le boîtier en mise au point manuelle. Agrandissez une étoile ou un détail très lointain pour affiner le point.",
+        "La bague n’est pas un repère mécanique garantissant l’infini : vérifiez les étoiles enregistrées à 100 %. Essayez 2, 5 et 10 s.",
+        "Si la réduction du bruit en pose longue est active, le boîtier peut rester occupé pendant une seconde collecte de durée comparable."
+      ],
+      "check": "Le FE 35 n’est pas un ultra-grand-angle. La rotation terrestre peut rendre les étoiles filées ; une règle de durée simplifiée n’est qu’un point de départ à vérifier à 33 Mpx.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 1.8,
+          "shutter": "2",
+          "iso": 1600,
+          "mode": "M",
+          "af": "MF"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 1.8,
+          "shutter": "5",
+          "iso": 1600,
+          "mode": "M",
+          "af": "MF"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 1.8,
+          "shutter": "10",
+          "iso": 1600,
+          "mode": "M",
+          "af": "MF"
+        }
+      ]
+    },
+    "N07-L01": {
+      "purpose": "Développer un fichier .ARW de votre propre α7 IV.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 5.6,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Capturez une série en RAW + JPEG avec une exposition vérifiée dans le boîtier.",
+        "Copiez les .ARW sur ordinateur et conservez une copie de sauvegarde distincte avant toute suppression sur carte.",
+        "Ouvrez le RAW dans un logiciel compatible avec l’ILCE-7M4, puis choisissez un profil d’interprétation cohérent.",
+        "Ajustez balance des blancs, exposition et tonalité avant les corrections locales.",
+        "Comparez au JPEG de référence de l’appareil et exportez une copie ; gardez le .ARW original."
+      ],
+      "check": "Développer un RAW et appliquer des masques se fait ici sur ordinateur. Ce cours ne présente pas ces outils comme des menus natifs de l’α7 IV.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N07-L02": {
+      "purpose": "Distinguer le rendu Sony de votre développement final.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Photographiez en .ARW + JPEG avec un Creative Look de référence, par exemple ST.",
+        "Conservez une balance de blancs documentée pour comprendre l’origine des dominantes.",
+        "Dans le logiciel, comparez un contraste doux et un contraste plus marqué sur le même RAW.",
+        "Verifiez les extrémités de l’histogramme et les teintes de peau ou objets connus.",
+        "Exportez deux versions nommées distinctement pour comparer à taille de sortie identique."
+      ],
+      "check": "Le menu Creative Look et une courbe dans votre logiciel ne sont pas le même outil. Les réglages du logiciel ne se retrouvent pas automatiquement dans les menus Sony.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N07-L03": {
+      "purpose": "Utiliser la latitude d’un .ARW sans créer de halos.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Réalisez un portrait au FE 85 en protégeant les zones importantes à la prise de vue.",
+        "Ouvrez le .ARW dans un éditeur compatible et créez un masque sur le visage ou le sujet.",
+        "Appliquez une correction locale modérée, puis vérifiez le contour à 100 %.",
+        "Comparez la correction au JPEG boîtier et à une version RAW sans masque.",
+        "Conservez le fichier source et les paramètres du logiciel pour revenir en arrière."
+      ],
+      "check": "La reconnaissance du sujet pour la mise au point sur l’α7 IV ne signifie pas que ses menus proposent les mêmes masques de retouche que votre logiciel.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N07-L04": {
+      "purpose": "Préserver la personne et la texture dans un portrait Sony.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Convenez de l’usage des photos et des limites de retouche avec la personne.",
+        "Au FE 85, réalisez des portraits à f/2,8 ou f/4 si cela aide à garder les plans utiles nets.",
+        "Développez le .ARW avec une interprétation de couleur cohérente avant toute correction de peau.",
+        "Corrigez seulement les éléments convenus et comparez systématiquement à l’original.",
+        "Exportez une copie distincte et gardez une trace du traitement et des usages autorisés."
+      ],
+      "check": "L’aspect du JPEG dans le boîtier ne justifie pas de modifier les traits d’une personne sans accord.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N07-L05": {
+      "purpose": "Exploiter les cartes du Sony sans confondre copie et sauvegarde.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Identifiez le logement 1 (SD ou CFexpress Type A) et le logement 2 (SD).",
+        "Si votre travail est important et que deux cartes compatibles sont présentes, configurez un enregistrement simultané puis vérifiez qu’un fichier apparaît bien sur chaque support.",
+        "Après la séance, copiez les fichiers dans un dossier identifié et contrôlez qu’ils s’ouvrent.",
+        "Créez une copie indépendante sur un autre support et testez la restauration d’une image.",
+        "Ne formatez les cartes dans le boîtier qu’après vérification de vos copies et selon votre organisation."
+      ],
+      "check": "Un simple basculement automatique quand la première carte est pleine n’est pas un enregistrement simultané. Deux cartes ne remplacent pas toutes les sauvegardes hors boîtier.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N07-L06": {
+      "purpose": "Préparer une sortie à partir des 33 Mpx du boîtier.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 5.6,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Verifiez que la capture prévue est en plein format et que la taille JPEG souhaitée est sélectionnée.",
+        "Pour un partage simple, utilisez un export JPEG en sRGB avec des dimensions adaptées à l’affichage.",
+        "Pour une impression, partez du .ARW ou d’un rendu de haute qualité et demandez les spécifications du prestataire.",
+        "À 7008 pixels sur le grand côté, une sortie à 300 ppp correspond théoriquement à environ 59,3 cm avant recadrage ; cela ne garantit pas la qualité de l’image.",
+        "Ouvrez le fichier exporté et vérifiez profil, dimensions et compression avant livraison."
+      ],
+      "check": "Modifier uniquement les ppp n’ajoute pas de détail. Un recadrage APS-C, une taille réduite ou un recadrage logiciel diminuent les pixels disponibles.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N08-L01": {
+      "purpose": "Préparer votre α7 IV pour une séance organisée.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 400,
+        "mode": "M",
+        "af": "AF-C"
+      },
+      "steps": [
+        "Définissez le brief et choisissez le Tamron, le FE 35 ou le FE 85 en fonction des vues et du recul disponibles.",
+        "Verifiez Photo/Film/S&Q, mode de prise de vue, format .ARW/JPEG, horloge, autonomie et cartes.",
+        "Verifiez les molettes et boutons personnalisés avec une photo d’essai plutôt que de supposer les affectations d’usine.",
+        "Si deux cartes et des sauvegardes de réglages sont utilisées, contrôlez leur comportement avant la prestation.",
+        "Conservez une liste de vues, une solution de repli et une procédure de sauvegarde après la séance."
+      ],
+      "check": "Ne changez pas de firmware ou toute votre personnalisation juste avant une séance importante uniquement pour suivre une recette.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        }
+      ]
+    },
+    "N08-L02": {
+      "purpose": "Rendre le boîtier discret pour mieux diriger.",
+      "setup": {
+        "lens": "fe85",
+        "focal": 85,
+        "aperture": 2.8,
+        "shutter": "1/250",
+        "iso": 400,
+        "mode": "S",
+        "af": "AF-C"
+      },
+      "steps": [
+        "Préparez AF-C, une détection humaine adaptée et une vitesse suffisante avant l’arrivée du modèle.",
+        "Choisissez le FE 85 si vous avez du recul ; passez au FE 35 pour une interaction dans l’environnement.",
+        "Proposez une action simple et gardez votre attention sur la personne, pas uniquement sur l’œil détecté par le boîtier.",
+        "Montrez ponctuellement une image en lecture pour vérifier le confort et l’intention commune.",
+        "Adaptez cadrage, distance et profondeur de champ selon le retour du modèle."
+      ],
+      "check": "Un cadre de détection correct ne remplace ni le consentement ni une direction compréhensible.",
+      "presets": [
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        },
+        {
+          "lens": "fe85",
+          "focal": 85,
+          "aperture": 2.8,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "S",
+          "af": "AF-C"
+        }
+      ]
+    },
+    "N08-L03": {
+      "purpose": "Construire une cohérence avec le même boîtier et votre kit.",
+      "setup": {
+        "lens": "fe35",
+        "focal": 35,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 200,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Choisissez un thème et une combinaison de lumière, focale et traitement cohérente.",
+        "Réalisez une série au FE 35 pour stabiliser votre rapport au cadre, puis sélectionnez ce que le 85 ou le Tamron apportent réellement.",
+        "Verifiez que les variations de Creative Look, balance des blancs ou format n’introduisent pas des écarts non voulus.",
+        "Développez les .ARW et éditez le portfolio pour son destinataire.",
+        "Comparez les exports à taille identique avant d’attribuer une différence à l’objectif ou au capteur."
+      ],
+      "check": "Posséder un α7 IV ne crée pas automatiquement une signature. Vos choix répétés et votre sélection rendent votre regard identifiable.",
+      "presets": [
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 200,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 200,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "fe35",
+          "focal": 35,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 200,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N08-L04": {
+      "purpose": "Analyser les décisions à partir des vrais réglages enregistrés.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 5.6,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Choisissez trois .ARW ou JPEG de votre α7 IV et relevez focale, ouverture, durée et ISO dans leurs métadonnées.",
+        "Verifiez aussi le sujet, la distance approximative, le mode AF choisi et les contraintes de lumière.",
+        "Décrivez un défaut observable avant d’accuser le matériel : erreur de point, mouvement, contraste ou cadrage.",
+        "Proposez un essai ne modifiant qu’un facteur important.",
+        "Refaites la prise de vue avec le même objectif et comparez au même grossissement."
+      ],
+      "check": "Les EXIF ne décrivent pas toujours complètement la méthode AF, la distance ou l’intention. Notez ces éléments dans votre carnet.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 5.6,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N08-L05": {
+      "purpose": "Relier vos fichiers Sony aux usages convenus.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 100,
+        "mode": "A",
+        "af": "AF-S"
+      },
+      "steps": [
+        "Avant la séance, précisez prestation, personnes, autorisations, livrables et usages selon le droit applicable.",
+        "Contrôlez date et heure du boîtier pour un classement et une chronologie cohérents.",
+        "Vous pouvez renseigner les informations de photographe et de copyright disponibles dans les réglages de fichier, puis vérifier leur présence dans une photo test.",
+        "Verifiez les métadonnées des exports : un logiciel ou une plateforme peut les retirer.",
+        "Conservez les accords écrits avec les fichiers et livrez seulement les usages et formats convenus."
+      ],
+      "check": "Une ligne de copyright dans les EXIF ne remplace pas un contrat, une autorisation de diffusion ou une vérification juridique locale.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 100,
+          "mode": "A",
+          "af": "AF-S"
+        }
+      ]
+    },
+    "N08-L06": {
+      "purpose": "Présenter une démarche complète réalisée avec votre α7 IV.",
+      "setup": {
+        "lens": "tamron",
+        "focal": 50,
+        "aperture": 4,
+        "shutter": "1/250",
+        "iso": 400,
+        "mode": "M",
+        "af": "AF-C"
+      },
+      "steps": [
+        "Préparez une série de 6 à 10 images et choisissez consciemment entre Tamron 28–75, FE 35 et FE 85.",
+        "Conservez les .ARW, un export de travail et une fiche de réglages et de conditions pour chaque image importante.",
+        "Verifiez la cohérence de mise au point, mouvement, profondeur de champ et couleur.",
+        "Présentez la sélection, le traitement et la stratégie de sauvegarde, pas seulement une galerie finale.",
+        "Expliquez une limite du matériel ou du protocole et une prochaine amélioration concrète."
+      ],
+      "check": "Les images d’ambiance du site sont des illustrations générées, pas des photographies mesurées provenant de votre α7 IV. Vos propres images sont les preuves de la mission.",
+      "presets": [
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        },
+        {
+          "lens": "tamron",
+          "focal": 50,
+          "aperture": 4,
+          "shutter": "1/250",
+          "iso": 400,
+          "mode": "M",
+          "af": "AF-C"
+        }
+      ]
+    }
+  },
+  "documentation": {
+    "verification": "official-guide-access-blocked",
+    "guide": "https://helpguide.sony.net/ilc/2110/v1/fr/index.html",
+    "support": "https://www.sony.fr/electronics/support/e-mount-body-ilce-7-series/ilce-7m4",
+    "note": "Les procédures décrivent les fonctions et commandes du boîtier. Les abréviations françaises, l’emplacement des fonctions et les affectations de touches peuvent varier selon le firmware et votre personnalisation. Les chemins de menus détaillés ne sont pas présentés comme vérifiés avec votre firmware."
+  },
+  "baseline": [
+    "Sélecteur Photo/Film/S&Q sur Photo pour les exercices de prise de vue.",
+    "Vos trois objectifs sont compatibles plein format ; contrôlez un éventuel recadrage APS-C/Super 35 mm.",
+    "Les FE 35 et 85 ne zooment pas et ne possèdent pas de bague d’ouverture.",
+    "Les trois objectifs sont dépourvus d’OSS/VC ; la stabilisation employée est celle du boîtier.",
+    "Les réglages chiffrés sont des points de départ à ajuster à la lumière, pas les EXIF réels des images illustratives."
+  ]
+}

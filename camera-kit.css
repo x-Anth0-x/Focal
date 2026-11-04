@@ -1,0 +1,502 @@
+.sony-context {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 18px;
+  margin: 0 0 20px;
+  border: 1px solid #6e655088;
+  border-radius: 9px;
+  background: linear-gradient(105deg, #b4814017, #23323b77);
+}
+.sony-context > a:first-child {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+.sony-alpha {
+  font-size: 35px;
+  color: #e8b66c;
+  line-height: 1;
+}
+.sony-context strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+.sony-context small {
+  display: block;
+  font-size: 7px;
+  color: #b9a075;
+  letter-spacing: 0.12em;
+  margin-top: 3px;
+}
+.sony-context > div {
+  border-left: 1px solid #74613c66;
+  padding-left: 22px;
+}
+.sony-context > div > strong {
+  font-size: 12px;
+  color: #e4d6b9;
+}
+.sony-context > div > span {
+  font-size: 9px;
+  color: #acbec8;
+  display: block;
+  margin-top: 4px;
+}
+.sony-context-guide {
+  font-size: 9px;
+  color: #dfc28b;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.sony-recipe {
+  margin: 27px 0 30px;
+  background: linear-gradient(140deg, #28353466, #172831);
+  border-color: #8b795455;
+}
+.sony-recipe-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+.sony-recipe-heading h2 {
+  margin: 9px 0 20px;
+  font-size: 24px;
+  max-width: 770px;
+}
+.sony-mode {
+  border: 1px solid #9c7f4e77;
+  background: #c7a35812;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 13px;
+  color: #f1cd84;
+  font-size: 27px;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+.sony-mode small {
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+  white-space: nowrap;
+  color: #b0c3cd;
+}
+.sony-settings {
+  display: grid;
+  grid-template-columns: 1.7fr repeat(5, 1fr);
+  border: 1px solid #4e667255;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 3px 0 12px;
+}
+.sony-settings > div {
+  padding: 14px 12px;
+  background: #19303a77;
+  border-right: 1px solid #4e667255;
+}
+.sony-settings > div:last-child {
+  border: 0;
+}
+.sony-settings small {
+  display: block;
+  color: #9eb6c4;
+  font-size: 7px;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.sony-settings strong {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #e8d4ae;
+  display: block;
+}
+.sony-settings > div:first-child strong {
+  font-size: 11px;
+}
+.sony-auto-note {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #b7c6ce;
+  max-width: 900px;
+  margin: 10px 0 22px;
+}
+.sony-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0;
+}
+.sony-steps li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 13px;
+  padding: 13px 0;
+  border-top: 1px solid #435d6866;
+}
+.sony-steps li > span {
+  color: #e4c17c;
+  font-size: 10px;
+  margin-top: 4px;
+}
+.sony-steps p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #c9d5dc;
+  margin: 0;
+}
+.sony-check {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 15px;
+  border-left: 2px solid #d6b774;
+  background: #bca15f0b;
+  padding: 17px;
+  margin: 19px 0;
+}
+.sony-check > span {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: #e1c181;
+  margin-top: 4px;
+}
+.sony-check > p {
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+  color: #d1c7ae;
+}
+.sony-reference {
+  border-top: 1px solid #47616e66;
+  padding-top: 14px;
+  margin-top: 8px;
+}
+.sony-reference summary {
+  font-size: 10px;
+  color: #b6cbd6;
+  cursor: pointer;
+}
+.sony-reference p {
+  font-size: 11px;
+  color: #aabecb;
+  line-height: 1.85;
+  margin: 14px 0;
+}
+.sony-reference a {
+  font-size: 11px;
+  color: var(--gold);
+}
+.sony-photo-reference {
+  display: block !important;
+  color: #f1ce8d !important;
+  font-size: 8px !important;
+  letter-spacing: 0.04em !important;
+  margin-top: 15px;
+}
+.sony-photo-numbers {
+  display: block;
+  font-size: 9px;
+  color: #c6d3d6;
+  margin-top: 5px;
+  line-height: 1.7;
+}
+.sony-mission-body {
+  font-size: 11px;
+  color: #f1d18c;
+  border-bottom: 1px solid #75674155;
+  padding-bottom: 13px;
+  margin-bottom: 17px;
+}
+.spatial-gear-reference {
+  padding: 10px 16px;
+  background: #182e3a;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 8px;
+  color: #b1c8d4;
+  border-bottom: 1px solid #41627366;
+}
+.spatial-gear-reference > strong {
+  font-weight: 500;
+  font-size: 7px;
+  color: #e3c38a;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.spatial-view-tools [data-action="back"],
+.spatial-view-tools [data-action="top"] {
+  font-size: 8px;
+}
+.spatial-play:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+.spatial-range:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+.sony-body-workshop {
+  border: 1px solid #4d6876;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 5px 0 25px;
+}
+.sony-body-workshop .spatial-canvas-wrap {
+  height: 480px;
+}
+.sony-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+.sony-guide-grid h2 {
+  font-size: 21px;
+  margin: 12px 0 17px;
+}
+.sony-guide-grid p {
+  font-size: 12px;
+  line-height: 1.9;
+}
+.sony-body-workshop + .sony-guide-grid + .panel {
+  margin: 25px 0;
+}
+.sony-guide-grid + .panel li {
+  font-size: 13px;
+  color: #c2d2db;
+  line-height: 1.9;
+  margin: 9px 0;
+}
+@media (max-width: 1100px) {
+  .sony-context {
+    flex-wrap: wrap;
+    gap: 13px 20px;
+  }
+  .sony-context-guide {
+    margin-left: 0;
+  }
+  .sony-context > div {
+    padding-left: 20px;
+  }
+  .sony-settings {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sony-settings > div {
+    border-bottom: 1px solid #4e667255;
+  }
+  .sony-settings > div:nth-child(3n) {
+    border-right: 0;
+  }
+  .sony-settings > div:nth-last-child(-n + 3) {
+    border-bottom: 0;
+  }
+  .sony-guide-grid {
+    grid-template-columns: 1fr;
+  }
+  .sony-body-workshop .spatial-canvas-wrap {
+    height: 420px;
+  }
+  .spatial-gear-reference {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+@media (max-width: 520px) {
+  .sony-context {
+    padding: 16px;
+    gap: 15px;
+  }
+  .sony-context > div {
+    border-left: 0;
+    border-top: 1px solid #74613c44;
+    padding: 12px 0 0;
+    width: 100%;
+  }
+  .sony-context > a:first-child strong {
+    font-size: 15px;
+  }
+  .sony-context-guide {
+    font-size: 10px;
+  }
+  .sony-context small {
+    font-size: 8px;
+  }
+  .sony-context > div > strong {
+    font-size: 13px;
+  }
+  .sony-context > div > span {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .sony-recipe {
+    padding: 21px 17px;
+  }
+  .sony-recipe-heading {
+    gap: 14px;
+  }
+  .sony-recipe-heading h2 {
+    font-size: 23px;
+    margin-top: 12px;
+  }
+  .sony-mode {
+    font-size: 24px;
+    padding: 10px;
+  }
+  .sony-mode small {
+    font-size: 6px;
+  }
+  .sony-settings {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sony-settings > div {
+    padding: 13px 11px;
+    border-right: 1px solid #4e667255 !important;
+    border-bottom: 1px solid #4e667255 !important;
+  }
+  .sony-settings > div:nth-child(2n) {
+    border-right: 0 !important;
+  }
+  .sony-settings > div:nth-last-child(-n + 2) {
+    border-bottom: 0 !important;
+  }
+  .sony-settings small {
+    font-size: 7px;
+  }
+  .sony-settings strong {
+    font-size: 15px;
+  }
+  .sony-settings > div:first-child strong {
+    font-size: 11px;
+  }
+  .sony-auto-note {
+    font-size: 11px;
+    margin: 14px 0 24px;
+  }
+  .sony-steps li {
+    grid-template-columns: 20px 1fr;
+    gap: 9px;
+    padding: 15px 0;
+  }
+  .sony-steps p {
+    font-size: 13px;
+    line-height: 1.95;
+  }
+  .sony-check {
+    display: block;
+    padding: 17px 14px;
+  }
+  .sony-check > span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 9px;
+  }
+  .sony-check > p {
+    font-size: 12px;
+  }
+  .sony-reference summary {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .sony-reference p {
+    font-size: 12px;
+  }
+  .sony-body-workshop .spatial-canvas-wrap {
+    height: 350px;
+  }
+  .sony-guide-grid {
+    gap: 16px;
+  }
+  .sony-guide-grid h2 {
+    font-size: 23px;
+  }
+  .sony-guide-grid p {
+    font-size: 13px;
+  }
+  .spatial-gear-reference {
+    padding: 10px 13px;
+    font-size: 8px;
+  }
+  .spatial-gear-reference > strong {
+    font-size: 7px;
+  }
+  .sony-photo-reference {
+    font-size: 8px !important;
+  }
+  .sony-photo-numbers {
+    font-size: 9px;
+  }
+}
+.sony-camera-hero {
+  background-image: none;
+  background: #13232d;
+}
+.sony-camera-hero > .spatial-preview {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  height: 100%;
+  border-radius: inherit;
+}
+.sony-camera-hero .spatial-thumbnail {
+  object-fit: contain;
+}
+.sony-camera-hero > .scene-shade,
+.sony-camera-hero > figcaption {
+  pointer-events: none;
+}
+.sony-camera-hero .spatial-open {
+  align-items: flex-start;
+  padding-top: 15px;
+  padding-bottom: 0;
+  background: transparent;
+}
+.sony-camera-hero .spatial-preview-label {
+  display: none;
+}
+.card-photo.sony-camera-hero {
+  position: relative;
+  aspect-ratio: 1.6;
+}
+.sony-calculator-lens {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  color: #c2d3dd;
+  margin: 22px 0;
+}
+.sony-calculator-lens select {
+  min-width: 0;
+  max-width: 100%;
+  padding: 9px 12px;
+  background: #1b2d37;
+  border: 1px solid #526b78;
+  color: #d8e6ee;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.sony-body-workshop .spatial-gear-reference {
+  font-size: 10px;
+}
+@media (max-width: 520px) {
+  .sony-calculator-lens {
+    display: block;
+  }
+  .sony-calculator-lens select {
+    display: block;
+    width: 100%;
+    margin-top: 9px;
+  }
+  .card-photo.sony-camera-hero {
+    aspect-ratio: 1.45;
+  }
+}

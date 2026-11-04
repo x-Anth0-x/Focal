@@ -2,7 +2,11 @@
   {
     "slug": "ouverture",
     "title": "Ouverture",
-    "aliases": ["ouverture", "ouvertures", "nombre f"],
+    "aliases": [
+      "ouverture",
+      "ouvertures",
+      "nombre f"
+    ],
     "kind": "aperture",
     "definition": "La taille relative de la pupille d’entrée de l’objectif. Le nombre f est la focale divisée par le diamètre de cette pupille.",
     "example": "À 50 mm et f/2, la pupille d’entrée mesure environ 25 mm ; à f/4, environ 12,5 mm. À temps de pose identique, passer de f/2 à f/4 divise la lumière par quatre.",
@@ -25,10 +29,13 @@
   {
     "slug": "diaphragme",
     "title": "Diaphragme",
-    "aliases": ["diaphragme", "diaphragmes"],
+    "aliases": [
+      "diaphragme",
+      "diaphragmes"
+    ],
     "kind": "aperture",
     "definition": "Le mécanisme à lamelles de l’objectif qui fait varier le passage de la lumière. Il contribue à définir l’ouverture.",
-    "example": "En mode A/Av, choisissez f/2,8 puis f/8 : le boîtier adapte normalement le temps de pose pour suivre sa mesure.",
+    "example": "En mode A, choisissez f/2,8 puis f/8 : le boîtier adapte normalement le temps de pose pour suivre sa mesure.",
     "lesson": "N01-L03",
     "steps": [
       {
@@ -48,10 +55,14 @@
   {
     "slug": "focale",
     "title": "Focale",
-    "aliases": ["focale", "focales", "longueur focale"],
+    "aliases": [
+      "focale",
+      "focales",
+      "longueur focale"
+    ],
     "kind": "focal",
     "definition": "Une caractéristique optique exprimée en millimètres qui, avec la taille du capteur, détermine l’angle de champ.",
-    "example": "Depuis le même endroit, un 24 mm couvre un champ plus large qu’un 85 mm sur le même capteur. La perspective ne change pas tant que le point de vue ne bouge pas.",
+    "example": "Depuis le même endroit, un 28 mm couvre un champ plus large qu’un 85 mm sur le même capteur. La perspective ne change pas tant que le point de vue ne bouge pas.",
     "lesson": "N03-L01",
     "steps": [
       {
@@ -71,7 +82,9 @@
   {
     "slug": "profondeur-de-champ",
     "title": "Profondeur de champ",
-    "aliases": ["profondeur de champ"],
+    "aliases": [
+      "profondeur de champ"
+    ],
     "kind": "depth",
     "definition": "L’étendue des distances qui paraissent suffisamment nettes selon un critère d’observation choisi, autour du plan de mise au point.",
     "example": "Un portrait rapproché à f/1,8 peut présenter une zone nette très courte. Une petite ouverture et une mise au point plus lointaine peuvent l’étendre.",
@@ -122,7 +135,10 @@
   {
     "slug": "iso",
     "title": "Sensibilité ISO",
-    "aliases": ["ISO", "sensibilité ISO"],
+    "aliases": [
+      "ISO",
+      "sensibilité ISO"
+    ],
     "kind": "iso",
     "definition": "Un réglage qui intervient dans le traitement du signal et la luminosité rendue. Il ne fait pas entrer plus de lumière dans l’appareil.",
     "example": "Dans une salle sombre, monter l’ISO peut permettre de garder un temps de pose court. Cela n’annule pas les conséquences d’une faible quantité de lumière collectée.",
@@ -145,7 +161,10 @@
   {
     "slug": "capteur",
     "title": "Capteur",
-    "aliases": ["capteur", "capteurs"],
+    "aliases": [
+      "capteur",
+      "capteurs"
+    ],
     "kind": "sensor",
     "definition": "La surface photosensible qui transforme la lumière projetée par l’objectif en signaux enregistrables.",
     "example": "Une zone très claire peut saturer des photosites. Réduire l’exposition à la capture peut préserver des nuances, contrairement à une simple baisse de luminosité après coup.",
@@ -168,7 +187,10 @@
   {
     "slug": "photosite",
     "title": "Photosite",
-    "aliases": ["photosite", "photosites"],
+    "aliases": [
+      "photosite",
+      "photosites"
+    ],
     "kind": "sensor",
     "definition": "Un élément sensible du capteur qui mesure un signal lié à la lumière reçue. Un photosite n’est pas à lui seul une photographie couleur complète.",
     "example": "Une matrice de filtres colorés permet généralement d’échantillonner différentes composantes ; le traitement reconstruit ensuite la couleur de l’image.",
@@ -191,7 +213,10 @@
   {
     "slug": "exposition",
     "title": "Exposition",
-    "aliases": ["exposition", "triangle d’exposition"],
+    "aliases": [
+      "exposition",
+      "triangle d’exposition"
+    ],
     "kind": "triangle",
     "definition": "La quantité de lumière reçue par le capteur pendant la prise de vue. L’ouverture et le temps de pose la contrôlent ; l’ISO influence le rendu du signal.",
     "example": "Ouvrir d’un stop et diviser le temps de pose par deux conservent approximativement la lumière collectée, avec un rendu différent du mouvement ou de la zone nette.",
@@ -214,7 +239,12 @@
   {
     "slug": "autofocus",
     "title": "Autofocus",
-    "aliases": ["autofocus", "AF continu", "AF ponctuel", "collimateur"],
+    "aliases": [
+      "autofocus",
+      "AF continu",
+      "AF ponctuel",
+      "collimateur"
+    ],
     "kind": "focus",
     "definition": "Le système qui règle la mise au point pour rendre une cible nette. La zone sélectionnée et le mode de suivi déterminent ce que l’appareil tente de suivre.",
     "example": "Pour un marcheur qui se rapproche, l’AF continu peut actualiser la mise au point. Une zone trop large peut néanmoins accrocher l’arrière-plan.",
@@ -237,7 +267,10 @@
   {
     "slug": "histogramme",
     "title": "Histogramme",
-    "aliases": ["histogramme", "histogrammes"],
+    "aliases": [
+      "histogramme",
+      "histogrammes"
+    ],
     "kind": "histogram",
     "definition": "Une représentation du nombre de valeurs tonales, des ombres aux hautes lumières. Elle ne montre pas où se trouvent les objets dans l’image.",
     "example": "Une scène de neige peut avoir beaucoup de valeurs claires. Il n’est pas nécessaire de recentrer son histogramme ; il faut surtout vérifier les zones que vous voulez préserver.",
@@ -260,7 +293,9 @@
   {
     "slug": "balance-des-blancs",
     "title": "Balance des blancs",
-    "aliases": ["balance des blancs"],
+    "aliases": [
+      "balance des blancs"
+    ],
     "kind": "whitebalance",
     "definition": "L’interprétation des couleurs destinée à rendre neutre une référence sous une lumière donnée, ou à choisir volontairement une ambiance.",
     "example": "Sous la même lumière, passer d’un réglage de 3 000 K à 7 000 K réchauffe généralement le rendu. Ce réglage ne modifie pas la couleur physique de la source.",
@@ -283,7 +318,9 @@
   {
     "slug": "perspective",
     "title": "Perspective",
-    "aliases": ["perspective"],
+    "aliases": [
+      "perspective"
+    ],
     "kind": "perspective",
     "definition": "La relation apparente de taille et de position entre les éléments selon le point de vue. Elle dépend de votre position par rapport aux sujets.",
     "example": "Un visage photographié de très près présente un nez relativement plus grand. Changer seulement la focale depuis la même place ne corrige pas ce rapport.",
@@ -306,7 +343,10 @@
   {
     "slug": "bruit",
     "title": "Bruit numérique",
-    "aliases": ["bruit numérique", "bruit"],
+    "aliases": [
+      "bruit numérique",
+      "bruit"
+    ],
     "kind": "iso",
     "definition": "Les variations indésirables du signal qui rendent le grain ou les taches visibles, particulièrement lorsque peu de lumière est collectée et que le rendu est éclairci.",
     "example": "Une photo sous-exposée puis fortement éclaircie peut montrer beaucoup de bruit. Comparer deux ISO demande de tenir compte de la lumière réellement reçue.",
@@ -329,7 +369,9 @@
   {
     "slug": "diffraction",
     "title": "Diffraction",
-    "aliases": ["diffraction"],
+    "aliases": [
+      "diffraction"
+    ],
     "kind": "diffraction",
     "definition": "L’étalement de la lumière lorsqu’elle traverse une ouverture. À très petite ouverture, cet effet peut réduire la finesse des détails enregistrés.",
     "example": "Fermer à f/22 peut augmenter la zone jugée nette tout en réduisant le détail très fin par rapport à f/8. Il faut arbitrer selon le sujet et la taille finale.",
@@ -352,7 +394,9 @@
   {
     "slug": "bokeh",
     "title": "Bokeh",
-    "aliases": ["bokeh"],
+    "aliases": [
+      "bokeh"
+    ],
     "kind": "bokeh",
     "definition": "L’aspect des zones hors mise au point : forme, douceur et transitions du flou. Ce n’est pas un synonyme de faible profondeur de champ.",
     "example": "Deux objectifs peuvent produire une zone nette comparable mais un rendu différent des points lumineux flous. Les lamelles et les corrections optiques participent au résultat.",
@@ -375,7 +419,9 @@
   {
     "slug": "raw",
     "title": "RAW",
-    "aliases": ["RAW"],
+    "aliases": [
+      "RAW"
+    ],
     "kind": "workflow",
     "definition": "Un fichier contenant des données issues du capteur et des métadonnées, avant un rendu final destiné à l’affichage. Son interprétation dépend d’un développement.",
     "example": "Conservez le RAW, ajustez la balance des blancs puis exportez un JPEG. Le fichier exporté est une interprétation ; il ne remplace pas toutes les données sources.",
@@ -398,7 +444,9 @@
   {
     "slug": "jpeg",
     "title": "JPEG",
-    "aliases": ["JPEG"],
+    "aliases": [
+      "JPEG"
+    ],
     "kind": "export",
     "definition": "Un format d’image qui contient un rendu déjà calculé et utilise généralement une compression avec perte. Il facilite le partage et l’affichage.",
     "example": "Un JPEG web peut être exporté en sRGB avec des dimensions adaptées. Réenregistrer plusieurs fois un fichier compressé peut dégrader son contenu.",
@@ -421,7 +469,9 @@
   {
     "slug": "dynamique",
     "title": "Dynamique",
-    "aliases": ["dynamique"],
+    "aliases": [
+      "dynamique"
+    ],
     "kind": "dynamic",
     "definition": "L’écart entre les niveaux de lumière qui peuvent être distingués ou enregistrés. Une scène peut dépasser la dynamique exploitable du capteur.",
     "example": "Un intérieur sombre devant une fenêtre ensoleillée peut présenter plus d’écart que le capteur n’enregistre en une seule exposition. Un réflecteur réduit le contraste de la scène.",
@@ -444,7 +494,9 @@
   {
     "slug": "hyperfocale",
     "title": "Hyperfocale",
-    "aliases": ["hyperfocale"],
+    "aliases": [
+      "hyperfocale"
+    ],
     "kind": "hyperfocal",
     "definition": "Une distance de mise au point calculée pour que la limite lointaine de profondeur de champ atteigne l’infini selon un cercle de confusion choisi.",
     "example": "À 50 mm, f/8 et un cercle de confusion de 0,03 mm, l’hyperfocale est proche de 10,47 m. Ce résultat reste lié au critère d’observation.",
@@ -467,7 +519,9 @@
   {
     "slug": "flash",
     "title": "Flash",
-    "aliases": ["flash"],
+    "aliases": [
+      "flash"
+    ],
     "kind": "flash",
     "definition": "Une source qui émet un éclair bref. L’équilibre entre cet éclair et la lumière ambiante dépend des réglages et du mode de synchronisation.",
     "example": "En synchro classique, à ouverture et ISO fixes, allonger le temps de pose augmente surtout la part de lumière ambiante. Le régime HSS fonctionne différemment.",
@@ -490,7 +544,10 @@
   {
     "slug": "synchronisation",
     "title": "Synchronisation flash",
-    "aliases": ["synchronisation", "synchro"],
+    "aliases": [
+      "synchronisation",
+      "synchro"
+    ],
     "kind": "flash",
     "definition": "La coordination de l’éclair avec le fonctionnement de l’obturateur pour éclairer correctement la surface du capteur.",
     "example": "Dépasser la vitesse de synchro classique peut créer une bande sombre si le système n’utilise pas un mode compatible comme le HSS.",
@@ -513,7 +570,9 @@
   {
     "slug": "contre-jour",
     "title": "Contre-jour",
-    "aliases": ["contre-jour"],
+    "aliases": [
+      "contre-jour"
+    ],
     "kind": "backlight",
     "definition": "Une situation où une source importante se trouve derrière le sujet relativement à l’appareil. Elle peut créer une silhouette, un liseré ou un fort contraste.",
     "example": "Devant une fenêtre, préserver le détail extérieur peut assombrir le visage. Ajouter un réflecteur peut éclairer le visage sans surexposer davantage le fond.",
@@ -536,7 +595,10 @@
   {
     "slug": "lumiere-douce",
     "title": "Lumière douce",
-    "aliases": ["lumière douce", "source diffuse"],
+    "aliases": [
+      "lumière douce",
+      "source diffuse"
+    ],
     "kind": "light",
     "definition": "Une lumière dont les transitions entre ombre et lumière sont progressives. La taille apparente de la source vue du sujet est déterminante.",
     "example": "Une grande fenêtre proche peut donner des ombres plus douces qu’un petit flash nu éloigné. Un diffuseur minuscule très loin ne devient pas une grande source apparente.",
@@ -559,7 +621,10 @@
   {
     "slug": "masque",
     "title": "Masque",
-    "aliases": ["masque", "masques"],
+    "aliases": [
+      "masque",
+      "masques"
+    ],
     "kind": "mask",
     "definition": "Une sélection qui détermine où et avec quelle intensité un réglage de retouche agit. Il peut suivre une zone, un sujet ou des critères de couleur et de luminosité.",
     "example": "Pour éclaircir un visage sans éclaircir le fond, utilisez un masque local avec une transition adaptée et vérifiez l’absence de halo.",
@@ -582,7 +647,10 @@
   {
     "slug": "courbe-tonale",
     "title": "Courbe tonale",
-    "aliases": ["courbe tonale", "courbe en S"],
+    "aliases": [
+      "courbe tonale",
+      "courbe en S"
+    ],
     "kind": "curves",
     "definition": "Une transformation qui associe des valeurs tonales d’entrée à des valeurs de sortie. Elle permet de modifier le contraste selon les zones de la gamme.",
     "example": "Une courbe en S modérée assombrit certains tons sombres et éclaircit certains tons clairs. Un réglage excessif peut écrêter des nuances.",
@@ -605,7 +673,10 @@
   {
     "slug": "aberration-chromatique",
     "title": "Aberration chromatique",
-    "aliases": ["aberration chromatique", "aberrations chromatiques"],
+    "aliases": [
+      "aberration chromatique",
+      "aberrations chromatiques"
+    ],
     "kind": "chromatic",
     "definition": "Un défaut optique où différentes composantes de couleur ne se superposent pas exactement dans l’image, pouvant créer des franges sur les transitions contrastées.",
     "example": "Des contours de branches contre un ciel clair peuvent montrer des franges. Leur correction dépend du type d’aberration et des outils disponibles.",
@@ -628,7 +699,10 @@
   {
     "slug": "sauvegarde",
     "title": "Sauvegarde",
-    "aliases": ["sauvegarde", "sauvegardes"],
+    "aliases": [
+      "sauvegarde",
+      "sauvegardes"
+    ],
     "kind": "backup",
     "definition": "Une copie destinée à permettre la récupération des données après perte, erreur ou panne. Son indépendance et sa capacité de restauration sont essentielles.",
     "example": "Une synchronisation peut répliquer une suppression. Une copie distincte, un historique adapté et un test de restauration apportent une protection différente.",
@@ -651,7 +725,11 @@
   {
     "slug": "pixels",
     "title": "Pixels et dimensions",
-    "aliases": ["pixel", "pixels", "ppp"],
+    "aliases": [
+      "pixel",
+      "pixels",
+      "ppp"
+    ],
     "kind": "export",
     "definition": "Les dimensions en pixels déterminent la quantité d’échantillons d’une image. Les ppp relient ces pixels à une taille physique d’impression.",
     "example": "3 000 pixels à 300 ppp correspondent à 10 pouces, soit environ 25,4 cm. Changer seulement la valeur ppp sans rééchantillonner ne crée pas de détail.",

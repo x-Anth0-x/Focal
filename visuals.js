@@ -16,7 +16,7 @@ window.FocalVisuals = (() => {
     attempt = 0;
   const load = () =>
     (modulePromise ??= import(
-      "./spatial.js?v=20261104-5" + (attempt ? "&retry=" + attempt : "")
+      "./spatial.js?v=20261104-6" + (attempt ? "&retry=" + attempt : "")
     ).catch((error) => {
       modulePromise = undefined;
       attempt++;
@@ -76,8 +76,15 @@ window.FocalVisuals = (() => {
     subtree: true,
   });
   return {
-    draw(kind, step = 0, title = "Explorer la notion en 3D", mode = "preview") {
-      return `<div class="spatial-view spatial-${escape(mode)}" data-kind="${escape(kind)}" data-step="${step}" data-mode="${escape(mode)}" data-title="${escape(title)}" data-state="loading"><div class="spatial-loading"><span class="spatial-loader" aria-hidden="true"></span><span>Préparation de la scène 3D</span><small>${escape(title)}</small></div>${mode === "preview" ? `<button class="spatial-open" data-open-spatial aria-label="Ouvrir en 3D : ${escape(title)}"><span aria-hidden="true">◇</span> Ouvrir en 3D <span aria-hidden="true">↗</span></button>` : ""}</div>`;
+    draw(
+      kind,
+      step = 0,
+      title = "Explorer la notion en 3D",
+      mode = "preview",
+      capture = null,
+    ) {
+      const shooting = capture || window.FocalCamera?.capture(kind, step) || {};
+      return `<div data-capture="${escape(JSON.stringify(shooting))}" class="spatial-view spatial-${escape(mode)}" data-kind="${escape(kind)}" data-step="${step}" data-mode="${escape(mode)}" data-title="${escape(title)}" data-state="loading"><div class="spatial-loading"><span class="spatial-loader" aria-hidden="true"></span><span>Préparation de la scène 3D</span><small>${escape(title)}</small></div>${mode === "preview" ? `<button class="spatial-open" data-open-spatial aria-label="Ouvrir en 3D : ${escape(title)}"><span aria-hidden="true">◇</span> Ouvrir en 3D <span aria-hidden="true">↗</span></button>` : ""}</div>`;
     },
     update(element, kind, step, title) {
       const view = element.querySelector(".spatial-view");
@@ -85,6 +92,9 @@ window.FocalVisuals = (() => {
         element.innerHTML = this.draw(kind, step, title, "interactive");
         return;
       }
+      view.dataset.capture = JSON.stringify(
+        window.FocalCamera?.capture(kind, step) || {},
+      );
       view.dataset.kind = kind;
       view.dataset.step = String(step);
       view.dataset.title = title;

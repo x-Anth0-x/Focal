@@ -21,7 +21,11 @@
     "questions": [
       {
         "q": "Quel élément forme l’image sur le capteur ?",
-        "a": ["L’objectif", "La carte mémoire", "La batterie"],
+        "a": [
+          "L’objectif",
+          "La carte mémoire",
+          "La batterie"
+        ],
         "correct": 0,
         "why": "Les lentilles de l’objectif forment l’image ; le capteur l’enregistre."
       },
@@ -101,7 +105,11 @@
     "questions": [
       {
         "q": "À focale constante, quel nombre correspond à la plus grande ouverture ?",
-        "a": ["f/16", "f/1,8", "f/8"],
+        "a": [
+          "f/16",
+          "f/1,8",
+          "f/8"
+        ],
         "correct": 1,
         "why": "Le nombre f est inversement lié au diamètre de la pupille d’entrée."
       },
@@ -139,7 +147,11 @@
     "questions": [
       {
         "q": "Quelle pose a le plus de chances de figer un mouvement rapide ?",
-        "a": ["1/1000 s", "1/30 s", "1 seconde"],
+        "a": [
+          "1/1000 s",
+          "1/30 s",
+          "1 seconde"
+        ],
         "correct": 0,
         "why": "Une durée courte réduit le déplacement du sujet pendant la collecte."
       },
@@ -229,7 +241,11 @@
       },
       {
         "q": "Quel réglage modifie directement la durée de collecte ?",
-        "a": ["Le temps de pose", "L’ISO", "La balance des blancs"],
+        "a": [
+          "Le temps de pose",
+          "L’ISO",
+          "La balance des blancs"
+        ],
         "correct": 0,
         "why": "L’obturateur ou l’échantillonnage électronique contrôle cette durée."
       }
@@ -238,15 +254,15 @@
   "N02-L01": {
     "kind": "modes",
     "headline": "Choisir qui décide de quoi.",
-    "key": "A/Av donne la priorité à l’ouverture ; S/Tv au temps de pose.",
-    "mission": "Photographiez un sujet fixe en A/Av puis un sujet mobile en S/Tv. Notez les réglages choisis automatiquement par le boîtier.",
+    "key": "A donne la priorité à l’ouverture ; S au temps de pose.",
+    "mission": "Photographiez un sujet fixe en A puis un sujet mobile en S. Notez les réglages choisis automatiquement par le boîtier.",
     "scenarios": [
       {
-        "label": "A / Av",
+        "label": "A",
         "explanation": "Vous choisissez l’ouverture, l’appareil adapte le temps de pose selon la mesure."
       },
       {
-        "label": "S / Tv",
+        "label": "S",
         "explanation": "Vous fixez le temps de pose ; le boîtier ajuste l’ouverture dans les limites de l’objectif."
       },
       {
@@ -256,7 +272,7 @@
     ],
     "questions": [
       {
-        "q": "En mode A/Av, que choisissez-vous en priorité ?",
+        "q": "En mode A, que choisissez-vous en priorité ?",
         "a": [
           "L’ouverture",
           "Le temps de pose imposé",
@@ -351,7 +367,11 @@
       },
       {
         "q": "Une scène volontairement sombre doit-elle avoir un histogramme centré ?",
-        "a": ["Non", "Toujours", "Seulement en RAW"],
+        "a": [
+          "Non",
+          "Toujours",
+          "Seulement en RAW"
+        ],
         "correct": 0,
         "why": "La forme cohérente dépend du contenu et de l’intention."
       }
@@ -421,7 +441,11 @@
     "questions": [
       {
         "q": "Sous une lumière inchangée, augmenter le réglage Kelvin rend généralement l’image…",
-        "a": ["Plus froide", "Plus nette", "Plus chaude"],
+        "a": [
+          "Plus froide",
+          "Plus nette",
+          "Plus chaude"
+        ],
         "correct": 2,
         "why": "Le réglage compense davantage une source supposée froide."
       },
@@ -459,7 +483,11 @@
     "questions": [
       {
         "q": "Quel format laisse généralement davantage de latitude de développement ?",
-        "a": ["Une capture d’écran", "RAW", "Un JPEG fortement compressé"],
+        "a": [
+          "Une capture d’écran",
+          "RAW",
+          "Un JPEG fortement compressé"
+        ],
         "correct": 1,
         "why": "Le RAW préserve plus d’informations et diffère du rendu final."
       },
@@ -482,15 +510,15 @@
     "mission": "Depuis un point fixe, comparez trois focales. Puis déplacez-vous pour garder un sujet à la même taille et observez le rapport au décor.",
     "scenarios": [
       {
-        "label": "24 mm",
+        "label": "28 mm · Tamron G2",
         "explanation": "Sur un même capteur, une focale courte embrasse un champ plus large."
       },
       {
-        "label": "50 mm",
+        "label": "35 mm · Sony FE",
         "explanation": "Une focale intermédiaire permet un cadrage plus resserré au même endroit."
       },
       {
-        "label": "135 mm",
+        "label": "85 mm · Sony FE",
         "explanation": "Une focale longue réduit le champ couvert ; la distance décide de la perspective."
       }
     ],
@@ -524,15 +552,15 @@
     "mission": "Réalisez une promenade avec une seule focale, puis une autre avec un zoom. Comparez vos déplacements, cadrages et contraintes.",
     "scenarios": [
       {
-        "label": "Focale fixe",
+        "label": "FE 35 · focale fixe",
         "explanation": "Un angle imposé peut encourager l’anticipation ; les caractéristiques varient selon les objectifs."
       },
       {
-        "label": "Zoom",
+        "label": "Tamron 28–75 · zoom",
         "explanation": "Changer la focale permet d’ajuster le cadrage sans changer de place."
       },
       {
-        "label": "Choix pratique",
+        "label": "FE 85 · portrait",
         "explanation": "Ouverture, poids, budget et conditions de terrain comptent autant que la plage focale."
       }
     ],
@@ -833,7 +861,11 @@
     "questions": [
       {
         "q": "Deux couleurs différentes peuvent-elles avoir une luminance proche ?",
-        "a": ["Uniquement à ISO 100", "Oui", "Non"],
+        "a": [
+          "Uniquement à ISO 100",
+          "Oui",
+          "Non"
+        ],
         "correct": 1,
         "why": "Le contraste de teinte ne garantit pas un contraste en noir et blanc."
       },
@@ -1081,7 +1113,11 @@
     "questions": [
       {
         "q": "Exposer pour une fenêtre très claire peut rendre le sujet…",
-        "a": ["Plus proche", "En silhouette", "Toujours parfaitement détaillé"],
+        "a": [
+          "Plus proche",
+          "En silhouette",
+          "Toujours parfaitement détaillé"
+        ],
         "correct": 1,
         "why": "Le contraste peut dépasser la dynamique enregistrable."
       },
@@ -1203,7 +1239,11 @@
     "questions": [
       {
         "q": "Une seule balance des blancs neutralise-t-elle toujours fenêtre et tungstène ?",
-        "a": ["Oui, avec tout JPEG", "Non", "Oui, parfaitement"],
+        "a": [
+          "Oui, avec tout JPEG",
+          "Non",
+          "Oui, parfaitement"
+        ],
         "correct": 1,
         "why": "Deux sources de spectres différents peuvent garder des dominantes distinctes."
       },
@@ -1503,7 +1543,11 @@
       },
       {
         "q": "Un curseur de récupération recrée-t-il les données entièrement saturées ?",
-        "a": ["Oui, sans limite", "Oui, dans tout JPEG", "Non"],
+        "a": [
+          "Oui, sans limite",
+          "Oui, dans tout JPEG",
+          "Non"
+        ],
         "correct": 2,
         "why": "Un traitement ne garantit pas le retour d’informations qui n’ont pas été enregistrées."
       }
@@ -1699,7 +1743,11 @@
     "questions": [
       {
         "q": "Augmenter uniquement les ppp ajoute-t-il du détail natif ?",
-        "a": ["Oui, sans rééchantillonnage", "Non", "Oui, automatiquement"],
+        "a": [
+          "Oui, sans rééchantillonnage",
+          "Non",
+          "Oui, automatiquement"
+        ],
         "correct": 1,
         "why": "Les détails dépendent des pixels disponibles et du procédé d’impression."
       },
@@ -1905,7 +1953,11 @@
     "questions": [
       {
         "q": "Droit d’auteur et droit à l’image sont-ils identiques ?",
-        "a": ["Oui", "Seulement sur Internet", "Non"],
+        "a": [
+          "Oui",
+          "Seulement sur Internet",
+          "Non"
+        ],
         "correct": 2,
         "why": "Ils concernent des objets juridiques différents ; les règles dépendent du contexte et du pays."
       },

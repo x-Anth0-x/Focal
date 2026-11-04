@@ -136,7 +136,11 @@
     const i = sceneMap[curriculum.indexOf(lesson)],
       x = ((i % 4) / 3) * 100,
       y = i > 3 ? 100 : 0;
-    return `<figure class="photo-scene ${extra}" style="--scene-x:${x}%;--scene-y:${y}%" role="img" aria-label="${esc(sceneDescriptions[i])} — illustration générée"><div class="scene-shade"></div>${caption ? `<figcaption><span class="eyebrow">LE REGARD FOCAL</span><strong>${esc(enrichment[lesson.id].headline)}</strong><small>Visuel d’illustration généré</small></figcaption>` : ""}</figure>`;
+    if ([0, 6, 7].includes(i)) {
+      const c = FocalCamera.capture("camera", 0, lesson.id);
+      return `<figure class="photo-scene sony-camera-hero ${extra}" aria-label="Sony α7 IV et ${esc(c.lensName)} : maquette pédagogique">${FocalVisuals.draw("camera", 0, "Sony α7 IV · " + c.lensShort, "preview", c)}<div class="scene-shade"></div>${caption ? `<figcaption><span class="eyebrow">VOTRE SONY α7 IV</span><strong>${esc(enrichment[lesson.id].headline)}</strong><small>Maquette 3D pédagogique · proportions simplifiées</small>${FocalCamera.captureCaption(lesson.id)}</figcaption>` : ""}</figure>`;
+    }
+    return `<figure class="photo-scene ${extra}" style="--scene-x:${x}%;--scene-y:${y}%" role="img" aria-label="${esc(sceneDescriptions[i])} — illustration générée"><div class="scene-shade"></div>${caption ? `<figcaption><span class="eyebrow">LE REGARD FOCAL</span><strong>${esc(enrichment[lesson.id].headline)}</strong><small>Visuel d’illustration généré</small>${FocalCamera.captureCaption(lesson.id)}</figcaption>` : ""}</figure>`;
   }
   function crumbs(text) {
     return `<div class="breadcrumbs"><a href="#courses">Formation</a><span>›</span>${text}</div>`;
@@ -254,6 +258,7 @@
       return;
     }
     activeLesson = lesson;
+    FocalCamera.setLesson(id);
     state.lastLesson = id;
     save();
     setNav("lesson", lesson.niveau);
@@ -271,9 +276,10 @@
         meta.headline,
         `<div class="lesson-utility"><span>◷ ${lesson.duree_estimee_minutes} min environ</span><div class="lesson-pagination">${idx > 0 ? `<a href="#lesson/${curriculum[idx - 1].id}" aria-label="Leçon précédente">‹</a>` : "<span></span>"}<span>${idx + 1} / 48</span>${idx < 47 ? `<a href="#lesson/${curriculum[idx + 1].id}" aria-label="Leçon suivante">›</a>` : "<span></span>"}</div></div>`,
       ) +
+      FocalCamera.banner(id) +
       `<div class="lesson-tabs" role="tablist" aria-label="Étapes de la leçon">${tabs.map(([key, label]) => `<button role="tab" id="tab-${key}" aria-controls="pane-${key}" aria-selected="false" tabindex="-1" data-tab="${key}">${label}</button>`).join("")}</div><div id="lesson-panes">${tabs.map(([key]) => `<section role="tabpanel" id="pane-${key}" aria-labelledby="tab-${key}" hidden></section>`).join("")}</div>${footer()}`;
     $("#pane-course").innerHTML =
-      `<div class="section-title"><span>01</span><h2>Voir la notion autrement.</h2></div><div class="lesson-overview"><div class="concept-intro"><span class="eyebrow">LE REPÈRE ESSENTIEL</span><h2>${esc(meta.key)}</h2><p>${esc((lesson.objectifs || [])[0])}</p><div class="concept-preview">${FocalVisuals.draw(meta.kind, 0, lesson.titre)}</div><button class="text-button" id="open-visual">Explorer les trois situations <span>→</span></button></div>${scene(lesson, "lesson-photo")}<aside class="lesson-tips"><div class="takeaway"><span class="eyebrow">◎ &nbsp; À RETENIR</span><h3>${esc(meta.scenarios[0].label)}</h3><p>${esc(meta.scenarios[0].explanation)}</p><p>${esc(meta.scenarios[1].explanation)}</p></div><div class="field-tip"><span class="eyebrow">✧ &nbsp; SUR LE TERRAIN</span><p>${esc(meta.mission)}</p></div></aside></div><div class="section-title"><span>02</span><h2>Comprendre, chapitre par chapitre.</h2><span class="chapter-counter" id="chapter-counter"></span></div><p class="section-intro">Ouvrez chaque chapitre et marquez-le comme lu à votre rythme. Votre lecture est mémorisée.</p><div class="chapter-list">${parts
+      `<div class="section-title"><span>01</span><h2>Voir la notion autrement.</h2></div><div class="lesson-overview"><div class="concept-intro"><span class="eyebrow">LE REPÈRE ESSENTIEL</span><h2>${esc(meta.key)}</h2><p>${esc((lesson.objectifs || [])[0])}</p><div class="concept-preview">${FocalVisuals.draw(meta.kind, 0, lesson.titre)}</div><button class="text-button" id="open-visual">Explorer les trois situations <span>→</span></button></div>${scene(lesson, "lesson-photo")}<aside class="lesson-tips"><div class="takeaway"><span class="eyebrow">◎ &nbsp; À RETENIR</span><h3>${esc(meta.scenarios[0].label)}</h3><p>${esc(meta.scenarios[0].explanation)}</p><p>${esc(meta.scenarios[1].explanation)}</p></div><div class="field-tip"><span class="eyebrow">✧ &nbsp; SUR LE TERRAIN</span><p>${esc(meta.mission)}</p></div></aside></div>${FocalCamera.recipe(id)}<div class="section-title"><span>02</span><h2>Comprendre, chapitre par chapitre.</h2><span class="chapter-counter" id="chapter-counter"></span></div><p class="section-intro">Ouvrez chaque chapitre et marquez-le comme lu à votre rythme. Votre lecture est mémorisée.</p><div class="chapter-list">${parts
         .map(
           (c, i) =>
             `<details class="chapter" ${i === 0 ? "open" : ""}><summary><span class="chapter-number">${String(i + 1).padStart(2, "0")}</span><span>${esc(c.titre)}</span><span class="chapter-toggle" aria-hidden="true">＋</span></summary><div class="chapter-content">${String(
@@ -291,11 +297,11 @@
     $("#pane-visual").innerHTML =
       `<div class="section-title"><span>↔</span><h2>Un sujet. Trois situations.</h2></div><p class="section-intro">Sélectionnez une situation, manipulez la scène 3D et observez le mécanisme.</p><div class="scenario-tabs" role="group" aria-label="Situations à comparer">${meta.scenarios.map((x, i) => `<button class="scenario-button ${i === 0 ? "selected" : ""}" data-scenario="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${esc(x.label)}</button>`).join("")}</div><div class="visual-workshop"><div id="workshop-art">${FocalVisuals.draw(meta.kind, 0, lesson.titre + " : " + meta.scenarios[0].label, "interactive")}</div><aside class="workshop-explanation" aria-live="polite"><span class="eyebrow">DÉCODER L’IMAGE</span><h2 id="scenario-title">${esc(meta.scenarios[0].label)}</h2><p id="scenario-explanation">${esc(meta.scenarios[0].explanation)}</p><div class="callout">${esc(meta.key)}</div><span class="illustration-label">Maquette 3D pédagogique : mécanismes simplifiés, sans valeur de mesure optique.</span></aside></div>${["aperture", "depth"].includes(meta.kind) ? depthCalculator() : ""}<div class="comparison-heading"><span class="eyebrow">GARDER LES TROIS REPÈRES EN TÊTE</span></div><div class="comparison-grid">${meta.scenarios.map((x, i) => `<article class="comparison-card">${FocalVisuals.draw(meta.kind, i, x.label)}<div><span class="eyebrow">SITUATION 0${i + 1}</span><h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p></div></article>`).join("")}</div>`;
     $("#pane-mission").innerHTML =
-      `<div class="mission-layout"><div><div class="section-title"><span>→</span><h2>De la notion à votre image.</h2></div><div class="panel mission-brief"><span class="eyebrow">VOTRE MISSION · ${esc(lesson.id)}</span><h2>${esc(lesson.titre)}</h2><p class="mission-instruction">${esc(meta.mission)}</p><h3>Votre protocole</h3><ol><li>Écrivez votre intention avant de commencer.</li><li>Gardez une trace des réglages et des conditions de chaque essai.</li><li>Comparez les résultats au même grossissement.</li><li>Notez une observation et une correction pour votre prochaine séance.</li></ol><div class="callout">${esc(meta.key)}</div></div></div><aside class="panel mission-evidence"><span class="eyebrow">À RAPPORTER DE VOTRE SÉANCE</span><h3>Une preuve, une réflexion.</h3><ul>${(lesson.exercice?.preuves || ["Une série d’essais comparables", "Des réglages consignés", "Une conclusion argumentée"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p class="tiny">Les images restent chez vous. Le site conserve uniquement vos notes et votre déclaration de réalisation.</p></aside></div><section class="panel notes-panel"><label for="fieldNotes"><h2>Mon carnet de terrain</h2><span>Intention, réglages, observations, prochain essai.</span></label><textarea id="fieldNotes" maxlength="50000" placeholder="Mon intention…\nLes conditions et mes réglages…\nCe que j’ai observé…\nCe que je changerai…">${esc(state.notes[id] || "")}</textarea><div class="notes-actions"><button class="btn" id="saveNotes">Enregistrer mes notes</button><span id="notes-status" role="status"></span><label class="read-check"><input type="checkbox" id="practiceDone" ${state.practice[id] ? "checked" : ""}> Mission réalisée</label></div></section>`;
+      `<div class="mission-layout"><div><div class="section-title"><span>→</span><h2>De la notion à votre image.</h2></div><div class="panel mission-brief"><p class="sony-mission-body">Sony α7 IV · ${esc(FocalCamera.capture("reference", 0, id).lensName)}</p><span class="eyebrow">VOTRE MISSION · ${esc(lesson.id)}</span><h2>${esc(lesson.titre)}</h2><p class="mission-instruction">${esc(meta.mission)}</p><h3>Votre protocole</h3><ol><li>Écrivez votre intention avant de commencer.</li><li>Gardez une trace des réglages et des conditions de chaque essai.</li><li>Comparez les résultats au même grossissement.</li><li>Notez une observation et une correction pour votre prochaine séance.</li></ol><div class="callout">${esc(meta.key)}</div></div></div><aside class="panel mission-evidence"><span class="eyebrow">À RAPPORTER DE VOTRE SÉANCE</span><h3>Une preuve, une réflexion.</h3><ul>${(lesson.exercice?.preuves || ["Une série d’essais comparables", "Des réglages consignés", "Une conclusion argumentée"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p class="tiny">Les images restent chez vous. Le site conserve uniquement vos notes et votre déclaration de réalisation.</p></aside></div><section class="panel notes-panel"><label for="fieldNotes"><h2>Mon carnet de terrain</h2><span>Intention, réglages, observations, prochain essai.</span></label><textarea id="fieldNotes" maxlength="50000" placeholder="Mon intention…\nLes conditions et mes réglages…\nCe que j’ai observé…\nCe que je changerai…">${esc(state.notes[id] || "")}</textarea><div class="notes-actions"><button class="btn" id="saveNotes">Enregistrer mes notes</button><span id="notes-status" role="status"></span><label class="read-check"><input type="checkbox" id="practiceDone" ${state.practice[id] ? "checked" : ""}> Mission réalisée</label></div></section>`;
     $("#pane-quiz").innerHTML =
       `<div class="section-title"><span>✓</span><h2>Vérifiez votre compréhension.</h2></div><p class="section-intro">${questions(id).length} questions propres à cette leçon. Chaque réponse est expliquée ; vous pouvez recommencer à tout moment.</p><div id="quiz"></div><div class="quiz-summary panel"><div><span class="eyebrow">VOTRE RÉSULTAT</span><h2 id="score" aria-live="polite"></h2><p>Objectif : ${target(id)} / ${questions(id).length} et mission terrain réalisée.</p></div><button class="btn alt" id="retry-quiz">Recommencer le quiz</button></div><section class="panel completion-panel"><div><span class="eyebrow">UNE NOUVELLE ÉTAPE</span><h2>Valider mon parcours personnel</h2><p>Le suivi est une autoévaluation pédagogique, pas une certification professionnelle.</p></div><button class="btn" id="finish">Valider cette leçon</button><p id="finishStatus" role="status"></p></section>`;
     $("#pane-resources").innerHTML =
-      `<div class="section-title"><span>▤</span><h2>Votre fiche à emporter.</h2></div><div class="memo-layout"><div class="panel"><span class="eyebrow">${esc(lesson.id)} · LE MÉMO FOCAL</span><h2>${esc(lesson.titre)}</h2><div class="callout">${esc(meta.key)}</div>${meta.scenarios.map((x) => `<h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p>`).join("")}<h3>À essayer</h3><p>${esc(meta.mission)}</p><button class="btn alt" id="print-lesson">Imprimer ma fiche</button></div><aside class="panel"><span class="eyebrow">ALLER PLUS LOIN</span><h3>Les leçons voisines</h3>${curriculum
+      `<div class="section-title"><span>▤</span><h2>Votre fiche à emporter.</h2></div><div class="memo-layout"><div class="panel"><span class="eyebrow">${esc(lesson.id)} · SONY α7 IV</span><h2>${esc(lesson.titre)}</h2><div class="callout">${esc(meta.key)}</div>${meta.scenarios.map((x) => `<h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p>`).join("")}<h3>À essayer</h3><p>${esc(meta.mission)}</p><button class="btn alt" id="print-lesson">Imprimer ma fiche</button></div><aside class="panel"><span class="eyebrow">ALLER PLUS LOIN</span><h3>Les leçons voisines</h3>${curriculum
         .filter((x) => x.niveau === lesson.niveau && x.id !== id)
         .map(
           (x) =>
@@ -487,10 +493,19 @@
       `${score(id)} / ${questions(id).length} bonnes réponses`;
   }
   function depthCalculator() {
-    return `<section class="panel depth-calculator"><span class="eyebrow">LABORATOIRE OPTIQUE</span><h2>Estimer la profondeur de champ</h2><p>Modèle de lentille mince, capteur plein format, cercle de confusion conventionnel de 0,03 mm. Valeurs indicatives, dépendantes du critère de netteté.</p><div id="depth-form" class="depth-grid"><div class="depth-inputs"><label for="aperture">Ouverture <output id="apertureOut"></output></label><input id="aperture" type="range" min="0" max="9" value="2"><label for="focal">Focale <output id="focalOut"></output></label><input id="focal" type="range" min="24" max="135" value="50"><label for="distance">Distance de mise au point <output id="distanceOut"></output></label><input id="distance" type="range" min="1" max="10" value="2" step="0.1"><button class="btn alt" id="resetLab">Réinitialiser</button></div><div class="depth-result" aria-live="polite"><span>Profondeur de champ estimée</span><strong id="dofOut"></strong><div><span>Limite proche <b id="nearOut"></b></span><span>Limite lointaine <b id="farOut"></b></span></div><p>Le calcul ne mesure ni le rendu du bokeh ni la diffraction.</p></div></div></section>`;
+    return `<section class="panel depth-calculator"><span class="eyebrow">LABORATOIRE OPTIQUE</span><h2>Estimer la profondeur de champ</h2><p>Modèle de lentille mince, capteur plein format, cercle de confusion conventionnel de 0,03 mm. Valeurs indicatives, dépendantes du critère de netteté.</p><label class="sony-calculator-lens" for="dof-lens">Objectif du calcul<select id="dof-lens">${Object.entries(
+      FocalCamera.profile.lenses,
+    )
+      .map(
+        ([key, l]) =>
+          `<option value="${key}" ${key === FocalCamera.capture("depth").lensId ? "selected" : ""}>${esc(l.name)}</option>`,
+      )
+      .join(
+        "",
+      )}</select></label><div id="depth-form" class="depth-grid"><div class="depth-inputs"><label for="aperture">Ouverture <output id="apertureOut"></output></label><input id="aperture" type="range" min="0" max="8" value="2"><label for="focal">Focale <output id="focalOut"></output></label><input id="focal" type="range" min="28" max="75" value="50"><label for="distance">Distance de mise au point <output id="distanceOut"></output></label><input id="distance" type="range" min="1" max="10" value="2" step="0.1"><button class="btn alt" id="resetLab">Réinitialiser</button></div><div class="depth-result" aria-live="polite"><span>Profondeur de champ estimée</span><strong id="dofOut"></strong><div><span>Limite proche <b id="nearOut"></b></span><span>Limite lointaine <b id="farOut"></b></span></div><p>Le calcul ne mesure ni le rendu du bokeh ni la diffraction.</p></div></div></section>`;
   }
   function bindDepthCalculator() {
-    const values = [1.4, 1.8, 2.8, 4, 5.6, 8, 11, 16, 22, 32];
+    const values = [1.8, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
     function draw() {
       const N = values[+$("#aperture").value],
         f = +$("#focal").value,
@@ -516,14 +531,27 @@
     ["aperture", "focal", "distance"].forEach(
       (id) => ($("#" + id).oninput = draw),
     );
-    $("#resetLab").onclick = () => {
-      ["2", "50", "2"].forEach(
-        (value, i) =>
-          ($("#" + ["aperture", "focal", "distance"][i]).value = value),
-      );
+    function chooseLens(reset = true) {
+      const l = FocalCamera.lens($("#dof-lens").value);
+      $("#focal").min = l.focalMin;
+      $("#focal").max = l.focalMax;
+      $("#focal").disabled = l.focalMin === l.focalMax;
+      $("#aperture").min = values.findIndex((v) => v >= l.maxAperture);
+      $("#aperture").max = values.findLastIndex((v) => v <= l.minAperture);
+      if (reset) {
+        const c = FocalCamera.capture("depth");
+        $("#focal").value = Math.max(l.focalMin, Math.min(l.focalMax, c.focal));
+        $("#aperture").value = Math.max(
+          Number($("#aperture").min),
+          values.findIndex((v) => v >= Math.max(l.maxAperture, c.aperture)),
+        );
+        $("#distance").value = "2";
+      }
       draw();
-    };
-    draw();
+    }
+    $("#dof-lens").onchange = () => chooseLens(true);
+    $("#resetLab").onclick = () => chooseLens(true);
+    chooseLens(true);
   }
   // External progress updates must never re-render a route: doing so saves its last
   // lesson again and causes different lesson tabs to continually reload each other.
@@ -551,7 +579,7 @@
         notes = $("#fieldNotes");
       if (
         notes &&
-        document.activeElement !== notes &&
+        notes.value === (previous.notes[id] || "") &&
         previous.notes[id] !== state.notes[id]
       )
         notes.value = state.notes[id] || "";
@@ -713,7 +741,11 @@
     document.title = "FOCAL Academy — Le regard s’apprend";
     if (bits[0] === "courses") renderCatalog(Number(bits[1]) || 0);
     else if (bits[0] === "progress") renderProgress();
-    else if (bits[0] === "glossary") {
+    else if (bits[0] === "camera") {
+      activeLesson = null;
+      setNav("camera");
+      FocalCamera.renderGuide(app, state.lastLesson);
+    } else if (bits[0] === "glossary") {
       activeLesson = null;
       setNav("glossary");
       FocalGlossary.render(app, bits[1], state.lastLesson);
@@ -735,6 +767,7 @@
         ),
       );
       [curriculum, enrichment, reference] = results;
+      await FocalCamera.init(enrichment);
       if (curriculum.length !== 48 || curriculum.some((x) => !enrichment[x.id]))
         throw Error("Catalogue incomplet");
       let raw = {};
