@@ -1,0 +1,90 @@
+{
+  "id": "N01-L03",
+  "title": "Ouverture et profondeur de champ",
+  "subtitle": "Comprendre la lumière, choisir la netteté, maîtriser le regard",
+  "duration": "55–75 min",
+  "chapters": [
+    {
+      "title": "01 · Ce que contrôle réellement le diaphragme",
+      "body": "Le diaphragme est une ouverture réglable située dans l’objectif. Son nombre f est le rapport entre la focale et le diamètre de la pupille d’entrée : N = f / D. À 50 mm, f/2 correspond à une pupille d’entrée de 25 mm ; f/4 correspond à 12,5 mm. Le nombre f n’est donc pas un diamètre exprimé en millimètres. Plus le nombre f est petit, plus l’ouverture relative est grande.",
+      "key": "À focale égale, passer de f/2,8 à f/4 divise approximativement par deux la lumière reçue par unité de surface du capteur, toutes choses égales par ailleurs."
+    },
+    {
+      "title": "02 · Les stops et l’exposition",
+      "body": "Une variation d’un stop (ou IL) double ou divise par deux la quantité de lumière. La suite classique est f/1,4 → f/2 → f/2,8 → f/4 → f/5,6 → f/8 → f/11 → f/16. Entre deux valeurs successives, l’aire de l’ouverture est approximativement divisée par deux. Pour conserver une exposition équivalente, on peut doubler le temps de pose lorsqu’on ferme d’un stop. Cette compensation augmente cependant le risque de flou de mouvement.",
+      "key": "f/2,8 à 1/500 s et f/4 à 1/250 s donnent une exposition théorique proche, à ISO identique, mais pas la même profondeur de champ ni le même rendu du mouvement."
+    },
+    {
+      "title": "03 · Pourquoi l’arrière-plan devient flou",
+      "body": "L’objectif forme une image nette sur le capteur pour la distance de mise au point choisie. Les points situés à d’autres distances produisent des taches appelées cercles de confusion. Fermer le diaphragme réduit ces taches et augmente la plage de distances jugées acceptables comme nettes. La profondeur de champ dépend aussi de la focale, de la distance de mise au point, du format de capteur et du critère de netteté retenu.",
+      "key": "À cadrage et distance identiques, fermer le diaphragme augmente généralement la profondeur de champ. Le flou d’arrière-plan dépend également de la distance entre le sujet et le décor."
+    },
+    {
+      "title": "04 · Portrait, paysage et compromis",
+      "body": "Pour un portrait isolé, f/1,8 à f/2,8 peut détacher le visage du décor, mais une profondeur de champ très faible exige une mise au point précise sur l’œil proche. Pour un portrait de deux personnes sur des plans différents, f/4 ou f/5,6 peut sécuriser la netteté. En paysage, f/8 est souvent un point de départ utile, mais il faut tenir compte de la distance de mise au point, de la focale et de la diffraction.",
+      "key": "Il n’existe pas de « meilleure ouverture » universelle : le bon réglage est celui qui sert l’intention et respecte les contraintes."
+    },
+    {
+      "title": "05 · Diffraction, piqué et erreurs fréquentes",
+      "body": "Fermer beaucoup le diaphragme réduit les aberrations de certains objectifs mais accentue la diffraction, qui peut atténuer les détails fins. Le compromis optimal dépend de l’objectif, du capteur, de la taille d’affichage et de la scène. Un arrière-plan flou ne garantit pas un sujet net : une erreur de mise au point ou une vitesse trop lente reste possible. De même, une grande ouverture ne modifie pas à elle seule la perspective ; celle-ci dépend du point de vue.",
+      "key": "Ne confonds pas profondeur de champ, flou de bougé, flou de mouvement, piqué optique et perspective."
+    },
+    {
+      "title": "06 · Méthode de prise de vue reproductible",
+      "body": "Place un objet texturé à environ 2 m, avec un fond détaillé à 5 m ou plus. Fixe le boîtier, la focale, la position et le point autofocus. En mode A, réalise quatre images à f/2,8, f/4, f/5,6 et f/8 ; note les vitesses choisies. Si tu veux isoler l’effet de l’ouverture sur la profondeur de champ, vérifie que les vitesses restent suffisamment rapides pour éviter le bougé et que l’éclairage ne varie pas. Compare le plan net et le fond à grossissement identique.",
+      "key": "Ne compare pas des photos prises à des distances différentes en prétendant isoler le seul effet de l’ouverture."
+    }
+  ],
+  "questions": [
+    {
+      "q": "À focale identique, que se passe-t-il en passant de f/2,8 à f/4 ?",
+      "a": [
+        "La quantité de lumière est approximativement divisée par deux",
+        "Elle double",
+        "La perspective change automatiquement"
+      ],
+      "correct": 0,
+      "why": "La valeur f augmente d’un facteur √2 : l’aire d’ouverture est environ divisée par deux."
+    },
+    {
+      "q": "À f/2,8, 1/500 s, ISO 200, quel réglage compense approximativement f/4 ?",
+      "a": [
+        "1/1000 s, ISO 200",
+        "1/250 s, ISO 200",
+        "1/500 s, ISO 100"
+      ],
+      "correct": 1,
+      "why": "Fermer d’un stop nécessite ici un temps de pose deux fois plus long pour maintenir l’exposition théorique."
+    },
+    {
+      "q": "Quel facteur modifie directement la perspective ?",
+      "a": [
+        "Le point de vue du photographe",
+        "Le nombre f uniquement",
+        "La sensibilité ISO"
+      ],
+      "correct": 0,
+      "why": "La perspective géométrique dépend de la position de prise de vue."
+    },
+    {
+      "q": "Pourquoi ne faut-il pas systématiquement photographier à f/16 ?",
+      "a": [
+        "Cela augmente toujours le bruit ISO",
+        "La diffraction peut réduire le contraste des détails fins",
+        "Le capteur devient plus petit"
+      ],
+      "correct": 1,
+      "why": "La diffraction augmente à petite ouverture ; le compromis dépend du matériel et de l’usage."
+    },
+    {
+      "q": "Que faut-il contrôler dans une comparaison de profondeur de champ ?",
+      "a": [
+        "Changer la distance et la focale à chaque photo",
+        "Garder la focale, le point de vue, la mise au point et la scène constants",
+        "Utiliser un fond différent à chaque fois"
+      ],
+      "correct": 1,
+      "why": "Un protocole contrôlé limite les variables qui brouillent l’interprétation."
+    }
+  ]
+}
