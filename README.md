@@ -67,7 +67,7 @@ FOCAL_URL=http://127.0.0.1:3000 python tests/smoke.py
 
 Les 48 anciens schémas SVG sont remplacés par des rendus de modèles 3D procéduraux. Les cours affichent des aperçus 3D ; les ateliers et le lexique donnent accès aux scènes manipulables.
 
-- Rotation à la souris ou au toucher, zoom tactile et par boutons, vue de face et réinitialisation.
+- Rotation à la souris ou par geste tactile horizontal, zoom par boutons, vue de face et réinitialisation. La molette et le geste tactile vertical restent dédiés au défilement de la page.
 - Un réglage propre à la notion, une animation à la demande et des points explicatifs ancrés à la scène.
 - Géométries mises à jour réellement : lamelles du diaphragme, plans de mise au point, répartition tonale, sources lumineuses, trajectoires et flux de fichiers.
 - Lorsque le réglage est modifié librement, la narration quitte le préréglage pour éviter de présenter une ancienne situation comme l’état actuel.
@@ -113,3 +113,15 @@ python tests/loading.py
 ```
 
 Cette suite simule une détection WebGPU sans réponse, une initialisation suspendue, un premier rendu qui ne termine pas, une interruption réseau et la navigation pendant ces échecs. Elle vérifie aussi les cinq onglets, la sélection d’une comparaison, le maintien du lexique et la sauvegarde des notes.
+
+### Défilement et synchronisation entre onglets
+
+La réception d’une progression provenant d’un autre onglet met à jour les compteurs, les notes non modifiées, les réponses et les marqueurs de lecture sans reconstruire la page ni enregistrer à nouveau la dernière leçon. Cela évite une boucle entre deux onglets affichant des leçons différentes, qui réinitialisait leur défilement et leurs scènes. Les mises à jour d’affichage sont regroupées par image, sans déplacer le curseur d’un champ de notes en cours d’édition ni réinitialiser les filtres du catalogue.
+
+La scène 3D laisse la molette faire défiler le document. Son comportement tactile autorise le déplacement vertical de la page et réserve le geste horizontal à la rotation du modèle. Les boutons de zoom restent disponibles.
+
+```sh
+python tests/scrolling.py
+```
+
+La suite ouvre plusieurs pages dans **un même contexte navigateur**, avec un stockage réellement partagé. Elle vérifie l’absence de rechargements croisés, la conservation de la position de lecture, des onglets, du brouillon local et des filtres, la mise à jour du suivi ainsi que les vrais gestes de molette et de défilement tactile sur le canevas 3D.

@@ -16,7 +16,7 @@ window.FocalVisuals = (() => {
     attempt = 0;
   const load = () =>
     (modulePromise ??= import(
-      "./spatial.js?v=20261104-4" + (attempt ? "&retry=" + attempt : "")
+      "./spatial.js?v=20261104-5" + (attempt ? "&retry=" + attempt : "")
     ).catch((error) => {
       modulePromise = undefined;
       attempt++;

@@ -1,5 +1,5 @@
 import * as T from "./vendor/three/three.module.min.js";
-import { RoundedBoxGeometry } from "./vendor/three/RoundedBoxGeometry.js?v=20261104-4";
+import { RoundedBoxGeometry } from "./vendor/three/RoundedBoxGeometry.js?v=20261104-5";
 const gold = 0xe9bd68,
   blue = 0x76b8c9,
   green = 0x9bbb9b,

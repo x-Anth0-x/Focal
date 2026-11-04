@@ -1,10 +1,10 @@
 import * as T from "./vendor/three/three.module.min.js";
-import { OrbitControls } from "./vendor/three/OrbitControls.js?v=20261104-4";
+import { OrbitControls } from "./vendor/three/OrbitControls.js?v=20261104-5";
 import {
   buildWorld,
   configs,
   formatValue,
-} from "./spatial-models.js?v=20261104-4";
+} from "./spatial-models.js?v=20261104-5";
 const escape = (value) =>
   String(value).replace(
     /[&<>"']/g,
@@ -382,7 +382,7 @@ async function interactive(host) {
     camera = makeCamera();
   r.shadowMap.enabled = true;
   r.setPixelRatio(Math.min(devicePixelRatio, 1.5));
-  host.innerHTML = `<div class="spatial-stage-header"><div><span class="spatial-live-dot"></span> LABORATOIRE SPATIAL</div><span class="spatial-backend">${r.backend.isWebGPUBackend ? "WebGPU" : "WebGL 2"} · TEMPS RÉEL</span></div><div class="spatial-canvas-wrap"><div class="spatial-vignette"></div><div class="spatial-annotations">${world.hotspots.map((h, i) => `<button class="spatial-hotspot" data-hotspot="${i}" aria-label="Expliquer : ${escape(h.label)}"><span>${i + 1}</span>${escape(h.label)}</button>`).join("")}</div><div class="spatial-orbit-hint">Glissez pour tourner · pincez pour zoomer</div><div class="spatial-view-tools"><button data-action="front" aria-label="Vue de face" title="Vue de face">Face</button><button data-action="reset" aria-label="Réinitialiser la vue" title="Réinitialiser la vue">↺</button><button data-action="zoom-in" aria-label="Rapprocher la vue">＋</button><button data-action="zoom-out" aria-label="Éloigner la vue">−</button></div></div><div class="spatial-control-deck"><div class="spatial-slider-label"><label>${escape(cfg[0])}</label><output class="spatial-value">${escape(formatValue(kind, world.value))}</output></div><input class="spatial-range" type="range" aria-label="${escape(cfg[0])}" min="${cfg[1]}" max="${cfg[2]}" step="${cfg[3]}" value="${world.value}"><div class="spatial-play-row"><button class="spatial-play" data-action="play" aria-pressed="false">▷ Lancer l’animation</button><span>Manipulez le réglage pour observer son effet.</span></div></div><div class="spatial-insight" aria-live="polite"><strong>À explorer</strong><span>Cliquez sur un repère numéroté pour comprendre le mécanisme.</span></div>`;
+  host.innerHTML = `<div class="spatial-stage-header"><div><span class="spatial-live-dot"></span> LABORATOIRE SPATIAL</div><span class="spatial-backend">${r.backend.isWebGPUBackend ? "WebGPU" : "WebGL 2"} · TEMPS RÉEL</span></div><div class="spatial-canvas-wrap"><div class="spatial-vignette"></div><div class="spatial-annotations">${world.hotspots.map((h, i) => `<button class="spatial-hotspot" data-hotspot="${i}" aria-label="Expliquer : ${escape(h.label)}"><span>${i + 1}</span>${escape(h.label)}</button>`).join("")}</div><div class="spatial-orbit-hint">Glissez horizontalement pour tourner · +/− pour zoomer</div><div class="spatial-view-tools"><button data-action="front" aria-label="Vue de face" title="Vue de face">Face</button><button data-action="reset" aria-label="Réinitialiser la vue" title="Réinitialiser la vue">↺</button><button data-action="zoom-in" aria-label="Rapprocher la vue">＋</button><button data-action="zoom-out" aria-label="Éloigner la vue">−</button></div></div><div class="spatial-control-deck"><div class="spatial-slider-label"><label>${escape(cfg[0])}</label><output class="spatial-value">${escape(formatValue(kind, world.value))}</output></div><input class="spatial-range" type="range" aria-label="${escape(cfg[0])}" min="${cfg[1]}" max="${cfg[2]}" step="${cfg[3]}" value="${world.value}"><div class="spatial-play-row"><button class="spatial-play" data-action="play" aria-pressed="false">▷ Lancer l’animation</button><span>Manipulez le réglage pour observer son effet.</span></div></div><div class="spatial-insight" aria-live="polite"><strong>À explorer</strong><span>Cliquez sur un repère numéroté pour comprendre le mécanisme.</span></div>`;
   const wrap = host.querySelector(".spatial-canvas-wrap"),
     canvas = r.domElement;
   wrap.prepend(canvas);
@@ -402,6 +402,7 @@ async function interactive(host) {
   controls.maxPolarAngle = Math.PI / 2 - 0.015;
   controls.enableDamping = false;
   controls.enablePan = false;
+  canvas.style.touchAction = "pan-y pinch-zoom";
   controls.update();
   const a = {
     host,
@@ -436,7 +437,7 @@ async function interactive(host) {
   controls.addEventListener("change", () => draw(a));
   controls.addEventListener("start", () => stop());
   function wheel(e) {
-    if (!e.ctrlKey) e.stopImmediatePropagation();
+    e.stopImmediatePropagation();
   }
   canvas.addEventListener("wheel", wheel, { capture: true, passive: true });
   function keydown(e) {

@@ -129,7 +129,8 @@
     $("#navbar").style.width = `${(count / 48) * 100}%`;
     $("#nav-progressbar").setAttribute("aria-valuenow", count);
     const lessonLink = $('[data-nav="lesson"]');
-    lessonLink.href = "#lesson/" + (state.lastLesson || reference.id);
+    lessonLink.href =
+      "#lesson/" + (activeLesson?.id || state.lastLesson || reference.id);
   }
   function scene(lesson, extra = "", caption = true) {
     const i = sceneMap[curriculum.indexOf(lesson)],
@@ -524,6 +525,107 @@
     };
     draw();
   }
+  // External progress updates must never re-render a route: doing so saves its last
+  // lesson again and causes different lesson tabs to continually reload each other.
+  function syncVisibleState(previous) {
+    updateProgress();
+    const put = (element, value) => {
+      if (element && element.textContent !== String(value))
+        element.textContent = value;
+    };
+    function badge(id) {
+      return isValidated(id)
+        ? "✓ Validée"
+        : state.done[id]
+          ? "◌ Déjà consultée"
+          : "Cours · atelier · quiz";
+    }
+    $$(".course-card").forEach((card) => {
+      const id = card.getAttribute("href").split("/").pop();
+      const status = $(".status", card);
+      put(status, badge(id));
+      status?.classList.toggle("passed", isValidated(id));
+    });
+    if (activeLesson) {
+      const id = activeLesson.id,
+        notes = $("#fieldNotes");
+      if (
+        notes &&
+        document.activeElement !== notes &&
+        previous.notes[id] !== state.notes[id]
+      )
+        notes.value = state.notes[id] || "";
+      const practice = $("#practiceDone");
+      if (practice) practice.checked = !!state.practice[id];
+      $$("[data-read]").forEach(
+        (input) =>
+          (input.checked = (state.readV2[id] || []).includes(
+            +input.dataset.read,
+          )),
+      );
+      put(
+        $("#chapter-counter"),
+        `${(state.readV2[id] || []).length} / ${$$(".chapter").length} lus`,
+      );
+      const oldAnswers =
+        id === reference.id ? previous.answers[id] : previous.quizV2[id];
+      const newAnswers =
+        id === reference.id ? state.answers[id] : state.quizV2[id];
+      const changedAnswers =
+        JSON.stringify(oldAnswers || {}) !== JSON.stringify(newAnswers || {});
+      if (changedAnswers) {
+        const focus = document.activeElement?.closest("[data-q][data-a]");
+        const restore = focus
+          ? `[data-q="${focus.dataset.q}"][data-a="${focus.dataset.a}"]`
+          : null;
+        renderQuiz(activeLesson);
+        if (restore) $(restore)?.focus({ preventScroll: true });
+      }
+      if (
+        changedAnswers ||
+        previous.practice[id] !== state.practice[id] ||
+        previous.completedV2[id] !== state.completedV2[id]
+      )
+        put(
+          $("#finishStatus"),
+          isValidated(id)
+            ? "Leçon déjà validée dans votre parcours personnel."
+            : "",
+        );
+    }
+    if ($(".progress-hero")) {
+      const validated = curriculum.filter((x) => isValidated(x.id)).length,
+        read = curriculum.filter((x) => state.done[x.id]).length;
+      put($(".progress-hero h2"), `${validated} / 48 leçons validées`);
+      const ring = $(".progress-ring");
+      ring.style.setProperty("--percent", `${(validated / 48) * 100}%`);
+      const percent = Math.round((validated / 48) * 100);
+      if (ring.dataset.value !== String(percent)) {
+        ring.querySelector("strong").innerHTML = `${percent}<small>%</small>`;
+        ring.dataset.value = percent;
+      }
+      put(
+        $(".progress-hero > div:nth-child(2) > p"),
+        `${read} leçons consultées ou lues · ${Object.values(state.notes).filter(Boolean).length} carnets de terrain`,
+      );
+      $(".progress-hero > div:nth-child(2) > a").href =
+        "#lesson/" + state.lastLesson;
+      $$(".level-progress").forEach((panel, index) => {
+        const count = curriculum.filter(
+          (x) => x.niveau === index + 1 && isValidated(x.id),
+        ).length;
+        put($(".level-heading p", panel), `${count} / 6 validées`);
+        $(".progress > div", panel).style.width = `${(count / 6) * 100}%`;
+      });
+      $$(".progress-lesson").forEach((link) => {
+        const id = link.getAttribute("href").split("/").pop(),
+          symbol = $(".progress-symbol", link);
+        put(symbol, isValidated(id) ? "✓" : state.done[id] ? "◌" : "○");
+        symbol.classList.toggle("passed", isValidated(id));
+        put($("small", link), `${score(id)} / ${questions(id).length}`);
+      });
+    }
+  }
   function renderProgress() {
     activeLesson = null;
     setNav("progress");
@@ -660,13 +762,22 @@
         $("#sidebar").classList.toggle("menu-open", open);
       };
       window.addEventListener("hashchange", renderRoute);
+      let pendingSync = 0,
+        beforeSync = null;
       window.addEventListener("storage", (e) => {
-        if (e.key === KEY) {
-          try {
-            state = cleanState(JSON.parse(e.newValue || "{}"));
-            renderRoute();
-          } catch {}
-        }
+        if (e.key !== KEY) return;
+        try {
+          const incoming = cleanState(JSON.parse(e.newValue || "{}"));
+          beforeSync ??= state;
+          state = incoming;
+          if (!pendingSync)
+            pendingSync = requestAnimationFrame(() => {
+              pendingSync = 0;
+              const previous = beforeSync;
+              beforeSync = null;
+              syncVisibleState(previous);
+            });
+        } catch {}
       });
       await FocalGlossary.init();
       renderRoute();
