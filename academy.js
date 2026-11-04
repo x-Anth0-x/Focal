@@ -336,6 +336,24 @@
       $("#tab-visual").focus();
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
+    function openSpatialPreview(event) {
+      const button = event.target.closest("[data-open-spatial]");
+      if (!button) return;
+      const step = Number(button.closest(".spatial-view").dataset.step) || 0;
+      selectTab("visual");
+      $(`[data-scenario="${step}"]`).click();
+      requestAnimationFrame(() => {
+        $(".visual-workshop").scrollIntoView({
+          block: "start",
+          behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+        });
+        $("#tab-visual").focus({ preventScroll: true });
+      });
+    }
+    $("#pane-course").addEventListener("click", openSpatialPreview);
+    $("#pane-visual").addEventListener("click", openSpatialPreview);
     function readCount() {
       const count = (state.readV2[id] || []).length;
       $("#chapter-counter").textContent = `${count} / ${parts.length} lus`;

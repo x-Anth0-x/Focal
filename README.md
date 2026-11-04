@@ -88,7 +88,7 @@ Routes supplémentaires : `#glossary`, `#glossary/ouverture`, `#glossary/diaphra
 | `glossary.js`       | Liens de vocabulaire, recherche, navigation et narration                      |
 | `vendor/three/`     | Three.js r180, contrôles et géométrie arrondie, sous licence MIT              |
 
-Le moteur Three.js sélectionne **WebGPU** lorsqu’un adaptateur est disponible et utilise **WebGL 2** sinon. Les dépendances sont servies depuis le dépôt grâce à une import map ; aucun CDN ni service externe n’est requis à l’exécution.
+Les aperçus des cours utilisent le moteur **WebGL 2** classique, sans attendre la disponibilité de WebGPU. Les scènes interactives tentent **WebGPU** avec des délais bornés pour la détection, l’initialisation et le premier rendu ; un échec ou un dépassement provoque un repli sur WebGL 2. Les dépendances utilisent des imports relatifs directs et sont servies depuis le dépôt ; aucun CDN, import map ni service externe n’est requis à l’exécution.
 
 Le catalogue et l’index du lexique ne créent pas de moteur graphique. Les scènes se chargent à l’approche de la zone visible. Un moteur réutilisé produit les aperçus ; un second sert la scène interactive. Le cache des aperçus est borné. Le rendu est déclenché à la demande ; les animations ne démarrent jamais seules et s’arrêtent quand la scène ou la page est masquée. Géométries, matériaux, ombres et contrôles sont libérés à la sortie de scène. Les préférences de réduction des animations sont respectées.
 
@@ -101,3 +101,15 @@ python tests/spatial.py
 ```
 
 Cette suite utilise aussi Pillow pour contrôler une capture du canevas. Elle vérifie les géométries aux bornes des réglages, le rendu réel des 48 leçons et des 29 notions, les animations, la caméra, les repères, le retour à la leçon, les écrans étroits et le cas sans GPU. Le moteur WebGL 2 est vérifié avec le rendu logiciel de Chromium dans l’environnement cloud ; les performances WebGPU natives dépendent du matériel et ne sont pas mesurées ici.
+
+### Chargement et accès aux cours
+
+Les aperçus sont cliquables dès leur affichage et ouvrent l’atelier de la leçon. Cliquer sur une carte de comparaison sélectionne sa situation. Le chargement d’une miniature conserve son bouton pour éviter de perdre un clic en cours.
+
+Les onglets Cours, Atelier visuel, Mission terrain, Quiz et Mémo restent indépendants du chargement graphique. Une erreur offre une relance explicite ; les promesses échouées ne sont pas conservées comme résultat définitif. Un ancien rendu dont la leçon a été quittée ne doit pas interrompre une nouvelle scène.
+
+```sh
+python tests/loading.py
+```
+
+Cette suite simule une détection WebGPU sans réponse, une initialisation suspendue, un premier rendu qui ne termine pas, une interruption réseau et la navigation pendant ces échecs. Elle vérifie aussi les cinq onglets, la sélection d’une comparaison, le maintien du lexique et la sauvegarde des notes.

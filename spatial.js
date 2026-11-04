@@ -1,6 +1,10 @@
-import * as T from "three";
-import { OrbitControls } from "./vendor/three/OrbitControls.js";
-import { buildWorld, configs, formatValue } from "./spatial-models.js";
+import * as T from "./vendor/three/three.module.min.js";
+import { OrbitControls } from "./vendor/three/OrbitControls.js?v=20261104-4";
+import {
+  buildWorld,
+  configs,
+  formatValue,
+} from "./spatial-models.js?v=20261104-4";
 const escape = (value) =>
   String(value).replace(
     /[&<>"']/g,
@@ -17,21 +21,16 @@ let previewRendererPromise,
   mountRevision = 0;
 const cache = new Map(),
   reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-async function renderer() {
-  let available = false;
-  try {
-    available = !!(await navigator.gpu?.requestAdapter({
-      powerPreference: "low-power",
-    }));
-  } catch {}
-  const r = new T.WebGPURenderer({
-    antialias: true,
-    alpha: false,
-    forceWebGL: !available,
-    preserveDrawingBuffer: true,
-    powerPreference: "low-power",
-  });
-  await r.init();
+function deadline(work, milliseconds, message) {
+  let timer;
+  return Promise.race([
+    work,
+    new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error(message)), milliseconds);
+    }),
+  ]).finally(() => clearTimeout(timer));
+}
+function configureRenderer(r) {
   r.setPixelRatio(1);
   r.toneMapping = T.ACESFilmicToneMapping;
   r.toneMappingExposure = 1.2;
@@ -39,6 +38,80 @@ async function renderer() {
   r.setClearColor(0x101e27);
   renderers++;
   return r;
+}
+function classicRenderer() {
+  const r = new T.WebGLRenderer({
+    antialias: true,
+    alpha: false,
+    preserveDrawingBuffer: true,
+    powerPreference: "low-power",
+  });
+  r.backend = { isWebGPUBackend: false };
+  r.renderAsync = (scene, camera) => {
+    r.render(scene, camera);
+    return Promise.resolve();
+  };
+  return configureRenderer(r);
+}
+async function renderer(preferWebGPU = false) {
+  if (!preferWebGPU || !navigator.gpu?.requestAdapter) return classicRenderer();
+  let adapter;
+  try {
+    adapter = await deadline(
+      navigator.gpu.requestAdapter({ powerPreference: "low-power" }),
+      1200,
+      "Adaptateur graphique trop lent",
+    );
+  } catch {
+    return classicRenderer();
+  }
+  if (!adapter) return classicRenderer();
+  let candidate;
+  const attempt = (async () => {
+    const { WebGPURenderer } = await import(
+      "./vendor/three/three.webgpu.min.js"
+    );
+    candidate = new WebGPURenderer({
+      antialias: true,
+      alpha: false,
+      preserveDrawingBuffer: true,
+      powerPreference: "low-power",
+    });
+    await candidate.init();
+    if (!candidate.backend.isWebGPUBackend) {
+      candidate.dispose();
+      return classicRenderer();
+    }
+    return configureRenderer(candidate);
+  })();
+  try {
+    return await deadline(attempt, 3000, "Initialisation WebGPU trop lente");
+  } catch {
+    try {
+      candidate?.dispose();
+    } catch {}
+    attempt.then(
+      (r) => r.dispose(),
+      () => {
+        try {
+          candidate?.dispose();
+        } catch {}
+      },
+    );
+    return classicRenderer();
+  }
+}
+function getPreviewRenderer() {
+  return (previewRendererPromise ??= renderer(false).catch((error) => {
+    previewRendererPromise = undefined;
+    throw error;
+  }));
+}
+function getStageRenderer() {
+  return (stageRendererPromise ??= renderer(true).catch((error) => {
+    stageRendererPromise = undefined;
+    throw error;
+  }));
 }
 function sceneFor(world, quality = true) {
   const scene = new T.Scene();
@@ -106,18 +179,22 @@ function disposeScene(scene, world) {
 function unavailable(host) {
   host.dataset.state = "unavailable";
   host.innerHTML =
-    '<div class="spatial-unavailable"><span>EXPLICATION ACCESSIBLE</span><strong>La 3D n’est pas disponible dans ce navigateur.</strong><p>Les définitions, les trois étapes et les exemples restent consultables. Un navigateur récent avec l’accélération graphique permet de manipuler la scène.</p></div>';
+    '<div class="spatial-unavailable"><span>EXPLICATION ACCESSIBLE</span><strong>Le rendu 3D n’a pas pu démarrer.</strong><p>Les explications restent consultables. Vous pouvez relancer la scène sans quitter la leçon.</p><button class="btn alt" data-spatial-retry>Réessayer la 3D</button></div>';
 }
 async function preview(host) {
   const key = host.dataset.kind + ":" + host.dataset.step;
   if (!cache.has(key)) {
-    const r = await (previewRendererPromise ??= renderer());
+    const r = await getPreviewRenderer();
     if (!host.isConnected) return;
     const world = buildWorld(host.dataset.kind, +host.dataset.step),
       scene = sceneFor(world, false),
       camera = makeCamera(560, 340);
     r.setSize(560, 340, false);
-    await r.renderAsync(scene, camera);
+    await deadline(
+      r.renderAsync(scene, camera),
+      6000,
+      "Le premier rendu 3D n’a pas répondu",
+    );
     if (r.backend.isWebGPUBackend)
       await r.backend.device.queue.onSubmittedWorkDone();
     const url = r.domElement.toDataURL("image/webp", 0.86);
@@ -126,9 +203,21 @@ async function preview(host) {
     disposeScene(scene, world);
   }
   if (!host.isConnected) return;
-  host.innerHTML = `<img class="spatial-thumbnail" src="${cache.get(key)}" width="560" height="340" alt="${escape(host.dataset.title)} — rendu d’un modèle 3D"><span class="spatial-preview-label"><i></i> ÉTUDE SPATIALE · 3D</span>`;
+  host
+    .querySelectorAll(".spatial-thumbnail,.spatial-preview-label")
+    .forEach((el) => el.remove());
+  host.insertAdjacentHTML(
+    "afterbegin",
+    `<img class="spatial-thumbnail" src="${cache.get(key)}" width="560" height="340" alt="${escape(host.dataset.title)} — rendu d’un modèle 3D"><span class="spatial-preview-label"><i></i> ÉTUDE SPATIALE · 3D</span>`,
+  );
+  host.querySelector(".spatial-loading,.spatial-unavailable")?.remove();
+  if (!host.querySelector("[data-open-spatial]"))
+    host.insertAdjacentHTML(
+      "beforeend",
+      `<button class="spatial-open" data-open-spatial aria-label="Ouvrir en 3D : ${escape(host.dataset.title)}"><span aria-hidden="true">◇</span> Ouvrir en 3D <span aria-hidden="true">↗</span></button>`,
+    );
   host.dataset.state = "ready";
-  host.dataset.renderer = "three-3d";
+  host.dataset.renderer = "webgl2-preview";
 }
 function stop() {
   if (!active) return;
@@ -283,7 +372,7 @@ async function interactive(host) {
   }
   const revision = ++mountRevision;
   destroy();
-  const r = await (stageRendererPromise ??= renderer());
+  const r = await getStageRenderer();
   if (!host.isConnected || revision !== mountRevision) return;
   const kind = host.dataset.kind,
     step = +host.dataset.step,
@@ -462,7 +551,16 @@ async function interactive(host) {
     canvas.removeEventListener("pointerdown", onDown);
     canvas.removeEventListener("pointerup", onUp);
   };
-  await r.renderAsync(scene, camera);
+  try {
+    await deadline(
+      r.renderAsync(scene, camera),
+      6000,
+      "Le premier rendu 3D n’a pas répondu",
+    );
+  } catch (error) {
+    if (active !== a || !host.isConnected) return;
+    throw error;
+  }
   if (active !== a) return;
   resize();
   host.dataset.state = "ready";
@@ -481,7 +579,22 @@ export async function mount(host) {
     try {
       await interactive(host);
     } catch (error) {
+      if (!host.isConnected) return;
       console.warn("FOCAL 3D : rendu indisponible", error.message);
+      const failed = await stageRendererPromise?.catch(() => null);
+      if (failed?.backend.isWebGPUBackend && !host.dataset.classicRetry) {
+        host.dataset.classicRetry = "true";
+        if (active?.host === host) destroy();
+        failed.dispose();
+        try {
+          stageRendererPromise = Promise.resolve(classicRenderer());
+          await interactive(host);
+          return;
+        } catch (retryError) {
+          console.warn("FOCAL 3D : repli indisponible", retryError.message);
+        }
+      }
+      if (active?.host === host) destroy();
       unavailable(host);
     }
   } else {

@@ -12,8 +12,33 @@ window.FocalVisuals = (() => {
           "'": "&#39;",
         })[c],
     );
-  let modulePromise;
-  const load = () => (modulePromise ??= import("./spatial.js?v=20261104-3"));
+  let modulePromise,
+    attempt = 0;
+  const load = () =>
+    (modulePromise ??= import(
+      "./spatial.js?v=20261104-4" + (attempt ? "&retry=" + attempt : "")
+    ).catch((error) => {
+      modulePromise = undefined;
+      attempt++;
+      throw error;
+    }));
+  function showError(host) {
+    host.dataset.state = "unavailable";
+    host.innerHTML =
+      '<div class="spatial-unavailable"><strong>Le chargement 3D n’a pas abouti.</strong><p>Vous pouvez relancer le chargement sans quitter la leçon.</p><button class="btn alt" data-spatial-retry>Réessayer la 3D</button></div>';
+  }
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest?.("[data-spatial-retry]");
+    if (!button) return;
+    const host = button.closest(".spatial-view");
+    if (!host) return;
+    host.dataset.state = "loading";
+    button.disabled = true;
+    button.textContent = "Nouvel essai…";
+    load()
+      .then((engine) => engine.mount(host))
+      .catch(() => showError(host));
+  });
   const seen = new WeakSet();
   const observer = new IntersectionObserver(
     (entries) => {
@@ -22,15 +47,9 @@ window.FocalVisuals = (() => {
         observer.unobserve(entry.target);
         load()
           .then((engine) => {
-            if (entry.target.isConnected) engine.mount(entry.target);
+            if (entry.target.isConnected) return engine.mount(entry.target);
           })
-          .catch(() => {
-            entry.target.dataset.state = "unavailable";
-            const loading = entry.target.querySelector(".spatial-loading");
-            if (loading)
-              loading.innerHTML =
-                "<span>La scène 3D ne peut pas se charger.</span><small>Les explications et les étapes restent disponibles ci-dessous.</small>";
-          });
+          .catch(() => showError(entry.target));
       }
     },
     { rootMargin: "80px" },
@@ -58,7 +77,7 @@ window.FocalVisuals = (() => {
   });
   return {
     draw(kind, step = 0, title = "Explorer la notion en 3D", mode = "preview") {
-      return `<div class="spatial-view spatial-${escape(mode)}" data-kind="${escape(kind)}" data-step="${step}" data-mode="${escape(mode)}" data-title="${escape(title)}" data-state="loading"><div class="spatial-loading"><span class="spatial-loader" aria-hidden="true"></span><span>Préparation de la scène 3D</span><small>${escape(title)}</small></div></div>`;
+      return `<div class="spatial-view spatial-${escape(mode)}" data-kind="${escape(kind)}" data-step="${step}" data-mode="${escape(mode)}" data-title="${escape(title)}" data-state="loading"><div class="spatial-loading"><span class="spatial-loader" aria-hidden="true"></span><span>Préparation de la scène 3D</span><small>${escape(title)}</small></div>${mode === "preview" ? `<button class="spatial-open" data-open-spatial aria-label="Ouvrir en 3D : ${escape(title)}"><span aria-hidden="true">◇</span> Ouvrir en 3D <span aria-hidden="true">↗</span></button>` : ""}</div>`;
     },
     update(element, kind, step, title) {
       const view = element.querySelector(".spatial-view");
@@ -70,7 +89,9 @@ window.FocalVisuals = (() => {
       view.dataset.step = String(step);
       view.dataset.title = title;
       view.dataset.state = "loading";
-      load().then((engine) => engine.mount(view));
+      load()
+        .then((engine) => engine.mount(view))
+        .catch(() => showError(view));
     },
     ready: load,
   };
