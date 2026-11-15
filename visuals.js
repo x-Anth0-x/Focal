@@ -1,108 +1,21 @@
-/* Lightweight, lazy entry point for the spatial learning engine. No GPU work on the catalogue. */
+/* Drop-in visual renderer: local Runway films replace every WebGL scene. */
 window.FocalVisuals = (() => {
-  const escape = (value) =>
-    String(value).replace(
-      /[&<>"']/g,
-      (c) =>
-        ({
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;",
-        })[c],
-    );
-  let modulePromise,
-    attempt = 0;
-  const load = () =>
-    (modulePromise ??= import(
-      "./spatial.js?v=20261104-6" + (attempt ? "&retry=" + attempt : "")
-    ).catch((error) => {
-      modulePromise = undefined;
-      attempt++;
-      throw error;
-    }));
-  function showError(host) {
-    host.dataset.state = "unavailable";
-    host.innerHTML =
-      '<div class="spatial-unavailable"><strong>Le chargement 3D n’a pas abouti.</strong><p>Vous pouvez relancer le chargement sans quitter la leçon.</p><button class="btn alt" data-spatial-retry>Réessayer la 3D</button></div>';
+  const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+  function draw(kind, step = 0, title = "Observer en vidéo", mode = "preview", capture = null) {
+    const c = capture || window.FocalCamera.capture(kind, step);
+    const gear = "gear-" + c.lensId;
+    if (mode === "preview") {
+      const slug = kind === "camera" ? gear : FocalFilms.forKind(kind);
+      return `<div class="runway-view runway-preview" data-kind="${esc(kind)}" data-step="${step}">${FocalFilms.poster(slug, title)}<button class="runway-open" data-open-film aria-label="Ouvrir l’atelier vidéo : ${esc(title)}">▷ Voir en vidéo ↗</button></div>`;
+    }
+    return `<div class="runway-view runway-interactive" data-kind="${esc(kind)}" data-step="${step}" data-title="${esc(title)}" data-capture="${esc(JSON.stringify(c))}"><div class="runway-kit-heading"><span class="eyebrow">VOTRE KIT · SONY α7 IV</span><strong>${esc(c.lensName)}</strong></div>${FocalFilms.player(gear, "Sony α7 IV · " + c.lensName)}<div class="runway-setting-reference"><span class="eyebrow">REPÈRES DE LA SITUATION ${step+1}</span><strong>${esc(c.focal)} mm · f/${esc(String(c.aperture).replace(".",","))} · ${esc(c.shutter)} s · ISO ${esc(c.iso)}</strong><p>Mode ${esc(c.mode)} · ${esc(c.af)}. Ces repères textuels sont à reproduire sur votre appareil ; ils ne modifient pas la vidéo. L’animation présente le kit, sans simuler le résultat optique.</p></div>${kind !== "camera" ? `<div class="runway-topic"><span class="eyebrow">OBSERVER LE SUJET DU COURS</span>${FocalFilms.player(FocalFilms.forKind(kind), title)}</div>` : ""}</div>`;
   }
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest?.("[data-spatial-retry]");
-    if (!button) return;
-    const host = button.closest(".spatial-view");
-    if (!host) return;
-    host.dataset.state = "loading";
-    button.disabled = true;
-    button.textContent = "Nouvel essai…";
-    load()
-      .then((engine) => engine.mount(host))
-      .catch(() => showError(host));
-  });
-  const seen = new WeakSet();
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        observer.unobserve(entry.target);
-        load()
-          .then((engine) => {
-            if (entry.target.isConnected) return engine.mount(entry.target);
-          })
-          .catch(() => showError(entry.target));
-      }
-    },
-    { rootMargin: "80px" },
-  );
-  function scan() {
-    document.querySelectorAll(".spatial-view").forEach((el) => {
-      if (!seen.has(el)) {
-        seen.add(el);
-        observer.observe(el);
-      }
-    });
-  }
-  let scheduled = false;
-  const mutations = new MutationObserver(() => {
-    if (scheduled) return;
-    scheduled = true;
-    requestAnimationFrame(() => {
-      scheduled = false;
-      scan();
-    });
-  });
-  mutations.observe(document.documentElement, {
-    childList: true,
-    subtree: true,
-  });
   return {
-    draw(
-      kind,
-      step = 0,
-      title = "Explorer la notion en 3D",
-      mode = "preview",
-      capture = null,
-    ) {
-      const shooting = capture || window.FocalCamera?.capture(kind, step) || {};
-      return `<div data-capture="${escape(JSON.stringify(shooting))}" class="spatial-view spatial-${escape(mode)}" data-kind="${escape(kind)}" data-step="${step}" data-mode="${escape(mode)}" data-title="${escape(title)}" data-state="loading"><div class="spatial-loading"><span class="spatial-loader" aria-hidden="true"></span><span>Préparation de la scène 3D</span><small>${escape(title)}</small></div>${mode === "preview" ? `<button class="spatial-open" data-open-spatial aria-label="Ouvrir en 3D : ${escape(title)}"><span aria-hidden="true">◇</span> Ouvrir en 3D <span aria-hidden="true">↗</span></button>` : ""}</div>`;
-    },
+    draw,
     update(element, kind, step, title) {
-      const view = element.querySelector(".spatial-view");
-      if (!view) {
-        element.innerHTML = this.draw(kind, step, title, "interactive");
-        return;
-      }
-      view.dataset.capture = JSON.stringify(
-        window.FocalCamera?.capture(kind, step) || {},
-      );
-      view.dataset.kind = kind;
-      view.dataset.step = String(step);
-      view.dataset.title = title;
-      view.dataset.state = "loading";
-      load()
-        .then((engine) => engine.mount(view))
-        .catch(() => showError(view));
+      element.querySelectorAll("video").forEach(v=>v.pause());
+      element.innerHTML = draw(kind, step, title, "interactive");
     },
-    ready: load,
+    ready: () => Promise.resolve(),
   };
 })();

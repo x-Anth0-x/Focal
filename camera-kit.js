@@ -111,7 +111,7 @@ window.FocalCamera = (() => {
   function renderGuide(app, lastLesson) {
     const id =
       lastLesson && profile.lessons[lastLesson] ? lastLesson : "N01-L01";
-    app.innerHTML = `<div class="breadcrumbs"><a href="#courses">Formation</a><span>›</span>Votre Sony α7 IV</div><div class="page-heading"><div><span class="lesson-badge">VOTRE MATÉRIEL, VOTRE PARCOURS</span><h1>Le Sony α7 IV, en main.</h1><p class="lead">Un boîtier plein format, votre Tamron G2 et vos deux focales fixes. Chaque cours est décliné pour ce kit.</p></div></div><nav class="camera-shortcuts" aria-label="Accès rapide au guide"><a href="#camera-controls" data-camera-jump="camera-controls">01 <span>Explorer le boîtier</span> ↓</a><a href="#camera-focus" data-camera-jump="camera-focus">02 <span>Observer et pratiquer</span> ↓</a><a href="#camera-lenses" data-camera-jump="camera-lenses">03 <span>Choisir un objectif</span> ↓</a></nav><div id="camera-controls" class="sony-body-workshop">${FocalVisuals.draw("camera", 0, "Sony α7 IV : commandes et monture", "interactive")}</div><div id="camera-focus">${focusCinema()}</div><div id="camera-lenses" class="sony-guide-grid">${Object.entries(
+    app.innerHTML = `<div class="breadcrumbs"><a href="#courses">Formation</a><span>›</span>Votre Sony α7 IV</div><div class="page-heading"><div><span class="lesson-badge">VOTRE MATÉRIEL, VOTRE PARCOURS</span><h1>Le Sony α7 IV, en main.</h1><p class="lead">Un boîtier plein format, votre Tamron G2 et vos deux focales fixes. Chaque cours est décliné pour ce kit.</p></div></div><nav class="camera-shortcuts" aria-label="Accès rapide au guide"><a href="#camera-controls" data-camera-jump="camera-controls">01 <span>Voir le boîtier en vidéo</span> ↓</a><a href="#camera-focus" data-camera-jump="camera-focus">02 <span>Observer et pratiquer</span> ↓</a><a href="#camera-lenses" data-camera-jump="camera-lenses">03 <span>Choisir un objectif</span> ↓</a></nav><div id="camera-controls" class="sony-body-workshop"><div class="camera-lens-switch" role="group" aria-label="Objectif à observer"><button class="btn alt" data-guide-lens="tamron" aria-pressed="true">Tamron 28–75 G2</button><button class="btn alt" data-guide-lens="fe35" aria-pressed="false">Sony FE 35 mm</button><button class="btn alt" data-guide-lens="fe85" aria-pressed="false">Sony FE 85 mm</button></div><div id="guide-kit-film">${FocalVisuals.draw("camera", 0, "Sony α7 IV : présentation du kit", "interactive", capture("camera",0,"N01-L01"))}</div><div class="camera-control-notes"><span class="eyebrow">CINQ REPÈRES SUR LE BOÎTIER</span><ol><li><strong>Déclencheur et ON/OFF</strong> : allumer, faire le point à mi-course, puis déclencher.</li><li><strong>Sélecteur Photo / Film / S&amp;Q</strong> : choisir Photo pour les exercices du parcours.</li><li><strong>Molette P / A / S / M</strong> : choisir le mode adapté à la priorité du cours.</li><li><strong>Fn et commandes personnalisées</strong> : vérifier l’affectation de vos commandes dans votre configuration.</li><li><strong>Monture et objectif</strong> : changer d’objectif boîtier éteint, à l’abri de la poussière ; ne pas toucher le capteur.</li></ol></div></div><div id="camera-focus">${focusCinema()}</div><div id="camera-lenses" class="sony-guide-grid">${Object.entries(
       profile.lenses,
     )
       .map(
@@ -121,6 +121,14 @@ window.FocalCamera = (() => {
       .join(
         "",
       )}</div><section class="panel"><span class="eyebrow">AVANT LES EXERCICES</span><h2>Une base cohérente.</h2><ul>${profile.baseline.map((s) => `<li>${esc(s)}</li>`).join("")}</ul><p>${esc(profile.documentation.note)}</p><a href="${esc(profile.documentation.guide)}" target="_blank" rel="noopener noreferrer">Guide officiel Sony α7 IV ↗</a></section><a class="btn" href="#lesson/${id}">Retour à ma leçon →</a>`;
+    app.querySelectorAll("[data-guide-lens]").forEach(button => {
+      button.onclick = () => {
+        app.querySelectorAll("[data-guide-lens]").forEach(b => b.setAttribute("aria-pressed", String(b === button)));
+        const lessonId = {tamron:"N01-L01",fe35:"N01-L05",fe85:"N06-L01"}[button.dataset.guideLens];
+        app.querySelectorAll("#guide-kit-film video").forEach(v=>v.pause());
+        app.querySelector("#guide-kit-film").innerHTML = FocalVisuals.draw("camera",0,"Votre kit Sony α7 IV","interactive",capture("camera",0,lessonId));
+      };
+    });
     app.querySelectorAll("[data-camera-jump]").forEach((link) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();

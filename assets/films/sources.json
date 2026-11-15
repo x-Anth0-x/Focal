@@ -1,0 +1,98 @@
+{
+  "provider": "Runway",
+  "clips": [
+    {
+      "slug": "kit",
+      "taskId": "2fae5791-3935-4d79-bb3e-60cf61b46f7d"
+    },
+    {
+      "slug": "exposure",
+      "taskId": "3b0ea65a-dc0e-4e19-b2bc-ed8e28c01b36"
+    },
+    {
+      "slug": "motion",
+      "taskId": "3589490b-7fe0-4fe9-92ec-def42c8b2fd9"
+    },
+    {
+      "slug": "night",
+      "taskId": "0f640124-b08a-4f6a-a339-3dfd6a4af812"
+    },
+    {
+      "slug": "landscape",
+      "taskId": "3d922e5c-e301-4c50-b672-14ee9945af82"
+    },
+    {
+      "slug": "street",
+      "taskId": "47839888-e7b5-48dd-a165-38cad23df1b1"
+    },
+    {
+      "slug": "color",
+      "taskId": "57f7d5b9-6470-483f-965f-ecad54ecaef1"
+    },
+    {
+      "slug": "studio-light",
+      "taskId": "2065b0de-614e-47f2-b2b0-e513f085756c"
+    },
+    {
+      "slug": "portrait",
+      "taskId": "b4984341-5662-4034-bd32-5e74db1dbb06"
+    },
+    {
+      "slug": "family",
+      "taskId": "132b956b-64fe-4ff1-afc4-f332c1cd092e"
+    },
+    {
+      "slug": "architecture",
+      "taskId": "065722c8-1d41-40d9-a5b8-745b2019b4f2"
+    },
+    {
+      "slug": "editing",
+      "taskId": "116348b7-25a3-457e-9b17-8e1914b64685"
+    },
+    {
+      "slug": "archive",
+      "taskId": "3a9a0330-a2ae-4942-8c0b-49068c536eb0"
+    },
+    {
+      "slug": "selection",
+      "taskId": "1e52054d-b068-43a7-a32c-d54701a7c743"
+    },
+    {
+      "slug": "planning",
+      "taskId": "87b5eac3-5670-489f-b05a-c87b5fed4506"
+    },
+    {
+      "slug": "gear-tamron",
+      "taskId": "78ba7966-63a7-4121-b98f-981a0655565d"
+    },
+    {
+      "slug": "gear-fe35",
+      "taskId": "6fc92597-07a3-4a8a-ae0b-2d86c4e92397"
+    },
+    {
+      "slug": "gear-fe85",
+      "taskId": "a9374ad6-f3e1-4d33-a6c6-76c51fef1c85"
+    },
+    {
+      "slug": "focus",
+      "taskId": "91b28501-5fe1-4497-b014-d376292b4c3e"
+    }
+  ],
+  "gear_starter_images": [
+    {
+      "slug": "tamron",
+      "taskId": "7bde0726-b302-403c-b888-d6836da5886f",
+      "lens": "Tamron 28-75mm F/2.8 Di III VXD G2 (model A063)"
+    },
+    {
+      "slug": "fe35",
+      "taskId": "6f5d9863-49d2-4e2a-b412-23e4a82c1b35",
+      "lens": "Sony FE 35mm F1.8 (SEL35F18F)"
+    },
+    {
+      "slug": "fe85",
+      "taskId": "1f0c3b0e-e98e-4acc-819d-aa8937da1670",
+      "lens": "Sony FE 85mm F1.8 (SEL85F18)"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""User kit integration: factual constraints, per-lesson procedures and actual 3D renders."""
+"""User kit integration: factual constraints, per-lesson procedures and Runway kit films."""
 import json,os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -27,20 +27,14 @@ with sync_playwright() as p:
   assert data['purpose'] in page.locator('.sony-recipe h2').inner_text(),id
   assert PROFILE['lenses'][data['setup']['lens']]['name'] in page.locator('.sony-mission-body').text_content(),id
   page.locator('#tab-visual').click();page.locator('#workshop-art').scroll_into_view_if_needed()
-  page.wait_for_selector('#workshop-art .spatial-interactive[data-state="ready"]',timeout=60000)
-  assert 'ILCE-7M4' in page.locator('.spatial-gear-reference').inner_text(),id
+  page.wait_for_selector('#workshop-art .runway-interactive')
+  assert 'SONY α7 IV' in page.locator('.runway-kit-heading').inner_text(),id
   for step,c in enumerate(data['presets']):
-   page.locator(f'[data-scenario="{step}"]').click();page.wait_for_selector('#workshop-art .spatial-interactive[data-state="ready"]',timeout=30000)
-   capture=page.locator('#workshop-art .spatial-view').evaluate('el=>JSON.parse(el.dataset.capture)')
+   page.locator(f'[data-scenario="{step}"]').click();page.wait_for_selector('#workshop-art .runway-interactive')
+   capture=page.locator('#workshop-art .runway-view').evaluate('el=>JSON.parse(el.dataset.capture)')
    lens=PROFILE['lenses'][c['lens']]
    assert capture['lensId']==c['lens'],id
    assert capture['focal']==c['focal'],id
-   if CONTENT[id]['kind'] in ['focal','lenskit']:
-    slider=page.locator('.spatial-range');assert float(slider.get_attribute('min'))==lens['focalMin'];assert float(slider.get_attribute('max'))==lens['focalMax'];assert slider.is_disabled()==(lens['focalMin']==lens['focalMax'])
-   if CONTENT[id]['kind'] in ['aperture','depth','aberration']:
-    assert float(page.locator('.spatial-range').get_attribute('data-physical-min'))==lens['maxAperture']
-    assert float(page.locator('.spatial-range').get_attribute('data-physical-max'))==22
-    allowed=json.loads(page.locator('.spatial-range').get_attribute('data-values'));assert all(v in [1.8,2,2.2,2.5,2.8,3.2,3.5,4,4.5,5,5.6,6.3,7.1,8,9,10,11,13,14,16,18,20,22] for v in allowed)
   if index%8==0:print('Sony checked',index+1,'/48',id,flush=True)
  page.goto(BASE+'#lesson/N01-L03/visual');page.wait_for_selector('#dof-lens')
  assert page.locator('#dof-lens').input_value()=='fe85'
@@ -52,12 +46,13 @@ with sync_playwright() as p:
  assert page.locator('#aperture').get_attribute('min')=='2'
  page.goto(BASE+'#camera');page.wait_for_selector('.sony-guide-grid')
  assert page.locator('.sony-guide-grid article').count()==3
- page.wait_for_selector('.spatial-interactive[data-state="ready"]',timeout=30000)
- for action in ['back','top','front']:page.locator(f'[data-action="{action}"]').click()
+ for lens in ['tamron','fe35','fe85']:
+  page.locator(f'[data-guide-lens="{lens}"]').click()
+  assert page.locator('#guide-kit-film .runway-film').get_attribute('data-clip')=='gear-'+lens
  for width in [390,768,1440]:
   page.set_viewport_size({'width':width,'height':844})
   for route in ['#camera','#lesson/N01-L03/course','#lesson/N06-L01/visual']:
    page.goto(BASE+route);page.wait_for_selector('.page-heading');assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,route)
  assert not errors,errors
  browser.close()
-print('PASS: 48 Sony procedures, 144 owned-lens presets, constrained controls, 3 lenses in the optical calculator, actual 3D body views and responsive layout. Camera menu operation is not hardware-tested.')
+print('PASS: 48 Sony procedures, 144 owned-lens presets, 3 lenses in the optical calculator, Runway body/lens views and responsive layout. Camera menu operation is not hardware-tested.')

@@ -1,0 +1,312 @@
+{
+  "clips": {
+    "kit": {
+      "title": "Préparer son matériel",
+      "description": "Un boîtier et des objectifs sont préparés sur une table.",
+      "video": "assets/films/kit.mp4",
+      "poster": "assets/films/kit.jpg"
+    },
+    "exposure": {
+      "title": "Lire les lumières et les matières",
+      "description": "Une nature morte réunit une céramique claire, un tissu sombre et des reflets près d’une fenêtre.",
+      "video": "assets/films/exposure.mp4",
+      "poster": "assets/films/exposure.jpg"
+    },
+    "focus": {
+      "title": "Choisir le plan de netteté",
+      "description": "Le point passe d’une tasse au premier plan à une plante plus éloignée, puis revient.",
+      "video": "assets/focus-study.mp4",
+      "poster": "assets/focus-study-poster.jpg"
+    },
+    "motion": {
+      "title": "Accompagner le mouvement",
+      "description": "Un cycliste traverse un chemin de parc ; le cadrage accompagne son déplacement.",
+      "video": "assets/films/motion.mp4",
+      "poster": "assets/films/motion.jpg"
+    },
+    "night": {
+      "title": "Observer la pénombre",
+      "description": "Un lac au crépuscule, des montagnes et quelques lumières composent une scène nocturne.",
+      "video": "assets/films/night.mp4",
+      "poster": "assets/films/night.jpg"
+    },
+    "landscape": {
+      "title": "Construire la profondeur",
+      "description": "Un rocher, des roseaux et des montagnes organisent les plans d’un paysage lacustre.",
+      "video": "assets/films/landscape.mp4",
+      "poster": "assets/films/landscape.jpg"
+    },
+    "street": {
+      "title": "Attendre dans son cadre",
+      "description": "Une personne traverse une rue vue depuis une arche de pierre.",
+      "video": "assets/films/street.mp4",
+      "poster": "assets/films/street.jpg"
+    },
+    "color": {
+      "title": "Faire dialoguer les couleurs",
+      "description": "Des oranges, un bol bleu et des feuilles composent une nature morte en lumière douce.",
+      "video": "assets/films/color.mp4",
+      "poster": "assets/films/color.jpg"
+    },
+    "studio-light": {
+      "title": "Observer les ombres",
+      "description": "Des variations de lumière et de point de vue révèlent les volumes d’une tête sculptée.",
+      "video": "assets/films/studio-light.mp4",
+      "poster": "assets/films/studio-light.jpg"
+    },
+    "portrait": {
+      "title": "Rencontrer la lumière",
+      "description": "Une personne se tourne légèrement vers une fenêtre en lumière naturelle.",
+      "video": "assets/films/portrait.mp4",
+      "poster": "assets/films/portrait.jpg"
+    },
+    "family": {
+      "title": "Photographier la relation",
+      "description": "Deux adultes et un enfant partagent un jeu sur une couverture dans un parc.",
+      "video": "assets/films/family.mp4",
+      "poster": "assets/films/family.jpg"
+    },
+    "architecture": {
+      "title": "Lire les lignes",
+      "description": "Un mouvement lent traverse une cour aux colonnes et aux lignes répétées.",
+      "video": "assets/films/architecture.mp4",
+      "poster": "assets/films/architecture.jpg"
+    },
+    "editing": {
+      "title": "Prendre le temps de développer",
+      "description": "Un photographe travaille devant une photographie de paysage sur un ordinateur.",
+      "video": "assets/films/editing.mp4",
+      "poster": "assets/films/editing.jpg"
+    },
+    "archive": {
+      "title": "Organiser ses supports",
+      "description": "Une carte mémoire, deux supports de stockage et des tirages sont organisés sur un bureau.",
+      "video": "assets/films/archive.mp4",
+      "poster": "assets/films/archive.jpg"
+    },
+    "selection": {
+      "title": "Construire une sélection",
+      "description": "Des tirages sont comparés et réordonnés sur une table.",
+      "video": "assets/films/selection.mp4",
+      "poster": "assets/films/selection.jpg"
+    },
+    "planning": {
+      "title": "Préparer ensemble",
+      "description": "Un photographe et son modèle échangent autour de références avant une séance.",
+      "video": "assets/films/planning.mp4",
+      "poster": "assets/films/planning.jpg"
+    },
+    "gear-tamron": {
+      "title": "Sony α7 IV · Tamron 28–75 G2",
+      "description": "Une vue animée du Sony α7 IV avec l’objectif indiqué. Illustration générée : détails physiques susceptibles de varier.",
+      "video": "assets/films/gear-tamron.mp4",
+      "poster": "assets/films/gear-tamron.jpg"
+    },
+    "gear-fe35": {
+      "title": "Sony α7 IV · Sony FE 35 mm f/1,8",
+      "description": "Une vue animée du Sony α7 IV avec l’objectif indiqué. Illustration générée : détails physiques susceptibles de varier.",
+      "video": "assets/films/gear-fe35.mp4",
+      "poster": "assets/films/gear-fe35.jpg"
+    },
+    "gear-fe85": {
+      "title": "Sony α7 IV · Sony FE 85 mm f/1,8",
+      "description": "Une vue animée du Sony α7 IV avec l’objectif indiqué. Illustration générée : détails physiques susceptibles de varier.",
+      "video": "assets/films/gear-fe85.mp4",
+      "poster": "assets/films/gear-fe85.jpg"
+    }
+  },
+  "lessons": {
+    "N01-L01": {
+      "clip": "kit",
+      "observe": "Quelles commandes devez-vous repérer avant de déclencher ?"
+    },
+    "N01-L02": {
+      "clip": "exposure",
+      "observe": "Où voyez-vous du détail dans les ombres et les surfaces claires ?"
+    },
+    "N01-L03": {
+      "clip": "focus",
+      "observe": "Comment le fond participe-t-il à la séparation du sujet ?"
+    },
+    "N01-L04": {
+      "clip": "motion",
+      "observe": "Quelles parties du sujet mobile souhaitez-vous figer ou laisser filer ?"
+    },
+    "N01-L05": {
+      "clip": "night",
+      "observe": "Quels détails de la scène sombre voulez-vous préserver ?"
+    },
+    "N01-L06": {
+      "clip": "exposure",
+      "observe": "Quelle priorité choisiriez-vous avant de régler votre exposition ?"
+    },
+    "N02-L01": {
+      "clip": "motion",
+      "observe": "Quel réglage voulez-vous imposer pour ce mouvement ?"
+    },
+    "N02-L02": {
+      "clip": "exposure",
+      "observe": "Quelle zone choisiriez-vous comme référence de mesure ?"
+    },
+    "N02-L03": {
+      "clip": "exposure",
+      "observe": "Quelles surfaces vérifieriez-vous pour éviter un écrêtage ?"
+    },
+    "N02-L04": {
+      "clip": "focus",
+      "observe": "Sur quel sujet placeriez-vous votre zone de mise au point ?"
+    },
+    "N02-L05": {
+      "clip": "color",
+      "observe": "Quels objets pourraient vous servir de référence neutre ?"
+    },
+    "N02-L06": {
+      "clip": "editing",
+      "observe": "Comment sépareriez-vous original, travail et fichier livré ?"
+    },
+    "N03-L01": {
+      "clip": "landscape",
+      "observe": "Quels éléments du décor souhaitez-vous conserver dans le cadre ?"
+    },
+    "N03-L02": {
+      "clip": "kit",
+      "observe": "Choisiriez-vous la souplesse du zoom ou une focale fixe pour votre sortie ?"
+    },
+    "N03-L03": {
+      "clip": "focus",
+      "observe": "Quels plans souhaitez-vous rendre lisibles dans votre propre image ?"
+    },
+    "N03-L04": {
+      "clip": "landscape",
+      "observe": "Comment le premier plan organise-t-il la profondeur ?"
+    },
+    "N03-L05": {
+      "clip": "architecture",
+      "observe": "Quelles lignes et quels détails examineriez-vous dans les coins de votre photo ?"
+    },
+    "N03-L06": {
+      "clip": "kit",
+      "observe": "Quelle pièce du kit sert directement votre intention ?"
+    },
+    "N04-L01": {
+      "clip": "street",
+      "observe": "Où se porte votre regard quand la personne entre dans le cadre ?"
+    },
+    "N04-L02": {
+      "clip": "architecture",
+      "observe": "Quelles lignes conduisent votre regard vers le centre ?"
+    },
+    "N04-L03": {
+      "clip": "color",
+      "observe": "Quel rôle joue le contraste entre l’orange et le bleu ?"
+    },
+    "N04-L04": {
+      "clip": "street",
+      "observe": "Quelle place occupe le vide autour du sujet ?"
+    },
+    "N04-L05": {
+      "clip": "street",
+      "observe": "À quel moment le geste du passant enrichit-il votre composition ?"
+    },
+    "N04-L06": {
+      "clip": "selection",
+      "observe": "Quelle vue donnerait le contexte, puis quel détail ferait avancer le récit ?"
+    },
+    "N05-L01": {
+      "clip": "studio-light",
+      "observe": "Comment le déplacement de la source transforme-t-il les ombres ?"
+    },
+    "N05-L02": {
+      "clip": "landscape",
+      "observe": "Dans quelle direction la lumière dessine-t-elle les reliefs ?"
+    },
+    "N05-L03": {
+      "clip": "portrait",
+      "observe": "Quels détails préserveriez-vous sur le visage et près de la fenêtre ?"
+    },
+    "N05-L04": {
+      "clip": "studio-light",
+      "observe": "Quelle direction et quelle douceur de lumière cherchez-vous à obtenir avec votre flash ?"
+    },
+    "N05-L05": {
+      "clip": "portrait",
+      "observe": "Quelle partie du visage est modelée par la fenêtre ?"
+    },
+    "N05-L06": {
+      "clip": "color",
+      "observe": "Comment vérifieriez-vous la cohérence des couleurs sous deux sources différentes ?"
+    },
+    "N06-L01": {
+      "clip": "portrait",
+      "observe": "Quel geste simple pourrait aider votre modèle à se détendre ?"
+    },
+    "N06-L02": {
+      "clip": "family",
+      "observe": "Quel instant raconte le mieux la relation entre les personnes ?"
+    },
+    "N06-L03": {
+      "clip": "landscape",
+      "observe": "Quel rôle jouent le rocher, les roseaux et les montagnes dans la lecture ?"
+    },
+    "N06-L04": {
+      "clip": "motion",
+      "observe": "Où commenceriez-vous le suivi avant le passage du cycliste ?"
+    },
+    "N06-L05": {
+      "clip": "architecture",
+      "observe": "Quels repères utiliseriez-vous pour garder les verticales cohérentes ?"
+    },
+    "N06-L06": {
+      "clip": "night",
+      "observe": "Quels points lumineux surveilleriez-vous pendant une pose longue ?"
+    },
+    "N07-L01": {
+      "clip": "editing",
+      "observe": "Quelles corrections testeriez-vous sur une copie avant de comparer à l’original ?"
+    },
+    "N07-L02": {
+      "clip": "editing",
+      "observe": "Quelles ombres et quelles hautes lumières voulez-vous protéger ?"
+    },
+    "N07-L03": {
+      "clip": "editing",
+      "observe": "Quelle zone de votre image mérite une correction locale ?"
+    },
+    "N07-L04": {
+      "clip": "portrait",
+      "observe": "Quels changements devriez-vous discuter avec cette personne avant toute retouche ?"
+    },
+    "N07-L05": {
+      "clip": "archive",
+      "observe": "Quelle copie resterait accessible si un support tombait en panne ?"
+    },
+    "N07-L06": {
+      "clip": "editing",
+      "observe": "Quel destinataire déterminera les dimensions et le profil de votre export ?"
+    },
+    "N08-L01": {
+      "clip": "planning",
+      "observe": "Quelles décisions voudriez-vous partager avant de commencer la séance ?"
+    },
+    "N08-L02": {
+      "clip": "planning",
+      "observe": "Quelle consigne concrète proposeriez-vous pour créer un geste naturel ?"
+    },
+    "N08-L03": {
+      "clip": "selection",
+      "observe": "Quelle image retireriez-vous pour rendre la sélection plus cohérente ?"
+    },
+    "N08-L04": {
+      "clip": "selection",
+      "observe": "Quel fait observable soutient votre choix plutôt qu’un simple jugement de goût ?"
+    },
+    "N08-L05": {
+      "clip": "planning",
+      "observe": "Quels usages des images clarifieriez-vous avant la prise de vue ?"
+    },
+    "N08-L06": {
+      "clip": "selection",
+      "observe": "Comment relieriez-vous cette sélection à l’intention de votre projet ?"
+    }
+  }
+}
