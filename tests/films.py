@@ -40,7 +40,7 @@ with sync_playwright() as p:
    assert page.locator('#glossary-step-title').inner_text()==term['steps'][i]['title']
  print('PASS: 29 glossary entries and 87 narration steps.')
  assert not any('/spatial.js' in u or '/vendor/three/' in u for u in requests)
- assert not any(u.split('?')[0].endswith('.mp4') for u in requests),'Video downloaded before play'
+ assert not any(u.split('?')[0].endswith('.mp4') and '/assets/brand/' not in u for u in requests),'Video downloaded before play'
  for width in [390,768,1440]:
   page.set_viewport_size({'width':width,'height':960})
   for route in ['#camera','#courses','#glossary/ouverture','#lesson/N01-L03/course','#lesson/N06-L04/visual']:

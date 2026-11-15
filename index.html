@@ -8,7 +8,7 @@
       name="description"
       content="FOCAL Academy : 48 leçons de photographie illustrées, ateliers visuels, missions terrain et quiz corrigés. Apprenez à construire votre regard, à votre rythme."
     />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/brand/favicon.png" type="image/png" />
     <title>FOCAL Academy — Le regard s’apprend</title>
     <link rel="stylesheet" href="academy.css?v=20261104-6" />
     <link rel="stylesheet" href="spatial.css?v=20261115-8" />
@@ -16,7 +16,9 @@
 
     <script src="camera-kit.js?v=20261115-8" defer></script>
     <link rel="stylesheet" href="films.css?v=20261115-8" />
-    <script src="films.js?v=20261115-8" defer></script>
+    <script src="films.js?v=20261115-9" defer></script>
+    <link rel="stylesheet" href="brand.css?v=20261115-9" />
+    <script src="brand.js?v=20261115-9" defer></script>
     <script src="visuals.js?v=20261115-8" defer></script>
     <script src="glossary.js?v=20261115-8" defer></script>
     <script src="academy.js?v=20261115-8" defer></script>
@@ -29,19 +31,10 @@
         href="#courses"
         aria-label="FOCAL Academy, catalogue des cours"
       >
-        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
-          <defs>
-            <path id="blade" d="M46 4A46 46 0 0 1 86 22L59 22L45 46L30 20Z" />
-          </defs>
-          <g fill="currentColor">
-            <use href="#blade" />
-            <use href="#blade" transform="rotate(60 50 50)" />
-            <use href="#blade" transform="rotate(120 50 50)" />
-            <use href="#blade" transform="rotate(180 50 50)" />
-            <use href="#blade" transform="rotate(240 50 50)" />
-            <use href="#blade" transform="rotate(300 50 50)" />
-          </g>
-        </svg>
+        <span class="brand-mark brand-aperture" aria-hidden="true">
+          <img src="assets/brand/aperture-poster.jpg" width="128" height="128" alt="" class="brand-still" />
+          <video class="brand-motion" muted playsinline preload="none" tabindex="-1" data-src="assets/brand/aperture.mp4"></video>
+        </span>
         <span>FOCAL<small>Academy</small></span>
       </a>
       <div class="masthead-title">

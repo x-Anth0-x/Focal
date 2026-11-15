@@ -118,3 +118,9 @@ La page `#camera` propose trois accès rapides (boîtier, étude filmée, object
 `assets/focus-study.mp4` est une scène générée avec Runway, accompagnée de `assets/focus-study-poster.jpg`. Elle illustre une intention de mise au point ; elle ne provient pas du Sony et n’est pas une simulation optique quantitative. Aucun son, lecture automatique ou lecteur tiers. Le navigateur affiche l’affiche et charge la vidéo à la demande (`preload="none"`, commandes natives, lecture dans la page sur mobile). Une description textuelle et un téléchargement direct restent disponibles.
 
 Source de génération : tâche Runway `91b28501-5fe1-4497-b014-d376292b4c3e`. Le média est stocké dans le dépôt : aucune URL signée temporaire ni clé API n’est intégrée au site.
+
+## Logo animé FOCAL
+
+Le symbole de l’en-tête est un diaphragme doré généré puis animé avec Runway. La vidéo locale est optimisée pour un affichage de 45 à 62 px, sans audio et sans boucle permanente. Elle joue brièvement à l’arrivée, puis peut être relancée par survol ou focus clavier. Les préférences de réduction des animations et d’économie de données conservent une affiche fixe. Le logo reste un lien vers les cours ; les lecteurs pédagogiques gèrent leur lecture indépendamment de cette animation décorative.
+
+`brand.js` pilote la lecture et le repli statique, `brand.css` conserve les dimensions responsive du symbole, `assets/brand/sources.json` documente les générations Runway.
