@@ -139,3 +139,11 @@ python tests/sony.py
 ```
 
 La suite contrôle les 48 protocoles, les 144 situations, les limites des objectifs, les trois sélections du calculateur, les vues du boîtier et les écrans étroits.
+
+## Étude de mise au point · Runway
+
+La page `#camera` propose trois accès rapides (boîtier, étude filmée, objectifs), une vidéo illustrative et un exercice de cinq minutes à reproduire avec le Tamron à 50 mm. Les raccourcis déplacent aussi le focus clavier sans changer la route de l’application. Le cours de mise au point reste accessible depuis l’exercice.
+
+`assets/focus-study.mp4` est une scène générée avec Runway, accompagnée de `assets/focus-study-poster.jpg`. Elle illustre une intention de mise au point ; elle ne provient pas du Sony et n’est pas une simulation optique quantitative. Aucun son, lecture automatique ou lecteur tiers. Le navigateur affiche l’affiche et charge la vidéo à la demande (`preload="none"`, commandes natives, lecture dans la page sur mobile). Une description textuelle et un téléchargement direct restent disponibles.
+
+Source de génération : tâche Runway `91b28501-5fe1-4497-b014-d376292b4c3e`. Le média est stocké dans le dépôt : aucune URL signée temporaire ni clé API n’est intégrée au site.
