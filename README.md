@@ -19,7 +19,7 @@ En production, les fichiers sont servis depuis la racine de la branche `gh-pages
 Chaque leçon dispose de cinq espaces :
 
 - **Cours** : repère essentiel, visuel d’ambiance et six chapitres avec suivi de lecture.
-- **Atelier visuel** : vidéos Runway du kit et du sujet, repères de réglage et trois situations commentées.
+- **Atelier visuel** : schéma explicatif, trois situations commentées, paramètres et limites affichés.
 - **Mission terrain** : protocole, preuves attendues et carnet personnel.
 - **Quiz** : questions propres au sujet, correction expliquée et possibilité de recommencer.
 - **Mémo** : synthèse imprimable et liens vers les leçons du même niveau.
@@ -63,39 +63,30 @@ FOCAL_URL=http://127.0.0.1:3000 python tests/smoke.py
 
 `CHROMIUM_PATH` peut désigner un autre exécutable Chromium. La suite parcourt les 48 leçons, réalise les missions et quiz, vérifie la persistance, l’import/export, la reprise d’un ancien suivi, les calculs de profondeur de champ, les liens directs, le clavier et six largeurs d’écran.
 
-## Vidéos Runway et lexique vivant
+## Ateliers explicatifs et lexique
 
-Les 48 cours disposent d’une étude filmée avec une question d’observation propre au sujet, un exercice guidé et un accès direct à la mission. Seize scènes thématiques sont mutualisées entre notions proches. Trois animations supplémentaires présentent le Sony α7 IV avec chacun des objectifs du profil : Tamron 28–75 G2, Sony FE 35 mm f/1,8 et Sony FE 85 mm f/1,8.
+Les vidéos générées du kit et des scènes d’ambiance ne servent plus de démonstrations de réglage dans les leçons et le lexique. Elles sont conservées comme sources dans le dépôt. Le logo animé et l’étude réelle de déplacement du point du guide matériel restent distincts des mécanismes techniques.
 
-Les vidéos remplacent les rendus 3D du catalogue, des cours, des ateliers, du lexique et du guide matériel. `visuals.js` ne charge plus `spatial.js`, Three.js, WebGL ou WebGPU. Les anciens moteurs restent dans le dépôt pour l’historique, sans être utilisés par l’application.
+`diagrams.js` fournit des schémas 2D déterministes pour les 48 notions : ouverture, champ, durée et mouvement, profondeur de champ, histogramme, balance des blancs, mise au point, lumière, cadrage, traitement et méthodes de travail. Les situations changent le schéma et sa légende. Chaque atelier précise « Ce qui change », « Repère à garder » et les hypothèses ou limites de la représentation. Les étapes de méthode sont des diagrammes de décisions, sans prétendre simuler un effet optique.
 
-Dans les ateliers, sélectionner une situation modifie ses explications, les repères de réglage et la vidéo de l’objectif correspondant. Les valeurs n’altèrent pas le film : il s’agit de références à reproduire sur le matériel, pas d’une simulation optique. Le calculateur de profondeur de champ reste indépendant et conserve ses hypothèses quantitatives.
+Les diamètres de pupille, angles de champ, déplacements v × t et limites de profondeur de champ utilisent les valeurs affichées. Les autres effets sont explicitement qualitatifs. Les illustrations ne mesurent ni le bruit, ni le bokeh, ni les aberrations des objectifs réels. Les cours conservent les missions et leurs protocoles de comparaison.
 
-Les 29 notions du lexique conservent leurs définitions, leurs trois étapes commentées et leur lien vers une leçon. Le retour dans une leçon restaure sa position de lecture. La synchronisation du suivi entre onglets conserve les brouillons, filtres et positions.
+Le calculateur de profondeur de champ et le schéma sont synchronisés : les situations d’ouverture et de distance chargent leurs paramètres dans le calculateur ; modifier les valeurs ouvre une exploration libre, sans conserver une ancienne situation sélectionnée.
 
-| Fichier | Rôle |
-| --- | --- |
-| `lesson-films.json` | Correspondance des 48 leçons, questions d’observation, descriptions et médias locaux |
-| `films.js` | Lecteur natif, études filmées, exercices et gestion de la lecture |
-| `films.css` | Mise en page responsive des vidéos et des exercices |
-| `visuals.js` | Aperçus et ateliers vidéo à la place du moteur 3D |
-| `assets/films/` | Dix-huit nouveaux MP4 et leurs affiches JPEG |
-| `assets/films/sources.json` | Identifiants des tâches Runway, sans liens signés ni secrets |
-| `assets/focus-study.mp4` | Première étude de mise au point, réutilisée dans le parcours |
+Les données Sony sont corrigées : les situations A/S/M utilisent réellement ces trois modes ; la leçon sur la distance garde 85 mm et f/1,8 pour comparer 1,2 / 2 / 5 m ; les exemples AF-S/AF-C, compensation d’exposition, Kelvin et compensation du triangle disposent de paramètres propres. Le générateur du profil conserve ces corrections.
 
-Tous les médias sont servis depuis le dépôt. Les affiches sont des images extraites des films. Les MP4 H.264 sont optimisés pour la lecture progressive, sans audio, sans lecture automatique et avec `preload="none"`. Une seule vidéo joue à la fois ; changer d’onglet de leçon ou de route arrête la lecture. La description écrite et le téléchargement direct restent accessibles si le lecteur échoue.
-
-Les clips sont des illustrations générées : les détails physiques peuvent varier, et les scènes ne sont pas des captations du Sony ni des comparaisons techniques contrôlées. Les vues du kit servent à reconnaître le matériel ; les fonctions et réglages sont expliqués séparément dans les textes.
+La navigation et les icônes utilisent un sprite SVG local dessiné pour FOCAL (`assets/icons.svg`, `icons.js`, `atelier.css`). L’accueil conserve son menu masqué ; les espaces de travail affichent une navigation d’atelier et des niveaux identifiables, avec état actif accessible au clavier.
 
 ### Vérifications actuelles
 
 ```sh
 FOCAL_URL=http://127.0.0.1:3000 python tests/smoke.py
-FOCAL_URL=http://127.0.0.1:3000 python tests/films.py
+FOCAL_URL=http://127.0.0.1:3000 python tests/pedagogy.py
 FOCAL_URL=http://127.0.0.1:3000 python tests/sony.py
+python tests/films.py
 ```
 
-La suite `films.py` couvre les 48 cours, les 144 associations situation/objectif, les 29 notions et 87 étapes du lexique, l’absence de requêtes WebGL et de téléchargement MP4 avant lecture, les 19 films réels, la pause au changement d’onglet et les largeurs 390, 768 et 1440 px. Les anciennes suites `spatial.py` et `loading.py` documentent le moteur 3D retiré et ne constituent plus les vérifications de l’application actuelle ; les assertions de canevas de `scrolling.py` sont également historiques.
+`pedagogy.py` vérifie les 144 états visuels, les rapports de diamètre, les angles plein format, les paramètres constants de l’expérience de distance, la synchronisation du calculateur, les 29 notions et 87 étapes du lexique, les écrans étroits et l’absence de téléchargements de vidéos décoratives et de moteur 3D dans les ateliers. Les anciennes suites `spatial.py` et `loading.py`, ainsi que les assertions de canevas de `scrolling.py`, concernent le moteur retiré.
 
 ## Kit Sony α7 IV
 
@@ -103,7 +94,7 @@ Le profil `sony-a7iv.json` décrit le boîtier ILCE-7M4, le Tamron A063 28–75 
 
 Les focales et ouvertures des ateliers et du calculateur respectent le kit : 28–75 mm et f/2,8–22 pour le Tamron ; 35 ou 85 mm fixes et f/1,8–22 pour les Sony. Le calculateur propose des valeurs d’ouverture compatibles avec ces objectifs. Les modes sont A et S, avec vitesse ou ouverture automatique signalée explicitement. Les réglages sont des points de départ, pas les EXIF des illustrations générées.
 
-Le firmware et les affectations personnalisées de l’utilisateur sont inconnus. Le guide officiel Sony est lié mais son accès depuis cet environnement est bloqué par la politique réseau ; les intitulés et chemins exacts des menus ne sont donc pas présentés comme vérifiés. Aucune manipulation n’a été testée sur un boîtier physique. Les vues Runway sont des illustrations générées et non des relevés physiques du matériel.
+Le firmware et les affectations personnalisées de l’utilisateur sont inconnus. Le guide officiel Sony est lié mais son accès depuis cet environnement est bloqué par la politique réseau ; les intitulés et chemins exacts des menus ne sont donc pas présentés comme vérifiés. Aucune manipulation n’a été testée sur un boîtier physique. Les schémas ne sont pas des relevés physiques du matériel.
 
 ```sh
 python tests/sony.py

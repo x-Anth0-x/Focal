@@ -1,21 +1,10 @@
-/* Drop-in visual renderer: local Runway films replace every WebGL scene. */
+/* Instruction first: deterministic diagrams replace unrelated generated demonstrations. */
 window.FocalVisuals = (() => {
-  const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
-  function draw(kind, step = 0, title = "Observer en vidéo", mode = "preview", capture = null) {
-    const c = capture || window.FocalCamera.capture(kind, step);
-    const gear = "gear-" + c.lensId;
-    if (mode === "preview") {
-      const slug = kind === "camera" ? gear : FocalFilms.forKind(kind);
-      return `<div class="runway-view runway-preview" data-kind="${esc(kind)}" data-step="${step}">${FocalFilms.poster(slug, title)}<button class="runway-open" data-open-film aria-label="Ouvrir l’atelier vidéo : ${esc(title)}">▷ Voir en vidéo ↗</button></div>`;
-    }
-    return `<div class="runway-view runway-interactive" data-kind="${esc(kind)}" data-step="${step}" data-title="${esc(title)}" data-capture="${esc(JSON.stringify(c))}"><div class="runway-kit-heading"><span class="eyebrow">VOTRE KIT · SONY α7 IV</span><strong>${esc(c.lensName)}</strong></div>${FocalFilms.player(gear, "Sony α7 IV · " + c.lensName)}<div class="runway-setting-reference"><span class="eyebrow">REPÈRES DE LA SITUATION ${step+1}</span><strong>${esc(c.focal)} mm · f/${esc(String(c.aperture).replace(".",","))} · ${esc(c.shutter)} s · ISO ${esc(c.iso)}</strong><p>Mode ${esc(c.mode)} · ${esc(c.af)}. Ces repères textuels sont à reproduire sur votre appareil ; ils ne modifient pas la vidéo. L’animation présente le kit, sans simuler le résultat optique.</p></div>${kind !== "camera" ? `<div class="runway-topic"><span class="eyebrow">OBSERVER LE SUJET DU COURS</span>${FocalFilms.player(FocalFilms.forKind(kind), title)}</div>` : ""}</div>`;
+  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+  function draw(kind,step=0,title='Comprendre la notion',mode='preview',capture=null) {
+    const c={...(capture||FocalCamera.capture(kind,step))}, preview=mode==='preview';
+    if(kind==='hyperfocal') c.distance=((c.focal*c.focal/(c.aperture*.03)+c.focal)/1000)*[.5,1,1.2][step];
+    return `<div class="runway-view ${preview?'runway-preview diagram-card':'runway-interactive diagram-workshop'}" data-kind="${esc(kind)}" data-step="${step}" data-title="${esc(title)}" data-capture="${esc(JSON.stringify(c))}">${!preview?`<div class="diagram-kit"><span class="eyebrow">${esc(c.body)} · ${esc(c.lensName)}</span><p>${esc(c.focal)} mm · f/${esc(String(c.aperture).replace('.',','))} · ${c.mode==='A'?'durée auto (repère ':''}${esc(c.shutter)} s${c.mode==='A'?')':''} · ISO ${esc(c.iso)} · ${esc(c.mode)} · ${esc(c.af)}${c.focusZone?" · "+esc(c.focusZone):""}${c.kelvin?" · "+esc(c.kelvin)+" K":""}${c.exposureComp!==undefined?" · correction "+esc(c.exposureComp)+" IL":""}${c.distance?' · point à '+esc(c.distance)+' m':''}</p></div>`:''}${FocalDiagrams.render(kind,step,c,title,preview)}${preview?`<button class="runway-open" data-open-film aria-label="Ouvrir l’atelier : ${esc(title)}">Comprendre cette situation →</button>`:''}</div>`;
   }
-  return {
-    draw,
-    update(element, kind, step, title) {
-      element.querySelectorAll("video").forEach(v=>v.pause());
-      element.innerHTML = draw(kind, step, title, "interactive");
-    },
-    ready: () => Promise.resolve(),
-  };
+  return {draw,update(el,kind,step,title,capture=null){el.innerHTML=draw(kind,step,title,'interactive',capture);},ready:()=>Promise.resolve()};
 })();
