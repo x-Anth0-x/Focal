@@ -1,0 +1,724 @@
+{
+  "auditedCommit": "dec8e2c71e87bde6c3fbb57a40a56290c5218f1b",
+  "date": "2026-11-15",
+  "lessons": [
+    {
+      "id": "N01-L01",
+      "title": "Découvrir son appareil",
+      "durationMinutes": 55,
+      "prerequisites": [],
+      "authoredChapterCount": 6,
+      "effectiveQuizCount": 2,
+      "topic": "camera",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N01-L02",
+      "title": "Capteur et formation de l’image",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N01-L01"
+      ],
+      "authoredChapterCount": 6,
+      "effectiveQuizCount": 2,
+      "topic": "sensor",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N01-L03",
+      "title": "Ouverture du diaphragme",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N01-L02"
+      ],
+      "authoredChapterCount": 6,
+      "effectiveQuizCount": 5,
+      "topic": "aperture",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N01-L04",
+      "title": "Vitesse d’obturation",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N01-L03"
+      ],
+      "authoredChapterCount": 6,
+      "effectiveQuizCount": 2,
+      "topic": "shutter",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N01-L05",
+      "title": "Sensibilité ISO",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N01-L04"
+      ],
+      "authoredChapterCount": 6,
+      "effectiveQuizCount": 2,
+      "topic": "iso",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N01-L06",
+      "title": "Triangle d’exposition",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N01-L05"
+      ],
+      "authoredChapterCount": 6,
+      "effectiveQuizCount": 2,
+      "topic": "triangle",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N02-L01",
+      "title": "Modes P, A, S et M",
+      "durationMinutes": 35,
+      "prerequisites": [
+        "N01-L06"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "modes",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N02-L02",
+      "title": "Mesure et correction d’exposition",
+      "durationMinutes": 35,
+      "prerequisites": [
+        "N02-L01"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "meter",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N02-L03",
+      "title": "Histogramme et dynamique",
+      "durationMinutes": 35,
+      "prerequisites": [
+        "N02-L02"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "histogram",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N02-L04",
+      "title": "Autofocus et suivi du sujet",
+      "durationMinutes": 35,
+      "prerequisites": [
+        "N02-L03"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "focus",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N02-L05",
+      "title": "Balance des blancs et couleur",
+      "durationMinutes": 35,
+      "prerequisites": [
+        "N02-L04"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "whitebalance",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N02-L06",
+      "title": "RAW, JPEG et flux de fichiers",
+      "durationMinutes": 35,
+      "prerequisites": [
+        "N02-L05"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "workflow",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N03-L01",
+      "title": "Comprendre les focales",
+      "durationMinutes": 40,
+      "prerequisites": [
+        "N02-L06"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "focal",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N03-L02",
+      "title": "Zoom ou focale fixe",
+      "durationMinutes": 40,
+      "prerequisites": [
+        "N03-L01"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "lenskit",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N03-L03",
+      "title": "Profondeur de champ avancée",
+      "durationMinutes": 40,
+      "prerequisites": [
+        "N03-L02"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "depth",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N03-L04",
+      "title": "Perspective et déformations",
+      "durationMinutes": 40,
+      "prerequisites": [
+        "N03-L03"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "perspective",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N03-L05",
+      "title": "Qualité optique et aberrations",
+      "durationMinutes": 40,
+      "prerequisites": [
+        "N03-L04"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "aberration",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N03-L06",
+      "title": "Choisir son kit photo",
+      "durationMinutes": 40,
+      "prerequisites": [
+        "N03-L05"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "kit",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N04-L01",
+      "title": "Cadrage et intention",
+      "durationMinutes": 45,
+      "prerequisites": [
+        "N03-L06"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "composition",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N04-L02",
+      "title": "Lignes, formes et équilibre",
+      "durationMinutes": 45,
+      "prerequisites": [
+        "N04-L01"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "lines",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N04-L03",
+      "title": "Couleur et contraste",
+      "durationMinutes": 45,
+      "prerequisites": [
+        "N04-L02"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "color",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N04-L04",
+      "title": "Arrière-plan et espace négatif",
+      "durationMinutes": 45,
+      "prerequisites": [
+        "N04-L03"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "negative",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N04-L05",
+      "title": "Photographie de rue et instant",
+      "durationMinutes": 45,
+      "prerequisites": [
+        "N04-L04"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "street",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N04-L06",
+      "title": "Raconter une histoire en série",
+      "durationMinutes": 45,
+      "prerequisites": [
+        "N04-L05"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "story",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N05-L01",
+      "title": "Qualité et direction de lumière",
+      "durationMinutes": 50,
+      "prerequisites": [
+        "N04-L06"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "light",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N05-L02",
+      "title": "Lumière naturelle et horaires",
+      "durationMinutes": 50,
+      "prerequisites": [
+        "N05-L01"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "sun",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N05-L03",
+      "title": "Contre-jour et forte dynamique",
+      "durationMinutes": 50,
+      "prerequisites": [
+        "N05-L02"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "backlight",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N05-L04",
+      "title": "Flash et synchronisation",
+      "durationMinutes": 50,
+      "prerequisites": [
+        "N05-L03"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "flash",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N05-L05",
+      "title": "Éclairage de portrait",
+      "durationMinutes": 50,
+      "prerequisites": [
+        "N05-L04"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "portraitlight",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N05-L06",
+      "title": "Lumière mixte et couleurs",
+      "durationMinutes": 50,
+      "prerequisites": [
+        "N05-L05"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "mixed",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N06-L01",
+      "title": "Portrait naturel",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N05-L06"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "portrait",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N06-L02",
+      "title": "Famille et enfants",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N06-L01"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "family",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N06-L03",
+      "title": "Paysage et voyage",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N06-L02"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "landscape",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N06-L04",
+      "title": "Sport et action",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N06-L03"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "sport",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N06-L05",
+      "title": "Architecture et intérieur",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N06-L04"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "architecture",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N06-L06",
+      "title": "Nuit et astrophotographie",
+      "durationMinutes": 55,
+      "prerequisites": [
+        "N06-L05"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "night",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N07-L01",
+      "title": "Développer un RAW",
+      "durationMinutes": 60,
+      "prerequisites": [
+        "N06-L06"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "raw",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N07-L02",
+      "title": "Contraste et couleur avancés",
+      "durationMinutes": 60,
+      "prerequisites": [
+        "N07-L01"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "curves",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N07-L03",
+      "title": "Masques et retouche locale",
+      "durationMinutes": 60,
+      "prerequisites": [
+        "N07-L02"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "mask",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N07-L04",
+      "title": "Retouche de portrait éthique",
+      "durationMinutes": 60,
+      "prerequisites": [
+        "N07-L03"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "ethics",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N07-L05",
+      "title": "Tri, classement et sauvegarde",
+      "durationMinutes": 60,
+      "prerequisites": [
+        "N07-L04"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "backup",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N07-L06",
+      "title": "Export, impression et colorimétrie",
+      "durationMinutes": 60,
+      "prerequisites": [
+        "N07-L05"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "export",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N08-L01",
+      "title": "Préparer un shooting professionnel",
+      "durationMinutes": 65,
+      "prerequisites": [
+        "N07-L06"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "planning",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N08-L02",
+      "title": "Direction et collaboration",
+      "durationMinutes": 65,
+      "prerequisites": [
+        "N08-L01"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "direction",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N08-L03",
+      "title": "Signature visuelle et portfolio",
+      "durationMinutes": 65,
+      "prerequisites": [
+        "N08-L02"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "portfolio",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N08-L04",
+      "title": "Qualité, critique et progression",
+      "durationMinutes": 65,
+      "prerequisites": [
+        "N08-L03"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "critique",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N08-L05",
+      "title": "Droits, devis et relation client",
+      "durationMinutes": 65,
+      "prerequisites": [
+        "N08-L04"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "rights",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    },
+    {
+      "id": "N08-L06",
+      "title": "Projet final et jury",
+      "durationMinutes": 65,
+      "prerequisites": [
+        "N08-L05"
+      ],
+      "authoredChapterCount": 0,
+      "effectiveQuizCount": 2,
+      "topic": "project",
+      "status": "legacy-consolidation-required",
+      "hasEquipmentProtocol": true,
+      "hasMission": true,
+      "hasDirectSources": false
+    }
+  ]
+}
