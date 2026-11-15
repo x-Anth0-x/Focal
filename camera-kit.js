@@ -101,10 +101,17 @@ window.FocalCamera = (() => {
     const c = capture("reference", 0, id);
     return `<span class="sony-photo-reference">EXERCICE α7 IV · ${esc(c.lensShort)}</span><span class="sony-photo-numbers">${esc(numbers(c))}</span>`;
   }
+  function focusCinema() {
+    return `<section class="focus-cinema panel" aria-labelledby="focus-title">
+      <div class="focus-cinema-heading"><div><span class="eyebrow">LE REGARD EN MOUVEMENT · RUNWAY</span><h2 id="focus-title">La netteté guide le regard.</h2><p>Un même cadre, deux sujets. Observez comment le déplacement du point change ce que vous regardez en premier.</p></div><span class="focus-duration">10 s · sans son</span></div>
+      <figure class="focus-film"><video controls playsinline preload="none" poster="assets/focus-study-poster.jpg" aria-label="Illustration d’un déplacement de mise au point entre une tasse et une plante" aria-describedby="focus-film-caption"><source src="assets/focus-study.mp4" type="video/mp4"><p>Votre navigateur ne lit pas cette vidéo. <a href="assets/focus-study.mp4">Télécharger la démonstration</a>.</p></video><figcaption id="focus-film-caption">Scène illustrative générée avec Runway. Le point passe de la tasse à la plante, puis revient. Ce rendu n’est ni une captation du Sony α7 IV ni une simulation optique mesurée. <a href="assets/focus-study.mp4" download>Télécharger la vidéo</a>.</figcaption></figure>
+      <div class="focus-practice"><div><span class="eyebrow">À VOUS DE JOUER · 5 MIN</span><h3>Deux sujets. Une intention.</h3><p>Posez deux objets à des distances différentes, près d’une fenêtre. Gardez le même cadrage pour comparer vos images.</p><a class="btn" href="#lesson/N02-L04/course">Comprendre la mise au point <span aria-hidden="true">↗</span></a></div><ol><li><strong>Préparez votre kit</strong><span>Tamron à 50 mm · mode A · f/2,8. Adaptez les ISO à la lumière et surveillez la vitesse.</span></li><li><strong>Choisissez le premier sujet</strong><span>En AF-S, placez une petite zone de mise au point sur l’objet proche. Faites une première photo.</span></li><li><strong>Déplacez le point</strong><span>Sans changer de place, visez l’objet éloigné avec la zone AF. Déclenchez et comparez les deux photos.</span></li></ol></div>
+    </section>`;
+  }
   function renderGuide(app, lastLesson) {
     const id =
       lastLesson && profile.lessons[lastLesson] ? lastLesson : "N01-L01";
-    app.innerHTML = `<div class="breadcrumbs"><a href="#courses">Formation</a><span>›</span>Votre Sony α7 IV</div><div class="page-heading"><div><span class="lesson-badge">VOTRE MATÉRIEL, VOTRE PARCOURS</span><h1>Le Sony α7 IV, en main.</h1><p class="lead">Un boîtier plein format, votre Tamron G2 et vos deux focales fixes. Chaque cours est décliné pour ce kit.</p></div></div><div class="sony-body-workshop">${FocalVisuals.draw("camera", 0, "Sony α7 IV : commandes et monture", "interactive")}</div><div class="sony-guide-grid">${Object.entries(
+    app.innerHTML = `<div class="breadcrumbs"><a href="#courses">Formation</a><span>›</span>Votre Sony α7 IV</div><div class="page-heading"><div><span class="lesson-badge">VOTRE MATÉRIEL, VOTRE PARCOURS</span><h1>Le Sony α7 IV, en main.</h1><p class="lead">Un boîtier plein format, votre Tamron G2 et vos deux focales fixes. Chaque cours est décliné pour ce kit.</p></div></div><nav class="camera-shortcuts" aria-label="Accès rapide au guide"><a href="#camera-controls" data-camera-jump="camera-controls">01 <span>Explorer le boîtier</span> ↓</a><a href="#camera-focus" data-camera-jump="camera-focus">02 <span>Observer et pratiquer</span> ↓</a><a href="#camera-lenses" data-camera-jump="camera-lenses">03 <span>Choisir un objectif</span> ↓</a></nav><div id="camera-controls" class="sony-body-workshop">${FocalVisuals.draw("camera", 0, "Sony α7 IV : commandes et monture", "interactive")}</div><div id="camera-focus">${focusCinema()}</div><div id="camera-lenses" class="sony-guide-grid">${Object.entries(
       profile.lenses,
     )
       .map(
@@ -114,6 +121,16 @@ window.FocalCamera = (() => {
       .join(
         "",
       )}</div><section class="panel"><span class="eyebrow">AVANT LES EXERCICES</span><h2>Une base cohérente.</h2><ul>${profile.baseline.map((s) => `<li>${esc(s)}</li>`).join("")}</ul><p>${esc(profile.documentation.note)}</p><a href="${esc(profile.documentation.guide)}" target="_blank" rel="noopener noreferrer">Guide officiel Sony α7 IV ↗</a></section><a class="btn" href="#lesson/${id}">Retour à ma leçon →</a>`;
+    app.querySelectorAll("[data-camera-jump]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const target = document.getElementById(link.dataset.cameraJump);
+        if (!target) return;
+        target.tabIndex = -1;
+        target.focus({ preventScroll: true });
+        target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
+      });
+    });
   }
   return {
     async init(enrichment) {

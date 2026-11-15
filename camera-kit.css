@@ -267,7 +267,7 @@
   font-size: 12px;
   line-height: 1.9;
 }
-.sony-body-workshop + .sony-guide-grid + .panel {
+.sony-guide-grid + .panel {
   margin: 25px 0;
 }
 .sony-guide-grid + .panel li {
@@ -500,3 +500,68 @@
     aspect-ratio: 1.45;
   }
 }
+
+/* A quiet, on-demand film study beside the interactive camera. */
+.camera-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 24px;
+}
+.camera-shortcuts a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--gold);
+  font-size: 12px;
+  transition: border-color .2s, background .2s;
+}
+.camera-shortcuts a:hover { border-color: var(--gold); background: #efc56f0a; }
+.camera-shortcuts span { flex: 1; color: var(--text); }
+#camera-controls, #camera-focus, #camera-lenses { scroll-margin-top: 24px; }
+#camera-controls:focus-visible, #camera-focus:focus-visible, #camera-lenses:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+.focus-cinema { margin: 24px 0; overflow: hidden; padding: 28px; }
+.focus-cinema-heading { display: flex; gap: 24px; justify-content: space-between; align-items: flex-start; }
+.focus-cinema-heading h2 { margin: 8px 0; font-size: clamp(24px, 3vw, 36px); line-height: 1.2; font-weight: 500; }
+.focus-cinema-heading p { max-width: 620px; margin: 12px 0 24px; color: var(--muted); }
+.focus-duration { flex-shrink: 0; border: 1px solid var(--line); border-radius: 30px; padding: 5px 12px; color: var(--muted); font-size: 11px; }
+.focus-film { margin: 0; }
+.focus-film video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #090d10; border-radius: 8px; object-fit: cover; }
+.focus-film video:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.focus-film figcaption { margin: 10px 0 26px; color: var(--muted); font-size: 11px; line-height: 1.7; max-width: 760px; }
+.focus-practice { display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; border-top: 1px solid var(--line); padding-top: 24px; }
+.focus-practice h3 { margin: 6px 0 12px; font-size: 22px; font-weight: 500; }
+.focus-practice p { color: var(--muted); margin: 0 0 20px; }
+.focus-practice .btn { white-space: normal; }
+.focus-practice ol { list-style: none; counter-reset: focus-step; padding: 0; margin: 0; display: grid; gap: 18px; }
+.focus-practice li { counter-increment: focus-step; position: relative; padding-left: 42px; }
+.focus-practice li::before { content: "0" counter(focus-step); position: absolute; left: 0; top: 1px; color: var(--gold); font-size: 12px; }
+.focus-practice li strong, .focus-practice li span { display: block; }
+.focus-practice li strong { font-weight: 500; }
+.focus-practice li span { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.sony-guide-grid + .panel { margin: 24px 0; }
+@media (max-width: 700px) {
+  .camera-shortcuts { grid-template-columns: 1fr; gap: 8px; }
+  .camera-shortcuts a { padding: 12px 14px; }
+  .focus-cinema { padding: 18px; }
+  .focus-cinema-heading { flex-direction: column; gap: 0; }
+  .focus-duration { margin-bottom: 16px; }
+  .focus-cinema-heading p { margin-bottom: 14px; }
+  .focus-practice { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .camera-shortcuts a { transition: none; }
+}
+@media print {
+  .camera-shortcuts, .focus-film video, .focus-duration { display: none; }
+  .focus-practice { display: block; }
+  .focus-practice ol { margin-top: 20px; }
+}
+
+.focus-film figcaption a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
