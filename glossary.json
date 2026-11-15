@@ -14,7 +14,7 @@
     "steps": [
       {
         "title": "Grande ouverture",
-        "body": "Un petit nombre f laisse une pupille plus large. Observez le passage central entre les lamelles."
+        "body": "Un petit nombre f correspond à une pupille d’entrée plus large relativement à la focale."
       },
       {
         "title": "Fermer le diaphragme",
@@ -40,11 +40,11 @@
     "steps": [
       {
         "title": "Repérer les lamelles",
-        "body": "Tournez la scène pour examiner les pièces qui entourent le passage lumineux."
+        "body": "Les lamelles du diaphragme délimitent le passage lumineux à l’intérieur de l’objectif."
       },
       {
         "title": "Actionner le mécanisme",
-        "body": "Déplacez le réglage : les lamelles modifient le diamètre utile de la pupille représentée."
+        "body": "Le réglage d’ouverture modifie le diamètre utile de la pupille d’entrée. Vérifiez ce changement sur votre matériel, sans déduire les positions des lamelles de la vidéo."
       },
       {
         "title": "Relier au nombre f",
@@ -67,11 +67,11 @@
     "steps": [
       {
         "title": "Champ large",
-        "body": "À courte focale, le cadre représenté couvre une zone plus grande depuis le même point."
+        "body": "À courte focale, le champ couvert est plus large depuis le même point."
       },
       {
         "title": "Resserrer le cadre",
-        "body": "Augmentez la focale : le champ se réduit sans déplacer l’appareil."
+        "body": "En augmentant la focale sans déplacer l’appareil, vous réduisez le champ cadré."
       },
       {
         "title": "Séparer focale et perspective",
@@ -96,7 +96,7 @@
       },
       {
         "title": "Faire varier l’ouverture",
-        "body": "Observez le diaphragme ; une ouverture plus petite étend généralement la zone jugée nette."
+        "body": "À focale et distance de mise au point constantes, une ouverture plus petite étend généralement la zone jugée nette."
       },
       {
         "title": "Vérifier à la taille finale",
@@ -124,7 +124,7 @@
       },
       {
         "title": "Raccourcir la collecte",
-        "body": "Le réglage réduit la durée ; la traînée représentée diminue."
+        "body": "Une durée plus courte réduit la trace d’un sujet mobile. La vidéo du cycliste fournit le sujet à observer, pas une comparaison de temps de pose."
       },
       {
         "title": "Figer selon le mouvement",
@@ -150,7 +150,7 @@
       },
       {
         "title": "Augmenter l’ISO",
-        "body": "Les points de bruit sont une illustration pédagogique, pas la mesure d’un boîtier."
+        "body": "Le bruit doit se comparer sur vos propres fichiers, avec une exposition et un grossissement maîtrisés. Une vidéo générée ne mesure pas le bruit du boîtier."
       },
       {
         "title": "Comprendre le compromis",
@@ -172,15 +172,15 @@
     "steps": [
       {
         "title": "Recevoir une image",
-        "body": "Suivez les rayons illustrés de l’objectif vers la surface sensible."
+        "body": "L’objectif forme une image lumineuse sur la surface sensible du capteur."
       },
       {
         "title": "Échantillonner la lumière",
-        "body": "La grille de photosites représente des mesures locales de signal."
+        "body": "Les photosites recueillent un signal local, ensuite transformé en image."
       },
       {
         "title": "Atteindre la saturation",
-        "body": "Le réglage illustre une montée du signal ; la capacité réelle dépend du capteur."
+        "body": "La quantité de lumière reçue et les caractéristiques du capteur déterminent le signal disponible ; augmenter les ISO ne crée pas de lumière."
       }
     ]
   },
@@ -198,11 +198,11 @@
     "steps": [
       {
         "title": "Observer la grille",
-        "body": "Chaque cellule représente une mesure locale et non un petit dessin complet."
+        "body": "Un photosite contribue à une mesure locale du signal ; il ne contient pas à lui seul une image complète."
       },
       {
         "title": "Collecter un signal",
-        "body": "L’animation fait varier la réponse des cellules. La disposition est schématique."
+        "body": "Les cellules du capteur convertissent la lumière reçue en signal. La vidéo fournit un contexte d’observation, sans montrer leur réponse physique."
       },
       {
         "title": "Reconstruire la couleur",
@@ -252,11 +252,11 @@
     "steps": [
       {
         "title": "Désigner la cible",
-        "body": "Le repère montre la zone que vous souhaitez rendre nette."
+        "body": "La zone AF indique au boîtier la région sur laquelle vous souhaitez faire le point."
       },
       {
         "title": "Actualiser la distance",
-        "body": "Déplacez le plan de mise au point pour comprendre le suivi d’un sujet."
+        "body": "Pour suivre un sujet, le système ajuste la mise au point en fonction de son déplacement. Vérifiez ce suivi sur vos prises de vue."
       },
       {
         "title": "Contrôler le résultat",
@@ -282,7 +282,7 @@
       },
       {
         "title": "Lire les tons moyens",
-        "body": "Déplacez la répartition ; aucune forme unique n’est idéale pour toutes les images."
+        "body": "La répartition dépend de la scène et de l’exposition ; aucune forme unique n’est idéale pour toutes les images."
       },
       {
         "title": "Surveiller les extrémités",
@@ -303,7 +303,7 @@
     "steps": [
       {
         "title": "Un rendu froid",
-        "body": "La maquette montre une interprétation bleutée. La source réelle reste une autre question."
+        "body": "Une interprétation bleutée peut résulter du réglage de balance des blancs. Il faut distinguer cette interprétation de la couleur de la source réelle."
       },
       {
         "title": "Un repère neutre",
@@ -358,7 +358,7 @@
       },
       {
         "title": "Peu de lumière",
-        "body": "Des points schématiques représentent la fluctuation visible dans le rendu."
+        "body": "Lorsque le signal utile est faible, les fluctuations peuvent devenir plus visibles. Vérifiez-les à luminosité finale et grossissement comparables."
       },
       {
         "title": "Choisir la priorité",
@@ -383,11 +383,11 @@
       },
       {
         "title": "Réduire le passage",
-        "body": "Les ondes représentées soulignent que la lumière ne se comporte pas comme des traits infiniment fins."
+        "body": "La propagation de la lumière dans une ouverture finie contribue à l’étalement d’un point. Cet effet n’est pas représenté physiquement dans la vidéo."
       },
       {
         "title": "Observer l’étalement",
-        "body": "La taille des anneaux augmente lorsque le nombre f augmente. Le modèle illustre le principe sans calculer une image de diffraction exacte."
+        "body": "À mesure que le nombre f augmente, la diffraction peut réduire le détail fin. La vidéo ne montre pas une image de diffraction calculée : comparez vos propres fichiers au même grossissement."
       }
     ]
   },
@@ -408,11 +408,11 @@
       },
       {
         "title": "Changer l’ouverture",
-        "body": "Leur taille apparente varie dans cette représentation ; la forme de la pupille joue aussi sur leur rendu."
+        "body": "La taille et la forme des zones défocalisées dépendent notamment de la géométrie de la prise de vue et de la pupille de l’objectif."
       },
       {
         "title": "Juger le rendu",
-        "body": "Le modèle ne mesure pas la qualité esthétique du bokeh d’un objectif réel."
+        "body": "La vidéo illustre une séparation des plans, sans mesurer la qualité esthétique du bokeh d’un objectif réel."
       }
     ]
   },
@@ -429,15 +429,15 @@
     "steps": [
       {
         "title": "Capturer",
-        "body": "La première carte représente les données originales."
+        "body": "Conservez les données originales du fichier RAW avant de commencer le développement."
       },
       {
         "title": "Développer",
-        "body": "La deuxième carte représente des choix de rendu non destructifs."
+        "body": "Les paramètres de développement permettent de choisir un rendu sans réécrire les données originales."
       },
       {
         "title": "Exporter",
-        "body": "La troisième carte est une image destinée à un usage ; gardez la source pour revenir sur les réglages."
+        "body": "Exportez une copie pour l’usage prévu et gardez la source pour revenir sur vos choix."
       }
     ]
   },
@@ -479,15 +479,15 @@
     "steps": [
       {
         "title": "Écart modéré",
-        "body": "Les ombres et les hautes lumières restent relativement proches dans la répartition représentée."
+        "body": "Une scène peu contrastée présente un écart réduit entre ses zones les plus sombres et les plus claires."
       },
       {
         "title": "Écart important",
-        "body": "Les groupes de valeurs s’écartent ; une seule exposition peut imposer un compromis."
+        "body": "Quand cet écart augmente, une seule exposition peut imposer un compromis."
       },
       {
         "title": "Décider quoi préserver",
-        "body": "Protégez les zones importantes ou modifiez l’éclairage. La plage du dessin n’est pas une mesure de capteur."
+        "body": "Protégez les zones importantes ou modifiez l’éclairage. La vidéo ne mesure pas la dynamique du capteur."
       }
     ]
   },
@@ -508,7 +508,7 @@
       },
       {
         "title": "Éloigner la mise au point",
-        "body": "La limite lointaine s’éloigne dans le modèle."
+        "body": "Lorsque la mise au point atteint la distance hyperfocale définie par les hypothèses choisies, la limite lointaine de profondeur de champ atteint l’infini."
       },
       {
         "title": "Atteindre l’hyperfocale",
@@ -529,15 +529,15 @@
     "steps": [
       {
         "title": "Observer la fenêtre temporelle",
-        "body": "La scène représente l’ouverture de l’obturateur."
+        "body": "L’obturateur définit une fenêtre pendant laquelle la lumière peut contribuer à l’exposition."
       },
       {
         "title": "Placer l’éclair",
-        "body": "Le point lumineux matérialise un éclair bref pendant cette fenêtre."
+        "body": "L’éclair doit contribuer à l’exposition au moment prévu par le système de synchronisation."
       },
       {
         "title": "Équilibrer les sources",
-        "body": "Le dessin est un modèle temporel simplifié, pas une mesure de durée d’éclair."
+        "body": "La durée d’un éclair dépend du flash et de sa puissance. L’illustration ne mesure ni cette durée ni une synchronisation réelle."
       }
     ]
   },
@@ -559,7 +559,7 @@
       },
       {
         "title": "Déclencher l’éclair",
-        "body": "L’éclair doit arriver au bon instant. Déplacez le réglage pour visualiser la coordination."
+        "body": "L’éclair doit arriver au bon instant par rapport au fonctionnement de l’obturateur. Consultez les modes compatibles avant l’essai."
       },
       {
         "title": "Connaître son matériel",
@@ -584,7 +584,7 @@
       },
       {
         "title": "Éclaircir le sujet",
-        "body": "Faire varier la lumière sur la maquette montre l’effet d’un apport."
+        "body": "Comparez sur votre sujet une vue avec et sans apport de lumière, en notant ce qui change dans les ombres et les hautes lumières."
       },
       {
         "title": "Réduire le contraste",
@@ -606,7 +606,7 @@
     "steps": [
       {
         "title": "Lire la direction",
-        "body": "Tournez la maquette pour examiner les surfaces éclairées."
+        "body": "Observez la direction des ombres et les surfaces éclairées ; reproduisez ensuite cette observation en déplaçant une source autour d’un objet."
       },
       {
         "title": "Déplacer la source",
@@ -614,7 +614,7 @@
       },
       {
         "title": "Distinguer douceur et direction",
-        "body": "Le réglage d’angle montre la direction. La douceur dépend aussi de la taille et de la distance de la source."
+        "body": "La direction et la douceur sont deux paramètres distincts. La douceur dépend notamment de la taille apparente et de la distance de la source."
       }
     ]
   },
@@ -632,15 +632,15 @@
     "steps": [
       {
         "title": "Une action globale",
-        "body": "Un grand repère couvre une large partie du sujet."
+        "body": "Un masque permet de limiter une correction à une partie choisie de l’image."
       },
       {
         "title": "Limiter la sélection",
-        "body": "Réduisez le rayon pour isoler une zone."
+        "body": "Adaptez la zone sélectionnée à votre intention plutôt que de corriger toute l’image."
       },
       {
         "title": "Soigner la transition",
-        "body": "Le contour représenté explique la sélection ; un logiciel réel permet aussi de gérer le contour progressif."
+        "body": "Contrôlez le contour progressif et les transitions dans votre logiciel pour éviter les halos."
       }
     ]
   },
@@ -662,7 +662,7 @@
       },
       {
         "title": "Un contraste accru",
-        "body": "Les variations de hauteur matérialisent la transformation des tons."
+        "body": "Une courbe transforme les valeurs d’entrée en valeurs de sortie ; contrôlez l’effet dans les ombres, les tons moyens et les hautes lumières."
       },
       {
         "title": "Surveiller les limites",
@@ -684,15 +684,15 @@
     "steps": [
       {
         "title": "Traverser l’objectif",
-        "body": "Les trajets colorés représentent plusieurs composantes de la lumière."
+        "body": "Les différentes longueurs d’onde ne sont pas nécessairement focalisées de façon identique par un objectif."
       },
       {
         "title": "Séparer les composantes",
-        "body": "Faites varier le décalage pour voir que les foyers peuvent ne pas coïncider."
+        "body": "Des écarts de focalisation ou de grandissement peuvent produire des franges colorées dans certaines zones."
       },
       {
         "title": "Identifier une frange",
-        "body": "La scène exagère la séparation pour rendre le mécanisme lisible ; elle ne caractérise pas un objectif réel."
+        "body": "Examinez les bords contrastés de vos propres fichiers. La vidéo ne permet pas de caractériser un objectif réel."
       }
     ]
   },
@@ -718,7 +718,7 @@
       },
       {
         "title": "Vérifier la restauration",
-        "body": "La présence de disques dans le dessin ne suffit pas : testez l’ouverture d’un fichier réellement restauré."
+        "body": "Posséder plusieurs supports ne suffit pas : testez l’ouverture d’un fichier réellement restauré depuis une copie indépendante."
       }
     ]
   },
@@ -741,7 +741,7 @@
       },
       {
         "title": "Choisir les dimensions",
-        "body": "Le réglage change la largeur de sortie représentée ; il n’invente pas de détails."
+        "body": "Changer les dimensions d’export modifie le nombre de pixels livrés ; agrandir ne récupère pas automatiquement les détails perdus."
       },
       {
         "title": "Calculer la taille imprimée",

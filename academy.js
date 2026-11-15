@@ -138,7 +138,7 @@
       y = i > 3 ? 100 : 0;
     if ([0, 6, 7].includes(i)) {
       const c = FocalCamera.capture("camera", 0, lesson.id);
-      return `<figure class="photo-scene sony-camera-hero ${extra}" aria-label="Sony α7 IV et ${esc(c.lensName)} : maquette pédagogique">${FocalVisuals.draw("camera", 0, "Sony α7 IV · " + c.lensShort, "preview", c)}<div class="scene-shade"></div>${caption ? `<figcaption><span class="eyebrow">VOTRE SONY α7 IV</span><strong>${esc(enrichment[lesson.id].headline)}</strong><small>Maquette 3D pédagogique · proportions simplifiées</small>${FocalCamera.captureCaption(lesson.id)}</figcaption>` : ""}</figure>`;
+      return `<figure class="photo-scene sony-camera-hero ${extra}" aria-label="Sony α7 IV et ${esc(c.lensName)} : illustration Runway">${FocalVisuals.draw("camera", 0, "Sony α7 IV · " + c.lensShort, "preview", c)}<div class="scene-shade"></div>${caption ? `<figcaption><span class="eyebrow">VOTRE SONY α7 IV</span><strong>${esc(enrichment[lesson.id].headline)}</strong><small>Illustration animée générée avec Runway</small>${FocalCamera.captureCaption(lesson.id)}</figcaption>` : ""}</figure>`;
     }
     return `<figure class="photo-scene ${extra}" style="--scene-x:${x}%;--scene-y:${y}%" role="img" aria-label="${esc(sceneDescriptions[i])} — illustration générée"><div class="scene-shade"></div>${caption ? `<figcaption><span class="eyebrow">LE REGARD FOCAL</span><strong>${esc(enrichment[lesson.id].headline)}</strong><small>Visuel d’illustration généré</small>${FocalCamera.captureCaption(lesson.id)}</figcaption>` : ""}</figure>`;
   }
@@ -279,7 +279,7 @@
       FocalCamera.banner(id) +
       `<div class="lesson-tabs" role="tablist" aria-label="Étapes de la leçon">${tabs.map(([key, label]) => `<button role="tab" id="tab-${key}" aria-controls="pane-${key}" aria-selected="false" tabindex="-1" data-tab="${key}">${label}</button>`).join("")}</div><div id="lesson-panes">${tabs.map(([key]) => `<section role="tabpanel" id="pane-${key}" aria-labelledby="tab-${key}" hidden></section>`).join("")}</div>${footer()}`;
     $("#pane-course").innerHTML =
-      `<div class="section-title"><span>01</span><h2>Voir la notion autrement.</h2></div><div class="lesson-overview"><div class="concept-intro"><span class="eyebrow">LE REPÈRE ESSENTIEL</span><h2>${esc(meta.key)}</h2><p>${esc((lesson.objectifs || [])[0])}</p><div class="concept-preview">${FocalVisuals.draw(meta.kind, 0, lesson.titre)}</div><button class="text-button" id="open-visual">Explorer les trois situations <span>→</span></button></div>${scene(lesson, "lesson-photo")}<aside class="lesson-tips"><div class="takeaway"><span class="eyebrow">◎ &nbsp; À RETENIR</span><h3>${esc(meta.scenarios[0].label)}</h3><p>${esc(meta.scenarios[0].explanation)}</p><p>${esc(meta.scenarios[1].explanation)}</p></div><div class="field-tip"><span class="eyebrow">✧ &nbsp; SUR LE TERRAIN</span><p>${esc(meta.mission)}</p></div></aside></div>${FocalCamera.recipe(id)}<div class="section-title"><span>02</span><h2>Comprendre, chapitre par chapitre.</h2><span class="chapter-counter" id="chapter-counter"></span></div><p class="section-intro">Ouvrez chaque chapitre et marquez-le comme lu à votre rythme. Votre lecture est mémorisée.</p><div class="chapter-list">${parts
+      `<div class="section-title"><span>01</span><h2>Voir la notion autrement.</h2></div><div class="lesson-overview"><div class="concept-intro"><span class="eyebrow">LE REPÈRE ESSENTIEL</span><h2>${esc(meta.key)}</h2><p>${esc((lesson.objectifs || [])[0])}</p><div class="concept-preview">${FocalVisuals.draw(meta.kind, 0, lesson.titre)}</div><button class="text-button" id="open-visual">Explorer les trois situations <span>→</span></button></div>${scene(lesson, "lesson-photo")}<aside class="lesson-tips"><div class="takeaway"><span class="eyebrow">◎ &nbsp; À RETENIR</span><h3>${esc(meta.scenarios[0].label)}</h3><p>${esc(meta.scenarios[0].explanation)}</p><p>${esc(meta.scenarios[1].explanation)}</p></div><div class="field-tip"><span class="eyebrow">✧ &nbsp; SUR LE TERRAIN</span><p>${esc(meta.mission)}</p></div></aside></div>${FocalFilms.lesson(lesson, meta)}${FocalCamera.recipe(id)}<div class="section-title"><span>02</span><h2>Comprendre, chapitre par chapitre.</h2><span class="chapter-counter" id="chapter-counter"></span></div><p class="section-intro">Ouvrez chaque chapitre et marquez-le comme lu à votre rythme. Votre lecture est mémorisée.</p><div class="chapter-list">${parts
         .map(
           (c, i) =>
             `<details class="chapter" ${i === 0 ? "open" : ""}><summary><span class="chapter-number">${String(i + 1).padStart(2, "0")}</span><span>${esc(c.titre)}</span><span class="chapter-toggle" aria-hidden="true">＋</span></summary><div class="chapter-content">${String(
@@ -295,7 +295,7 @@
           "",
         )}</div><div class="next-step"><div><span class="eyebrow">OBSERVER POUR COMPRENDRE</span><h3>Une idée devient claire quand on la compare.</h3><p>Explorez les trois situations, puis testez sur le terrain.</p></div><button class="btn" id="go-visual">Ouvrir l’atelier visuel →</button></div>`;
     $("#pane-visual").innerHTML =
-      `<div class="section-title"><span>↔</span><h2>Un sujet. Trois situations.</h2></div><p class="section-intro">Sélectionnez une situation, manipulez la scène 3D et observez le mécanisme.</p><div class="scenario-tabs" role="group" aria-label="Situations à comparer">${meta.scenarios.map((x, i) => `<button class="scenario-button ${i === 0 ? "selected" : ""}" data-scenario="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${esc(x.label)}</button>`).join("")}</div><div class="visual-workshop"><div id="workshop-art">${FocalVisuals.draw(meta.kind, 0, lesson.titre + " : " + meta.scenarios[0].label, "interactive")}</div><aside class="workshop-explanation" aria-live="polite"><span class="eyebrow">DÉCODER L’IMAGE</span><h2 id="scenario-title">${esc(meta.scenarios[0].label)}</h2><p id="scenario-explanation">${esc(meta.scenarios[0].explanation)}</p><div class="callout">${esc(meta.key)}</div><span class="illustration-label">Maquette 3D pédagogique : mécanismes simplifiés, sans valeur de mesure optique.</span></aside></div>${["aperture", "depth"].includes(meta.kind) ? depthCalculator() : ""}<div class="comparison-heading"><span class="eyebrow">GARDER LES TROIS REPÈRES EN TÊTE</span></div><div class="comparison-grid">${meta.scenarios.map((x, i) => `<article class="comparison-card">${FocalVisuals.draw(meta.kind, i, x.label)}<div><span class="eyebrow">SITUATION 0${i + 1}</span><h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p></div></article>`).join("")}</div>`;
+      `<div class="section-title"><span>↔</span><h2>Un sujet. Trois situations.</h2></div><p class="section-intro">Sélectionnez une situation pour lire ses repères, puis observez les vidéos du kit et du sujet.</p><div class="scenario-tabs" role="group" aria-label="Situations à comparer">${meta.scenarios.map((x, i) => `<button class="scenario-button ${i === 0 ? "selected" : ""}" data-scenario="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${esc(x.label)}</button>`).join("")}</div><div class="visual-workshop"><div id="workshop-art">${FocalVisuals.draw(meta.kind, 0, lesson.titre + " : " + meta.scenarios[0].label, "interactive")}</div><aside class="workshop-explanation" aria-live="polite"><span class="eyebrow">DÉCODER L’IMAGE</span><h2 id="scenario-title">${esc(meta.scenarios[0].label)}</h2><p id="scenario-explanation">${esc(meta.scenarios[0].explanation)}</p><div class="callout">${esc(meta.key)}</div><span class="illustration-label">Vidéos Runway illustratives. Les situations mettent à jour les repères écrits et l’objectif présenté ; elles ne simulent pas le rendu des réglages.</span></aside></div>${["aperture", "depth"].includes(meta.kind) ? depthCalculator() : ""}<div class="comparison-heading"><span class="eyebrow">GARDER LES TROIS REPÈRES EN TÊTE</span></div><div class="comparison-grid">${meta.scenarios.map((x, i) => `<article class="comparison-card">${FocalVisuals.draw(meta.kind, i, x.label)}<div><span class="eyebrow">SITUATION 0${i + 1}</span><h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p></div></article>`).join("")}</div>`;
     $("#pane-mission").innerHTML =
       `<div class="mission-layout"><div><div class="section-title"><span>→</span><h2>De la notion à votre image.</h2></div><div class="panel mission-brief"><p class="sony-mission-body">Sony α7 IV · ${esc(FocalCamera.capture("reference", 0, id).lensName)}</p><span class="eyebrow">VOTRE MISSION · ${esc(lesson.id)}</span><h2>${esc(lesson.titre)}</h2><p class="mission-instruction">${esc(meta.mission)}</p><h3>Votre protocole</h3><ol><li>Écrivez votre intention avant de commencer.</li><li>Gardez une trace des réglages et des conditions de chaque essai.</li><li>Comparez les résultats au même grossissement.</li><li>Notez une observation et une correction pour votre prochaine séance.</li></ol><div class="callout">${esc(meta.key)}</div></div></div><aside class="panel mission-evidence"><span class="eyebrow">À RAPPORTER DE VOTRE SÉANCE</span><h3>Une preuve, une réflexion.</h3><ul>${(lesson.exercice?.preuves || ["Une série d’essais comparables", "Des réglages consignés", "Une conclusion argumentée"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p class="tiny">Les images restent chez vous. Le site conserve uniquement vos notes et votre déclaration de réalisation.</p></aside></div><section class="panel notes-panel"><label for="fieldNotes"><h2>Mon carnet de terrain</h2><span>Intention, réglages, observations, prochain essai.</span></label><textarea id="fieldNotes" maxlength="50000" placeholder="Mon intention…\nLes conditions et mes réglages…\nCe que j’ai observé…\nCe que je changerai…">${esc(state.notes[id] || "")}</textarea><div class="notes-actions"><button class="btn" id="saveNotes">Enregistrer mes notes</button><span id="notes-status" role="status"></span><label class="read-check"><input type="checkbox" id="practiceDone" ${state.practice[id] ? "checked" : ""}> Mission réalisée</label></div></section>`;
     $("#pane-quiz").innerHTML =
@@ -309,8 +309,9 @@
         )
         .join(
           "",
-        )}<p class="tiny">Les images sont des illustrations générées ; les diagrammes sont des schémas explicatifs. Les règles techniques doivent être confrontées au matériel et aux conditions réelles.</p></aside></div>`;
+        )}<p class="tiny">Les vidéos et leurs affiches sont des illustrations générées avec Runway. Les règles techniques doivent être confrontées au matériel et aux conditions réelles.</p></aside></div>`;
     function selectTab(key, updateUrl = true) {
+      FocalFilms.pause();
       if (!tabs.some((t) => t[0] === key)) key = "course";
       $$("[data-tab]").forEach((b) => {
         const active = b.dataset.tab === key;
@@ -338,15 +339,16 @@
         all[next].focus();
       };
     });
+    $("[data-film-mission]").onclick = () => { selectTab("mission"); $("#tab-mission").focus(); };
     $("#open-visual").onclick = $("#go-visual").onclick = () => {
       selectTab("visual");
       $("#tab-visual").focus();
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
     function openSpatialPreview(event) {
-      const button = event.target.closest("[data-open-spatial]");
+      const button = event.target.closest("[data-open-film]");
       if (!button) return;
-      const step = Number(button.closest(".spatial-view").dataset.step) || 0;
+      const step = Number(button.closest(".runway-view").dataset.step) || 0;
       selectTab("visual");
       $(`[data-scenario="${step}"]`).click();
       requestAnimationFrame(() => {
@@ -397,18 +399,6 @@
             meta.scenarios[i].explanation;
         }),
     );
-    function exploreScene() {
-      $$("[data-scenario]").forEach((b) => {
-        b.classList.remove("selected");
-        b.setAttribute("aria-pressed", "false");
-      });
-      $("#scenario-title").textContent = "Exploration libre";
-      $("#scenario-explanation").textContent =
-        meta.key +
-        " Les réglages du laboratoire remplacent le préréglage de la situation. Sélectionnez une situation pour y revenir.";
-    }
-    $("#workshop-art").addEventListener("spatial-change", exploreScene);
-    $("#workshop-art").addEventListener("spatial-play", exploreScene);
     const notes = $("#fieldNotes"),
       notesStatus = $("#notes-status");
     let noteTimer;
@@ -736,6 +726,7 @@
     app.innerHTML = `<div class="empty-state"><span class="eyebrow">FOCAL ACADEMY</span><h1>Cette leçon reste à trouver.</h1><p>Le lien ne correspond pas à une leçon du parcours.</p><a class="btn" href="#courses">Revenir aux 48 leçons</a></div>`;
   }
   function renderRoute() {
+    FocalFilms.pause();
     routeCounter++;
     const bits = location.hash.slice(1).split("/");
     document.title = "FOCAL Academy — Le regard s’apprend";
@@ -768,6 +759,7 @@
       );
       [curriculum, enrichment, reference] = results;
       await FocalCamera.init(enrichment);
+      await FocalFilms.init(enrichment);
       if (curriculum.length !== 48 || curriculum.some((x) => !enrichment[x.id]))
         throw Error("Catalogue incomplet");
       let raw = {};

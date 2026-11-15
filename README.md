@@ -19,7 +19,7 @@ En production, les fichiers sont servis depuis la racine de la branche `gh-pages
 Chaque leçon dispose de cinq espaces :
 
 - **Cours** : repère essentiel, visuel d’ambiance et six chapitres avec suivi de lecture.
-- **Atelier visuel** : scène 3D manipulable, réglage animé, repères cliquables, trois situations commentées et une comparaison de rendus 3D.
+- **Atelier visuel** : vidéos Runway du kit et du sujet, repères de réglage et trois situations commentées.
 - **Mission terrain** : protocole, preuves attendues et carnet personnel.
 - **Quiz** : questions propres au sujet, correction expliquée et possibilité de recommencer.
 - **Mémo** : synthèse imprimable et liens vers les leçons du même niveau.
@@ -35,7 +35,7 @@ Les contenus d’origine sont conservés dans `curriculum.json`. Les complément
 | `index.html`                | Structure accessible, chargement et navigation                |
 | `academy.css`               | Interface, responsive, impression et réduction des animations |
 | `academy.js`                | Catalogue, routes, leçons, quiz, carnet et progression        |
-| `visuals.js`                | Chargement différé des aperçus et ateliers 3D                   |
+| `visuals.js`                | Aperçus et ateliers vidéo Runway                   |
 | `curriculum.json`           | Catalogue et contenu pédagogique d’origine                    |
 | `lesson-content.json`       | Notions, missions, situations et questions complémentaires    |
 | `lesson_reference.json`     | Chapitres et quiz d’origine du pilote sur l’ouverture         |
@@ -43,7 +43,7 @@ Les contenus d’origine sont conservés dans `curriculum.json`. Les complément
 | `assets/landscape.png`      | Illustration générée de la première version, conservée        |
 | `REFERENCE.md`              | Documentation historique de l’archive fournie                 |
 
-Pour enrichir une leçon, conserver son identifiant `Nxx-Lxx`. Modifier ses textes dans `lesson-content.json`, et sa maquette dans `spatial-models.js`. Les illustrations générées ne sont pas des photographies comparatives contrôlées. Les maquettes 3D expliquent des mécanismes ; elles ne constituent pas des simulations optiques quantitatives. Le calcul optique annonce séparément ses hypothèses.
+Pour enrichir une leçon, conserver son identifiant `Nxx-Lxx`. Modifier ses textes dans `lesson-content.json`, et sa correspondance vidéo dans `lesson-films.json`. Les illustrations générées ne sont pas des photographies comparatives contrôlées. Les vidéos illustrent le sujet ; elles ne constituent pas des simulations optiques quantitatives. Le calcul optique annonce séparément ses hypothèses.
 
 ## Suivi et compatibilité
 
@@ -63,76 +63,47 @@ FOCAL_URL=http://127.0.0.1:3000 python tests/smoke.py
 
 `CHROMIUM_PATH` peut désigner un autre exécutable Chromium. La suite parcourt les 48 leçons, réalise les missions et quiz, vérifie la persistance, l’import/export, la reprise d’un ancien suivi, les calculs de profondeur de champ, les liens directs, le clavier et six largeurs d’écran.
 
-## Laboratoire spatial et lexique vivant
+## Vidéos Runway et lexique vivant
 
-Les 48 anciens schémas SVG sont remplacés par des rendus de modèles 3D procéduraux. Les cours affichent des aperçus 3D ; les ateliers et le lexique donnent accès aux scènes manipulables.
+Les 48 cours disposent d’une étude filmée avec une question d’observation propre au sujet, un exercice guidé et un accès direct à la mission. Seize scènes thématiques sont mutualisées entre notions proches. Trois animations supplémentaires présentent le Sony α7 IV avec chacun des objectifs du profil : Tamron 28–75 G2, Sony FE 35 mm f/1,8 et Sony FE 85 mm f/1,8.
 
-- Rotation à la souris ou par geste tactile horizontal, zoom par boutons, vue de face et réinitialisation. La molette et le geste tactile vertical restent dédiés au défilement de la page.
-- Un réglage propre à la notion, une animation à la demande et des points explicatifs ancrés à la scène.
-- Géométries mises à jour réellement : lamelles du diaphragme, plans de mise au point, répartition tonale, sources lumineuses, trajectoires et flux de fichiers.
-- Lorsque le réglage est modifié librement, la narration quitte le préréglage pour éviter de présenter une ancienne situation comme l’état actuel.
-- Les flèches font tourner la vue au clavier ; `+` / `−` zooment et `0` réinitialise. La barre d’espace lance ou arrête l’animation lorsque le canevas est sélectionné.
+Les vidéos remplacent les rendus 3D du catalogue, des cours, des ateliers, du lexique et du guide matériel. `visuals.js` ne charge plus `spatial.js`, Three.js, WebGL ou WebGPU. Les anciens moteurs restent dans le dépôt pour l’historique, sans être utilisés par l’application.
 
-**29 notions techniques** deviennent des liens dans les cours, exemples et corrections. Chaque notion possède une définition, une animation 3D pilotable, trois étapes commentées et un exemple concret. La lecture des textes ne nécessite pas de GPU. Le retour depuis un mot cliqué restaure la leçon et son onglet, avec sa position de lecture.
+Dans les ateliers, sélectionner une situation modifie ses explications, les repères de réglage et la vidéo de l’objectif correspondant. Les valeurs n’altèrent pas le film : il s’agit de références à reproduire sur le matériel, pas d’une simulation optique. Le calculateur de profondeur de champ reste indépendant et conserve ses hypothèses quantitatives.
 
-Routes supplémentaires : `#glossary`, `#glossary/ouverture`, `#glossary/diaphragme`, `#glossary/focale`.
+Les 29 notions du lexique conservent leurs définitions, leurs trois étapes commentées et leur lien vers une leçon. Le retour dans une leçon restaure sa position de lecture. La synchronisation du suivi entre onglets conserve les brouillons, filtres et positions.
 
-### Architecture graphique
+| Fichier | Rôle |
+| --- | --- |
+| `lesson-films.json` | Correspondance des 48 leçons, questions d’observation, descriptions et médias locaux |
+| `films.js` | Lecteur natif, études filmées, exercices et gestion de la lecture |
+| `films.css` | Mise en page responsive des vidéos et des exercices |
+| `visuals.js` | Aperçus et ateliers vidéo à la place du moteur 3D |
+| `assets/films/` | Dix-huit nouveaux MP4 et leurs affiches JPEG |
+| `assets/films/sources.json` | Identifiants des tâches Runway, sans liens signés ni secrets |
+| `assets/focus-study.mp4` | Première étude de mise au point, réutilisée dans le parcours |
 
-| Fichier             | Rôle                                                                          |
-| ------------------- | ----------------------------------------------------------------------------- |
-| `spatial-models.js` | 53 configurations de maquettes, dont les 48 sujets du parcours                |
-| `spatial.js`        | Rendu, contrôles, repères, animation, visibilité et libération des ressources |
-| `spatial.css`       | Interface spatiale et lexique responsive                                      |
-| `glossary.json`     | 29 définitions, 87 étapes et exemples rédigés                                 |
-| `glossary.js`       | Liens de vocabulaire, recherche, navigation et narration                      |
-| `vendor/three/`     | Three.js r180, contrôles et géométrie arrondie, sous licence MIT              |
+Tous les médias sont servis depuis le dépôt. Les affiches sont des images extraites des films. Les MP4 H.264 sont optimisés pour la lecture progressive, sans audio, sans lecture automatique et avec `preload="none"`. Une seule vidéo joue à la fois ; changer d’onglet de leçon ou de route arrête la lecture. La description écrite et le téléchargement direct restent accessibles si le lecteur échoue.
 
-Les aperçus des cours utilisent le moteur **WebGL 2** classique, sans attendre la disponibilité de WebGPU. Les scènes interactives tentent **WebGPU** avec des délais bornés pour la détection, l’initialisation et le premier rendu ; un échec ou un dépassement provoque un repli sur WebGL 2. Les dépendances utilisent des imports relatifs directs et sont servies depuis le dépôt ; aucun CDN, import map ni service externe n’est requis à l’exécution.
+Les clips sont des illustrations générées : les détails physiques peuvent varier, et les scènes ne sont pas des captations du Sony ni des comparaisons techniques contrôlées. Les vues du kit servent à reconnaître le matériel ; les fonctions et réglages sont expliqués séparément dans les textes.
 
-Les miniatures de boîtier du catalogue peuvent utiliser le moteur d’aperçus ; l’index du lexique ne crée pas de moteur graphique. Les scènes se chargent à l’approche de la zone visible. Un moteur réutilisé produit les aperçus ; un second sert la scène interactive. Le cache des aperçus est borné. Le rendu est déclenché à la demande ; les animations ne démarrent jamais seules et s’arrêtent quand la scène ou la page est masquée. Géométries, matériaux, ombres et contrôles sont libérés à la sortie de scène. Les préférences de réduction des animations sont respectées.
-
-L’absence de support graphique affiche une explication textuelle : définition, étapes, exemples et cours restent utilisables. Les visuels sont schématiques, les trajectoires peuvent être exagérées, et le boîtier reprend les fonctions du Sony α7 IV et les trois objectifs du profil, avec des formes et positions simplifiées ; il ne s’agit pas d’une numérisation du matériel réel. Seul le calcul de profondeur de champ est quantitatif, selon les hypothèses affichées.
-
-### Vérification 3D
+### Vérifications actuelles
 
 ```sh
-python tests/spatial.py
+FOCAL_URL=http://127.0.0.1:3000 python tests/smoke.py
+FOCAL_URL=http://127.0.0.1:3000 python tests/films.py
+FOCAL_URL=http://127.0.0.1:3000 python tests/sony.py
 ```
 
-Cette suite utilise aussi Pillow pour contrôler une capture du canevas. Elle vérifie les géométries aux bornes des réglages, le rendu réel des 48 leçons et des 29 notions, les animations, la caméra, les repères, le retour à la leçon, les écrans étroits et le cas sans GPU. Le moteur WebGL 2 est vérifié avec le rendu logiciel de Chromium dans l’environnement cloud ; les performances WebGPU natives dépendent du matériel et ne sont pas mesurées ici.
-
-### Chargement et accès aux cours
-
-Les aperçus sont cliquables dès leur affichage et ouvrent l’atelier de la leçon. Cliquer sur une carte de comparaison sélectionne sa situation. Le chargement d’une miniature conserve son bouton pour éviter de perdre un clic en cours.
-
-Les onglets Cours, Atelier visuel, Mission terrain, Quiz et Mémo restent indépendants du chargement graphique. Une erreur offre une relance explicite ; les promesses échouées ne sont pas conservées comme résultat définitif. Un ancien rendu dont la leçon a été quittée ne doit pas interrompre une nouvelle scène.
-
-```sh
-python tests/loading.py
-```
-
-Cette suite simule une détection WebGPU sans réponse, une initialisation suspendue, un premier rendu qui ne termine pas, une interruption réseau et la navigation pendant ces échecs. Elle vérifie aussi les cinq onglets, la sélection d’une comparaison, le maintien du lexique et la sauvegarde des notes.
-
-### Défilement et synchronisation entre onglets
-
-La réception d’une progression provenant d’un autre onglet met à jour les compteurs, les notes non modifiées, les réponses et les marqueurs de lecture sans reconstruire la page ni enregistrer à nouveau la dernière leçon. Cela évite une boucle entre deux onglets affichant des leçons différentes, qui réinitialisait leur défilement et leurs scènes. Les mises à jour d’affichage sont regroupées par image, sans déplacer le curseur d’un champ de notes en cours d’édition ni réinitialiser les filtres du catalogue.
-
-La scène 3D laisse la molette faire défiler le document. Son comportement tactile autorise le déplacement vertical de la page et réserve le geste horizontal à la rotation du modèle. Les boutons de zoom restent disponibles.
-
-```sh
-python tests/scrolling.py
-```
-
-La suite ouvre plusieurs pages dans **un même contexte navigateur**, avec un stockage réellement partagé. Elle vérifie l’absence de rechargements croisés, la conservation de la position de lecture, des onglets, du brouillon local et des filtres, la mise à jour du suivi ainsi que les vrais gestes de molette et de défilement tactile sur le canevas 3D.
+La suite `films.py` couvre les 48 cours, les 144 associations situation/objectif, les 29 notions et 87 étapes du lexique, l’absence de requêtes WebGL et de téléchargement MP4 avant lecture, les 19 films réels, la pause au changement d’onglet et les largeurs 390, 768 et 1440 px. Les anciennes suites `spatial.py` et `loading.py` documentent le moteur 3D retiré et ne constituent plus les vérifications de l’application actuelle ; les assertions de canevas de `scrolling.py` sont également historiques.
 
 ## Kit Sony α7 IV
 
 Le profil `sony-a7iv.json` décrit le boîtier ILCE-7M4, le Tamron A063 28–75 mm f/2,8 G2, le Sony SEL85F18 et le Sony SEL35F18F plein format. Il fournit 48 protocoles de cinq étapes et 144 situations. `camera-kit.js` affiche ces protocoles dans les cours, les missions et le mémo ; `#camera` présente les commandes et les trois objectifs. Le générateur éditorial est `scripts/build_sony_profile.py`.
 
-Les focales et ouvertures des ateliers et du calculateur respectent le kit : 28–75 mm et f/2,8–22 pour le Tamron ; 35 ou 85 mm fixes et f/1,8–22 pour les Sony. Les commandes d’ouverture utilisent des valeurs par tiers de diaphragme. Les modes sont A et S, avec vitesse ou ouverture automatique signalée explicitement. Les réglages sont des points de départ, pas les EXIF des illustrations générées.
+Les focales et ouvertures des ateliers et du calculateur respectent le kit : 28–75 mm et f/2,8–22 pour le Tamron ; 35 ou 85 mm fixes et f/1,8–22 pour les Sony. Le calculateur propose des valeurs d’ouverture compatibles avec ces objectifs. Les modes sont A et S, avec vitesse ou ouverture automatique signalée explicitement. Les réglages sont des points de départ, pas les EXIF des illustrations générées.
 
-Le firmware et les affectations personnalisées de l’utilisateur sont inconnus. Le guide officiel Sony est lié mais son accès depuis cet environnement est bloqué par la politique réseau ; les intitulés et chemins exacts des menus ne sont donc pas présentés comme vérifiés. Aucune manipulation n’a été testée sur un boîtier physique. Les vues 3D restent des maquettes pédagogiques ; des photos réelles ou une numérisation et des prises de vue comparatives contrôlées seront nécessaires à une future présentation photoréaliste.
+Le firmware et les affectations personnalisées de l’utilisateur sont inconnus. Le guide officiel Sony est lié mais son accès depuis cet environnement est bloqué par la politique réseau ; les intitulés et chemins exacts des menus ne sont donc pas présentés comme vérifiés. Aucune manipulation n’a été testée sur un boîtier physique. Les vues Runway sont des illustrations générées et non des relevés physiques du matériel.
 
 ```sh
 python tests/sony.py
