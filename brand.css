@@ -1,0 +1,6 @@
+.brand-aperture { position: relative; display: block; overflow: hidden; border-radius: 50%; background: #101619; isolation: isolate; }
+.brand-aperture img, .brand-aperture video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.18); }
+.brand-aperture video { opacity: 0; pointer-events: none; }
+.brand-aperture.is-active video { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .brand-aperture video { display: none; } }
+@media print { .brand-aperture video { display: none; } }
