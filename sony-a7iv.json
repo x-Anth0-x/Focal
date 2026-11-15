@@ -3,7 +3,10 @@
   "modelCode": "ILCE-7M4",
   "sensor": "Plein format 35 mm",
   "megapixels": 33,
-  "jpegLarge": [7008, 4672],
+  "jpegLarge": [
+    7008,
+    4672
+  ],
   "firmware": null,
   "menuLanguage": "fr",
   "lensSource": "Kit indiqué par l’utilisateur",
@@ -307,7 +310,7 @@
           "focal": 50,
           "aperture": 2.8,
           "shutter": "1/250",
-          "iso": 400,
+          "iso": 100,
           "mode": "M",
           "af": "AF-S"
         },
@@ -315,8 +318,8 @@
           "lens": "tamron",
           "focal": 50,
           "aperture": 2.8,
-          "shutter": "1/250",
-          "iso": 400,
+          "shutter": "1/500",
+          "iso": 100,
           "mode": "M",
           "af": "AF-S"
         },
@@ -324,8 +327,8 @@
           "lens": "tamron",
           "focal": 50,
           "aperture": 2.8,
-          "shutter": "1/250",
-          "iso": 400,
+          "shutter": "1/500",
+          "iso": 200,
           "mode": "M",
           "af": "AF-S"
         }
@@ -366,7 +369,7 @@
           "aperture": 4,
           "shutter": "1/250",
           "iso": 400,
-          "mode": "A",
+          "mode": "S",
           "af": "AF-S"
         },
         {
@@ -375,7 +378,7 @@
           "aperture": 4,
           "shutter": "1/250",
           "iso": 400,
-          "mode": "A",
+          "mode": "M",
           "af": "AF-S"
         }
       ]
@@ -407,7 +410,8 @@
           "shutter": "1/250",
           "iso": 100,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "exposureComp": -1
         },
         {
           "lens": "fe35",
@@ -416,7 +420,8 @@
           "shutter": "1/250",
           "iso": 100,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "exposureComp": 0
         },
         {
           "lens": "fe35",
@@ -425,7 +430,8 @@
           "shutter": "1/250",
           "iso": 100,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "exposureComp": 1
         }
       ]
     },
@@ -505,7 +511,8 @@
           "shutter": "1/500",
           "iso": 400,
           "mode": "S",
-          "af": "AF-C"
+          "af": "AF-S",
+          "focusZone": "Spot"
         },
         {
           "lens": "fe85",
@@ -514,7 +521,8 @@
           "shutter": "1/500",
           "iso": 400,
           "mode": "S",
-          "af": "AF-C"
+          "af": "AF-C",
+          "focusZone": "Zone avec suivi"
         },
         {
           "lens": "fe85",
@@ -523,7 +531,8 @@
           "shutter": "1/500",
           "iso": 400,
           "mode": "S",
-          "af": "AF-C"
+          "af": "AF-S",
+          "focusZone": "Large"
         }
       ]
     },
@@ -554,7 +563,8 @@
           "shutter": "1/125",
           "iso": 400,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "kelvin": 3200
         },
         {
           "lens": "fe35",
@@ -563,7 +573,8 @@
           "shutter": "1/125",
           "iso": 400,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "kelvin": 5500
         },
         {
           "lens": "fe35",
@@ -572,7 +583,8 @@
           "shutter": "1/125",
           "iso": 400,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "kelvin": 7500
         }
       ]
     },
@@ -750,25 +762,28 @@
           "shutter": "1/250",
           "iso": 100,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "distance": 1.2
         },
         {
           "lens": "fe85",
           "focal": 85,
-          "aperture": 5.6,
+          "aperture": 1.8,
           "shutter": "1/250",
           "iso": 100,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "distance": 2
         },
         {
           "lens": "fe85",
           "focal": 85,
-          "aperture": 16,
+          "aperture": 1.8,
           "shutter": "1/250",
           "iso": 100,
           "mode": "A",
-          "af": "AF-S"
+          "af": "AF-S",
+          "distance": 5
         }
       ]
     },

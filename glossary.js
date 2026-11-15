@@ -57,8 +57,8 @@ window.FocalGlossary = (() => {
       a.href = "#glossary/" + term.slug;
       a.className = "technical-term";
       a.textContent = match[0];
-      a.title = "Comprendre « " + term.title + " » en vidéo";
-      a.setAttribute("aria-label", match[0] + " : explication et vidéo Runway");
+      a.title = "Comprendre « " + term.title + " » en schéma";
+      a.setAttribute("aria-label", match[0] + " : explication et schéma explicatif");
       fragment.append(a);
       offset = end;
     }
@@ -87,7 +87,7 @@ window.FocalGlossary = (() => {
     });
   }
   async function init() {
-    const response = await fetch("glossary.json?v=20261115-8");
+    const response = await fetch("glossary.json?v=20261115-12");
     if (!response.ok) throw Error("Lexique indisponible");
     terms = await response.json();
     document.addEventListener("click", (event) => {
@@ -128,7 +128,7 @@ window.FocalGlossary = (() => {
     document.title = "Lexique vivant — FOCAL Academy";
     app.innerHTML =
       header() +
-      `<div class="glossary-page"><div class="page-heading"><div><span class="lesson-badge">LES MOTS DEVIENNENT DES MÉCANISMES</span><h1>Le lexique vivant.</h1><p class="lead">Un mot. Une explication. Une scène à manipuler. Explorez ${terms.length} notions pour comprendre ce qui se passe vraiment.</p></div><span class="glossary-emblem" aria-hidden="true">VIDÉO</span></div><label class="search-wrap glossary-search"><span aria-hidden="true">⌕</span><input id="term-search" type="search" placeholder="Ouverture, focale, ISO, bokeh…" aria-label="Rechercher un terme technique"></label><div class="glossary-grid" id="glossary-results"></div></div>`;
+      `<div class="glossary-page"><div class="page-heading"><div><span class="lesson-badge">LES MOTS DEVIENNENT DES MÉCANISMES</span><h1>Le lexique vivant.</h1><p class="lead">Un mot. Une explication. Une scène à manipuler. Explorez ${terms.length} notions pour comprendre ce qui se passe vraiment.</p></div><span class="glossary-emblem" aria-hidden="true">SCHÉMA</span></div><label class="search-wrap glossary-search"><span aria-hidden="true">⌕</span><input id="term-search" type="search" placeholder="Ouverture, focale, ISO, bokeh…" aria-label="Rechercher un terme technique"></label><div class="glossary-grid" id="glossary-results"></div></div>`;
     const draw = () => {
       const query = normalize(app.querySelector("#term-search").value),
         rows = terms.filter((t) =>
@@ -138,7 +138,7 @@ window.FocalGlossary = (() => {
         ? rows
             .map(
               (t, i) =>
-                `<a class="glossary-card" href="#glossary/${t.slug}"><span class="glossary-card-number">${String(terms.indexOf(t) + 1).padStart(2, "0")}</span><span class="glossary-card-icon" aria-hidden="true">◇</span><h2>${esc(t.title)}</h2><p>${esc(t.definition)}</p><span class="glossary-card-cta">Comprendre en vidéo <span>↗</span></span></a>`,
+                `<a class="glossary-card" href="#glossary/${t.slug}"><span class="glossary-card-number">${String(terms.indexOf(t) + 1).padStart(2, "0")}</span><span class="glossary-card-icon" aria-hidden="true">◇</span><h2>${esc(t.title)}</h2><p>${esc(t.definition)}</p><span class="glossary-card-cta">Comprendre en schéma <span>↗</span></span></a>`,
             )
             .join("")
         : '<p class="empty-state">Aucun terme ne correspond à votre recherche.</p>';
@@ -158,10 +158,10 @@ window.FocalGlossary = (() => {
       return;
     }
     FocalCamera.setLesson(term.lesson);
-    document.title = term.title + " en vidéo — FOCAL Academy";
+    document.title = term.title + " en schéma — FOCAL Academy";
     app.innerHTML =
       header(term.title) +
-      `<article class="glossary-page glossary-detail"><div class="glossary-back"><a href="${esc(returnHash)}" id="glossary-return">← Retour à ma leçon</a><a href="#glossary">Les ${terms.length} notions ↗</a></div><div class="page-heading"><div><span class="lesson-badge">COMPRENDRE PAR LE MOUVEMENT</span><h1>${esc(term.title)}<span class="title-period">.</span></h1><p class="glossary-definition">${esc(term.definition)}</p></div><span class="glossary-emblem" aria-hidden="true">VIDÉO</span></div><div class="glossary-experience"><div class="glossary-model">${FocalVisuals.draw(term.kind, 0, term.title + " : illustration vidéo", "interactive")}</div><aside class="glossary-story"><span class="eyebrow">LE MÉCANISME EN 3 ÉTAPES</span><div class="glossary-steps">${term.steps.map((s, i) => `<button class="glossary-step ${i === 0 ? "active" : ""}" data-glossary-step="${i}" aria-pressed="${i === 0}"><span>${String(i + 1).padStart(2, "0")}</span><strong>${esc(s.title)}</strong><span class="step-progress"></span></button>`).join("")}</div><div class="glossary-narration" aria-live="polite"><span class="eyebrow" id="glossary-step-label">ÉTAPE 01</span><h2 id="glossary-step-title">${esc(term.steps[0].title)}</h2><p id="glossary-step-body">${esc(term.steps[0].body)}</p></div><p class="illustration-label">Illustrations Runway du kit et du sujet. Les étapes changent les explications ; elles ne constituent pas une simulation optique.</p></aside></div><section class="glossary-concrete panel"><span class="concrete-icon" aria-hidden="true">✧</span><div><span class="eyebrow">CONCRÈTEMENT, SUR LE TERRAIN</span><h2>Ce que cela change dans votre image.</h2><p>${esc(term.example)}</p></div></section><div class="glossary-next"><a class="btn" href="#lesson/${term.lesson}/visual">Pratiquer dans la leçon associée ↗</a><a class="text-button" href="#glossary">Explorer un autre terme →</a></div></article>`;
+      `<article class="glossary-page glossary-detail"><div class="glossary-back"><a href="${esc(returnHash)}" id="glossary-return">← Retour à ma leçon</a><a href="#glossary">Les ${terms.length} notions ↗</a></div><div class="page-heading"><div><span class="lesson-badge">COMPRENDRE PAR LE MOUVEMENT</span><h1>${esc(term.title)}<span class="title-period">.</span></h1><p class="glossary-definition">${esc(term.definition)}</p></div><span class="glossary-emblem" aria-hidden="true">SCHÉMA</span></div><div class="glossary-experience"><div class="glossary-model">${FocalVisuals.draw(term.kind, 0, term.title + " : schéma explicatif", "interactive")}</div><aside class="glossary-story"><span class="eyebrow">LE MÉCANISME EN 3 ÉTAPES</span><div class="glossary-steps">${term.steps.map((s, i) => `<button class="glossary-step ${i === 0 ? "active" : ""}" data-glossary-step="${i}" aria-pressed="${i === 0}"><span>${String(i + 1).padStart(2, "0")}</span><strong>${esc(s.title)}</strong><span class="step-progress"></span></button>`).join("")}</div><div class="glossary-narration" aria-live="polite"><span class="eyebrow" id="glossary-step-label">ÉTAPE 01</span><h2 id="glossary-step-title">${esc(term.steps[0].title)}</h2><p id="glossary-step-body">${esc(term.steps[0].body)}</p></div><p class="illustration-label">Le schéma évolue avec l’étape. Les valeurs calculées et les effets qualitatifs sont distingués dans sa légende.</p></aside></div><section class="glossary-concrete panel"><span class="concrete-icon" aria-hidden="true">✧</span><div><span class="eyebrow">CONCRÈTEMENT, SUR LE TERRAIN</span><h2>Ce que cela change dans votre image.</h2><p>${esc(term.example)}</p></div></section><div class="glossary-next"><a class="btn" href="#lesson/${term.lesson}/visual">Pratiquer dans la leçon associée ↗</a><a class="text-button" href="#glossary">Explorer un autre terme →</a></div></article>`;
     app.querySelector("#glossary-return").onclick = () =>
       (pendingReturn = true);
     app.querySelectorAll("[data-glossary-step]").forEach(

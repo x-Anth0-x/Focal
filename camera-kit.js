@@ -60,12 +60,13 @@ window.FocalCamera = (() => {
             : ["1/30", "1/250", "1/1000"]
         )[step];
     }
-    if (kind === "depth") c.distance = [1.2, 2, 5][step];
+    if (kind === "depth") { c.distance = [1.2, 2, 5][step]; c.aperture = 1.8; }
     const l = lens(c.lens);
     c.focal = Math.max(l.focalMin, Math.min(l.focalMax, c.focal));
     c.aperture = Math.max(l.maxAperture, Math.min(l.minAperture, c.aperture));
     return {
       ...c,
+      lessonId,
       body: profile.model,
       bodyCode: profile.modelCode,
       lensId: c.lens,
@@ -142,7 +143,7 @@ window.FocalCamera = (() => {
   }
   return {
     async init(enrichment) {
-      const response = await fetch("sony-a7iv.json");
+      const response = await fetch("sony-a7iv.json?v=20261115-12");
       if (!response.ok) throw Error("Profil Sony indisponible");
       profile = await response.json();
       lessons = enrichment;

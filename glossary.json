@@ -44,7 +44,7 @@
       },
       {
         "title": "Actionner le mécanisme",
-        "body": "Le réglage d’ouverture modifie le diamètre utile de la pupille d’entrée. Vérifiez ce changement sur votre matériel, sans déduire les positions des lamelles de la vidéo."
+        "body": "Le réglage d’ouverture modifie le diamètre utile de la pupille d’entrée. Vérifiez ce changement sur votre matériel, sans confondre la pupille idéalisée du schéma et la position physique des lamelles."
       },
       {
         "title": "Relier au nombre f",
@@ -124,7 +124,7 @@
       },
       {
         "title": "Raccourcir la collecte",
-        "body": "Une durée plus courte réduit la trace d’un sujet mobile. La vidéo du cycliste fournit le sujet à observer, pas une comparaison de temps de pose."
+        "body": "Une durée plus courte réduit la trace d’un sujet mobile. Le schéma représente une distance parcourue, pas une photographie de test."
       },
       {
         "title": "Figer selon le mouvement",
@@ -150,7 +150,7 @@
       },
       {
         "title": "Augmenter l’ISO",
-        "body": "Le bruit doit se comparer sur vos propres fichiers, avec une exposition et un grossissement maîtrisés. Une vidéo générée ne mesure pas le bruit du boîtier."
+        "body": "Le bruit doit se comparer sur vos propres fichiers, avec une exposition et un grossissement maîtrisés. Ce schéma ne mesure pas le bruit du boîtier."
       },
       {
         "title": "Comprendre le compromis",
@@ -202,7 +202,7 @@
       },
       {
         "title": "Collecter un signal",
-        "body": "Les cellules du capteur convertissent la lumière reçue en signal. La vidéo fournit un contexte d’observation, sans montrer leur réponse physique."
+        "body": "Les cellules du capteur convertissent la lumière reçue en signal. Le schéma montre le principe, sans mesurer leur réponse physique."
       },
       {
         "title": "Reconstruire la couleur",
@@ -383,11 +383,11 @@
       },
       {
         "title": "Réduire le passage",
-        "body": "La propagation de la lumière dans une ouverture finie contribue à l’étalement d’un point. Cet effet n’est pas représenté physiquement dans la vidéo."
+        "body": "La propagation de la lumière dans une ouverture finie contribue à l’étalement d’un point. Le schéma d’Airy repose sur une pupille idéale."
       },
       {
         "title": "Observer l’étalement",
-        "body": "À mesure que le nombre f augmente, la diffraction peut réduire le détail fin. La vidéo ne montre pas une image de diffraction calculée : comparez vos propres fichiers au même grossissement."
+        "body": "À mesure que le nombre f augmente, la diffraction peut réduire le détail fin. Le calcul d’Airy isole la diffraction d’une pupille idéale ; comparez aussi vos propres fichiers au même grossissement."
       }
     ]
   },
@@ -412,7 +412,7 @@
       },
       {
         "title": "Juger le rendu",
-        "body": "La vidéo illustre une séparation des plans, sans mesurer la qualité esthétique du bokeh d’un objectif réel."
+        "body": "Les disques sont schématiques et ne mesurent pas la qualité esthétique du bokeh d’un objectif réel."
       }
     ]
   },
@@ -487,7 +487,7 @@
       },
       {
         "title": "Décider quoi préserver",
-        "body": "Protégez les zones importantes ou modifiez l’éclairage. La vidéo ne mesure pas la dynamique du capteur."
+        "body": "Protégez les zones importantes ou modifiez l’éclairage. Le schéma ne mesure pas la dynamique du capteur."
       }
     ]
   },
@@ -692,7 +692,7 @@
       },
       {
         "title": "Identifier une frange",
-        "body": "Examinez les bords contrastés de vos propres fichiers. La vidéo ne permet pas de caractériser un objectif réel."
+        "body": "Examinez les bords contrastés de vos propres fichiers. Le schéma ne permet pas de caractériser un objectif réel."
       }
     ]
   },

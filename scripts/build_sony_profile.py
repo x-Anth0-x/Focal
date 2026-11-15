@@ -357,7 +357,7 @@ for id,lens,focal,aperture,shutter,iso,mode,af,purpose,steps,check in rows:
  for i in range(3):
   c=dict(base)
   kind=json.loads((ROOT/'lesson-content.json').read_text())[id]['kind']
-  if kind in ['aperture','depth','aberration']:c['aperture']=[max(lenses[lens]['maxAperture'],1.8),5.6,16][i]
+  if kind in ['aperture','aberration']:c['aperture']=[max(lenses[lens]['maxAperture'],1.8),5.6,16][i]
   if kind=='focal':
    lensIds=['tamron','fe35','fe85'];c.update(lens=lensIds[i],focal=[28,35,85][i],aperture=4)
   if kind=='lenskit':
@@ -366,6 +366,12 @@ for id,lens,focal,aperture,shutter,iso,mode,af,purpose,steps,check in rows:
   if kind=='sport':c['shutter']=['1/1000','1/250','1/30'][i]
   if kind=='iso':c['iso']=[100,1600,6400][i]
   if kind=='night':c['shutter']=['2','5','10'][i]
+  if kind=='depth':c.update(aperture=1.8,distance=[1.2,2,5][i])
+  if kind=='modes':c['mode']=['A','S','M'][i]
+  if kind=='focus':c.update(af=['AF-S','AF-C','AF-S'][i],focusZone=['Spot','Zone avec suivi','Large'][i])
+  if kind=='meter':c['exposureComp']=[-1,0,1][i]
+  if kind=='whitebalance':c['kelvin']=[3200,5500,7500][i]
+  if kind=='triangle':c.update(shutter=['1/250','1/500','1/500'][i],iso=[100,100,200][i])
   presets.append(c)
  lessons[id]=dict(purpose=purpose,setup=base,steps=steps,check=check,presets=presets)
 profile=dict(model='Sony α7 IV',modelCode='ILCE-7M4',sensor='Plein format 35 mm',megapixels=33,jpegLarge=[7008,4672],firmware=None,menuLanguage='fr',lensSource='Kit indiqué par l’utilisateur',lenses=lenses,lessons=lessons,

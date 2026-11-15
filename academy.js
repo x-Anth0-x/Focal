@@ -193,15 +193,18 @@
       if (active) a.setAttribute("aria-current", "page");
       else a.removeAttribute("aria-current");
     });
-    $$("[data-level]").forEach((a) =>
-      a.classList.toggle("active", +a.dataset.level === level),
-    );
+    $$("[data-level]").forEach(a => {
+      const active = +a.dataset.level === level;
+      a.classList.toggle("active", active);
+      if (active) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
     $("#menu-toggle").setAttribute("aria-expanded", "false");
+    $("#menu-toggle").setAttribute("aria-label", "Ouvrir la navigation");
     $("#sidebar").classList.remove("menu-open");
   }
   function lessonCard(lesson) {
     const passed = isValidated(lesson.id), read = !!state.done[lesson.id];
-    return `<a class="course-card compact-course-card" href="#lesson/${lesson.id}"><span class="compact-lesson-number" aria-hidden="true">${String(lesson.ordre).padStart(2,"0")}</span><div class="card-body"><h3>${esc(lesson.titre)}</h3><div class="card-bottom"><span>${lesson.duree_estimee_minutes} min</span><span class="status ${passed ? "passed" : ""}">${passed ? "✓ Validée" : read ? "◌ Déjà consultée" : "Cours · atelier · quiz"}</span></div></div><span class="card-arrow" aria-hidden="true">→</span></a>`;
+    return `<a class="course-card compact-course-card" href="#lesson/${lesson.id}"><span class="compact-lesson-number" aria-hidden="true">${String(lesson.ordre).padStart(2,"0")}</span><div class="card-body"><h3>${esc(lesson.titre)}</h3><div class="card-bottom"><span>${lesson.duree_estimee_minutes} min</span><span class="status ${passed ? "passed" : ""}">${passed ? "✓ Validée" : read ? "◌ Déjà consultée" : "Cours · atelier · quiz"}</span></div></div><span class="card-arrow" aria-hidden="true">${FocalIcons.draw("arrow")}</span></a>`;
   }
   function homeResume() {
     const started = Object.keys(state.readV2 || {}).length || Object.keys(state.notes || {}).length || Object.keys(state.practice || {}).length;
@@ -214,9 +217,9 @@
     const levels = [...new Map(curriculum.map(x=>[x.niveau,x.niveau_titre]))];
     app.innerHTML = `<div class="home-page">
       <section class="home-hero" aria-labelledby="home-title"><div class="home-hero-copy"><span class="eyebrow">FOCAL ACADEMY · PHOTOGRAPHIE</span><h1 id="home-title">Moins de hasard.<br>Plus de <em>regard.</em></h1><p>Comprenez vos réglages, apprenez à lire la lumière et construisez les images que vous avez en tête. Un parcours concret, pensé pour votre Sony α7 IV.</p><div class="home-actions"><a class="btn" data-home-resume href="#lesson/${resume.id}">${resume.label} <span aria-hidden="true">→</span></a><button class="text-button" data-home-explore>Découvrir mes espaces ↓</button></div><div class="home-facts"><span><strong>48</strong> leçons</span><span><strong>8</strong> niveaux</span><span>À votre rythme</span></div></div><figure class="home-hero-visual"><img src="assets/films/landscape.jpg" alt="Paysage de montagne au bord d’un lac, avec un rocher au premier plan — illustration générée" width="1280" height="720" fetchpriority="high"><figcaption><span>APPRENDRE À VOIR</span><strong>Une lumière. Plusieurs intentions.</strong><small>Illustration Runway</small></figcaption><div class="home-image-index" aria-hidden="true">01 / LE REGARD</div></figure></section>
-      <section class="home-method" aria-labelledby="method-title"><div><span class="eyebrow">DE LA NOTION À VOTRE IMAGE</span><h2 id="method-title">Apprendre en faisant.</h2></div><ol><li><span>01</span><div><h3>Comprendre</h3><p>Des explications claires et des repères adaptés à votre boîtier.</p></div></li><li><span>02</span><div><h3>Observer</h3><p>Des études filmées et trois situations pour mettre les choix en perspective.</p></div></li><li><span>03</span><div><h3>Essayer</h3><p>Une mission terrain, un carnet personnel et un quiz pour faire le point.</p></div></li></ol></section>
-      <section class="home-spaces" id="home-spaces" aria-labelledby="spaces-title" tabindex="-1"><div class="home-section-heading"><div><span class="eyebrow">CHOISISSEZ VOTRE POINT DE DÉPART</span><h2 id="spaces-title">Votre espace photo.</h2></div><p>Une question technique, une envie de pratiquer ou une leçon à reprendre ?</p></div><div class="home-space-grid"><a href="#lesson/${resume.id}" class="home-space" data-home-lesson><span class="home-space-icon" aria-hidden="true">◎</span><span class="eyebrow">APPRENDRE & PRATIQUER</span><h3>Mon espace leçon</h3><p>Du cours à la mission, retrouvez votre prochaine étape.</p><span class="home-space-link">Ouvrir ma leçon →</span></a><a href="#camera" class="home-space"><span class="home-space-icon" aria-hidden="true">α</span><span class="eyebrow">PRENDRE EN MAIN</span><h3>Mon Sony α7 IV</h3><p>Le boîtier, vos trois objectifs et les réglages pour démarrer.</p><span class="home-space-link">Explorer mon matériel →</span></a><a href="#glossary" class="home-space"><span class="home-space-icon" aria-hidden="true">◇</span><span class="eyebrow">ÉCLAIRCIR UNE NOTION</span><h3>Le lexique vivant</h3><p>29 définitions et leurs explications, toujours à portée de main.</p><span class="home-space-link">Trouver un mot →</span></a><a href="#progress" class="home-space"><span class="home-space-icon" aria-hidden="true">◈</span><span class="eyebrow">MESURER MON CHEMIN</span><h3>Ma progression</h3><p>Retrouvez vos leçons validées et conservez une copie de votre suivi.</p><span class="home-space-link">Voir mon parcours →</span></a></div></section>
-      <section class="home-path" aria-labelledby="path-title"><div class="home-section-heading"><div><span class="eyebrow">UN PARCOURS, HUIT ÉTAPES</span><h2 id="path-title">Avancez depuis là où vous êtes.</h2></div><p>Commencez par les bases ou choisissez le sujet dont vous avez besoin.</p></div><div class="home-level-grid">${levels.map(([n,title])=>`<a class="home-level" href="#courses/${n}"><span>${String(n).padStart(2,"0")}</span><div><h3>${esc(title)}</h3><p>6 leçons · ${esc(levelDescriptions[n-1])}</p></div><span aria-hidden="true">→</span></a>`).join("")}</div></section>
+      <section class="home-method" aria-labelledby="method-title"><div><span class="eyebrow">DE LA NOTION À VOTRE IMAGE</span><h2 id="method-title">Apprendre en faisant.</h2></div><ol><li><span>01</span><div><h3>Comprendre</h3><p>Des explications claires et des repères adaptés à votre boîtier.</p></div></li><li><span>02</span><div><h3>Observer</h3><p>Des schémas explicatifs et trois situations pour comprendre ce qui change.</p></div></li><li><span>03</span><div><h3>Essayer</h3><p>Une mission terrain, un carnet personnel et un quiz pour faire le point.</p></div></li></ol></section>
+      <section class="home-spaces" id="home-spaces" aria-labelledby="spaces-title" tabindex="-1"><div class="home-section-heading"><div><span class="eyebrow">CHOISISSEZ VOTRE POINT DE DÉPART</span><h2 id="spaces-title">Votre espace photo.</h2></div><p>Une question technique, une envie de pratiquer ou une leçon à reprendre ?</p></div><div class="home-space-grid"><a href="#lesson/${resume.id}" class="home-space" data-home-lesson><span class="home-space-icon" aria-hidden="true">${FocalIcons.draw("lesson")}<i></i></span><span class="eyebrow">APPRENDRE & PRATIQUER</span><h3>Mon espace leçon</h3><p>Du cours à la mission, retrouvez votre prochaine étape.</p><span class="home-space-link">Ouvrir ma leçon ${FocalIcons.draw("arrow")}</span></a><a href="#camera" class="home-space"><span class="home-space-icon" aria-hidden="true">${FocalIcons.draw("camera")}<i></i></span><span class="eyebrow">PRENDRE EN MAIN</span><h3>Mon Sony α7 IV</h3><p>Le boîtier, vos trois objectifs et les réglages pour démarrer.</p><span class="home-space-link">Explorer mon matériel ${FocalIcons.draw("arrow")}</span></a><a href="#glossary" class="home-space"><span class="home-space-icon" aria-hidden="true">${FocalIcons.draw("lexicon")}<i></i></span><span class="eyebrow">ÉCLAIRCIR UNE NOTION</span><h3>Le lexique vivant</h3><p>29 définitions et leurs explications, toujours à portée de main.</p><span class="home-space-link">Trouver un mot ${FocalIcons.draw("arrow")}</span></a><a href="#progress" class="home-space"><span class="home-space-icon" aria-hidden="true">${FocalIcons.draw("progress")}<i></i></span><span class="eyebrow">MESURER MON CHEMIN</span><h3>Ma progression</h3><p>Retrouvez vos leçons validées et conservez une copie de votre suivi.</p><span class="home-space-link">Voir mon parcours ${FocalIcons.draw("arrow")}</span></a></div></section>
+      <section class="home-path" aria-labelledby="path-title"><div class="home-section-heading"><div><span class="eyebrow">UN PARCOURS, HUIT ÉTAPES</span><h2 id="path-title">Avancez depuis là où vous êtes.</h2></div><p>Commencez par les bases ou choisissez le sujet dont vous avez besoin.</p></div><div class="home-level-grid">${levels.map(([n,title])=>`<a class="home-level" href="#courses/${n}"><span>${String(n).padStart(2,"0")}</span><div><h3>${esc(title)}</h3><p>6 leçons · ${esc(levelDescriptions[n-1])}</p></div><span aria-hidden="true">${FocalIcons.draw("arrow")}</span></a>`).join("")}</div></section>
       <div class="home-bottom-note"><span>Votre regard se construit, image après image.</span><p>Votre suivi est conservé sur cet appareil, sans compte. Exportez-le depuis « Ma progression » pour le garder.</p></div>${footer()}</div>`;
     $("[data-home-explore]").onclick = () => {
       const section = $("#home-spaces");
@@ -269,7 +272,7 @@
       FocalCamera.banner(id) +
       `<div class="lesson-tabs" role="tablist" aria-label="Étapes de la leçon">${tabs.map(([key, label]) => `<button role="tab" id="tab-${key}" aria-controls="pane-${key}" aria-selected="false" tabindex="-1" data-tab="${key}">${label}</button>`).join("")}</div><div id="lesson-panes">${tabs.map(([key]) => `<section role="tabpanel" id="pane-${key}" aria-labelledby="tab-${key}" hidden></section>`).join("")}</div>${footer()}`;
     $("#pane-course").innerHTML =
-      `<div class="section-title"><span>01</span><h2>Voir la notion autrement.</h2></div><div class="lesson-overview"><div class="concept-intro"><span class="eyebrow">LE REPÈRE ESSENTIEL</span><h2>${esc(meta.key)}</h2><p>${esc((lesson.objectifs || [])[0])}</p><div class="concept-preview">${FocalVisuals.draw(meta.kind, 0, lesson.titre)}</div><button class="text-button" id="open-visual">Explorer les trois situations <span>→</span></button></div>${scene(lesson, "lesson-photo")}<aside class="lesson-tips"><div class="takeaway"><span class="eyebrow">◎ &nbsp; À RETENIR</span><h3>${esc(meta.scenarios[0].label)}</h3><p>${esc(meta.scenarios[0].explanation)}</p><p>${esc(meta.scenarios[1].explanation)}</p></div><div class="field-tip"><span class="eyebrow">✧ &nbsp; SUR LE TERRAIN</span><p>${esc(meta.mission)}</p></div></aside></div>${FocalFilms.lesson(lesson, meta)}${FocalCamera.recipe(id)}<div class="section-title"><span>02</span><h2>Comprendre, chapitre par chapitre.</h2><span class="chapter-counter" id="chapter-counter"></span></div><p class="section-intro">Ouvrez chaque chapitre et marquez-le comme lu à votre rythme. Votre lecture est mémorisée.</p><div class="chapter-list">${parts
+      `<div class="section-title"><span>01</span><h2>Voir la notion autrement.</h2></div><div class="lesson-overview"><div class="concept-intro"><span class="eyebrow">LE REPÈRE ESSENTIEL</span><h2>${esc(meta.key)}</h2><p>${esc((lesson.objectifs || [])[0])}</p><div class="concept-preview">${FocalVisuals.draw(meta.kind, 0, lesson.titre)}</div><button class="text-button" id="open-visual">Explorer les trois situations <span>→</span></button></div><aside class="lesson-tips"><div class="takeaway"><span class="eyebrow">◎ &nbsp; À RETENIR</span><h3>${esc(meta.scenarios[0].label)}</h3><p>${esc(meta.scenarios[0].explanation)}</p><p>${esc(meta.scenarios[1].explanation)}</p></div><div class="field-tip"><span class="eyebrow">✧ &nbsp; SUR LE TERRAIN</span><p>${esc(meta.mission)}</p></div></aside></div>${FocalFilms.lesson(lesson, meta)}${FocalCamera.recipe(id)}<div class="section-title"><span>02</span><h2>Comprendre, chapitre par chapitre.</h2><span class="chapter-counter" id="chapter-counter"></span></div><p class="section-intro">Ouvrez chaque chapitre et marquez-le comme lu à votre rythme. Votre lecture est mémorisée.</p><div class="chapter-list">${parts
         .map(
           (c, i) =>
             `<details class="chapter" ${i === 0 ? "open" : ""}><summary><span class="chapter-number">${String(i + 1).padStart(2, "0")}</span><span>${esc(c.titre)}</span><span class="chapter-toggle" aria-hidden="true">＋</span></summary><div class="chapter-content">${String(
@@ -285,7 +288,7 @@
           "",
         )}</div><div class="next-step"><div><span class="eyebrow">OBSERVER POUR COMPRENDRE</span><h3>Une idée devient claire quand on la compare.</h3><p>Explorez les trois situations, puis testez sur le terrain.</p></div><button class="btn" id="go-visual">Ouvrir l’atelier visuel →</button></div>`;
     $("#pane-visual").innerHTML =
-      `<div class="section-title"><span>↔</span><h2>Un sujet. Trois situations.</h2></div><p class="section-intro">Sélectionnez une situation pour lire ses repères, puis observez les vidéos du kit et du sujet.</p><div class="scenario-tabs" role="group" aria-label="Situations à comparer">${meta.scenarios.map((x, i) => `<button class="scenario-button ${i === 0 ? "selected" : ""}" data-scenario="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${esc(x.label)}</button>`).join("")}</div><div class="visual-workshop"><div id="workshop-art">${FocalVisuals.draw(meta.kind, 0, lesson.titre + " : " + meta.scenarios[0].label, "interactive")}</div><aside class="workshop-explanation" aria-live="polite"><span class="eyebrow">DÉCODER L’IMAGE</span><h2 id="scenario-title">${esc(meta.scenarios[0].label)}</h2><p id="scenario-explanation">${esc(meta.scenarios[0].explanation)}</p><div class="callout">${esc(meta.key)}</div><span class="illustration-label">Vidéos Runway illustratives. Les situations mettent à jour les repères écrits et l’objectif présenté ; elles ne simulent pas le rendu des réglages.</span></aside></div>${["aperture", "depth"].includes(meta.kind) ? depthCalculator() : ""}<div class="comparison-heading"><span class="eyebrow">GARDER LES TROIS REPÈRES EN TÊTE</span></div><div class="comparison-grid">${meta.scenarios.map((x, i) => `<article class="comparison-card">${FocalVisuals.draw(meta.kind, i, x.label)}<div><span class="eyebrow">SITUATION 0${i + 1}</span><h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p></div></article>`).join("")}</div>`;
+      `<div class="section-title"><span>↔</span><h2>Un sujet. Trois situations.</h2></div><p class="section-intro">Sélectionnez une situation : le schéma change pour expliquer la différence. Comparez ce qui varie et ce qui reste identique.</p><div class="scenario-tabs" role="group" aria-label="Situations à comparer">${meta.scenarios.map((x, i) => `<button class="scenario-button ${i === 0 ? "selected" : ""}" data-scenario="${i}" aria-pressed="${i === 0}"><span>0${i + 1}</span>${esc(x.label)}</button>`).join("")}</div><div class="visual-workshop"><div id="workshop-art">${FocalVisuals.draw(meta.kind, 0, lesson.titre + " : " + meta.scenarios[0].label, "interactive")}</div><aside class="workshop-explanation" aria-live="polite"><span class="eyebrow">DÉCODER L’IMAGE</span><h2 id="scenario-title">${esc(meta.scenarios[0].label)}</h2><p id="scenario-explanation">${esc(meta.scenarios[0].explanation)}</p><div class="callout">${esc(meta.key)}</div><span class="illustration-label">Les schémas explicitent le mécanisme et leurs hypothèses. Les réglages sont des repères à reproduire sur votre boîtier, pas les EXIF d’une vidéo.</span></aside></div>${["aperture", "depth"].includes(meta.kind) ? depthCalculator() : ""}<div class="comparison-heading"><span class="eyebrow">GARDER LES TROIS REPÈRES EN TÊTE</span></div><div class="comparison-grid">${meta.scenarios.map((x, i) => `<article class="comparison-card">${FocalVisuals.draw(meta.kind, i, x.label)}<div><span class="eyebrow">SITUATION 0${i + 1}</span><h3>${esc(x.label)}</h3><p>${esc(x.explanation)}</p></div></article>`).join("")}</div>`;
     $("#pane-mission").innerHTML =
       `<div class="mission-layout"><div><div class="section-title"><span>→</span><h2>De la notion à votre image.</h2></div><div class="panel mission-brief"><p class="sony-mission-body">Sony α7 IV · ${esc(FocalCamera.capture("reference", 0, id).lensName)}</p><span class="eyebrow">VOTRE MISSION · ${esc(lesson.id)}</span><h2>${esc(lesson.titre)}</h2><p class="mission-instruction">${esc(meta.mission)}</p><h3>Votre protocole</h3><ol><li>Écrivez votre intention avant de commencer.</li><li>Gardez une trace des réglages et des conditions de chaque essai.</li><li>Comparez les résultats au même grossissement.</li><li>Notez une observation et une correction pour votre prochaine séance.</li></ol><div class="callout">${esc(meta.key)}</div></div></div><aside class="panel mission-evidence"><span class="eyebrow">À RAPPORTER DE VOTRE SÉANCE</span><h3>Une preuve, une réflexion.</h3><ul>${(lesson.exercice?.preuves || ["Une série d’essais comparables", "Des réglages consignés", "Une conclusion argumentée"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p class="tiny">Les images restent chez vous. Le site conserve uniquement vos notes et votre déclaration de réalisation.</p></aside></div><section class="panel notes-panel"><label for="fieldNotes"><h2>Mon carnet de terrain</h2><span>Intention, réglages, observations, prochain essai.</span></label><textarea id="fieldNotes" maxlength="50000" placeholder="Mon intention…\nLes conditions et mes réglages…\nCe que j’ai observé…\nCe que je changerai…">${esc(state.notes[id] || "")}</textarea><div class="notes-actions"><button class="btn" id="saveNotes">Enregistrer mes notes</button><span id="notes-status" role="status"></span><label class="read-check"><input type="checkbox" id="practiceDone" ${state.practice[id] ? "checked" : ""}> Mission réalisée</label></div></section>`;
     $("#pane-quiz").innerHTML =
@@ -299,7 +302,7 @@
         )
         .join(
           "",
-        )}<p class="tiny">Les vidéos et leurs affiches sont des illustrations générées avec Runway. Les règles techniques doivent être confrontées au matériel et aux conditions réelles.</p></aside></div>`;
+        )}<p class="tiny">Les schémas expliquent un principe ; leurs limites et hypothèses sont précisées dans l’atelier. Les règles techniques doivent être confrontées au matériel et aux conditions réelles.</p></aside></div>`;
     function selectTab(key, updateUrl = true) {
       FocalFilms.pause();
       if (!tabs.some((t) => t[0] === key)) key = "course";
@@ -370,6 +373,19 @@
         }),
     );
     readCount();
+    let syncingDepth = false;
+    function syncDepth(i) {
+      if (!$("#depth-form")) return;
+      syncingDepth = true;
+      const c = FocalCamera.capture(meta.kind,i);
+      $("#dof-lens").value = c.lensId;
+      $("#dof-lens").dispatchEvent(new Event("change"));
+      $("#aperture").value = [1.8,2,2.8,4,5.6,8,11,16,22].indexOf(c.aperture);
+      $("#focal").value = c.focal;
+      $("#distance").value = c.distance || 2;
+      $("#distance").dispatchEvent(new Event("input"));
+      syncingDepth = false;
+    }
     $$("[data-scenario]").forEach(
       (button) =>
         (button.onclick = () => {
@@ -384,6 +400,7 @@
             i,
             lesson.titre + " : " + meta.scenarios[i].label,
           );
+          syncDepth(i);
           $("#scenario-title").textContent = meta.scenarios[i].label;
           $("#scenario-explanation").textContent =
             meta.scenarios[i].explanation;
@@ -443,7 +460,17 @@
       window.print();
       document.body.classList.remove("print-memo");
     };
-    if ($("#depth-form")) bindDepthCalculator();
+    if ($("#depth-form")) {
+      syncingDepth = true;
+      bindDepthCalculator(c => {
+        if (syncingDepth) return;
+        $$("[data-scenario]").forEach(b=>{b.classList.remove("selected");b.setAttribute("aria-pressed","false");});
+        FocalVisuals.update($("#workshop-art"), meta.kind, 0, "Exploration calculée", c);
+        $("#scenario-title").textContent = "Vos réglages libres";
+        $("#scenario-explanation").textContent = "Le schéma et le calculateur utilisent vos valeurs. Changez un paramètre à la fois pour comprendre son effet ; sélectionnez une situation pour retrouver le protocole.";
+      });
+      syncDepth(0);
+    }
     selectTab(selectedTab, false);
   }
   function renderQuiz(lesson) {
@@ -484,7 +511,7 @@
         "",
       )}</select></label><div id="depth-form" class="depth-grid"><div class="depth-inputs"><label for="aperture">Ouverture <output id="apertureOut"></output></label><input id="aperture" type="range" min="0" max="8" value="2"><label for="focal">Focale <output id="focalOut"></output></label><input id="focal" type="range" min="28" max="75" value="50"><label for="distance">Distance de mise au point <output id="distanceOut"></output></label><input id="distance" type="range" min="1" max="10" value="2" step="0.1"><button class="btn alt" id="resetLab">Réinitialiser</button></div><div class="depth-result" aria-live="polite"><span>Profondeur de champ estimée</span><strong id="dofOut"></strong><div><span>Limite proche <b id="nearOut"></b></span><span>Limite lointaine <b id="farOut"></b></span></div><p>Le calcul ne mesure ni le rendu du bokeh ni la diffraction.</p></div></div></section>`;
   }
-  function bindDepthCalculator() {
+  function bindDepthCalculator(onChange = () => {}) {
     const values = [1.8, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
     function draw() {
       const N = values[+$("#aperture").value],
@@ -507,6 +534,9 @@
       $("#nearOut").textContent = fmt(near);
       $("#farOut").textContent = fmt(far);
       $("#dofOut").textContent = fmt(far - near);
+      const c = FocalCamera.capture(activeLesson?.id ? enrichment[activeLesson.id].kind : "depth");
+      const lensId = $("#dof-lens").value, l = FocalCamera.lens(lensId);
+      onChange({...c,lensId,lens:lensId,lensName:l.name,focal:f,aperture:N,distance:s});
     }
     ["aperture", "focal", "distance"].forEach(
       (id) => ($("#" + id).oninput = draw),
@@ -744,7 +774,7 @@
       const results = await Promise.all(
         ["curriculum.json", "lesson-content.json", "lesson_reference.json"].map(
           async (file) => {
-            const response = await fetch(file);
+            const response = await fetch(file + "?v=20261115-12");
             if (!response.ok) throw Error(file);
             return response.json();
           },
@@ -753,6 +783,7 @@
       [curriculum, enrichment, reference] = results;
       await FocalCamera.init(enrichment);
       await FocalFilms.init(enrichment);
+      FocalDiagrams.init(enrichment);
       if (curriculum.length !== 48 || curriculum.some((x) => !enrichment[x.id]))
         throw Error("Catalogue incomplet");
       let raw = {};
@@ -771,12 +802,13 @@
         [...new Map(curriculum.map((x) => [x.niveau, x.niveau_titre]))]
           .map(
             ([n, title]) =>
-              `<a href="#courses/${n}" data-level="${n}"><span class="level-number">${String(n).padStart(2, "0")}</span><span>${esc(title)}</span><span class="level-arrow">›</span></a>`,
+              `<a href="#courses/${n}" data-level="${n}"><span class="level-art" aria-hidden="true">${FocalIcons.draw(["aperture","focus","lens","composition","light","field","develop","signature"][n-1])}</span><span class="level-copy"><span class="level-number">ÉTUDE ${String(n).padStart(2,"0")}</span><strong>${esc(title)}</strong></span><span class="level-arrow" aria-hidden="true">${FocalIcons.draw("arrow")}</span></a>`,
           )
           .join("");
       $("#menu-toggle").onclick = () => {
         const open = $("#menu-toggle").getAttribute("aria-expanded") !== "true";
         $("#menu-toggle").setAttribute("aria-expanded", open);
+        $("#menu-toggle").setAttribute("aria-label", open ? "Fermer la navigation" : "Ouvrir la navigation");
         $("#sidebar").classList.toggle("menu-open", open);
       };
       window.addEventListener("hashchange", renderRoute);

@@ -14,15 +14,19 @@
     <link rel="stylesheet" href="spatial.css?v=20261115-8" />
     <link rel="stylesheet" href="camera-kit.css?v=20261114-7" />
 
-    <script src="camera-kit.js?v=20261115-8" defer></script>
+    <script src="camera-kit.js?v=20261115-12" defer></script>
     <link rel="stylesheet" href="films.css?v=20261115-8" />
     <link rel="stylesheet" href="home.css?v=20261115-10" />
-    <script src="films.js?v=20261115-9" defer></script>
+    <script src="films.js?v=20261115-12" defer></script>
     <link rel="stylesheet" href="brand.css?v=20261115-9" />
     <script src="brand.js?v=20261115-9" defer></script>
-    <script src="visuals.js?v=20261115-8" defer></script>
-    <script src="glossary.js?v=20261115-8" defer></script>
-    <script src="academy.js?v=20261115-10" defer></script>
+    <link rel="stylesheet" href="diagrams.css?v=20261115-12" />
+    <script src="diagrams.js?v=20261115-12" defer></script>
+    <script src="visuals.js?v=20261115-12" defer></script>
+    <script src="glossary.js?v=20261115-12" defer></script>
+    <link rel="stylesheet" href="atelier.css?v=20261115-11" />
+    <script src="icons.js?v=20261115-11" defer></script>
+    <script src="academy.js?v=20261115-12" defer></script>
   </head>
   <body class="home-mode">
     <a class="skip-link" href="#app">Aller au contenu</a>
@@ -55,32 +59,15 @@
             aria-controls="sidebar-content"
             aria-label="Ouvrir la navigation"
           >
-            ☰
+            <svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#menu"></use></svg>
           </button>
         </div>
         <div id="sidebar-content">
-          <div class="sidebar-label">VOTRE ESPACE CRÉATIF</div>
-          <nav class="navitems" aria-label="Navigation principale">
-            <a href="#home" data-nav="home"
-              ><span aria-hidden="true">▤</span>Accueil</a
-            >
-            <a href="#lesson/N01-L03" data-nav="lesson"
-              ><span aria-hidden="true">◎</span>Mon espace leçon</a
-            >
-            <a href="#camera" data-nav="camera"
-              ><span aria-hidden="true">α</span>Mon Sony α7 IV</a
-            >
-            <a href="#glossary" data-nav="glossary"
-              ><span aria-hidden="true">◇</span>Lexique vivant
-              <small>VIDÉO</small></a
-            >
-            <a href="#progress" data-nav="progress"
-              ><span aria-hidden="true">◈</span>Ma progression</a
-            >
-          </nav>
+          <div class="atelier-signature"><div class="atelier-orbit" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#aperture"></use></svg></div><span class="eyebrow">FOCAL · ESPACE CRÉATIF</span><strong>L’atelier<br>du <em>regard.</em></strong><span class="atelier-edition">OBSERVER / EXPÉRIMENTER</span></div>
+          <nav class="navitems" aria-label="Navigation principale"><a href="#home" data-nav="home"><span class="nav-icon" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#home"></use></svg></span><span class="nav-copy"><strong>Accueil</strong><small>Votre point de départ</small></span><span class="nav-trail" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#arrow"></use></svg></span></a><a href="#lesson/N01-L03" data-nav="lesson"><span class="nav-icon" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#lesson"></use></svg></span><span class="nav-copy"><strong>Mon espace leçon</strong><small>Comprendre & pratiquer</small></span><span class="nav-trail" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#arrow"></use></svg></span></a><a href="#camera" data-nav="camera"><span class="nav-icon" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#camera"></use></svg></span><span class="nav-copy"><strong>Mon Sony α7 IV</strong><small>Boîtier & objectifs</small></span><span class="nav-trail" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#arrow"></use></svg></span></a><a href="#glossary" data-nav="glossary"><span class="nav-icon" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#lexicon"></use></svg></span><span class="nav-copy"><strong>Lexique vivant</strong><small>Les mots de l’image</small></span><span class="nav-trail" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#arrow"></use></svg></span></a><a href="#progress" data-nav="progress"><span class="nav-icon" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#progress"></use></svg></span><span class="nav-copy"><strong>Ma progression</strong><small>Votre chemin créatif</small></span><span class="nav-trail" aria-hidden="true"><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#arrow"></use></svg></span></a></nav>
           <div class="levels" id="level-nav"></div>
           <div class="sidebar-progress">
-            <span class="eyebrow">VOTRE PARCOURS</span>
+            <span class="eyebrow">VOTRE REGARD PREND FORME</span>
             <div class="progress-count">
               <strong id="navprogress">0</strong
               ><span>/ 48 leçons validées</span>
@@ -96,7 +83,7 @@
             >
               <div id="navbar"></div>
             </div>
-            <a href="#progress">Voir mon suivi <span>↗</span></a>
+            <a href="#progress">Voir mon suivi <span><svg class="focal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="assets/icons.svg?v=11#arrow"></use></svg></span></a>
           </div>
           <p class="local-note">
             Votre suivi reste sur cet appareil.<br />Exportez-le pour le

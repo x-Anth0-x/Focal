@@ -1,4 +1,4 @@
-"""User kit integration: factual constraints, per-lesson procedures and Runway kit films."""
+"""User kit integration: factual constraints, per-lesson procedures and explanatory diagrams."""
 import json,os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -28,7 +28,7 @@ with sync_playwright() as p:
   assert PROFILE['lenses'][data['setup']['lens']]['name'] in page.locator('.sony-mission-body').text_content(),id
   page.locator('#tab-visual').click();page.locator('#workshop-art').scroll_into_view_if_needed()
   page.wait_for_selector('#workshop-art .runway-interactive')
-  assert 'SONY α7 IV' in page.locator('.runway-kit-heading').inner_text(),id
+  assert 'Sony α7 IV' in page.locator('.diagram-kit').inner_text(),id
   for step,c in enumerate(data['presets']):
    page.locator(f'[data-scenario="{step}"]').click();page.wait_for_selector('#workshop-art .runway-interactive')
    capture=page.locator('#workshop-art .runway-view').evaluate('el=>JSON.parse(el.dataset.capture)')
@@ -48,11 +48,11 @@ with sync_playwright() as p:
  assert page.locator('.sony-guide-grid article').count()==3
  for lens in ['tamron','fe35','fe85']:
   page.locator(f'[data-guide-lens="{lens}"]').click()
-  assert page.locator('#guide-kit-film .runway-film').get_attribute('data-clip')=='gear-'+lens
+  assert page.locator('#guide-kit-film .runway-view').evaluate('el=>JSON.parse(el.dataset.capture).lensId')==lens
  for width in [390,768,1440]:
   page.set_viewport_size({'width':width,'height':844})
   for route in ['#camera','#lesson/N01-L03/course','#lesson/N06-L01/visual']:
    page.goto(BASE+route);page.wait_for_selector('.page-heading');assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,route)
  assert not errors,errors
  browser.close()
-print('PASS: 48 Sony procedures, 144 owned-lens presets, 3 lenses in the optical calculator, Runway body/lens views and responsive layout. Camera menu operation is not hardware-tested.')
+print('PASS: 48 Sony procedures, 144 owned-lens presets, 3 lenses in the optical calculator, body/lens references and explanatory diagrams and responsive layout. Camera menu operation is not hardware-tested.')
