@@ -21,15 +21,23 @@ with sync_playwright() as p:
     page=browser.new_page(viewport={'width':1440,'height':1000})
     errors=[]
     page.on('pageerror',lambda error:errors.append(str(error)))
-    page.goto(BASE+'/#courses')
-    page.wait_for_selector('.course-card')
-    assert page.locator('.course-card').count()==48
+    page.goto(BASE+'/#home');page.wait_for_selector('.home-hero')
+    assert not page.locator('#sidebar').is_visible()
+    assert page.locator('.home-space').count()==4 and page.locator('.home-level').count()==8
+    found=set()
+    for level in range(1,9):
+        page.goto(BASE+'/#courses/'+str(level));page.wait_for_selector('.course-card')
+        assert page.locator('.course-card').count()==6
+        found.update(page.locator('.course-card').evaluate_all('els=>els.map(e=>e.getAttribute("href"))'))
+    assert len(found)==48
+    page.goto(BASE+'/#courses/1');page.wait_for_selector('.course-card')
     page.locator('#course-search').fill('sensibilite')
     assert page.locator('.course-card').count()==1  # Accent-insensitive search.
     page.locator('#course-search').fill('aucun-resultat-xyz')
     page.locator('#clear-search').click()
-    assert page.locator('.course-card').count()==48
+    assert page.locator('.course-card').count()==6
     page.locator('#level-filter').select_option('8')
+    page.wait_for_url('**/#courses/8')
     assert page.locator('.course-card').count()==6
 
     for lesson in CATALOG:
@@ -97,7 +105,7 @@ with sync_playwright() as p:
     imported.close()
     # Original learner records migrate without promoting old read markers to validations.
     migrated=browser.new_page()
-    migrated.goto(BASE+'/#courses');migrated.wait_for_selector('.course-card')
+    migrated.goto(BASE+'/#courses/1');migrated.wait_for_selector('.course-card')
     old={'done':{'N01-L03':True,'N02-L01':True},'notes':{'N02-L01':'Ancien carnet préservé'},'practice':{'N01-L03':True},'answers':{'N01-L03':{str(i):q['correct'] for i,q in enumerate(REFERENCE['questions'])}}}
     migrated.evaluate('(raw)=>localStorage.setItem("focal_academy_web_v1",JSON.stringify(raw))',old)
     migrated.reload();migrated.wait_for_function("document.querySelector('#navprogress').textContent==='1'")
@@ -118,11 +126,11 @@ with sync_playwright() as p:
     assert page.locator('#pane-mission').is_visible()
     for width in [360,390,520,768,1024,1440]:
         page.set_viewport_size({'width':width,'height':900})
-        for path in ['#courses','#lesson/N03-L05/visual','#lesson/N08-L05/quiz','#progress']:
+        for path in ['#courses/1','#lesson/N03-L05/visual','#lesson/N08-L05/quiz','#progress']:
             page.goto(BASE+'/'+path);page.wait_for_selector('.page-heading')
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(width,path)
     page.set_viewport_size({'width':390,'height':844})
-    page.goto(BASE+'/#courses');page.wait_for_selector('#menu-toggle')
+    page.goto(BASE+'/#courses/1');page.wait_for_selector('#menu-toggle')
     assert not page.locator('#sidebar-content').is_visible()
     page.locator('#menu-toggle').click();assert page.locator('#sidebar-content').is_visible()
     page.locator('[data-level="5"]').click();page.wait_for_selector('.course-card')

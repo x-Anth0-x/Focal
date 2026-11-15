@@ -131,6 +131,11 @@
     const lessonLink = $('[data-nav="lesson"]');
     lessonLink.href =
       "#lesson/" + (activeLesson?.id || state.lastLesson || reference.id);
+    const resume = homeResume();
+    const homeButton = $("[data-home-resume]");
+    if (homeButton) { homeButton.href = "#lesson/" + resume.id; homeButton.textContent = resume.label + " →"; }
+    const homeLesson = $("[data-home-lesson]");
+    if (homeLesson) homeLesson.href = "#lesson/" + resume.id;
   }
   function scene(lesson, extra = "", caption = true) {
     const i = sceneMap[curriculum.indexOf(lesson)],
@@ -195,60 +200,45 @@
     $("#sidebar").classList.remove("menu-open");
   }
   function lessonCard(lesson) {
-    const data = enrichment[lesson.id],
-      passed = isValidated(lesson.id),
-      read = !!state.done[lesson.id];
-    return `<a class="course-card" href="#lesson/${lesson.id}">${scene(lesson, "card-photo", false)}<div class="card-body"><div class="card-meta"><span>LEÇON ${String(lesson.ordre).padStart(2, "0")}</span><span>${lesson.duree_estimee_minutes} MIN</span></div><h3>${esc(lesson.titre)}</h3><p>${esc(data.headline)}</p><div class="card-bottom"><span class="status ${passed ? "passed" : ""}">${passed ? "✓ Validée" : read ? "◌ Déjà consultée" : "Cours · atelier · quiz"}</span><span class="card-arrow" aria-hidden="true">→</span></div></div></a>`;
+    const passed = isValidated(lesson.id), read = !!state.done[lesson.id];
+    return `<a class="course-card compact-course-card" href="#lesson/${lesson.id}"><span class="compact-lesson-number" aria-hidden="true">${String(lesson.ordre).padStart(2,"0")}</span><div class="card-body"><h3>${esc(lesson.titre)}</h3><div class="card-bottom"><span>${lesson.duree_estimee_minutes} min</span><span class="status ${passed ? "passed" : ""}">${passed ? "✓ Validée" : read ? "◌ Déjà consultée" : "Cours · atelier · quiz"}</span></div></div><span class="card-arrow" aria-hidden="true">→</span></a>`;
   }
-  function renderCatalog(selectedLevel = 0) {
+  function homeResume() {
+    const started = Object.keys(state.readV2 || {}).length || Object.keys(state.notes || {}).length || Object.keys(state.practice || {}).length;
+    return { id: started && curriculum.some(x=>x.id===state.lastLesson) ? state.lastLesson : "N01-L01", label: started ? "Reprendre ma leçon" : "Commencer à apprendre" };
+  }
+  function renderHome() {
+    activeLesson = null;
+    setNav("home");
+    const resume = homeResume();
+    const levels = [...new Map(curriculum.map(x=>[x.niveau,x.niveau_titre]))];
+    app.innerHTML = `<div class="home-page">
+      <section class="home-hero" aria-labelledby="home-title"><div class="home-hero-copy"><span class="eyebrow">FOCAL ACADEMY · PHOTOGRAPHIE</span><h1 id="home-title">Moins de hasard.<br>Plus de <em>regard.</em></h1><p>Comprenez vos réglages, apprenez à lire la lumière et construisez les images que vous avez en tête. Un parcours concret, pensé pour votre Sony α7 IV.</p><div class="home-actions"><a class="btn" data-home-resume href="#lesson/${resume.id}">${resume.label} <span aria-hidden="true">→</span></a><button class="text-button" data-home-explore>Découvrir mes espaces ↓</button></div><div class="home-facts"><span><strong>48</strong> leçons</span><span><strong>8</strong> niveaux</span><span>À votre rythme</span></div></div><figure class="home-hero-visual"><img src="assets/films/landscape.jpg" alt="Paysage de montagne au bord d’un lac, avec un rocher au premier plan — illustration générée" width="1280" height="720" fetchpriority="high"><figcaption><span>APPRENDRE À VOIR</span><strong>Une lumière. Plusieurs intentions.</strong><small>Illustration Runway</small></figcaption><div class="home-image-index" aria-hidden="true">01 / LE REGARD</div></figure></section>
+      <section class="home-method" aria-labelledby="method-title"><div><span class="eyebrow">DE LA NOTION À VOTRE IMAGE</span><h2 id="method-title">Apprendre en faisant.</h2></div><ol><li><span>01</span><div><h3>Comprendre</h3><p>Des explications claires et des repères adaptés à votre boîtier.</p></div></li><li><span>02</span><div><h3>Observer</h3><p>Des études filmées et trois situations pour mettre les choix en perspective.</p></div></li><li><span>03</span><div><h3>Essayer</h3><p>Une mission terrain, un carnet personnel et un quiz pour faire le point.</p></div></li></ol></section>
+      <section class="home-spaces" id="home-spaces" aria-labelledby="spaces-title" tabindex="-1"><div class="home-section-heading"><div><span class="eyebrow">CHOISISSEZ VOTRE POINT DE DÉPART</span><h2 id="spaces-title">Votre espace photo.</h2></div><p>Une question technique, une envie de pratiquer ou une leçon à reprendre ?</p></div><div class="home-space-grid"><a href="#lesson/${resume.id}" class="home-space" data-home-lesson><span class="home-space-icon" aria-hidden="true">◎</span><span class="eyebrow">APPRENDRE & PRATIQUER</span><h3>Mon espace leçon</h3><p>Du cours à la mission, retrouvez votre prochaine étape.</p><span class="home-space-link">Ouvrir ma leçon →</span></a><a href="#camera" class="home-space"><span class="home-space-icon" aria-hidden="true">α</span><span class="eyebrow">PRENDRE EN MAIN</span><h3>Mon Sony α7 IV</h3><p>Le boîtier, vos trois objectifs et les réglages pour démarrer.</p><span class="home-space-link">Explorer mon matériel →</span></a><a href="#glossary" class="home-space"><span class="home-space-icon" aria-hidden="true">◇</span><span class="eyebrow">ÉCLAIRCIR UNE NOTION</span><h3>Le lexique vivant</h3><p>29 définitions et leurs explications, toujours à portée de main.</p><span class="home-space-link">Trouver un mot →</span></a><a href="#progress" class="home-space"><span class="home-space-icon" aria-hidden="true">◈</span><span class="eyebrow">MESURER MON CHEMIN</span><h3>Ma progression</h3><p>Retrouvez vos leçons validées et conservez une copie de votre suivi.</p><span class="home-space-link">Voir mon parcours →</span></a></div></section>
+      <section class="home-path" aria-labelledby="path-title"><div class="home-section-heading"><div><span class="eyebrow">UN PARCOURS, HUIT ÉTAPES</span><h2 id="path-title">Avancez depuis là où vous êtes.</h2></div><p>Commencez par les bases ou choisissez le sujet dont vous avez besoin.</p></div><div class="home-level-grid">${levels.map(([n,title])=>`<a class="home-level" href="#courses/${n}"><span>${String(n).padStart(2,"0")}</span><div><h3>${esc(title)}</h3><p>6 leçons · ${esc(levelDescriptions[n-1])}</p></div><span aria-hidden="true">→</span></a>`).join("")}</div></section>
+      <div class="home-bottom-note"><span>Votre regard se construit, image après image.</span><p>Votre suivi est conservé sur cet appareil, sans compte. Exportez-le depuis « Ma progression » pour le garder.</p></div>${footer()}</div>`;
+    $("[data-home-explore]").onclick = () => {
+      const section = $("#home-spaces");
+      section.focus({preventScroll:true});
+      section.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+    };
+  }
+  function renderCatalog(selectedLevel = 1) {
+    if (!Number.isInteger(selectedLevel) || selectedLevel < 1 || selectedLevel > 8) { renderNotFound(); return; }
     activeLesson = null;
     setNav("courses", selectedLevel);
-    app.innerHTML =
-      crumbs("Le parcours complet") +
-      heading(
-        "VOTRE PROCHAINE IMAGE COMMENCE ICI",
-        "48 leçons. Un nouveau regard.",
-        "Des premiers réglages à votre signature visuelle : observez, expérimentez, puis passez sur le terrain.",
-      ) +
-      `<div class="catalog-intro"><div><span class="eyebrow">LA MÉTHODE FOCAL</span><h2>Comprendre. Voir. Faire.</h2><p>Chaque leçon réunit un cours structuré, un schéma dédié, trois situations à explorer, une mission et un quiz corrigé.</p></div><div class="catalog-stats"><span><strong>48</strong>leçons illustrées</span><span><strong>8</strong>niveaux progressifs</span><span><strong>144</strong>situations visuelles</span></div></div><div class="catalog-toolbar"><label class="search-wrap"><span aria-hidden="true">⌕</span><input id="course-search" type="search" placeholder="Rechercher une notion, une leçon…" aria-label="Rechercher une leçon"></label><label class="level-select"><span class="sr-only">Filtrer par niveau</span><select id="level-filter"><option value="0">Tous les niveaux</option>${[...new Map(curriculum.map((x) => [x.niveau, x.niveau_titre]))].map(([n, t]) => `<option value="${n}" ${n === selectedLevel ? "selected" : ""}>${n}. ${esc(t)}</option>`).join("")}</select></label></div><div id="catalog-results" aria-live="polite"></div>${footer()}`;
-    const search = $("#course-search"),
-      filter = $("#level-filter");
+    const title = curriculum.find(x=>x.niveau===selectedLevel).niveau_titre;
+    app.innerHTML = crumbs(`Niveau ${selectedLevel}`) + heading(`VOTRE PARCOURS · NIVEAU ${String(selectedLevel).padStart(2,"0")}`,title,levelDescriptions[selectedLevel-1]) + `<div class="compact-course-toolbar"><label class="search-wrap"><span aria-hidden="true">⌕</span><input id="course-search" type="search" placeholder="Rechercher dans ce niveau…" aria-label="Rechercher une leçon dans ce niveau"></label><label class="level-select"><span class="sr-only">Choisir un niveau</span><select id="level-filter">${[...new Map(curriculum.map(x=>[x.niveau,x.niveau_titre]))].map(([n,t])=>`<option value="${n}" ${n===selectedLevel ? "selected" : ""}>${n}. ${esc(t)}</option>`).join("")}</select></label></div><div id="catalog-results" aria-live="polite"></div><nav class="level-pagination" aria-label="Niveaux du parcours">${selectedLevel>1 ? `<a href="#courses/${selectedLevel-1}">← Niveau précédent</a>` : '<span></span>'}${selectedLevel<8 ? `<a href="#courses/${selectedLevel+1}">Niveau suivant →</a>` : '<a href="#progress">Voir ma progression →</a>'}</nav>${footer()}`;
+    const search = $("#course-search");
     function draw() {
-      const query = search.value
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toLowerCase();
-      const rows = curriculum.filter(
-        (x) =>
-          (!+filter.value || x.niveau === +filter.value) &&
-          (x.titre + " " + x.niveau_titre + " " + enrichment[x.id].key)
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .toLowerCase()
-            .includes(query),
-      );
-      $("#catalog-results").innerHTML =
-        `<p class="result-count">${rows.length} leçon${rows.length > 1 ? "s" : ""} ${query ? "pour votre recherche" : "à explorer"}</p>` +
-        (rows.length
-          ? [...new Set(rows.map((x) => x.niveau))]
-              .map(
-                (n) =>
-                  `<section class="level-section"><div class="level-heading"><span class="level-index">${String(n).padStart(2, "0")}</span><div><h2>${esc(rows.find((x) => x.niveau === n).niveau_titre)}</h2><p>${levelDescriptions[n - 1]}</p></div></div><div class="course-grid">${rows
-                    .filter((x) => x.niveau === n)
-                    .map(lessonCard)
-                    .join("")}</div></section>`,
-              )
-              .join("")
-          : '<div class="empty-state"><h2>Aucune leçon pour cette recherche.</h2><p>Essayez un autre mot ou affichez tous les niveaux.</p><button class="btn alt" id="clear-search">Réinitialiser les filtres</button></div>');
-      if ($("#clear-search"))
-        $("#clear-search").onclick = () => {
-          search.value = "";
-          filter.value = "0";
-          draw();
-        };
+      const query = search.value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+      const rows = curriculum.filter(x=>x.niveau===selectedLevel && (x.titre+" "+enrichment[x.id].key).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(query));
+      $("#catalog-results").innerHTML = `<p class="result-count">${rows.length} leçon${rows.length>1 ? "s" : ""} dans ce niveau</p>` + (rows.length ? `<div class="course-grid compact-course-grid">${rows.map(lessonCard).join("")}</div>` : '<div class="empty-state"><h2>Aucune leçon pour cette recherche.</h2><button class="btn alt" id="clear-search">Effacer ma recherche</button></div>');
+      if ($("#clear-search")) $("#clear-search").onclick = ()=>{search.value="";draw();};
     }
     search.oninput = draw;
-    filter.onchange = draw;
+    $("#level-filter").onchange = e=>navigate("#courses/"+e.target.value);
     draw();
   }
   function renderLesson(id, selectedTab = "course") {
@@ -723,14 +713,17 @@
   function renderNotFound() {
     activeLesson = null;
     setNav("");
-    app.innerHTML = `<div class="empty-state"><span class="eyebrow">FOCAL ACADEMY</span><h1>Cette leçon reste à trouver.</h1><p>Le lien ne correspond pas à une leçon du parcours.</p><a class="btn" href="#courses">Revenir aux 48 leçons</a></div>`;
+    app.innerHTML = `<div class="empty-state"><span class="eyebrow">FOCAL ACADEMY</span><h1>Cette leçon reste à trouver.</h1><p>Le lien ne correspond pas à une leçon du parcours.</p><a class="btn" href="#courses">Revenir à l’accueil</a></div>`;
   }
   function renderRoute() {
     FocalFilms.pause();
     routeCounter++;
     const bits = location.hash.slice(1).split("/");
     document.title = "FOCAL Academy — Le regard s’apprend";
-    if (bits[0] === "courses") renderCatalog(Number(bits[1]) || 0);
+    const home = !bits[0] || bits[0] === "home" || (bits[0] === "courses" && !bits[1]);
+    document.body.classList.toggle("home-mode", home);
+    if (home) renderHome();
+    else if (bits[0] === "courses") renderCatalog(Number(bits[1]));
     else if (bits[0] === "progress") renderProgress();
     else if (bits[0] === "camera") {
       activeLesson = null;
@@ -741,7 +734,7 @@
       setNav("glossary");
       FocalGlossary.render(app, bits[1], state.lastLesson);
     } else if (bits[0] === "lesson") renderLesson(bits[1], bits[2]);
-    else if (!bits[0]) renderLesson(state.lastLesson || reference.id);
+
     else renderNotFound();
     window.scrollTo(0, 0);
     FocalGlossary.restorePosition();

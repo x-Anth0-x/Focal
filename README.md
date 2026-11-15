@@ -51,7 +51,7 @@ La clé `focal_academy_web_v1` reste identique. Les anciennes notes, missions, r
 
 Une validation personnelle nécessite la mission déclarée réalisée et le score requis : 4/5 pour le pilote, 2/2 pour les autres. Ce suivi est une autoévaluation, pas une certification. La lecture des chapitres est enregistrée séparément. Les notes sont sauvegardées automatiquement et par bouton ; elles restent locales au navigateur. La page de progression propose export et import JSON, avec confirmation avant remplacement du suivi.
 
-Liens directs : `#courses`, `#courses/5`, `#lesson/N06-L04/visual`, `#progress`. Les onglets et la navigation fonctionnent aussi au clavier.
+Liens directs : `#home`, `#courses/5`, `#lesson/N06-L04/visual`, `#progress`. Les onglets et la navigation fonctionnent aussi au clavier.
 
 ## Vérifications
 
@@ -124,3 +124,9 @@ Source de génération : tâche Runway `91b28501-5fe1-4497-b014-d376292b4c3e`. L
 Le symbole de l’en-tête est un diaphragme doré généré puis animé avec Runway. La vidéo locale est optimisée pour un affichage de 45 à 62 px, sans audio et sans boucle permanente. Elle joue brièvement à l’arrivée, puis peut être relancée par survol ou focus clavier. Les préférences de réduction des animations et d’économie de données conservent une affiche fixe. Le logo reste un lien vers les cours ; les lecteurs pédagogiques gèrent leur lecture indépendamment de cette animation décorative.
 
 `brand.js` pilote la lecture et le repli statique, `brand.css` conserve les dimensions responsive du symbole, `assets/brand/sources.json` documente les générations Runway.
+
+## Accueil et navigation
+
+La racine, `#home` et l’ancien lien `#courses` affichent l’accueil : présentation de la méthode, quatre accès aux espaces (leçon, matériel, lexique, progression) et huit liens de niveaux. La barre latérale est masquée sur cet accueil uniquement et revient dans les espaces de travail. Le logo et l’entrée « Accueil » y ramènent.
+
+Les pages `#courses/1` à `#courses/8` affichent chacune six liens de leçons compacts, sans grandes vignettes. La recherche porte sur le niveau affiché ; le sélecteur et les liens précédent/suivant permettent de changer de niveau. La page qui regroupait les 48 grandes cartes est remplacée par l’accueil. Les liens directs vers les leçons et les données de suivi restent compatibles. Le bouton principal de l’accueil propose la première leçon ou la reprise de la leçon en cours.
