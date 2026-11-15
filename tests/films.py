@@ -43,7 +43,7 @@ with sync_playwright() as p:
  assert not any(u.split('?')[0].endswith('.mp4') and '/assets/brand/' not in u for u in requests),'Video downloaded before play'
  for width in [390,768,1440]:
   page.set_viewport_size({'width':width,'height':960})
-  for route in ['#camera','#courses','#glossary/ouverture','#lesson/N01-L03/course','#lesson/N06-L04/visual']:
+  for route in ['#camera','#courses/1','#glossary/ouverture','#lesson/N01-L03/course','#lesson/N06-L04/visual']:
    page.goto(BASE+'/'+route);page.wait_for_selector('.page-heading')
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,route)
  for slug,clip in FILMS['clips'].items():
