@@ -1,0 +1,326 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://x-anth0-x.github.io/Focal/schemas/pilot-first-shot.schema.json",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "id": {
+      "const": "N01-L01"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skillId": {
+      "const": "SK-camera"
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "difficulty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "durationMinutes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "editorialStatus": {
+      "const": "documented-pilot"
+    },
+    "validatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "physicalVerified": {
+      "const": false
+    },
+    "intuition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["title", "body"]
+      },
+      "minItems": 6
+    },
+    "glossary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "term": {
+            "type": "string",
+            "minLength": 1
+          },
+          "definition": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["slug", "term", "definition"]
+      },
+      "minItems": 1
+    },
+    "visual": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "qualitative-diagram"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": ["type", "kind", "description"]
+    },
+    "comparison": {
+      "type": "object",
+      "properties": {
+        "applicable": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": ["applicable", "reason"]
+    },
+    "sonySteps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "instruction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceId": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["title", "instruction", "sourceId"]
+      },
+      "minItems": 5
+    },
+    "guidedExercise": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 3
+        }
+      },
+      "required": ["title", "steps"]
+    },
+    "autonomousExercise": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "instruction": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": ["title", "instruction"]
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "symptom": {
+            "type": "string",
+            "minLength": 1
+          },
+          "check": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["symptom", "check"]
+      },
+      "minItems": 3
+    },
+    "mission": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 3
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": ["id", "title", "criteria", "evidence"]
+    },
+    "memo": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 3
+    },
+    "deepening": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "skillId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 3,
+            "uniqueItems": true
+          },
+          "correct": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual": {
+            "enum": [null, "aperture", "motion", "camera", "histogram"]
+          }
+        },
+        "required": [
+          "id",
+          "skillId",
+          "prompt",
+          "options",
+          "correct",
+          "explanation",
+          "type"
+        ]
+      },
+      "minItems": 5
+    }
+  },
+  "required": [
+    "version",
+    "id",
+    "title",
+    "skillId",
+    "objective",
+    "prerequisites",
+    "difficulty",
+    "durationMinutes",
+    "editorialStatus",
+    "validatedAt",
+    "physicalVerified",
+    "intuition",
+    "chapters",
+    "glossary",
+    "visual",
+    "comparison",
+    "sonySteps",
+    "guidedExercise",
+    "autonomousExercise",
+    "errors",
+    "mission",
+    "memo",
+    "deepening",
+    "sourceIds",
+    "questions"
+  ]
+}

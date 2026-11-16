@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "bodies": [
+    {
+      "id": "sony-a7iv",
+      "name": "Sony α7 IV (ILCE-7M4)",
+      "sensorWidth": 36,
+      "sensorHeight": 24,
+      "sourceIds": [
+        "sony-manual"
+      ],
+      "physicalVerified": false,
+      "supported": true
+    }
+  ],
+  "lenses": [
+    {
+      "id": "tamron",
+      "name": "Tamron 28–75 mm f/2,8 Di III VXD G2",
+      "model": "A063 · monture Sony E",
+      "focalMin": 28,
+      "focalMax": 75,
+      "maxAperture": 2.8,
+      "minAperture": 22,
+      "stabilized": false,
+      "sourceIds": [
+        "tamron-a063"
+      ],
+      "editorialStatus": "inherited-reference-to-check"
+    },
+    {
+      "id": "fe85",
+      "name": "Sony FE 85 mm f/1,8",
+      "model": "SEL85F18",
+      "focalMin": 85,
+      "focalMax": 85,
+      "maxAperture": 1.8,
+      "minAperture": 22,
+      "stabilized": false,
+      "sourceIds": [
+        "sony-lenses"
+      ],
+      "editorialStatus": "inherited-reference-to-check"
+    },
+    {
+      "id": "fe35",
+      "name": "Sony FE 35 mm f/1,8",
+      "model": "SEL35F18F · plein format",
+      "focalMin": 35,
+      "focalMax": 35,
+      "maxAperture": 1.8,
+      "minAperture": 22,
+      "stabilized": false,
+      "sourceIds": [
+        "sony-lenses"
+      ],
+      "editorialStatus": "inherited-reference-to-check"
+    }
+  ]
+}

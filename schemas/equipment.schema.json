@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://x-anth0-x.github.io/Focal/schemas/equipment.schema.json",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "bodies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sensorWidth": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "sensorHeight": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "physicalVerified": {
+            "const": false
+          },
+          "supported": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "sensorWidth",
+          "sensorHeight",
+          "sourceIds",
+          "physicalVerified",
+          "supported"
+        ]
+      },
+      "minItems": 1
+    },
+    "lenses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1
+          },
+          "focalMin": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "focalMax": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "maxAperture": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minAperture": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "stabilized": {
+            "type": "boolean"
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "editorialStatus": {
+            "const": "inherited-reference-to-check"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "model",
+          "focalMin",
+          "focalMax",
+          "maxAperture",
+          "minAperture",
+          "stabilized",
+          "sourceIds",
+          "editorialStatus"
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["version", "bodies", "lenses"]
+}

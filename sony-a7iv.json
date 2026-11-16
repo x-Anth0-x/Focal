@@ -2406,10 +2406,10 @@
     }
   },
   "documentation": {
-    "verification": "official-guide-access-blocked",
+    "verification": "partial-documentary-pilot-2026-11-15",
     "guide": "https://helpguide.sony.net/ilc/2110/v1/fr/index.html",
     "support": "https://www.sony.fr/electronics/support/e-mount-body-ilce-7-series/ilce-7m4",
-    "note": "Les procédures décrivent les fonctions et commandes du boîtier. Les abréviations françaises, l’emplacement des fonctions et les affectations de touches peuvent varier selon le firmware et votre personnalisation. Les chemins de menus détaillés ne sont pas présentés comme vérifiés avec votre firmware."
+    "note": "Les commandes Photo, P/A/S/M, Mode mise au pt, Zone mise au pt et ISO AUTO vit.ob min sont documentées dans le pilote guidé, avec liens aux pages Sony consultées le 15 novembre 2026. Les autres protocoles restent des références à consolider. Aucun test physique ; les affectations personnalisées, le firmware et la langue peuvent modifier vos commandes."
   },
   "baseline": [
     "Sélecteur Photo/Film/S&Q sur Photo pour les exercices de prise de vue.",

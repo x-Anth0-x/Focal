@@ -1,0 +1,366 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://x-anth0-x.github.io/Focal/schemas/academy-v2.schema.json",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 27
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "const": "reference"
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "order",
+          "prerequisites",
+          "status",
+          "objective"
+        ]
+      },
+      "minItems": 27
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "moduleId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "editorialStatus": {
+            "enum": ["legacy-consolidation-required", "outline-only"]
+          },
+          "level": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "equipment": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "validatedAt": {
+            "type": ["string", "null"]
+          },
+          "version": {
+            "const": 1
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lessonId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exerciseIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "assessable": {
+            "type": "boolean"
+          },
+          "remediation": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "minLength": 1
+              },
+              "explanation": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": ["action", "explanation"]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "moduleId",
+          "prerequisites",
+          "editorialStatus",
+          "level",
+          "keywords",
+          "equipment",
+          "sourceIds",
+          "validatedAt",
+          "version",
+          "objective",
+          "lessonId",
+          "exerciseIds",
+          "assessable"
+        ]
+      },
+      "minItems": 240
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "moduleId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "editorialStatus": {
+            "enum": ["legacy-consolidation-required", "outline-only"]
+          },
+          "level": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "equipment": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "validatedAt": {
+            "type": ["string", "null"]
+          },
+          "version": {
+            "const": 1
+          },
+          "skillIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "availability": {
+            "enum": ["legacy-available", "planned"]
+          },
+          "route": {
+            "type": ["string", "null"]
+          },
+          "relatedIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "contentType": {
+            "enum": ["lesson", "lesson-plan"]
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "moduleId",
+          "prerequisites",
+          "editorialStatus",
+          "level",
+          "keywords",
+          "equipment",
+          "sourceIds",
+          "validatedAt",
+          "version",
+          "skillIds",
+          "availability",
+          "route",
+          "relatedIds",
+          "contentType",
+          "category"
+        ]
+      },
+      "minItems": 240
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "status": {
+            "enum": ["document-consulted", "reference-to-check"]
+          },
+          "checkedAt": {
+            "type": ["string", "null"]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["id", "title", "url", "status", "checkedAt", "scope"]
+      },
+      "minItems": 1
+    },
+    "coverageGoals": {
+      "type": "object",
+      "properties": {
+        "lessons": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "exercises": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "caseStudies": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "questions": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "technicalSheets": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "troubleshootingGuides": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "lessons",
+        "exercises",
+        "caseStudies",
+        "questions",
+        "technicalSheets",
+        "troubleshootingGuides"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "modules",
+    "skills",
+    "targets",
+    "sources",
+    "coverageGoals"
+  ]
+}

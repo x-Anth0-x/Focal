@@ -1,0 +1,47 @@
+name: Academy quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  static-academy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: pip install -r requirements-dev.txt
+      - run: playwright install --with-deps chromium
+      - name: Validate contracts and learning rules
+        run: python scripts/validate_academy.py
+      - name: Serve and exercise the application
+        env:
+          FOCAL_URL: http://127.0.0.1:3000
+        run: |
+          python -m http.server 3000 > /tmp/focal-http.log 2>&1 &
+          python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print("CHROMIUM_PATH="+p.chromium.executable_path); p.stop()' >> "$GITHUB_ENV"
+          python -c 'import urllib.request; urllib.request.urlopen("http://127.0.0.1:3000")'
+      - name: Beginner acceptance
+        env:
+          FOCAL_URL: http://127.0.0.1:3000
+        run: python tests/learning-ui.py
+      - name: Existing lessons and data compatibility
+        env:
+          FOCAL_URL: http://127.0.0.1:3000
+        run: python tests/smoke.py
+      - name: Teaching mechanisms and equipment
+        env:
+          FOCAL_URL: http://127.0.0.1:3000
+        run: |
+          python tests/pedagogy.py
+          python tests/sony.py
+          python tests/films.py
