@@ -94,7 +94,7 @@ Le profil `sony-a7iv.json` décrit le boîtier ILCE-7M4, le Tamron A063 28–75 
 
 Les focales et ouvertures des ateliers et du calculateur respectent le kit : 28–75 mm et f/2,8–22 pour le Tamron ; 35 ou 85 mm fixes et f/1,8–22 pour les Sony. Le calculateur propose des valeurs d’ouverture compatibles avec ces objectifs. Les modes sont A et S, avec vitesse ou ouverture automatique signalée explicitement. Les réglages sont des points de départ, pas les EXIF des illustrations générées.
 
-Le firmware et les affectations personnalisées de l’utilisateur sont inconnus. Le guide officiel Sony est lié mais son accès depuis cet environnement est bloqué par la politique réseau ; les intitulés et chemins exacts des menus ne sont donc pas présentés comme vérifiés. Aucune manipulation n’a été testée sur un boîtier physique. Les schémas ne sont pas des relevés physiques du matériel.
+Le firmware peut être déclaré dans le profil ; les affectations personnalisées restent propres au boîtier. Les pages Sony des commandes de base, modes P/A/S/M, autofocus et ISO AUTO vit.ob min ont été consultées pour la leçon pilote, avec liens directs. Les autres protocoles restent à consolider. Aucune manipulation n’a été testée sur un boîtier physique. Les schémas ne sont pas des relevés physiques du matériel.
 
 ```sh
 python tests/sony.py
@@ -121,3 +121,17 @@ Le symbole de l’en-tête est un diaphragme doré généré puis animé avec Ru
 La racine, `#home` et l’ancien lien `#courses` affichent l’accueil : présentation de la méthode, quatre accès aux espaces (leçon, matériel, lexique, progression) et huit liens de niveaux. La barre latérale est masquée sur cet accueil uniquement et revient dans les espaces de travail. Le logo et l’entrée « Accueil » y ramènent.
 
 Les pages `#courses/1` à `#courses/8` affichent chacune six liens de leçons compacts, sans grandes vignettes. La recherche porte sur le niveau affiché ; le sélecteur et les liens précédent/suivant permettent de changer de niveau. La page qui regroupait les 48 grandes cartes est remplacée par l’accueil. Les liens directs vers les leçons et les données de suivi restent compatibles. Le bouton principal de l’accueil propose la première leçon ou la reprise de la leçon en cours.
+
+
+## Academy 2.0 — phases 1 et 2
+
+L’accueil propose maintenant une action selon le profil, le diagnostic et les révisions. `#profile` confirme les objectifs réellement disponibles ; `#diagnostic` propose dix situations. `#learn/N01-L01` ouvre la première leçon guidée ; `#skills` distingue lectures, compréhension estimée et preuves de pratique. `#knowledge` recherche les cours et sépare les 192 plans futurs des 48 cours accessibles. `#shoot` propose dix situations avec réglages contextualisés. Les anciennes routes et données restent conservées.
+
+Lire le [rapport de livraison](docs/LIVRAISON-2.0.md) pour les fichiers, fonctions réellement réalisées, limites, tests et procédure de publication. L’[audit initial](docs/AUDIT-2.0.md) et l’[architecture](docs/ARCHITECTURE-2.0.md) précisent les décisions.
+
+```sh
+python3 scripts/validate_academy.py
+FOCAL_URL=http://127.0.0.1:3000 python3 tests/learning-ui.py
+```
+
+Le validateur utilise `jsonschema` en développement. Le site reste statique, sans dépendance de production, compte obligatoire, analyse de photos ni serveur de synchronisation.

@@ -1,0 +1,1267 @@
+{
+  "version": 1,
+  "origin": "Unchanged historical questions; not additional authored coverage.",
+  "questions": [
+    {
+      "id": "R-SK-sensor-0",
+      "skillId": "SK-sensor",
+      "prompt": "Que mesure un photosite ?",
+      "options": [
+        "Une intention artistique",
+        "Un nombre de fichiers",
+        "Un signal lumineux"
+      ],
+      "correct": 2,
+      "explanation": "Le photosite produit un signal lié à la lumière reçue.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-sensor-1",
+      "skillId": "SK-sensor",
+      "prompt": "Que signifie une haute lumière saturée à la capture ?",
+      "options": [
+        "Elle est forcément correctement exposée",
+        "Ses différences de signal ne sont plus enregistrées",
+        "Elle contient toujours plus de détails"
+      ],
+      "correct": 1,
+      "explanation": "La saturation empêche de conserver les variations au-delà de la capacité du photosite.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-aperture-0",
+      "skillId": "SK-aperture",
+      "prompt": "À focale identique, que se passe-t-il en passant de f/2,8 à f/4 ?",
+      "options": [
+        "La quantité de lumière est approximativement divisée par deux",
+        "Elle double",
+        "La perspective change automatiquement"
+      ],
+      "correct": 0,
+      "explanation": "La valeur f augmente d’un facteur √2 : l’aire d’ouverture est environ divisée par deux.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-aperture-1",
+      "skillId": "SK-aperture",
+      "prompt": "À f/2,8, 1/500 s, ISO 200, quel réglage compense approximativement f/4 ?",
+      "options": [
+        "1/1000 s, ISO 200",
+        "1/250 s, ISO 200",
+        "1/500 s, ISO 100"
+      ],
+      "correct": 1,
+      "explanation": "Fermer d’un stop nécessite ici un temps de pose deux fois plus long pour maintenir l’exposition théorique.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-aperture-2",
+      "skillId": "SK-aperture",
+      "prompt": "Quel facteur modifie directement la perspective ?",
+      "options": [
+        "Le point de vue du photographe",
+        "Le nombre f uniquement",
+        "La sensibilité ISO"
+      ],
+      "correct": 0,
+      "explanation": "La perspective géométrique dépend de la position de prise de vue.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-aperture-3",
+      "skillId": "SK-aperture",
+      "prompt": "Pourquoi ne faut-il pas systématiquement photographier à f/16 ?",
+      "options": [
+        "Cela augmente toujours le bruit ISO",
+        "La diffraction peut réduire le contraste des détails fins",
+        "Le capteur devient plus petit"
+      ],
+      "correct": 1,
+      "explanation": "La diffraction augmente à petite ouverture ; le compromis dépend du matériel et de l’usage.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-aperture-4",
+      "skillId": "SK-aperture",
+      "prompt": "Que faut-il contrôler dans une comparaison de profondeur de champ ?",
+      "options": [
+        "Changer la distance et la focale à chaque photo",
+        "Garder la focale, le point de vue, la mise au point et la scène constants",
+        "Utiliser un fond différent à chaque fois"
+      ],
+      "correct": 1,
+      "explanation": "Un protocole contrôlé limite les variables qui brouillent l’interprétation.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-shutter-0",
+      "skillId": "SK-shutter",
+      "prompt": "Quelle pose a le plus de chances de figer un mouvement rapide ?",
+      "options": [
+        "1/1000 s",
+        "1/30 s",
+        "1 seconde"
+      ],
+      "correct": 0,
+      "explanation": "Une durée courte réduit le déplacement du sujet pendant la collecte.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-shutter-1",
+      "skillId": "SK-shutter",
+      "prompt": "À ouverture et ISO constants, passer de 1/250 s à 1/500 s…",
+      "options": [
+        "Double la lumière",
+        "Ne change pas l’exposition",
+        "Divise la lumière collectée par deux"
+      ],
+      "correct": 2,
+      "explanation": "La durée est divisée par deux.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-iso-0",
+      "skillId": "SK-iso",
+      "prompt": "Monter l’ISO fait-il entrer davantage de lumière ?",
+      "options": [
+        "Oui, le diaphragme s’ouvre toujours",
+        "Oui, la lumière ambiante augmente",
+        "Non"
+      ],
+      "correct": 2,
+      "explanation": "La lumière collectée dépend de la scène, de l’ouverture et du temps de pose.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-iso-1",
+      "skillId": "SK-iso",
+      "prompt": "Pourquoi monter l’ISO en sport peu éclairé ?",
+      "options": [
+        "Pour agrandir le capteur",
+        "Pour conserver un temps de pose court et un rendu exploitable",
+        "Pour ralentir le sujet"
+      ],
+      "correct": 1,
+      "explanation": "C’est un compromis entre vitesse nécessaire, exposition réelle et bruit.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-triangle-0",
+      "skillId": "SK-triangle",
+      "prompt": "Ouvrir d’un stop et raccourcir la pose d’un stop…",
+      "options": [
+        "Supprime tous les flous",
+        "Conserve approximativement la quantité de lumière",
+        "Double toujours la lumière"
+      ],
+      "correct": 1,
+      "explanation": "Les deux effets sur la collecte se compensent, mais le rendu peut changer.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-triangle-1",
+      "skillId": "SK-triangle",
+      "prompt": "Quel réglage modifie directement la durée de collecte ?",
+      "options": [
+        "Le temps de pose",
+        "L’ISO",
+        "La balance des blancs"
+      ],
+      "correct": 0,
+      "explanation": "L’obturateur ou l’échantillonnage électronique contrôle cette durée.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-modes-0",
+      "skillId": "SK-modes",
+      "prompt": "En mode A, que choisissez-vous en priorité ?",
+      "options": [
+        "L’ouverture",
+        "Le temps de pose imposé",
+        "Le profil d’impression"
+      ],
+      "correct": 0,
+      "explanation": "Le boîtier calcule le temps de pose selon la mesure et les autres réglages.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-modes-1",
+      "skillId": "SK-modes",
+      "prompt": "Le mode M impose-t-il nécessairement un ISO fixe ?",
+      "options": [
+        "Oui, sur tous les appareils",
+        "Il interdit toute mesure",
+        "Non, l’ISO automatique peut rester actif"
+      ],
+      "correct": 2,
+      "explanation": "De nombreux boîtiers permettent M avec ISO automatique.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-meter-0",
+      "skillId": "SK-meter",
+      "prompt": "Un sujet blanc rendu trop gris peut nécessiter…",
+      "options": [
+        "Une correction toujours négative",
+        "Un changement de carte",
+        "Une correction positive à vérifier"
+      ],
+      "correct": 2,
+      "explanation": "La mesure réfléchie peut ramener un sujet clair vers un ton de référence.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-meter-1",
+      "skillId": "SK-meter",
+      "prompt": "Quel risque accompagne une correction positive excessive ?",
+      "options": [
+        "Supprimer la perspective",
+        "Écrêter les hautes lumières",
+        "Réduire la focale réelle"
+      ],
+      "correct": 1,
+      "explanation": "Une exposition plus élevée peut dépasser la capacité d’enregistrement.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-histogram-0",
+      "skillId": "SK-histogram",
+      "prompt": "L’histogramme localise-t-il les objets dans le cadre ?",
+      "options": [
+        "Oui, mais seulement les visages",
+        "Non, il répartit les valeurs tonales",
+        "Oui, de gauche à droite dans la scène"
+      ],
+      "correct": 1,
+      "explanation": "Il compte les valeurs, sans indiquer leur position spatiale.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-histogram-1",
+      "skillId": "SK-histogram",
+      "prompt": "Une scène volontairement sombre doit-elle avoir un histogramme centré ?",
+      "options": [
+        "Non",
+        "Toujours",
+        "Seulement en RAW"
+      ],
+      "correct": 0,
+      "explanation": "La forme cohérente dépend du contenu et de l’intention.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-focus-0",
+      "skillId": "SK-focus",
+      "prompt": "Quel mode convient généralement à un sujet qui se rapproche ?",
+      "options": [
+        "AF continu",
+        "AF ponctuel verrouillé sans suivi",
+        "Mise au point sur l’infini"
+      ],
+      "correct": 0,
+      "explanation": "L’AF continu actualise la mise au point pendant le déplacement.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-focus-1",
+      "skillId": "SK-focus",
+      "prompt": "Pourquoi une zone AF trop large peut-elle échouer ?",
+      "options": [
+        "Elle change l’ouverture physique",
+        "Elle désactive toujours le capteur",
+        "Elle peut sélectionner le décor"
+      ],
+      "correct": 2,
+      "explanation": "L’appareil doit choisir une cible parmi plusieurs éléments.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-whitebalance-0",
+      "skillId": "SK-whitebalance",
+      "prompt": "Sous une lumière inchangée, augmenter le réglage Kelvin rend généralement l’image…",
+      "options": [
+        "Plus froide",
+        "Plus nette",
+        "Plus chaude"
+      ],
+      "correct": 2,
+      "explanation": "Le réglage compense davantage une source supposée froide.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-whitebalance-1",
+      "skillId": "SK-whitebalance",
+      "prompt": "Quelle référence aide à neutraliser une dominante ?",
+      "options": [
+        "Une zone déjà saturée",
+        "Une surface réellement neutre",
+        "Un objet dont on aime la couleur"
+      ],
+      "correct": 1,
+      "explanation": "Une référence neutre permet d’estimer l’équilibre entre canaux.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-workflow-0",
+      "skillId": "SK-workflow",
+      "prompt": "Quel format laisse généralement davantage de latitude de développement ?",
+      "options": [
+        "Une capture d’écran",
+        "RAW",
+        "Un JPEG fortement compressé"
+      ],
+      "correct": 1,
+      "explanation": "Le RAW préserve plus d’informations et diffère du rendu final.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-workflow-1",
+      "skillId": "SK-workflow",
+      "prompt": "Que faut-il conserver pour revenir au développement d’origine ?",
+      "options": [
+        "Le RAW original et les réglages",
+        "Seulement le JPEG partagé",
+        "Seulement une miniature"
+      ],
+      "correct": 0,
+      "explanation": "Un flux non destructif conserve la source et les paramètres.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-focal-0",
+      "skillId": "SK-focal",
+      "prompt": "Depuis une position fixe, une focale plus longue donne…",
+      "options": [
+        "Un angle de champ plus étroit",
+        "Une perspective automatiquement différente",
+        "Un capteur plus grand"
+      ],
+      "correct": 0,
+      "explanation": "À capteur identique, la focale détermine le champ couvert.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-focal-1",
+      "skillId": "SK-focal",
+      "prompt": "Qu’est-ce qui change directement la perspective ?",
+      "options": [
+        "Le seul recadrage du fichier",
+        "Le changement de nom de l’objectif",
+        "Le déplacement du point de vue"
+      ],
+      "correct": 2,
+      "explanation": "La position de prise de vue détermine les rapports entre plans.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-lenskit-0",
+      "skillId": "SK-lenskit",
+      "prompt": "Quelle propriété définit un zoom ?",
+      "options": [
+        "Il est toujours plus lumineux",
+        "Il empêche de se déplacer",
+        "Sa focale est variable"
+      ],
+      "correct": 2,
+      "explanation": "Le zoom propose plusieurs focales sans changer d’objectif.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-lenskit-1",
+      "skillId": "SK-lenskit",
+      "prompt": "Une focale fixe est-elle toujours meilleure dans tous les usages ?",
+      "options": [
+        "Oui, même sans cadrage adapté",
+        "Non, les compromis dépendent du besoin",
+        "Oui, sans exception"
+      ],
+      "correct": 1,
+      "explanation": "Poids, ouverture, qualité, coût et souplesse doivent être comparés.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-depth-0",
+      "skillId": "SK-depth",
+      "prompt": "À paramètres égaux, se rapprocher du plan de mise au point tend à…",
+      "options": [
+        "Supprimer le flou",
+        "Réduire la profondeur de champ",
+        "L’augmenter toujours"
+      ],
+      "correct": 1,
+      "explanation": "Le rapport de grandissement augmente et la zone jugée nette se réduit généralement.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-depth-1",
+      "skillId": "SK-depth",
+      "prompt": "L’hyperfocale garantit-elle une netteté absolue à tout grossissement ?",
+      "options": [
+        "Non, elle repose sur un critère de netteté",
+        "Oui, sur tout écran",
+        "Oui, quel que soit le capteur"
+      ],
+      "correct": 0,
+      "explanation": "Le cercle de confusion représente une convention liée à l’usage.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-perspective-0",
+      "skillId": "SK-perspective",
+      "prompt": "Pourquoi un premier plan paraît-il disproportionné lorsqu’on s’en approche ?",
+      "options": [
+        "Le rapport des distances entre les plans change",
+        "L’ISO change la géométrie",
+        "Le capteur se courbe"
+      ],
+      "correct": 0,
+      "explanation": "La perspective résulte de la position relative du point de vue et des objets.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-perspective-1",
+      "skillId": "SK-perspective",
+      "prompt": "Pointer un boîtier vers le haut devant une façade produit souvent…",
+      "options": [
+        "Des verticales toujours parallèles",
+        "Une baisse automatique du bruit",
+        "Des verticales convergentes"
+      ],
+      "correct": 2,
+      "explanation": "Le plan du capteur n’est plus parallèle aux verticales de la façade.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-aberration-0",
+      "skillId": "SK-aberration",
+      "prompt": "Pourquoi f/22 peut-il donner moins de détail que f/8 ?",
+      "options": [
+        "Parce que le capteur perd des pixels",
+        "Parce que la focale disparaît",
+        "À cause de la diffraction"
+      ],
+      "correct": 2,
+      "explanation": "Une très petite ouverture étale la réponse optique aux fins détails.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-aberration-1",
+      "skillId": "SK-aberration",
+      "prompt": "Une frange colorée au bord d’un détail contrasté peut être…",
+      "options": [
+        "Un changement de perspective",
+        "Une aberration chromatique",
+        "Un défaut de classement"
+      ],
+      "correct": 1,
+      "explanation": "Les différentes longueurs d’onde peuvent ne pas se superposer exactement.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-kit-0",
+      "skillId": "SK-kit",
+      "prompt": "Par quoi commencer pour choisir un kit ?",
+      "options": [
+        "Le nombre d’accessoires",
+        "L’usage et les contraintes",
+        "Le prix maximal disponible seulement"
+      ],
+      "correct": 1,
+      "explanation": "Un équipement pertinent répond à un projet réel.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-kit-1",
+      "skillId": "SK-kit",
+      "prompt": "Quel élément fait partie de la préparation du kit ?",
+      "options": [
+        "Vérifier batteries et cartes",
+        "Acheter tous les objectifs",
+        "Supprimer les sauvegardes"
+      ],
+      "correct": 0,
+      "explanation": "La fiabilité pratique compte autant que les caractéristiques optiques.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-composition-0",
+      "skillId": "SK-composition",
+      "prompt": "Une grille de tiers garantit-elle une image forte ?",
+      "options": [
+        "Non",
+        "Oui, systématiquement",
+        "Seulement avec un objectif cher"
+      ],
+      "correct": 0,
+      "explanation": "Le cadre sert une intention ; une règle seule ne la fournit pas.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-composition-1",
+      "skillId": "SK-composition",
+      "prompt": "Pourquoi laisser de l’espace devant un regard ?",
+      "options": [
+        "Pour augmenter la résolution",
+        "Pour corriger l’exposition",
+        "Pour suggérer une direction ou une attente"
+      ],
+      "correct": 2,
+      "explanation": "L’organisation de l’espace influence la lecture et le sens.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-lines-0",
+      "skillId": "SK-lines",
+      "prompt": "Quel élément peut guider l’œil vers un sujet ?",
+      "options": [
+        "Le nom du boîtier",
+        "La capacité de la carte",
+        "Une ligne directrice"
+      ],
+      "correct": 2,
+      "explanation": "Les lignes peuvent organiser un parcours dans l’image.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-lines-1",
+      "skillId": "SK-lines",
+      "prompt": "Un équilibre exige-t-il deux masses de même taille ?",
+      "options": [
+        "Seulement en couleur",
+        "Non, contraste et position comptent aussi",
+        "Oui"
+      ],
+      "correct": 1,
+      "explanation": "Une petite zone très contrastée peut peser fortement visuellement.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-color-0",
+      "skillId": "SK-color",
+      "prompt": "Deux couleurs différentes peuvent-elles avoir une luminance proche ?",
+      "options": [
+        "Uniquement à ISO 100",
+        "Oui",
+        "Non"
+      ],
+      "correct": 1,
+      "explanation": "Le contraste de teinte ne garantit pas un contraste en noir et blanc.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-color-1",
+      "skillId": "SK-color",
+      "prompt": "Des couleurs proches sur le cercle chromatique créent plutôt…",
+      "options": [
+        "Une harmonie analogue",
+        "Une complémentarité obligatoire",
+        "Un effet de perspective"
+      ],
+      "correct": 0,
+      "explanation": "Des teintes voisines peuvent unifier une ambiance.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-negative-0",
+      "skillId": "SK-negative",
+      "prompt": "Comment clarifier un fond sans retouche ?",
+      "options": [
+        "Changer légèrement de point de vue",
+        "Monter seulement l’ISO",
+        "Renommer la photo"
+      ],
+      "correct": 0,
+      "explanation": "Un déplacement peut retirer des éléments concurrents du cadre.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-negative-1",
+      "skillId": "SK-negative",
+      "prompt": "L’espace négatif peut-il porter du sens ?",
+      "options": [
+        "Non, c’est toujours une erreur",
+        "Seulement dans un carré",
+        "Oui, par exemple isolement ou calme"
+      ],
+      "correct": 2,
+      "explanation": "Une zone vide peut construire une relation avec le sujet.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-street-0",
+      "skillId": "SK-street",
+      "prompt": "Quelle méthode aide à capter une rencontre dans la rue ?",
+      "options": [
+        "Déclencher sans regarder",
+        "Imposer un geste à chaque passant",
+        "Préparer un cadre puis attendre"
+      ],
+      "correct": 2,
+      "explanation": "L’anticipation libère l’attention au moment où les éléments s’alignent.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-street-1",
+      "skillId": "SK-street",
+      "prompt": "Le seul critère d’une bonne image de rue est-il la netteté ?",
+      "options": [
+        "Oui, à grande ouverture",
+        "Non, gestes et relations comptent aussi",
+        "Oui"
+      ],
+      "correct": 1,
+      "explanation": "L’expression et l’organisation du cadre peuvent être déterminantes.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-story-0",
+      "skillId": "SK-story",
+      "prompt": "Pourquoi varier plan large et détail dans une série ?",
+      "options": [
+        "Pour éviter toute cohérence",
+        "Pour apporter des informations complémentaires",
+        "Pour remplir une carte"
+      ],
+      "correct": 1,
+      "explanation": "Chaque image peut jouer un rôle dans la narration.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-story-1",
+      "skillId": "SK-story",
+      "prompt": "Que faire d’une image qui répète exactement une autre ?",
+      "options": [
+        "Envisager de la retirer",
+        "La garder toujours",
+        "La répéter trois fois"
+      ],
+      "correct": 0,
+      "explanation": "L’édition évite les redondances qui affaiblissent le rythme.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-light-0",
+      "skillId": "SK-light",
+      "prompt": "Une grande source apparente produit généralement…",
+      "options": [
+        "Des transitions d’ombre plus douces",
+        "Des ombres toujours plus dures",
+        "Aucune ombre possible"
+      ],
+      "correct": 0,
+      "explanation": "La taille apparente de la source influence la transition entre lumière et ombre.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-light-1",
+      "skillId": "SK-light",
+      "prompt": "Une lumière latérale aide à révéler…",
+      "options": [
+        "Le nom du fichier",
+        "La vitesse de la carte",
+        "Le relief et les textures"
+      ],
+      "correct": 2,
+      "explanation": "Les variations d’ombre rendent les volumes lisibles.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-sun-0",
+      "skillId": "SK-sun",
+      "prompt": "Qu’est-ce qui influence la lumière naturelle en plus de l’heure ?",
+      "options": [
+        "Seulement le nombre de pixels",
+        "Seulement le format du fichier",
+        "Météo, saison et orientation"
+      ],
+      "correct": 2,
+      "explanation": "La trajectoire et la diffusion de la lumière dépendent de ces conditions.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-sun-1",
+      "skillId": "SK-sun",
+      "prompt": "Un soleil bas produit souvent…",
+      "options": [
+        "Un éclairage identique à midi",
+        "Des ombres longues",
+        "Des ombres forcément absentes"
+      ],
+      "correct": 1,
+      "explanation": "L’angle rasant projette les ombres sur une plus grande distance.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-backlight-0",
+      "skillId": "SK-backlight",
+      "prompt": "Exposer pour une fenêtre très claire peut rendre le sujet…",
+      "options": [
+        "Plus proche",
+        "En silhouette",
+        "Toujours parfaitement détaillé"
+      ],
+      "correct": 1,
+      "explanation": "Le contraste peut dépasser la dynamique enregistrable.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-backlight-1",
+      "skillId": "SK-backlight",
+      "prompt": "Quel geste réduit le contraste de la scène elle-même ?",
+      "options": [
+        "Renvoyer de la lumière avec un réflecteur",
+        "Augmenter seulement la luminosité de l’écran",
+        "Changer le nom du fichier"
+      ],
+      "correct": 0,
+      "explanation": "Un apport sur le sujet réduit l’écart avec le fond.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-flash-0",
+      "skillId": "SK-flash",
+      "prompt": "Hors HSS, dépasser la vitesse de synchro peut produire…",
+      "options": [
+        "Une bande sombre",
+        "Une meilleure balance des blancs",
+        "Une netteté infinie"
+      ],
+      "correct": 0,
+      "explanation": "L’éclair peut ne pas éclairer tout le capteur pendant le déplacement des rideaux.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-flash-1",
+      "skillId": "SK-flash",
+      "prompt": "À ouverture et ISO fixes, le temps de pose agit principalement sur…",
+      "options": [
+        "La seule puissance électrique du flash",
+        "La température fixe du tube",
+        "L’ambiance, dans le régime de synchro classique"
+      ],
+      "correct": 2,
+      "explanation": "Un éclair bref et la lumière continue ne répondent pas de la même façon au temps de pose.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-portraitlight-0",
+      "skillId": "SK-portraitlight",
+      "prompt": "Déplacer une source autour d’un visage modifie…",
+      "options": [
+        "La taille physique du capteur",
+        "Le droit d’auteur",
+        "Le dessin des ombres"
+      ],
+      "correct": 2,
+      "explanation": "La direction de lumière change le modelé du visage.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-portraitlight-1",
+      "skillId": "SK-portraitlight",
+      "prompt": "Un réflecteur sert notamment à…",
+      "options": [
+        "Changer le nombre de pixels",
+        "Déboucher les ombres",
+        "Allonger la focale"
+      ],
+      "correct": 1,
+      "explanation": "Il renvoie une partie de la lumière disponible.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-mixed-0",
+      "skillId": "SK-mixed",
+      "prompt": "Une seule balance des blancs neutralise-t-elle toujours fenêtre et tungstène ?",
+      "options": [
+        "Oui, avec tout JPEG",
+        "Non",
+        "Oui, parfaitement"
+      ],
+      "correct": 1,
+      "explanation": "Deux sources de spectres différents peuvent garder des dominantes distinctes.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-mixed-1",
+      "skillId": "SK-mixed",
+      "prompt": "Comment harmoniser les sources dès la prise de vue ?",
+      "options": [
+        "Adapter une source avec une gélatine appropriée",
+        "Augmenter le contraste de l’écran",
+        "Réduire le nombre de fichiers"
+      ],
+      "correct": 0,
+      "explanation": "Une correction de source réduit l’écart avant la capture.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-portrait-0",
+      "skillId": "SK-portrait",
+      "prompt": "Quel préalable améliore un portrait naturel ?",
+      "options": [
+        "Mettre le modèle en confiance et obtenir son accord",
+        "Imposer toute pose sans échange",
+        "Éviter toute explication"
+      ],
+      "correct": 0,
+      "explanation": "Le confort du modèle influence expression et collaboration.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-portrait-1",
+      "skillId": "SK-portrait",
+      "prompt": "Où place-t-on souvent la netteté importante dans un portrait rapproché ?",
+      "options": [
+        "Toujours sur le fond",
+        "Toujours sur le bord",
+        "Sur l’œil pertinent pour l’intention"
+      ],
+      "correct": 2,
+      "explanation": "Le regard joue généralement un rôle fort dans la lecture du portrait.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-family-0",
+      "skillId": "SK-family",
+      "prompt": "Pour un groupe net, pourquoi rapprocher les visages du même plan ?",
+      "options": [
+        "Pour doubler les ISO",
+        "Pour supprimer la lumière",
+        "Pour réduire l’étendue de profondeur nécessaire"
+      ],
+      "correct": 2,
+      "explanation": "Des distances proches simplifient la gestion de la zone nette.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-family-1",
+      "skillId": "SK-family",
+      "prompt": "Quelle consigne favorise une interaction spontanée ?",
+      "options": [
+        "Ne pas laisser bouger les enfants",
+        "Une action courte et ludique",
+        "Une longue liste contradictoire"
+      ],
+      "correct": 1,
+      "explanation": "Une action simple peut susciter un geste naturel.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-landscape-0",
+      "skillId": "SK-landscape",
+      "prompt": "Que peut apporter un premier plan au paysage ?",
+      "options": [
+        "Une netteté automatique à l’infini",
+        "Une entrée et un repère de profondeur",
+        "Une exposition toujours parfaite"
+      ],
+      "correct": 1,
+      "explanation": "Les plans organisent la perception de l’espace.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-landscape-1",
+      "skillId": "SK-landscape",
+      "prompt": "Faut-il toujours fermer à l’ouverture minimale en paysage ?",
+      "options": [
+        "Non, il faut arbitrer netteté et diffraction",
+        "Oui",
+        "Oui, sans vérifier la mise au point"
+      ],
+      "correct": 0,
+      "explanation": "Une petite ouverture n’est pas une garantie universelle de détail.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-sport-0",
+      "skillId": "SK-sport",
+      "prompt": "Quel geste accompagne un filé ?",
+      "options": [
+        "Suivre le déplacement du sujet",
+        "Bloquer toujours le boîtier vers le sol",
+        "Ne pas regarder le sujet"
+      ],
+      "correct": 0,
+      "explanation": "Le suivi réduit le mouvement relatif du sujet par rapport au fond.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-sport-1",
+      "skillId": "SK-sport",
+      "prompt": "Quel mode de mise au point aide sur un sujet en déplacement ?",
+      "options": [
+        "AF ponctuel figé sur le fond",
+        "Infini sans vérification",
+        "AF continu adapté"
+      ],
+      "correct": 2,
+      "explanation": "Le suivi permet d’actualiser la distance de mise au point.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-architecture-0",
+      "skillId": "SK-architecture",
+      "prompt": "Comment limiter les verticales convergentes dès la prise de vue ?",
+      "options": [
+        "Pointer davantage vers le haut",
+        "Monter les ISO",
+        "Garder l’axe de visée horizontal quand le cadrage le permet"
+      ],
+      "correct": 2,
+      "explanation": "Éviter l’inclinaison réduit la convergence des verticales.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-architecture-1",
+      "skillId": "SK-architecture",
+      "prompt": "Une correction de perspective peut nécessiter…",
+      "options": [
+        "Une augmentation réelle du détail",
+        "Un recadrage et une perte de champ",
+        "Une récupération de toute la scène hors cadre"
+      ],
+      "correct": 1,
+      "explanation": "La transformation géométrique déplace et étire les pixels.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-night-0",
+      "skillId": "SK-night",
+      "prompt": "Sans suivi, pourquoi les étoiles deviennent-elles des traits ?",
+      "options": [
+        "La carte est lente",
+        "La Terre tourne pendant la pose",
+        "L’ISO crée des lignes"
+      ],
+      "correct": 1,
+      "explanation": "Le ciel se déplace dans le cadre pendant la collecte.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-night-1",
+      "skillId": "SK-night",
+      "prompt": "Pourquoi vérifier un calcul de pose théorique à 100 % ?",
+      "options": [
+        "Le critère de netteté et le matériel modifient le résultat acceptable",
+        "Pour changer la saison",
+        "Pour annuler la rotation terrestre"
+      ],
+      "correct": 0,
+      "explanation": "Une règle simplifiée n’est qu’un point de départ.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-raw-0",
+      "skillId": "SK-raw",
+      "prompt": "Qu’est-ce qu’un développement non destructif ?",
+      "options": [
+        "Conserver l’original et enregistrer des paramètres",
+        "Écraser toujours le RAW",
+        "Supprimer la capture après export"
+      ],
+      "correct": 0,
+      "explanation": "Le rendu peut être recalculé sans modifier les données sources.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-raw-1",
+      "skillId": "SK-raw",
+      "prompt": "Un curseur de récupération recrée-t-il les données entièrement saturées ?",
+      "options": [
+        "Oui, sans limite",
+        "Oui, dans tout JPEG",
+        "Non"
+      ],
+      "correct": 2,
+      "explanation": "Un traitement ne garantit pas le retour d’informations qui n’ont pas été enregistrées.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-curves-0",
+      "skillId": "SK-curves",
+      "prompt": "Une courbe en S modérée sert souvent à…",
+      "options": [
+        "Changer la focale",
+        "Reconstituer des pixels absents",
+        "Augmenter le contraste"
+      ],
+      "correct": 2,
+      "explanation": "Elle écarte certaines valeurs sombres et claires.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-curves-1",
+      "skillId": "SK-curves",
+      "prompt": "Pourquoi surveiller les extrémités de la courbe ?",
+      "options": [
+        "Pour régler l’autofocus",
+        "Pour éviter un écrêtage non voulu",
+        "Pour compter les fichiers"
+      ],
+      "correct": 1,
+      "explanation": "Écraser les valeurs extrêmes peut supprimer des nuances.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-mask-0",
+      "skillId": "SK-mask",
+      "prompt": "Que définit un masque ?",
+      "options": [
+        "La propriété juridique",
+        "La zone et l’intensité d’action d’un réglage",
+        "Le format du capteur"
+      ],
+      "correct": 1,
+      "explanation": "Il limite spatialement ou selon une sélection l’effet du traitement.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-mask-1",
+      "skillId": "SK-mask",
+      "prompt": "Un halo autour d’un sujet peut révéler…",
+      "options": [
+        "Une transition de masque ou une correction excessive",
+        "Un défaut de nommage",
+        "Une carte trop grande"
+      ],
+      "correct": 0,
+      "explanation": "Un traitement local trop fort ou mal raccordé peut devenir visible.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-ethics-0",
+      "skillId": "SK-ethics",
+      "prompt": "Quelle limite doit guider une retouche de portrait ?",
+      "options": [
+        "Le consentement et le contexte d’usage",
+        "La suppression systématique de toute texture",
+        "Le goût du retoucheur seul"
+      ],
+      "correct": 0,
+      "explanation": "L’accord et la finalité comptent pour les modifications acceptables.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-ethics-1",
+      "skillId": "SK-ethics",
+      "prompt": "Une peau sans aucune texture est-elle toujours une amélioration ?",
+      "options": [
+        "Oui, pour tous les usages",
+        "Oui, si le fichier est lourd",
+        "Non"
+      ],
+      "correct": 2,
+      "explanation": "Le rendu doit respecter l’intention et les limites convenues.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-backup-0",
+      "skillId": "SK-backup",
+      "prompt": "Pourquoi une synchronisation seule peut-elle être insuffisante ?",
+      "options": [
+        "Elle empêche toute panne",
+        "Elle garde toujours toutes les versions",
+        "Elle peut propager une suppression"
+      ],
+      "correct": 2,
+      "explanation": "Une vraie stratégie prévoit indépendance et restauration.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-backup-1",
+      "skillId": "SK-backup",
+      "prompt": "Quel test prouve le mieux qu’une sauvegarde est utilisable ?",
+      "options": [
+        "Renommer le disque",
+        "Restaurer un fichier et vérifier son ouverture",
+        "Voir une icône verte seulement"
+      ],
+      "correct": 1,
+      "explanation": "La récupération réelle vérifie le résultat attendu.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-export-0",
+      "skillId": "SK-export",
+      "prompt": "Augmenter uniquement les ppp ajoute-t-il du détail natif ?",
+      "options": [
+        "Oui, sans rééchantillonnage",
+        "Non",
+        "Oui, automatiquement"
+      ],
+      "correct": 1,
+      "explanation": "Les détails dépendent des pixels disponibles et du procédé d’impression.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-export-1",
+      "skillId": "SK-export",
+      "prompt": "Que faut-il vérifier pour un laboratoire ?",
+      "options": [
+        "Ses dimensions et profils demandés",
+        "Le seul nom du photographe",
+        "La marque de la carte"
+      ],
+      "correct": 0,
+      "explanation": "Les exigences du destinataire déterminent un export approprié.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-planning-0",
+      "skillId": "SK-planning",
+      "prompt": "Que doit relier un brief ?",
+      "options": [
+        "Intention, contraintes et livrables",
+        "Uniquement la liste du matériel",
+        "Uniquement l’heure du repas"
+      ],
+      "correct": 0,
+      "explanation": "Un brief aligne résultat attendu et conditions de production.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-planning-1",
+      "skillId": "SK-planning",
+      "prompt": "Pourquoi prévoir un plan B ?",
+      "options": [
+        "Pour éviter toute préparation",
+        "Pour multiplier les coûts sans motif",
+        "Pour répondre à une météo, un retard ou une panne"
+      ],
+      "correct": 2,
+      "explanation": "L’anticipation réduit les interruptions de production.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-direction-0",
+      "skillId": "SK-direction",
+      "prompt": "Quelle consigne est la plus exploitable ?",
+      "options": [
+        "Soyez mieux",
+        "Changez tout en même temps",
+        "Tournez légèrement les épaules vers la fenêtre"
+      ],
+      "correct": 2,
+      "explanation": "Une action concrète peut être comprise et ajustée.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-direction-1",
+      "skillId": "SK-direction",
+      "prompt": "Pourquoi demander un retour au modèle ?",
+      "options": [
+        "Pour imposer davantage",
+        "Pour vérifier confort et compréhension",
+        "Pour abandonner toute intention"
+      ],
+      "correct": 1,
+      "explanation": "La collaboration permet d’adapter le travail et de respecter les limites.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-portfolio-0",
+      "skillId": "SK-portfolio",
+      "prompt": "Un portfolio doit-il contenir toutes les bonnes photos ?",
+      "options": [
+        "Oui, dans l’ordre des fichiers",
+        "Non, il sert une intention et un destinataire",
+        "Oui, toujours"
+      ],
+      "correct": 1,
+      "explanation": "Une sélection ciblée peut mieux démontrer une direction.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-portfolio-1",
+      "skillId": "SK-portfolio",
+      "prompt": "Pourquoi retirer des images redondantes ?",
+      "options": [
+        "Pour renforcer le rythme et la cohérence",
+        "Pour réduire la résolution",
+        "Pour modifier l’exposition"
+      ],
+      "correct": 0,
+      "explanation": "L’édition concentre l’attention sur les images nécessaires.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-critique-0",
+      "skillId": "SK-critique",
+      "prompt": "Quelle formulation constitue une critique utile ?",
+      "options": [
+        "Le fond attire l’œil ; déplaçons le cadre pour isoler le sujet",
+        "C’est nul",
+        "C’est bien, sans autre précision"
+      ],
+      "correct": 0,
+      "explanation": "Une critique relie un fait observable, un effet et une piste.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-critique-1",
+      "skillId": "SK-critique",
+      "prompt": "Comment vérifier qu’un retour aide à progresser ?",
+      "options": [
+        "Appliquer toute opinion sans réfléchir",
+        "Ne jamais refaire de photo",
+        "Tester un changement et comparer"
+      ],
+      "correct": 2,
+      "explanation": "Une proposition mesurable peut être évaluée sur un nouvel essai.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-rights-0",
+      "skillId": "SK-rights",
+      "prompt": "Droit d’auteur et droit à l’image sont-ils identiques ?",
+      "options": [
+        "Oui",
+        "Seulement sur Internet",
+        "Non"
+      ],
+      "correct": 2,
+      "explanation": "Ils concernent des objets juridiques différents ; les règles dépendent du contexte et du pays.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-rights-1",
+      "skillId": "SK-rights",
+      "prompt": "Que faut-il préciser dans une autorisation d’usage ?",
+      "options": [
+        "Aucun détail écrit",
+        "Les supports, la durée et le périmètre convenus",
+        "Seulement la taille de la carte"
+      ],
+      "correct": 1,
+      "explanation": "Un périmètre explicite aide à éviter les malentendus.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-project-0",
+      "skillId": "SK-project",
+      "prompt": "Qu’est-ce qui rend une présentation de projet plus convaincante ?",
+      "options": [
+        "Masquer toutes les limites",
+        "Relier les images à une intention et justifier les choix",
+        "Ne montrer que le prix du matériel"
+      ],
+      "correct": 1,
+      "explanation": "La démarche, les résultats et l’analyse permettent d’évaluer le projet.",
+      "type": "legacy-review"
+    },
+    {
+      "id": "R-SK-project-1",
+      "skillId": "SK-project",
+      "prompt": "Un bilan critique doit notamment identifier…",
+      "options": [
+        "Une limite et une prochaine piste concrète",
+        "Uniquement des compliments",
+        "Un classement des marques"
+      ],
+      "correct": 0,
+      "explanation": "L’analyse prépare une nouvelle itération et montre la compréhension des compromis.",
+      "type": "legacy-review"
+    }
+  ]
+}

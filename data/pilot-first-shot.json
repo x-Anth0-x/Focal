@@ -1,0 +1,246 @@
+{
+  "version": 1,
+  "id": "N01-L01",
+  "title": "Votre première photo choisie, pas subie",
+  "skillId": "SK-camera",
+  "objective": "En dix minutes de pratique, repérer cinq commandes, choisir le sujet net et expliquer trois contrôles sur deux photos d’un objet immobile.",
+  "prerequisites": [],
+  "difficulty": "Débutant absolu",
+  "durationMinutes": 35,
+  "editorialStatus": "documented-pilot",
+  "validatedAt": "2026-11-15",
+  "physicalVerified": false,
+  "intuition": "Votre appareil n’a pas besoin de deviner votre intention. Vous choisissez ce qui compte dans le cadre ; il vous aide à obtenir une image que vous vérifiez ensuite. Pour ce premier essai, un objet immobile près d’une fenêtre suffit.",
+  "chapters": [
+    {
+      "title": "1. Choisir ce qui doit être vu",
+      "body": "Posez un objet près d’une fenêtre, sans soleil direct si le contraste est difficile. Écartez ce qui concurrence le sujet. Écrivez une phrase : « Je veux montrer… ». Cette phrase devient votre critère de choix. Une image techniquement nette n’est pas automatiquement une image lisible ; inversement, un flou volontaire peut servir une intention, mais nous cherchons ici un sujet net pour apprendre les commandes."
+    },
+    {
+      "title": "2. Comprendre le trajet de la lumière",
+      "body": "La lumière réfléchie par le sujet traverse l’objectif. Les lentilles forment une image sur le capteur ; l’ouverture influence la collecte et la profondeur de champ ; la durée influence la collecte et la trace du mouvement. Le capteur transforme la lumière reçue en signal. Le viseur et l’écran montrent une interprétation qui peut différer du fichier final. Le schéma du cours isole le principe : il ne reproduit pas physiquement chaque lentille de votre objectif."
+    },
+    {
+      "title": "3. Trouver cinq commandes sans se perdre",
+      "body": "Repérez ON/OFF et le déclencheur à l’avant supérieur, le sélecteur Photo/Film/S&Q et le sélecteur de mode en partie supérieure, puis le bouton de lecture à l’arrière. Ne confondez pas le mode d’exposition P/A/S/M et le mode de mise au point AF-S/AF-C : ils répondent à deux questions différentes. Les sélecteurs peuvent avoir été personnalisés ; si une molette ne modifie pas la valeur attendue, consultez son affectation plutôt que de forcer une commande."
+    },
+    {
+      "title": "4. Donner une consigne simple au boîtier",
+      "body": "Pour cet objet immobile, commencez par Photo et A. Vous choisissez l’ouverture ; l’appareil adapte la durée selon la mesure et les limites disponibles. L’ouverture proposée par l’application est bornée à votre objectif déclaré. Avec ISO AUTO, surveillez la durée : si elle devient trop longue pour votre tenue en main, cherchez plus de lumière, un appui stable ou une autre combinaison. Un réglage proposé est un départ, pas une garantie d’exposition ni de netteté."
+    },
+    {
+      "title": "5. Choisir le point avant de déclencher",
+      "body": "En AF ponctuel, le point est verrouillé une fois obtenu ; c’est une option adaptée à notre sujet immobile. Placez une petite zone sur le détail important. Avec l’activation d’origine, la demi-course du déclencheur active la mise au point ; maintenez une prise stable puis déclenchez. Une zone qui inclut un arrière-plan contrasté peut sélectionner autre chose que votre objet. En cas d’échec, vérifiez aussi la distance minimale de mise au point de l’objectif : reculer peut résoudre un problème qu’un changement de menu ne résout pas."
+    },
+    {
+      "title": "6. Contrôler puis décider du prochain essai",
+      "body": "En lecture, agrandissez le détail choisi. Est-il net là où vous le vouliez ? Regardez les zones claires importantes et l’histogramme sans rechercher une courbe « idéale ». Revenez au cadrage complet : l’objet est-il lisible ? Décrivez un fait avant de juger l’image. Pour la deuxième prise, corrigez une seule décision et notez son effet. Le carnet enregistre vos observations ; il ne prétend pas vérifier automatiquement le contenu de vos photos."
+    }
+  ],
+  "glossary": [
+    {
+      "slug": "capteur",
+      "term": "Capteur",
+      "definition": "Surface sensible qui convertit la lumière en signal."
+    },
+    {
+      "slug": "ouverture",
+      "term": "Ouverture",
+      "definition": "Ouverture relative de l’objectif, exprimée par le nombre f."
+    },
+    {
+      "slug": "autofocus",
+      "term": "Autofocus",
+      "definition": "Système qui ajuste la mise au point selon la zone et le comportement choisis."
+    },
+    {
+      "slug": "histogramme",
+      "term": "Histogramme",
+      "definition": "Répartition des valeurs du rendu observé ; ce n’est pas un jugement esthétique."
+    }
+  ],
+  "visual": {
+    "type": "qualitative-diagram",
+    "kind": "firstshot",
+    "description": "Trajet lumineux simplifié, puis choix d’une zone et contrôle du cadrage. Aucun comparatif de performances du Sony."
+  },
+  "comparison": {
+    "applicable": false,
+    "reason": "Cette première leçon enseigne une séquence de commandes et de contrôle. Les deux prises à réaliser sont vos observations, pas une fausse comparaison photographique générée."
+  },
+  "sonySteps": [
+    {
+      "title": "Sélecteur Photo/Film/S&Q",
+      "instruction": "Choisissez Photo. Le déverrouillage du sélecteur se trouve à l’avant de ce sélecteur, selon le guide.",
+      "sourceId": "sony-TP1000660864"
+    },
+    {
+      "title": "Mode A — Priorité ouvert.",
+      "instruction": "Choisissez A et ajustez l’ouverture avec le sélecteur avant ou arrière L dans la configuration documentée. Vérifiez la valeur à l’écran.",
+      "sourceId": "sony-TP1000650414"
+    },
+    {
+      "title": "AF ponctuel",
+      "instruction": "Dans le guide français consulté : MENU → Mise au point → AF/MF → Mode mise au pt → AF ponctuel. L’affectation de vos boutons et votre firmware peuvent différer.",
+      "sourceId": "sony-TP1000650254"
+    },
+    {
+      "title": "Zone mise au pt",
+      "instruction": "Dans le guide français consulté : MENU → Mise au point → Zone mise au pt → Zone mise au pt. Choisissez une petite zone Spot disponible et placez-la sur le détail.",
+      "sourceId": "sony-TP1000650435"
+    },
+    {
+      "title": "Contrôle de la durée avec ISO AUTO",
+      "instruction": "Surveillez la durée indiquée. Le guide décrit ISO AUTO vit.ob min pour P/A ; cette limite peut être dépassée si l’exposition manque même à la limite ISO. Ne présumez pas qu’elle garantit votre vitesse.",
+      "sourceId": "sony-TP1000650225"
+    }
+  ],
+  "guidedExercise": {
+    "title": "Une photo, une intention",
+    "steps": [
+      "Écrire l’objet et le détail qui doivent attirer le regard.",
+      "Repérer les cinq commandes, sélectionner Photo et A, choisir une ouverture permise.",
+      "Placer la zone AF sur le détail, acquérir le point puis photographier.",
+      "Agrandir la zone importante et noter un fait sur netteté, lumière et cadrage."
+    ]
+  },
+  "autonomousExercise": {
+    "title": "Changer une seule décision",
+    "instruction": "Sans changer d’objet, réalisez une deuxième prise en modifiant seulement le cadrage ou la zone AF. Gardez une trace des réglages réellement affichés et expliquez la différence observée."
+  },
+  "errors": [
+    {
+      "symptom": "Le boîtier ne fait pas le point sur l’objet",
+      "check": "Vérifier la zone AF, le contraste du détail, le mode et la distance au sujet avant de conclure à une panne."
+    },
+    {
+      "symptom": "La photo est floue malgré un cadre AF vert",
+      "check": "Distinguer mauvaise zone, mouvement du sujet et bougé du boîtier. Vérifier le détail en lecture et la durée utilisée."
+    },
+    {
+      "symptom": "La photo paraît très claire sur l’écran",
+      "check": "Ne pas modifier l’exposition sur la seule luminosité de l’écran ; vérifier les zones utiles, l’histogramme et la lecture du fichier."
+    },
+    {
+      "symptom": "La molette ne fait pas ce que le guide annonce",
+      "check": "Les fonctions peuvent être personnalisées. Lire la valeur qui change et consulter l’affectation ; aucun chemin inventé n’est nécessaire."
+    }
+  ],
+  "mission": {
+    "id": "MISSION-PILOT-N01-L01",
+    "title": "Deux prises, une correction argumentée",
+    "criteria": [
+      "L’intention et le détail net sont nommés.",
+      "Deux prises comportent des réglages plausibles pour l’objectif déclaré.",
+      "Une observation et une correction sont justifiées sans confondre luminosité d’écran et exposition."
+    ],
+    "evidence": "Deux essais consignés et une observation argumentée. Déclaration personnelle, sans analyse automatique de vos photos."
+  },
+  "memo": [
+    "Sujet → cadre → zone de point → déclenchement → contrôle.",
+    "A règle l’ouverture ; AF-S règle le comportement de mise au point : ce sont deux décisions différentes.",
+    "Un réglage doit rester possible avec l’objectif et être contrôlé dans la lumière réelle.",
+    "Une mission cochée n’établit pas à elle seule une maîtrise."
+  ],
+  "deepening": [
+    "N02-L04",
+    "N01-L03",
+    "N02-L03"
+  ],
+  "sourceIds": [
+    "sony-manual",
+    "sony-TP1000660862",
+    "sony-TP1000660863",
+    "sony-TP1000660864",
+    "sony-TP1000650414",
+    "sony-TP1000650254",
+    "sony-TP1000650435",
+    "sony-TP1000650225"
+  ],
+  "questions": [
+    {
+      "id": "P-camera-1",
+      "skillId": "SK-camera",
+      "prompt": "Vous voulez que le détail avant soit net. Le cadre AF est sur le fond. Que corriger en premier ?",
+      "options": [
+        "La zone AF visée",
+        "La balance des blancs",
+        "Le nom du fichier"
+      ],
+      "correct": 0,
+      "explanation": "La zone donne au système la région souhaitée. Corrigez d’abord la visée, puis vérifiez la mise au point en lecture.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "P-camera-2",
+      "skillId": "SK-camera",
+      "prompt": "Quel couple de décisions répond à deux questions différentes ?",
+      "options": [
+        "A et AF-S : exposition et mise au point",
+        "RAW et JPEG : deux vitesses",
+        "ISO et zoom : deux cadrages"
+      ],
+      "correct": 0,
+      "explanation": "A répartit la commande d’exposition. AF-S décrit le comportement de mise au point. Les confondre empêche de diagnostiquer un problème.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "P-camera-3",
+      "skillId": "SK-camera",
+      "prompt": "La photo paraît nette en miniature mais le détail choisi est mou à l’agrandissement. Quelle conclusion est justifiée ?",
+      "options": [
+        "Le boîtier est nécessairement en panne",
+        "Il faut vérifier zone, durée et stabilité avant de diagnostiquer",
+        "Il suffit de rendre l’écran plus lumineux"
+      ],
+      "correct": 1,
+      "explanation": "Plusieurs causes produisent une apparence de flou. L’agrandissement apporte un fait ; il faut le relier aux conditions de prise de vue.",
+      "type": "diagnosis",
+      "visual": null
+    },
+    {
+      "id": "P-camera-4",
+      "skillId": "SK-camera",
+      "prompt": "Vous ne possédez qu’un zoom f/2,8. Quel départ est physiquement possible ?",
+      "options": [
+        "85 mm f/1,8 sur ce zoom 28–75",
+        "50 mm f/4 sur ce zoom 28–75",
+        "35 mm f/1,4 sur ce zoom"
+      ],
+      "correct": 1,
+      "explanation": "50 mm se trouve dans la plage 28–75 et f/4 ferme davantage que f/2,8. Les autres propositions dépassent au moins une limite.",
+      "type": "settings",
+      "visual": null
+    },
+    {
+      "id": "P-camera-5",
+      "skillId": "SK-camera",
+      "prompt": "Dans le schéma de trajet lumineux, que reçoit le capteur ?",
+      "options": [
+        "L’intention artistique du photographe",
+        "Une image lumineuse formée par l’objectif",
+        "Une liste de mots-clés"
+      ],
+      "correct": 1,
+      "explanation": "L’objectif forme une image sur le plan sensible. Le schéma est un principe ; l’intention détermine vos choix, pas le signal reçu.",
+      "type": "interpretation",
+      "visual": "camera"
+    },
+    {
+      "id": "P-camera-6",
+      "skillId": "SK-camera",
+      "prompt": "Quelle paire d’essais aide à comprendre une correction de cadrage ?",
+      "options": [
+        "Deux sujets, deux lumières et deux objectifs différents",
+        "Même objet, même lumière, cadrage changé et observations notées",
+        "Une seule miniature sans réglages"
+      ],
+      "correct": 1,
+      "explanation": "Isoler la décision facilite l’attribution de la différence. Cela n’élimine pas toute variation, mais rend la comparaison explicable.",
+      "type": "experiment",
+      "visual": null
+    }
+  ]
+}

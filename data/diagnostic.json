@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "estimatedMinutes": [
+    5,
+    10
+  ],
+  "instructions": "Répondez sans chercher une note. « Je ne sais pas encore » aide à choisir un point de départ. Les dessins sont des schémas, pas des photographies comparatives.",
+  "questions": [
+    {
+      "id": "D-camera-1",
+      "skillId": "SK-camera",
+      "prompt": "Vous visez un objet immobile. Avec les commandes d’origine, quel geste sert d’abord à acquérir le point ?",
+      "options": [
+        "Enfoncer le déclencheur à mi-course",
+        "Éteindre puis rallumer",
+        "Tourner la bague de zoom"
+      ],
+      "correct": 0,
+      "explanation": "Avec l’activation AF d’origine, la demi-course lance la mise au point. Une personnalisation AF-ON peut modifier ce comportement.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "D-camera-2",
+      "skillId": "SK-camera",
+      "prompt": "Après la prise, quel contrôle répond à la question « mon sujet important est-il net ? »",
+      "options": [
+        "Regarder uniquement la miniature",
+        "Agrandir la zone du sujet dans l’image enregistrée",
+        "Augmenter la luminosité de l’écran"
+      ],
+      "correct": 1,
+      "explanation": "La miniature masque souvent un défaut. L’agrandissement de lecture aide à vérifier la zone qui porte l’intention.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "D-aperture-1",
+      "skillId": "SK-aperture",
+      "prompt": "Ces deux cercles représentent une pupille idéalisée à même focale. Lequel correspond au plus petit nombre f ?",
+      "options": [
+        "Le grand passage",
+        "Le petit passage",
+        "Impossible : le nombre f est une durée"
+      ],
+      "correct": 0,
+      "explanation": "À même focale, D = focale / nombre f. Un plus petit nombre f donne un passage plus large. Ce dessin ne mesure pas un objectif réel.",
+      "type": "interpretation",
+      "visual": "aperture"
+    },
+    {
+      "id": "D-aperture-2",
+      "skillId": "SK-aperture",
+      "prompt": "Vous fermez de f/2,8 à f/4. À lumière et ISO identiques, quelle compensation conserve approximativement la collecte ?",
+      "options": [
+        "Diviser la durée par deux",
+        "Doubler la durée",
+        "Changer uniquement le point"
+      ],
+      "correct": 1,
+      "explanation": "Fermer d’un stop divise environ la surface de collecte par deux ; doubler la durée compense la quantité de lumière.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "D-shutter-1",
+      "skillId": "SK-shutter",
+      "prompt": "Un enfant court en lumière suffisante. Pour limiter la trace de son mouvement, quel point de départ paraît le plus pertinent ?",
+      "options": [
+        "1/15 s",
+        "1/30 s",
+        "1/1000 s"
+      ],
+      "correct": 2,
+      "explanation": "Une durée courte limite le déplacement pendant l’exposition. Elle ne garantit pas la netteté : il faut aussi lumière, mise au point et suivi.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "D-shutter-2",
+      "skillId": "SK-shutter",
+      "prompt": "Le schéma montre une même vitesse de déplacement. Quelle durée correspond à la plus longue trace ?",
+      "options": [
+        "1/30 s",
+        "1/1000 s",
+        "Les deux traces doivent être identiques"
+      ],
+      "correct": 0,
+      "explanation": "À vitesse identique, la distance parcourue est proportionnelle au temps. Le flou en pixels dépend aussi de la distance et de la focale.",
+      "type": "interpretation",
+      "visual": "motion"
+    },
+    {
+      "id": "D-focus-1",
+      "skillId": "SK-focus",
+      "prompt": "Un marcheur se rapproche de vous. Quel comportement AF devez-vous étudier en priorité ?",
+      "options": [
+        "AF-S / AF ponctuel uniquement",
+        "AF-C / AF continu",
+        "La balance des blancs"
+      ],
+      "correct": 1,
+      "explanation": "Le continu actualise le point pour un sujet mobile. Une zone adaptée et le contrôle du résultat restent nécessaires.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "D-focus-2",
+      "skillId": "SK-focus",
+      "prompt": "L’appareil choisit le fond au lieu de votre sujet. Quelle correction est la plus directement liée au problème ?",
+      "options": [
+        "Cibler une zone AF sur le sujet important",
+        "Monter les ISO dans tous les cas",
+        "Recadrer uniquement après la séance"
+      ],
+      "correct": 0,
+      "explanation": "Une zone trop large peut donner plusieurs candidats. Une zone mieux placée clarifie le sujet voulu sans garantir chaque acquisition.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "D-iso-1",
+      "skillId": "SK-iso",
+      "prompt": "Avec la même lumière, la même ouverture et la même durée, augmenter l’ISO ajoute-t-il des photons au capteur ?",
+      "options": [
+        "Oui, toujours",
+        "Non ; cela change la chaîne de rendu/amplification",
+        "Seulement avec un zoom"
+      ],
+      "correct": 1,
+      "explanation": "L’ISO ne crée pas la lumière reçue. Le signal utile dépend d’abord de la collecte ; le bruit dépend aussi du capteur et du traitement.",
+      "type": "decision",
+      "visual": null
+    },
+    {
+      "id": "D-histogram-1",
+      "skillId": "SK-histogram",
+      "prompt": "La répartition synthétique s’accumule au bord blanc. Quel contrôle est utile ?",
+      "options": [
+        "Chercher une belle courbe centrée à tout prix",
+        "Vérifier les zones claires importantes et les canaux couleur",
+        "Déclarer automatiquement la photo ratée"
+      ],
+      "correct": 1,
+      "explanation": "Un amas contre le bord peut indiquer un écrêtage. Certaines sources lumineuses peuvent être volontairement saturées : l’intention reste à examiner.",
+      "type": "interpretation",
+      "visual": "histogram"
+    }
+  ]
+}

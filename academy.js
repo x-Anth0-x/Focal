@@ -226,6 +226,7 @@
       section.focus({preventScroll:true});
       section.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
     };
+    FocalLearning.home(app);
   }
   function renderCatalog(selectedLevel = 1) {
     if (!Number.isInteger(selectedLevel) || selectedLevel < 1 || selectedLevel > 8) { renderNotFound(); return; }
@@ -255,7 +256,7 @@
     state.lastLesson = id;
     save();
     setNav("lesson", lesson.niveau);
-    const meta = enrichment[id],
+    const meta = FocalLearning.adaptMeta(id, enrichment[id]),
       parts = chapters(lesson),
       idx = curriculum.indexOf(lesson);
     document.title = `${lesson.titre} — FOCAL Academy`;
@@ -269,7 +270,7 @@
         meta.headline,
         `<div class="lesson-utility"><span>◷ ${lesson.duree_estimee_minutes} min environ</span><div class="lesson-pagination">${idx > 0 ? `<a href="#lesson/${curriculum[idx - 1].id}" aria-label="Leçon précédente">‹</a>` : "<span></span>"}<span>${idx + 1} / 48</span>${idx < 47 ? `<a href="#lesson/${curriculum[idx + 1].id}" aria-label="Leçon suivante">›</a>` : "<span></span>"}</div></div>`,
       ) +
-      FocalCamera.banner(id) +
+      FocalLearning.lessonPanel(id) + FocalCamera.banner(id) +
       `<div class="lesson-tabs" role="tablist" aria-label="Étapes de la leçon">${tabs.map(([key, label]) => `<button role="tab" id="tab-${key}" aria-controls="pane-${key}" aria-selected="false" tabindex="-1" data-tab="${key}">${label}</button>`).join("")}</div><div id="lesson-panes">${tabs.map(([key]) => `<section role="tabpanel" id="pane-${key}" aria-labelledby="tab-${key}" hidden></section>`).join("")}</div>${footer()}`;
     $("#pane-course").innerHTML =
       `<div class="section-title"><span>01</span><h2>Voir la notion autrement.</h2></div><div class="lesson-overview"><div class="concept-intro"><span class="eyebrow">LE REPÈRE ESSENTIEL</span><h2>${esc(meta.key)}</h2><p>${esc((lesson.objectifs || [])[0])}</p><div class="concept-preview">${FocalVisuals.draw(meta.kind, 0, lesson.titre)}</div><button class="text-button" id="open-visual">Explorer les trois situations <span>→</span></button></div><aside class="lesson-tips"><div class="takeaway"><span class="eyebrow">◎ &nbsp; À RETENIR</span><h3>${esc(meta.scenarios[0].label)}</h3><p>${esc(meta.scenarios[0].explanation)}</p><p>${esc(meta.scenarios[1].explanation)}</p></div><div class="field-tip"><span class="eyebrow">✧ &nbsp; SUR LE TERRAIN</span><p>${esc(meta.mission)}</p></div></aside></div>${FocalFilms.lesson(lesson, meta)}${FocalCamera.recipe(id)}<div class="section-title"><span>02</span><h2>Comprendre, chapitre par chapitre.</h2><span class="chapter-counter" id="chapter-counter"></span></div><p class="section-intro">Ouvrez chaque chapitre et marquez-le comme lu à votre rythme. Votre lecture est mémorisée.</p><div class="chapter-list">${parts
@@ -380,7 +381,7 @@
       const c = FocalCamera.capture(meta.kind,i);
       $("#dof-lens").value = c.lensId;
       $("#dof-lens").dispatchEvent(new Event("change"));
-      $("#aperture").value = [1.8,2,2.8,4,5.6,8,11,16,22].indexOf(c.aperture);
+      $("#aperture").value = calculatorApertures(FocalCamera.lens(c.lensId)).indexOf(c.aperture);
       $("#focal").value = c.focal;
       $("#distance").value = c.distance || 2;
       $("#distance").dispatchEvent(new Event("input"));
@@ -501,7 +502,7 @@
   }
   function depthCalculator() {
     return `<section class="panel depth-calculator"><span class="eyebrow">LABORATOIRE OPTIQUE</span><h2>Estimer la profondeur de champ</h2><p>Modèle de lentille mince, capteur plein format, cercle de confusion conventionnel de 0,03 mm. Valeurs indicatives, dépendantes du critère de netteté.</p><label class="sony-calculator-lens" for="dof-lens">Objectif du calcul<select id="dof-lens">${Object.entries(
-      FocalCamera.profile.lenses,
+      FocalCamera.availableLenses(),
     )
       .map(
         ([key, l]) =>
@@ -511,8 +512,12 @@
         "",
       )}</select></label><div id="depth-form" class="depth-grid"><div class="depth-inputs"><label for="aperture">Ouverture <output id="apertureOut"></output></label><input id="aperture" type="range" min="0" max="8" value="2"><label for="focal">Focale <output id="focalOut"></output></label><input id="focal" type="range" min="28" max="75" value="50"><label for="distance">Distance de mise au point <output id="distanceOut"></output></label><input id="distance" type="range" min="1" max="10" value="2" step="0.1"><button class="btn alt" id="resetLab">Réinitialiser</button></div><div class="depth-result" aria-live="polite"><span>Profondeur de champ estimée</span><strong id="dofOut"></strong><div><span>Limite proche <b id="nearOut"></b></span><span>Limite lointaine <b id="farOut"></b></span></div><p>Le calcul ne mesure ni le rendu du bokeh ni la diffraction.</p></div></div></section>`;
   }
+  function calculatorApertures(lens) {
+    const standard = [1.8, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
+    return lens && !FocalCamera.profile.lenses[lens.id] ? [...new Set([...standard,lens.maxAperture,lens.minAperture])].sort((a,b)=>a-b) : standard;
+  }
   function bindDepthCalculator(onChange = () => {}) {
-    const values = [1.8, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
+    let values = calculatorApertures(FocalCamera.lens($("#dof-lens").value));
     function draw() {
       const N = values[+$("#aperture").value],
         f = +$("#focal").value,
@@ -543,6 +548,7 @@
     );
     function chooseLens(reset = true) {
       const l = FocalCamera.lens($("#dof-lens").value);
+      values = calculatorApertures(l);
       $("#focal").min = l.focalMin;
       $("#focal").max = l.focalMax;
       $("#focal").disabled = l.focalMin === l.focalMax;
@@ -676,7 +682,7 @@
         "Votre regard prend forme.",
         "Retrouvez vos acquis, vos lectures et votre carnet. Votre suivi est conservé sur cet appareil.",
       ) +
-      `<div class="progress-hero panel"><div class="progress-ring" style="--percent:${(validated / 48) * 100}%"><strong>${Math.round((validated / 48) * 100)}<small>%</small></strong></div><div><span class="eyebrow">VOTRE PARCOURS PERSONNEL</span><h2>${validated} / 48 leçons validées</h2><p>${read} leçons consultées ou lues · ${Object.values(state.notes).filter(Boolean).length} carnets de terrain</p><a class="btn" href="#lesson/${state.lastLesson}">Continuer ma leçon →</a></div><div class="progress-exports"><button class="btn alt" id="export">Exporter mon suivi</button><label class="btn alt import-button">Importer un suivi<input id="import" type="file" accept="application/json,.json"></label><p class="tiny">L’export contient vos notes personnelles.<br>Le suivi ne vaut pas certification.</p></div></div><div class="level-progress-grid">${[
+      `<div class="learning-info">Votre suivi historique est conservé. <a href="#skills">Voir mes compétences, mes preuves et mes révisions →</a></div><div class="progress-hero panel"><div class="progress-ring" style="--percent:${(validated / 48) * 100}%"><strong>${Math.round((validated / 48) * 100)}<small>%</small></strong></div><div><span class="eyebrow">VOTRE PARCOURS PERSONNEL</span><h2>${validated} / 48 leçons validées</h2><p>${read} leçons consultées ou lues · ${Object.values(state.notes).filter(Boolean).length} carnets de terrain</p><a class="btn" href="#lesson/${state.lastLesson}">Continuer ma leçon →</a></div><div class="progress-exports"><button class="btn alt" id="export">Exporter mon suivi</button><label class="btn alt import-button">Importer un suivi<input id="import" type="file" accept="application/json,.json"></label><p class="tiny">L’export contient vos notes personnelles.<br>Le suivi ne vaut pas certification.</p></div></div><div class="level-progress-grid">${[
         ...new Map(curriculum.map((x) => [x.niveau, x.niveau_titre])),
       ]
         .map(([n, t]) => {
@@ -694,6 +700,7 @@
                 contentVersion: 2,
                 exportedAt: new Date().toISOString(),
                 state,
+                learning: FocalLearning.export(),
               },
               null,
               2,
@@ -711,8 +718,8 @@
     $("#import").onchange = async (e) => {
       const file = e.target.files[0];
       if (!file) return;
-      if (file.size > 2 * 1024 * 1024) {
-        toast("Ce fichier est trop volumineux (maximum 2 Mo).");
+      if (file.size > 8 * 1024 * 1024) {
+        toast("Ce fichier est trop volumineux (maximum 8 Mo).");
         return;
       }
       try {
@@ -725,14 +732,27 @@
         )
           throw Error("Format incorrect");
         const imported = cleanState(data.state);
+        const importedLearning = data.learning ? FocalLearning.validateImport(data.learning) : null;
         if (
           !window.confirm(
             "Importer ce suivi remplacera le suivi de cet appareil. Exportez votre suivi actuel si vous souhaitez le conserver. Continuer ?",
           )
         )
           return;
+        // Preflight storage and retain rollback copies before replacing either model.
+        const previousLegacy = localStorage.getItem(KEY);
+        const previousLearning = FocalLearning.export();
+        try {
+          localStorage.setItem(KEY, JSON.stringify(imported));
+          if (importedLearning) FocalLearning.restore(importedLearning);
+        } catch (error) {
+          if (previousLegacy !== null) localStorage.setItem(KEY, previousLegacy);
+          else localStorage.removeItem(KEY);
+          if (importedLearning) FocalLearning.restore(previousLearning);
+          throw error;
+        }
         state = imported;
-        save();
+        updateProgress();
         renderProgress();
         toast("Votre suivi a été importé.");
       } catch {
@@ -753,6 +773,7 @@
     const home = !bits[0] || bits[0] === "home" || (bits[0] === "courses" && !bits[1]);
     document.body.classList.toggle("home-mode", home);
     if (home) renderHome();
+    else if (FocalLearning.handle(app, bits)) { activeLesson = null; setNav(bits[0]); }
     else if (bits[0] === "courses") renderCatalog(Number(bits[1]));
     else if (bits[0] === "progress") renderProgress();
     else if (bits[0] === "camera") {
@@ -811,6 +832,12 @@
         $("#menu-toggle").setAttribute("aria-label", open ? "Fermer la navigation" : "Ouvrir la navigation");
         $("#sidebar").classList.toggle("menu-open", open);
       };
+      $("#sidebar-content").addEventListener("click", event => {
+        if (!event.target.closest('a[href^="#"]')) return;
+        $("#menu-toggle").setAttribute("aria-expanded", "false");
+        $("#menu-toggle").setAttribute("aria-label", "Ouvrir la navigation");
+        $("#sidebar").classList.remove("menu-open");
+      });
       window.addEventListener("hashchange", renderRoute);
       let pendingSync = 0,
         beforeSync = null;
@@ -830,6 +857,17 @@
         } catch {}
       });
       await FocalGlossary.init();
+      await FocalLearning.init({legacy: () => state, questions, answers, meta: enrichment});
+      const learningNav = document.createElement("a");
+      learningNav.href = "#skills"; learningNav.dataset.nav = "skills";
+      learningNav.innerHTML = `<span class="nav-icon" aria-hidden="true">${FocalIcons.draw("progress")}</span><span class="nav-copy"><strong>Mes compétences</strong><small>Acquis, preuves & révisions</small></span>`;
+      $(".navitems").append(learningNav);
+      window.addEventListener("focal-learning-sync", () => {
+        if ($(".learning-sync")) return;
+        const banner = document.createElement("div"); banner.className = "learning-sync"; banner.setAttribute("role", "status");
+        banner.innerHTML = `Le profil ou le suivi a changé dans un autre onglet. <button class="btn alt" type="button">Actualiser cette vue</button>`;
+        banner.querySelector("button").onclick = renderRoute; app.prepend(banner);
+      });
       renderRoute();
       updateProgress();
       window.FocalApp = {

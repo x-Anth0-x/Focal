@@ -17,7 +17,12 @@ window.FocalDiagrams = (() => {
     const k=aliases[kind]||kind, id=c.lessonId || byKind[k], meta=content[id]?.kind===k?content[id]:content[byKind[k]];
     let result='',art='',note='Schéma qualitatif : les formes et couleurs servent à isoler une idée, sans reproduire les performances du Sony.',fact='',variable='La situation sélectionnée', fixed='L’intention du cours';
     const f=c.focal||50,N=c.aperture||4;
-    if(kind==='diffraction') {
+    if(kind==='firstshot') {
+      if(n===0){art=box(65,105,80,70)+`<ellipse cx="220" cy="140" rx="15" ry="70" fill="#7ca3a433" stroke="${mint}"/>`+line(145,110,455,200)+line(145,175,455,80)+line(455,65,455,215,mint,6)+text(65,265,'Sujet → objectif → image sur le capteur',18,gold);fact='L’objectif forme l’image, le capteur l’enregistre.';variable='Trajet représenté';fixed='Sujet immobile et intention';}
+      if(n===1){art=box(65,55,470,185,'#1a2a30')+circle(210,120,30,mint)+box(180,150,60,65,'#799d95')+box(410,90,65,120,'#48606b')+`<rect x="166" y="77" width="88" height="88" fill="none" stroke="${gold}" stroke-width="3"/>`+text(65,275,'AF ponctuel : visez le détail du sujet',18,gold);fact='Placez la zone de visée sur le détail voulu, puis faites le point.';variable='Zone choisie par vous';fixed='Un sujet immobile, AF-S dans cet exercice';}
+      if(n===2){art=box(65,55,220,175,'#1a2a30')+circle(170,118,20,mint)+box(150,140,40,60,'#799d95')+line(205,115,365,65,mint)+line(205,150,365,225,mint)+box(365,55,160,175,'#263b42',gold)+circle(445,120,48,mint)+text(65,280,'Lecture agrandie : vérifiez le détail utile',18,gold);fact='Agrandissez l’image enregistrée : zone nette, lumière et cadrage sont à contrôler.';variable='Grossissement de lecture';fixed='Même fichier enregistré, sans amélioration de netteté';}
+      note='Séquence qualitative : aucun automatisme de contrôle ou résultat de netteté n’est simulé. Vérifiez vos propres photos sur le boîtier.';
+    } else if(kind==='diffraction') {
       const diameter=2.44*.55*N;
       art=circle(280,140,diameter*2.4,'#dcc58b')+circle(280,140,diameter*4,'#dcc58b18')+text(65,45,`f/${N} · longueur d’onde 550 nm`,20,gold)+text(65,275,`Diamètre du premier minimum ≈ ${diameter.toFixed(1)} µm`,18,mint);
       variable='Nombre f';fixed='Longueur d’onde 550 nm';fact='Quand on ferme, la tache de diffraction s’élargit sur le capteur.';note='Modèle d’Airy pour une pupille circulaire idéale : diamètre 2,44 × λ × N. Grossissement graphique arbitraire ; les aberrations réelles ne sont pas modélisées.';
