@@ -732,7 +732,7 @@
         )
           throw Error("Format incorrect");
         const imported = cleanState(data.state);
-        const importedLearning = data.learning ? FocalLearning.validateImport(data.learning) : null;
+        const importedLearning = Object.hasOwn(data, "learning") ? FocalLearning.validateImport(data.learning) : null;
         if (
           !window.confirm(
             "Importer ce suivi remplacera le suivi de cet appareil. Exportez votre suivi actuel si vous souhaitez le conserver. Continuer ?",

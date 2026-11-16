@@ -657,6 +657,24 @@ window.FocalLearning = (() => {
         "À focale, position et mise au point fixes, comparez " +
         [...new Set(captures.map((x) => "f/" + x.aperture))].join(", ") +
         ". En A, surveillez la durée automatique ; en M, compensez la durée pour conserver une exposition comparable.";
+    if (meta.kind === "focal") {
+      const focalValues = [...new Set(captures.map((x) => x.focal))];
+      action =
+        focalValues.length > 1
+          ? "Depuis un point fixe, comparez les focales disponibles : " +
+            focalValues.join(", ") +
+            " mm, en utilisant seulement les objectifs déclarés. Puis déplacez-vous pour garder le sujet à taille similaire : le rapport entre les plans change avec votre position."
+          : "Avec votre focale fixe de " +
+            c.focal +
+            " mm, réalisez une vue depuis un point repéré, puis une seconde en changeant votre position. Décrivez le changement de cadrage et de rapport entre les plans. Les trois repères de l’atelier gardent ici le même angle : comparer des focales depuis le même point demande un autre objectif ou un zoom.";
+    }
+    if (meta.kind === "lenskit") {
+      const available = C.lenses(S.state.profile, data().equipment);
+      const zoom = available.find((l) => l.focalMin !== l.focalMax);
+      action = zoom
+        ? "Faites une promenade en gardant une focale disponible sur votre zoom, puis une autre en autorisant les changements de focale dans sa plage. Comparez cadrages et déplacements. Ce protocole compare deux usages, pas les performances d’un objectif fixe face au zoom."
+        : "Faites une promenade avec votre objectif fixe et notez les cadrages possibles depuis des positions sûres. Expliquez ce qui impose de vous déplacer ou de renoncer à une image. Sans zoom disponible, la comparaison zoom/fixe reste une étude théorique : aucun autre objectif n’est nécessaire pour cette mission.";
+    }
     if (meta.kind === "aberration")
       action =
         "Sur un support stable, photographiez une cible détaillée à pleine ouverture puis à deux ouvertures permises par votre objectif. Gardez le traitement et l’exposition comparables ; distinguez franges, défaut de point et diffraction.";

@@ -77,10 +77,15 @@ with sync_playwright() as p:
  legacy={'version':1,'state':exported['state']}
  page.locator('#import').set_input_files({'name':'legacy.json','mimeType':'application/json','buffer':json.dumps(legacy).encode()});page.wait_for_function('document.querySelector("#toast").textContent.includes("importé")');assert page.evaluate('FocalLearning.state.profile.activeLensId')=='tamron'
  page.locator('#import').set_input_files({'name':'full.json','mimeType':'application/json','buffer':json.dumps(exported).encode()});page.wait_for_function('document.querySelector("#toast").textContent.includes("importé")');page.reload();page.wait_for_function('!!window.FocalApp');assert page.evaluate('FocalLearning.state.practice.length')==2
+ # A single fixed lens must never be asked to perform a three-focal-length comparison.
+ go('#profile');page.locator('[name=ownedLensIds][value=tamron]').uncheck();page.locator('[name=ownedLensIds][value=fe35]').check();page.locator('#profile-form button[type=submit]').click();page.wait_for_url('**/#home')
+ go('#lesson/N03-L01/mission');assert 'Avec votre focale fixe de 35 mm' in page.locator('.mission-instruction').inner_text();assert 'comparez trois focales' not in page.locator('.mission-instruction').inner_text()
+ go('#lesson/N03-L02/mission');assert 'Sans zoom disponible' in page.locator('.mission-instruction').inner_text()
  # Custom conservative limits work in the calculator, scenarios and restored evidence.
- go('#profile');page.locator('[name=ownedLensIds][value=tamron]').uncheck();page.locator('[name=ownedLensIds][value=user-lens]').check()
+ go('#profile');page.locator('[name=ownedLensIds][value=fe35]').uncheck();page.locator('[name=ownedLensIds][value=user-lens]').check()
  for key,val in [('lensName','Mon zoom 24–105 f/4'),('focalMin','24'),('focalMax','105'),('maxAperture','4'),('minAperture','22')]:page.locator(f'[name={key}]').fill(val)
  page.locator('#profile-form button[type=submit]').click();page.wait_for_url('**/#home');go('#lesson/N01-L03/visual');assert page.locator('#dof-lens').input_value()=='user-lens';assert page.locator('#apertureOut').inner_text()=='f/4';assert page.locator('#scenario-title').inner_text()=='f/4'
+ go('#lesson/N03-L02/visual');assert 'Le zoom ajuste le cadre' in page.locator('#workshop-art').inner_text()
  assert page.evaluate('FocalLearning.state.practice[0].trials[0].lensId')=='tamron'
  print('PASS: search availability, ten shooting scenarios, concurrent tab drafts, full/legacy imports, invalid version rejection and custom lens.',flush=True)
  for width in [360,390,768,1024,1440]:
